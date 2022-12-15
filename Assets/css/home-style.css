@@ -4,16 +4,12 @@
 }
 .head {
   font-size: 48px;
-  background-color: white;
-  background: transparent;
 
+  background: transparent;
   color: #007bff;
 }
 .background {
   background-image: url(/Assets/image/background\ .jpg);
-}
-total {
-  background-color: #82cd47;
 }
 .nav-bar {
   display: flex;
@@ -23,12 +19,13 @@ total {
   border-radius: 60px;
   background: transparent;
   background-color: white;
+
   margin-left: 50%;
 }
 
 .nav-bar a {
-  text-decoration: none;
   text-align: center;
+
   text-decoration: none;
   color: black;
 }
@@ -181,8 +178,6 @@ video {
   font-family: "Times New Roman", Times, serif;
   font-size: large;
   margin: 30px;
-  margin-left: 90%;
-
   border-radius: 5px;
   border: none;
   padding: 10px;
@@ -197,7 +192,6 @@ video {
   font-family: "Times New Roman", Times, serif;
   font-size: large;
   margin: 30px;
-  margin-left: 90%;
 
   border-radius: 5px;
   border: none;
@@ -214,8 +208,6 @@ video {
   font-size: 48px;
 }
 
-footer {
-}
 .footer-1 {
   margin-left: 30%;
   display: flex;
