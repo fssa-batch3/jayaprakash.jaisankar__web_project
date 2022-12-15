@@ -1,0 +1,25 @@
+.content {
+  border: 3px solid black;
+  height: 600px;
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: aquamarine;
+  margin-left: 10%;
+}
+.head-1 {
+  text-align: center;
+}
+.head-2 {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.sub-content {
+  display: flex;
+  border: 3px solid red;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  background-color: white;
+}

@@ -1,0 +1,54 @@
+.help {
+  height: 600px;
+  width: 1000px;
+  border: 3px solid green;
+  border-radius: 10px;
+  margin: 10% 20%;
+}
+
+.help-1 {
+  display: flex;
+}
+.number {
+  margin: 2px;
+  background-color: green;
+  padding: 10px;
+}
+
+.title {
+  margin: 2px;
+  background-color: green;
+  padding: 10px;
+  padding-right: 30%;
+}
+
+.link {
+  margin: 2px;
+  background-color: green;
+  padding: 10px;
+  padding-right: 50%;
+}
+
+.link-1 {
+  display: flex;
+}
+.Note {
+  margin-top: 5%;
+  margin-left: 20px;
+}
+
+.content {
+  margin-top: 5%;
+  margin-left: 60px;
+}
+.youtube {
+  margin-top: 5%;
+  margin-left: 20%;
+}
+.btn {
+  margin-top: 35%;
+  margin-left: 5%;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+}

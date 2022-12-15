@@ -1,0 +1,237 @@
+.logo {
+  border-radius: 40%;
+  background-color: blue;
+}
+.head {
+  font-size: 48px;
+  background-color: white;
+  background: transparent;
+
+  color: #007bff;
+}
+.background {
+  background-image: url(/Assets/image/background\ .jpg);
+}
+total {
+  background-color: #82cd47;
+}
+.nav-bar {
+  display: flex;
+  width: 650px;
+  height: 40px;
+  border: 1px solid #007bff;
+  border-radius: 60px;
+  background: transparent;
+  background-color: white;
+  margin-left: 50%;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.active-1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-left: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.active-1:hover {
+  color: black;
+  background-color: rgb(105, 245, 210);
+  width: 100px;
+  border-radius: 10px;
+}
+.active {
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  width: 100px;
+}
+
+.active:hover {
+  color: black;
+
+  background-color: rgb(105, 245, 210);
+  border-radius: 10px;
+  width: 100px;
+}
+.middle {
+  display: flex;
+  padding-top: 10%;
+}
+.theory {
+  font-family: "Tangerine", serif;
+  font-size: 30px;
+  color: black;
+  margin-top: -80px;
+}
+.video {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+video {
+  border-radius: 20px;
+  width: 500px;
+  height: 280px;
+  margin-top: -20px;
+}
+.last {
+  padding-top: 3%;
+  background-color: rgba(180, 224, 239, 0.959);
+}
+.last-1 {
+  display: flex;
+}
+.last-2 {
+  display: flex;
+}
+.btn {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  margin: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  width: 300px;
+}
+.btn:hover {
+  color: aliceblue;
+  background-color: rgb(77, 117, 152);
+}
+.btn-1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin: 30px;
+  margin-left: 40px;
+  width: 300px;
+}
+.btn-1:hover {
+  color: aliceblue;
+  background-color: rgb(77, 117, 152);
+}
+.btn-2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  margin: 20px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-left: 40px;
+  margin-top: 30px;
+  width: 300px;
+}
+.btn-2:hover {
+  color: aliceblue;
+  background-color: rgb(77, 117, 152);
+}
+.btn-3 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  margin: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-left: 40px;
+  width: 300px;
+}
+.btn-3:hover {
+  color: aliceblue;
+  background-color: rgb(77, 117, 152);
+}
+.btn-4 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  margin: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-left: 90;
+  width: 300px;
+}
+
+.btn-4:hover {
+  color: aliceblue;
+  background-color: rgb(77, 117, 152);
+}
+.btn-5 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  margin: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-left: 40px;
+  width: 300px;
+}
+.btn-5:hover {
+  color: aliceblue;
+  background-color: rgb(77, 117, 152);
+}
+.btn-6 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  margin: 30px;
+  margin-left: 90%;
+
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-left: 40px;
+  width: 300px;
+}
+.btn-6:hover {
+  color: aliceblue;
+  background-color: rgb(77, 117, 152);
+}
+.btn-7 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  margin: 30px;
+  margin-left: 90%;
+
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-left: 40px;
+  width: 300px;
+}
+.btn-7:hover {
+  color: aliceblue;
+  background-color: rgb(77, 117, 152);
+}
+
+.pdf {
+  font-size: 48px;
+}
+
+footer {
+}
+.footer-1 {
+  margin-left: 30%;
+  display: flex;
+  padding: 20px 0px;
+}
+.footer-2 {
+  font-size: 40px;
+  padding-left: 30%;
+  padding-top: 2%;
+}
+.image-1 {
+  padding-left: 5%;
+}
+.image-2 {
+  padding-left: 5%;
+}
+.image-3 {
+  padding-left: 5%;
+}
