@@ -1,0 +1,15 @@
+.contact {
+  height: 600px;
+  width: 800px;
+  background-color: lightblue;
+  border: 5px solid red;
+  margin-left: 30%;
+  margin-top: 10%;
+}
+.contact-1 {
+  padding-left: 20%;
+  padding-top: 10%;
+}
+.btn {
+  background-color: green;
+}

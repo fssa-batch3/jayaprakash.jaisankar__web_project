@@ -1,0 +1,26 @@
+.whole {
+  background-color: aqua;
+  border: 3px solid red;
+  height: 500px;
+  width: 500px;
+  margin-left: 30%;
+  margin-top: 10%;
+}
+.head {
+  font-size: 50px;
+}
+.name {
+  padding: 10px;
+  margin-left: 0%;
+  margin-bottom: 10px;
+}
+.mail {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.Question {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.box {
+}
