@@ -1,10 +1,11 @@
 .whole {
   background-color: aqua;
   border: 3px solid red;
-  height: 500px;
+  height: 400px;
   width: 500px;
-  margin-left: 30%;
+  padding-left: 10%;
   margin-top: 10%;
+  margin-left: 30%;
 }
 .head {
   font-size: 50px;
@@ -21,6 +22,4 @@
 .Question {
   padding: 10px;
   margin-bottom: 10px;
-}
-.box {
 }

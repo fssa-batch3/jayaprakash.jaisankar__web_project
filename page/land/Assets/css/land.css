@@ -47,7 +47,7 @@
 .land-1 {
   border: 10px solid rgb(93, 212, 212);
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
 }
 .land-tot {
   position: fixed;
@@ -66,10 +66,12 @@ body {
   padding: 30px;
   font-size: 20px;
   margin-left: 40%;
+  border: 2px solid black;
+  border-radius: 10px;
   border-right-style: solid;
   border-left-style: solid;
 }
-.video-1 {
+.iframe {
   margin-left: 20px;
   border-radius: 10px;
 }

@@ -1,36 +1,86 @@
+.total {
+  background: url(https://services.india.gov.in/assets/images/cat_banners/ministry_banner.jpg);
+  height: 400px;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  height: 400px;
+}
+.head {
+  color: white;
+}
+body {
+  margin: 0px;
+}
 .nav-bar {
   display: flex;
-  padding-top: 3%;
-  background-color: black;
+  width: 650px;
+
+  border: 1px solid #007bff;
+  border-radius: 60px;
+  background: transparent;
+  background-color: white;
+
+  margin-left: 25%;
 }
 .nav-bar a {
-  overflow: hidden;
   text-align: center;
+
   text-decoration: none;
-  color: white;
+  color: black;
 }
 .active-1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  padding-left: 10%;
+  margin-left: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.active-1:hover {
+  color: black;
+  background-color: rgb(105, 245, 210);
+  width: 100px;
+  border-radius: 10px;
 }
 .active {
-  padding-left: 10%;
-
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  width: 100px;
+}
+
+.active:hover {
+  color: black;
+
+  background-color: rgb(105, 245, 210);
+  border-radius: 10px;
+  width: 100px;
 }
 .full {
   display: flex;
-  background-color: lightblue;
+  background-color: rgb(81, 208, 218);
 }
 .full-1 {
   padding-right: 30px;
-  margin-top: 5%;
+  margin-top: 24%;
   font-size: 20px;
+  width: 500px;
+  margin-left: 5%;
+  margin-bottom: 10%;
+  color: blue;
 }
 .video {
-  margin-top: 15%;
+  margin-top: 30%;
+  margin-left: 50%;
+  position: fixed;
+}
+.video-1 {
+  border-radius: 60px;
+  border: 10px solid rgb(100, 210, 247);
+  height: 330px;
 }
 .btn-8 {
   font-size: 40px;
@@ -65,18 +115,26 @@
   color: white;
   border: none;
 }
+.title {
+  padding-left: 40%;
+  margin: 0px;
+}
 
 .footer {
   background-color: rgb(129, 129, 244);
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
 }
 .footer-1 {
   font-size: 20px;
-  padding-left: 40%;
+  margin-left: 35%;
 }
 .footer-2 {
   margin-left: 30%;
   display: flex;
-  padding: 20px 0px;
+  padding: 0px 0px;
 }
 
 .image-1 {

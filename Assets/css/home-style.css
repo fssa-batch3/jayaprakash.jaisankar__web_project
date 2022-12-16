@@ -4,6 +4,9 @@
   background: transparent;
   color: #007bff;
 }
+body {
+  margin: 0px;
+}
 .background {
   background-image: url(/Assets/image/background\ .jpg);
 }
@@ -64,13 +67,14 @@
   font-size: 30px;
   color: black;
   margin-top: -80px;
+  margin-left: 10px;
+  width: 200px;
 }
 .video {
   padding-left: 20%;
   padding-right: 20%;
 }
 .video-1 {
-  bottom: 0;
   right: 0;
   width: 600px;
   height: 300px;
@@ -81,8 +85,7 @@
   border: 10px solid rgb(93, 212, 212);
 
   padding: 10px;
-
-  margin-top: -20px;
+  margin-bottom: 50px;
 }
 .last {
   padding-top: 3%;
