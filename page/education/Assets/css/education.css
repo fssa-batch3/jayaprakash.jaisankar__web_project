@@ -1,6 +1,7 @@
 .nav-bar {
   display: flex;
   padding-top: 3%;
+  background: transparent;
   background-color: black;
 }
 .nav-bar a {
@@ -9,7 +10,9 @@
   text-decoration: none;
   color: white;
 }
-
+.backgroud {
+  background: url(https://st2.depositphotos.com/1177973/6136/i/450/depositphotos_61369911-stock-photo-pencil-with-sharpening-shavings.jpg);
+}
 .active-1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
