@@ -1,18 +1,28 @@
 .nav-bar {
   display: flex;
-  padding-top: 3%;
-  background-color: black;
+  width: 1000px;
+  height: 40px;
+  border: 1px solid #007bff;
+  border-radius: 60px;
+  background: transparent;
+  background-color: white;
+  margin-left: 25%;
 }
+
 .nav-bar a {
-  overflow: hidden;
   text-align: center;
+
   text-decoration: none;
-  color: white;
+  color: black;
 }
-.active-1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  padding-left: 10%;
+
+.background {
+  background: url(https://images.unsplash.com/photo-1563068261-13ebbdf16aa3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZWxlY3RyaWNhbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60);
+  height: 300px;
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  top: 0px;
 }
 .active {
   padding-left: 10%;
@@ -21,7 +31,20 @@
   font-size: 20px;
 }
 .image-4 {
-  background-color: aqua;
+  background: transparent;
+  position: absolute;
+  padding: 20px;
+}
+.grid {
+  display: flex;
+  background-color: rgb(198, 234, 246);
+  margin-top: 30%;
+}
+.theory {
+  margin-left: 30%;
+  font-size: 20px;
+  border: 2px solid gray;
+  padding: 20px;
 }
 
 .btn-8 {
@@ -60,7 +83,9 @@
 
 .footer {
   background-color: rgb(129, 129, 244);
+  bottom: 0px;
 }
+
 .footer-1 {
   font-size: 20px;
   padding-left: 40%;

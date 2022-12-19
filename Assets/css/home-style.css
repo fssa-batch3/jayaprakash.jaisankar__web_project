@@ -28,20 +28,7 @@ body {
   text-decoration: none;
   color: black;
 }
-.active-1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  margin-left: 10px;
-  text-align: center;
-  margin-top: 10px;
-}
 
-.active-1:hover {
-  color: black;
-  background-color: rgb(105, 245, 210);
-  width: 100px;
-  border-radius: 10px;
-}
 .active {
   margin-left: 10px;
   margin-top: 10px;
@@ -94,9 +81,7 @@ body {
 .last-1 {
   display: flex;
 }
-.last-2 {
-  display: flex;
-}
+
 .btn {
   font-family: "Times New Roman", Times, serif;
   font-size: large;
@@ -110,92 +95,7 @@ body {
   color: aliceblue;
   background-color: rgb(77, 117, 152);
 }
-.btn-1 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  margin: 30px;
-  margin-left: 40px;
-  width: 300px;
-}
-.btn-1:hover {
-  color: aliceblue;
-  background-color: rgb(77, 117, 152);
-}
-.btn-2 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-  margin: 20px;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  margin-left: 40px;
-  margin-top: 30px;
-  width: 300px;
-}
-.btn-2:hover {
-  color: aliceblue;
-  background-color: rgb(77, 117, 152);
-}
-.btn-3 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-  margin: 30px;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  margin-left: 40px;
-  width: 300px;
-}
-.btn-3:hover {
-  color: aliceblue;
-  background-color: rgb(77, 117, 152);
-}
-.btn-4 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-  margin: 30px;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  margin-left: 90;
-  width: 300px;
-}
 
-.btn-4:hover {
-  color: aliceblue;
-  background-color: rgb(77, 117, 152);
-}
-.btn-5 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-  margin: 30px;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  margin-left: 40px;
-  width: 300px;
-}
-.btn-5:hover {
-  color: aliceblue;
-  background-color: rgb(77, 117, 152);
-}
-.btn-6 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-  margin: 30px;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  margin-left: 40px;
-  width: 300px;
-}
-.btn-6:hover {
-  color: aliceblue;
-  background-color: rgb(77, 117, 152);
-}
 .btn-7 {
   font-family: "Times New Roman", Times, serif;
   font-size: large;
