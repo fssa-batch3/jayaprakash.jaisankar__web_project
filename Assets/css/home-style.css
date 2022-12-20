@@ -8,7 +8,7 @@ body {
   margin: 0px;
 }
 .background {
-  background-image: url(/Assets/image/background\ .jpg);
+  background-image: url(../image/background\ .jpg);
 }
 .nav-bar {
   display: flex;
