@@ -174,3 +174,166 @@ p {
 .image-3 {
   padding-left: 5%;
 }
+
+@media only screen and (max-width: 600px) {
+  .head {
+    font-size: 24px;
+
+    background: transparent;
+    color: #007bff;
+  }
+  body {
+    margin: 0px;
+  }
+  .background {
+    background-image: url(../image/background\ .jpg);
+    height: 600px;
+  }
+  .nav-bar {
+    display: flex;
+    width: 325px;
+    height: 20px;
+    border: 1px solid #007bff;
+    border-radius: 30px;
+    background: transparent;
+    background-color: white;
+
+    margin-left: 25%;
+  }
+
+  .nav-bar a {
+    text-align: center;
+
+    text-decoration: none;
+    color: black;
+  }
+
+  .active {
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    width: 50px;
+  }
+
+  .active:hover {
+    color: black;
+
+    background-color: rgb(105, 245, 210);
+    border-radius: 5px;
+    width: 50px;
+  }
+  .middle {
+    display: flex;
+    padding-top: 5%;
+  }
+  .theory {
+    font-family: "Tangerine", serif;
+    font-size: 15px;
+    color: black;
+    margin-top: -40px;
+    margin-left: 5px;
+    width: 100px;
+  }
+  .video {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .video-1 {
+    right: 0;
+    width: 300px;
+    height: 150px;
+    background: #f0eef0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid rgb(93, 212, 212);
+
+    padding: 5px;
+    margin-bottom: 25px;
+  }
+  .last {
+    padding-top: 1.5%;
+    background-color: rgba(180, 224, 239, 0.959);
+  }
+  .last-1 {
+    display: flex;
+  }
+
+  .btn {
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+    margin: 15px;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    width: 100px;
+  }
+  .btn:hover {
+    color: aliceblue;
+    background-color: rgb(77, 117, 152);
+  }
+
+  .btn-7 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+    margin: 15px;
+
+    border-radius: 2px;
+    border: none;
+    padding: 5px;
+    margin-left: 20px;
+    width: 150px;
+  }
+  .btn-7:hover {
+    color: aliceblue;
+    background-color: rgb(77, 117, 152);
+  }
+
+  .btn-8:hover {
+    opacity: 0.7;
+    border: none;
+  }
+
+  .btn-9:hover {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  .btn-10:hover {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+
+  .pdf {
+    font-size: 24px;
+  }
+  p {
+    padding-left: 20%;
+    margin: 0px;
+  }
+  .footer {
+    background-color: rgb(129, 129, 244);
+  }
+  .footer-1 {
+    font-size: 10px;
+    padding-left: 20%;
+  }
+  .footer-2 {
+    margin-left: 15%;
+    display: flex;
+    padding: 10px 0px;
+  }
+
+  .image-1 {
+    padding-left: 5%;
+  }
+  .image-2 {
+    padding-left: 5%;
+  }
+  .image-3 {
+    padding-left: 5%;
+  }
+}

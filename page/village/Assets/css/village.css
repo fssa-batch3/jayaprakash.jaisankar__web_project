@@ -106,3 +106,38 @@ td {
 .image-3 {
   padding-left: 5%;
 }
+@media only screen and (max-width: 700px) {
+  .nav-bar {
+    width: 600px;
+  }
+  .active {
+    padding-left: 5%;
+  }
+  .village {
+    width: 300px;
+  }
+  body {
+    width: 700px;
+  }
+
+  .table-1,
+  th,
+  td {
+    width: 200px;
+    margin-top: 20px;
+  }
+  .city {
+    margin-left: 2%;
+  }
+  .table-2 {
+    width: 200px;
+
+    margin-bottom: 40%;
+  }
+  .table-3 {
+    margin: 4% 5%;
+  }
+  .image-4 {
+    margin-top: 15%;
+  }
+}

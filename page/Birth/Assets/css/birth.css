@@ -88,10 +88,29 @@
 .image-3 {
   padding-left: 5%;
 }
+.para {
+  margin-top: 0px;
+  margin-left: 40%;
+}
 .birth {
   margin-left: 20%;
   margin-top: 10%;
 }
 .birth-1 {
   border-radius: 20px;
+}
+@media only screen and (max-width: 700px) {
+  .nav-bar {
+    width: 645px;
+  }
+  .active {
+    padding-left: 5%;
+  }
+  .birth {
+    margin-left: 1px;
+  }
+  .form {
+    width: 380px;
+    margin-top: 30%;
+  }
 }

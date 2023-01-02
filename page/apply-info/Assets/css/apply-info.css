@@ -145,3 +145,29 @@ body {
 .image-3 {
   padding-left: 5%;
 }
+
+@media only screen and (max-width: 700px) {
+  .total {
+    height:300px;
+    width: 620px;
+  }
+.video {
+  margin-top: 75%;
+  
+}
+.video-1{
+  height:300px;
+  width: 280px;
+}
+.full{
+  width: auto;
+  
+}
+.full-1{
+  width: 200px;
+}
+.nav-bar{
+  width: auto;
+}
+
+

@@ -82,7 +82,10 @@
   display: flex;
   padding: 20px 0px;
 }
-
+.para {
+  margin-top: 0px;
+  margin-left: 40%;
+}
 .image-1 {
   padding-left: 5%;
 }
@@ -91,4 +94,23 @@
 }
 .image-3 {
   padding-left: 5%;
+}
+@media only screen and (max-width: 700px) {
+  .nav-bar {
+    width: 645px;
+  }
+  .active {
+    padding-left: 5%;
+  }
+  .theory {
+    font-size: 20px;
+    margin-left: 10%;
+  }
+  .video {
+    margin-left: 5%;
+  }
+  .iframe {
+    width: 400px;
+    border-radius: 20px;
+  }
 }

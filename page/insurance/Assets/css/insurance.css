@@ -1,7 +1,7 @@
 .total {
   background: url(https://cdn.s3waas.gov.in/s3f5f8590cd58a54e94377e6ae2eded4d9/uploads/2018/06/2018062913.jpg)
     no-repeat;
-  height: 300px;
+  height: 200px;
 }
 .nav-bar {
   display: flex;
@@ -107,4 +107,26 @@ body {
 }
 .image-3 {
   padding-left: 5%;
+}
+@media only screen and (max-width: 700px) {
+  .nav-bar {
+    width: 600px;
+    margin-left: 0px;
+  }
+  .active {
+    padding-left: 30px;
+  }
+  .video-1 {
+    width: 300px;
+    height: 300px;
+    margin-top: -10%;
+    border-radius: 30px;
+  }
+  .theory {
+    font-size: 20px;
+    margin-left: 10%;
+  }
+  .video {
+    margin-left: 20%;
+  }
 }

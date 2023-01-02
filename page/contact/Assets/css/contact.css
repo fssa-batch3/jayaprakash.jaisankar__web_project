@@ -13,3 +13,9 @@
 .btn {
   background-color: green;
 }
+@media only screen and (max-width: 600px) {
+  .contact {
+    width: 400px;
+    margin-left: 10%;
+  }
+}

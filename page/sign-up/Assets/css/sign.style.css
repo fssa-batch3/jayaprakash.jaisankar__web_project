@@ -22,3 +22,10 @@
 #btn:hover {
   opacity: 0.7;
 }
+
+@media only screen and (max-width: 600px) {
+  .sign-up {
+    width: 200px;
+    margin-left: 20px;
+  }
+}
