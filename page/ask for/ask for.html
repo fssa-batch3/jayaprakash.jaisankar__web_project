@@ -10,12 +10,29 @@
   <body>
     <div class="whole">
       <header class="head">Leave a comment:</header>
+      <label>Name:</label>
+      <input class="name" type="text" id="name" /><br />
+      <label>E-mail:</label>
+      <input class="mail" type="text" id="email" /><br />
+      <label>Question:</label>
+      <input class="Question" type="text" id="text" /><br />
 
-      <input class="name" type="text" placeholder="Name" /><br />
-      <input class="mail" type="text" placeholder="E-mail" /><br />
-
-      <input class="Question" type="text" placeholder="Question" /><br />
-      <input class="box" type="checkbox" />Save for next time<br />
+      <input class="box" type="checkbox" id="box" />Save for next time
+      <button type="button" class="btn" onclick="submit()">submit</button>
     </div>
   </body>
+
+  <script>
+    function submit() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const text = document.getElementById("text").value;
+
+      console.log(name);
+      console.log(email);
+      console.log(text);
+
+      window.location.href = "/index.html";
+    }
+  </script>
 </html>

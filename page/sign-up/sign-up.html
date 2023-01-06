@@ -12,23 +12,51 @@
       <h1>Sign-up</h1>
       <form>
         <lable>First Name:</lable>
-        <input class="input" type="text" />
+        <input class="input" id="fname" type="text" />
         <lable> Middle Name:</lable>
-        <input class="input" type="text" />
+        <input class="input" id="mname" type="text" />
         <lable>Last Name:</lable>
-        <input class="input" type="text" />
+        <input class="input" id="Lname" type="text" />
         <lable>E-mail id</lable>
-        <input class="input" type="text" />
+        <input class="input" id="email" type="text" />
         <lable>Phone Number:</lable>
-        <input class="input" type="text" />
+        <input class="input" id="phnumber" type="text" />
         <lable>Age</lable>
-        <input class="input" type="text" />
+        <input class="input" id="age" type="text" />
 
         <lable>Password:</lable>
-        <input class="input" type="text" minlength="8" required />
-
-        <input type="submit" id="btn" value="submit" />
+        <input class="input" type="text" id="password" minlength="8" required />
       </form>
+      <button type="button" class="btn" onclick="submit()">submit</button>
     </div>
+
+    <script>
+      function submit() {
+        const fname = document.getElementById("fname").value;
+        const mname = document.getElementById("mname").value;
+        const Lname = document.getElementById("Lname").value;
+        const email = document.getElementById("email").value;
+        const phnumber = document.getElementById("phnumber").value;
+        const age = document.getElementById("age").value;
+        const password = document.getElementById("password").value;
+
+        console.log(fname);
+        console.log(mname);
+        console.log(Lname);
+        console.log(email);
+        console.log(phnumber);
+        console.log(age);
+        console.log(password);
+
+        localStorage.setItem("user_fname", fname);
+        localStorage.setItem("user_mname", mname);
+        localStorage.setItem("user_Lname", Lname);
+        localStorage.setItem("user_email", email);
+        localStorage.setItem("user_phnumber", phnumber);
+        localStorage.setItem("user_age", age);
+        localStorage.setItem("user_password", password);
+        window.location.href = "/index.html";
+      }
+    </script>
   </body>
 </html>

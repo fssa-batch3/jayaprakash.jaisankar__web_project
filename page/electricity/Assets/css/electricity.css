@@ -36,13 +36,15 @@ body {
 .image-4 {
   background: transparent;
   position: fixed;
-  padding-top: 22%;
-
   width: 500px;
+  padding-top: 22%;
+}
+.img-4 {
 }
 .grid {
   display: flex;
   background-color: rgb(198, 234, 246);
+  padding-bottom: 160%;
 }
 .theory {
   margin-left: 50%;

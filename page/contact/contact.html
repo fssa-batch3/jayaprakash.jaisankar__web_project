@@ -12,17 +12,32 @@
       <div class="contact-1">
         <h1>Contact Us Form</h1>
         <label>Name*</label><br />
-        <input type="text" value="name" /><br />
+        <input type="text" id="name" /><br />
         <label>E-mail*</label><br />
-        <input type="text" value="mail" /><br />
+        <input type="text" id="email" /><br />
         <label>Subject*</label><br />
-        <input type="text" /><br />
+        <input type="text" id="text" /><br />
         <label>Message*</label><br />
-        <input type="text" />
+        <input type="text" id="sent" />
         <br />
-
-        <button class="btn">Submit</button>
+        <button type="button" class="btn" onclick="submit()">submit</button>
       </div>
     </div>
+
+    <script>
+      function submit() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const text = document.getElementById("text").value;
+        const sent = document.getElementById("sent").value;
+
+        console.log(name);
+        console.log(email);
+        console.log(text);
+        console.log(sent);
+
+        window.location.href = "/index.html";
+      }
+    </script>
   </body>
 </html>

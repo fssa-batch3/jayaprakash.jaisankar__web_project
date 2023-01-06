@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #photo {
+        border-radius: 20px;
+        background-color: rgb(241, 81, 183);
+        width: 40px;
+        height: 40px;
+        margin-left: 20%;
+      }
+      .para {
+        margin-left: 15px;
+        padding-top: 13px;
+      }
+
+      .sign-up {
+        background-color: white;
+        padding: 100px;
+        margin-left: 30%;
+        margin-top: 2%;
+        width: 200px;
+      }
+      .input {
+        margin-left: 105px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sign-up">
+      <div id="photo"><p class="para">J</p></div>
+
+      <h1>Jayaprakash</h1>
+
+      <form>
+        <lable>First Name:</lable>
+        <input class="input" id="fname" type="text" />
+        <lable> Middle Name:</lable>
+        <input class="input" id="mname" type="text" />
+        <lable>Last Name:</lable>
+        <input class="input" id="Lname" type="text" />
+        <lable>E-mail id</lable>
+        <input class="input" id="email" type="text" />
+        <lable>Phone Number:</lable>
+        <input class="input" id="phnumber" type="text" />
+        <lable>Age</lable>
+        <input class="input" id="age" type="text" />
+
+        <lable>Password:</lable>
+        <input class="input" type="text" id="password" minlength="8" required />
+      </form>
+    </div>
+    <script>
+      //localStorage.getIte("user_fname")
+      const user_fname = localStorage.getItem("user_fname");
+      console.log(user_fname);
+
+      document.getElementById.value = "user_fname";
+    </script>
+  </body>
+</html>
