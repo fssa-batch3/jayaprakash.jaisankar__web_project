@@ -552,4 +552,15 @@ p {
     display: flex;
     padding: 20px 0px;
   }
+  #photo {
+    border-radius: 20px;
+    background-color: rgb(241, 81, 183);
+    width: 100px;
+    height: 20px;
+    margin-left: 20%;
+  }
+  .para {
+    margin-left: -10px;
+    padding-top: 7px;
+  }
 }
