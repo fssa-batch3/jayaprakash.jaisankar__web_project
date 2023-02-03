@@ -10,14 +10,14 @@
   <body>
     <h1 class="head-1">Hello. What can we help you with?</h1>
     <h2 class="head-2">Something can do here</h2>
-    <div class="content">
+    <!-- <div class="content">
       <div class="sub-content">
         <div class="photo">
           <a href="https://eservices.tn.gov.in/eservicesnew/index.html">
             <img
-              src="Assets\image\birth -pdf.png"
-              width="100px"
-              height="100px"
+              src="/page/Birth/Assets/image/birth -pdf.png"
+              width="300px"
+              height="200px"
               alt="birth certificate"
             />
           </a>
@@ -30,9 +30,9 @@
             href="https://www.indiafilings.com/learn/legal-heir-certificate-tamil-nadu/"
           >
             <img
-              src="Assets\image\birth -pdf.png"
-              width="100px"
-              height="100px"
+              src="/page/Birth/Assets/image/birth -pdf.png"
+              width="300px"
+              height="200px"
               alt="birth certificate-1"
           /></a>
         </div>
@@ -45,9 +45,9 @@
             href="https://en.wikipedia.org/wiki/Education_in_Tamil_Nadu#:~:text=The%20structure%20of%20education%20in,years%2C%20respectively%2C%20followed%20by%20secondary"
           >
             <img
-              src="Assets\image\birth -pdf.png"
-              width="100px"
-              height="100px"
+              src="/page/Birth/Assets/image/birth -pdf.png"
+              width="300px"
+              height="200px"
               alt="birth certificate-2"
             />
           </a>
@@ -60,9 +60,9 @@
         >
           <div class="photo">
             <img
-              src="Assets\image\birth -pdf.png"
-              width="100px"
-              height="100px"
+              src="/page/Birth/Assets/image/birth -pdf.png"
+              width="300px"
+              height="200px"
               alt="birth certificate-3"
             /></div
         ></a>
@@ -76,9 +76,9 @@
         >
           <div class="photo">
             <img
-              src="Assets\image\birth -pdf.png"
-              width="100px"
-              height="100px"
+              src="/page/Birth/Assets/image/birth -pdf.png"
+              width="300px"
+              height="200px"
               alt="birth certificate-4"
             /></div
         ></a>
@@ -91,15 +91,87 @@
         >
           <div class="photo">
             <img
-              src="Assets\image\birth -pdf.png"
-              width="100px"
-              height="100px"
+              src="/page/Birth/Assets/image/birth -pdf.png"
+              width="300px"
+              height="200px"
               alt="birth certificate-5"
             /></div
         ></a>
 
         <div class="theory">Your search about Electricity</div>
       </div>
-    </div>
+    </div> -->
+    <div class="whole"></div>
+
+    <script>
+      let arrayoflist = [
+        {
+          image:
+            "https://www.researchgate.net/publication/318653803/figure/tbl1/AS:631676480802855@1527614817503/District-wise-area-of-coconut-in-Tamil-Nadu-India.png",
+          description: "Your search about legal Measurement",
+        },
+
+        {
+          image: "/page/Birth/Assets/image/birth -pdf.png",
+          description: "Your search about legal certificate",
+        },
+
+        {
+          image:
+            "https://images.shiksha.com/mediadata/images/articles/1594883372phpHNYCmn.jpeg",
+          description: "Your search about Education",
+          alt: "about education",
+        },
+
+        {
+          image: "https://m.media-amazon.com/images/I/31VahQWoL6L.jpg",
+          description: "Your search about stamp Duty",
+          alt: "about stamp",
+        },
+        {
+          image:
+            "https://images.ctfassets.net/uwf0n1j71a7j/1V81Md7AG2xOrbd4FFUgGC/72ed54a9446839de910f7dc737a96458/amma-health-insurance.png",
+          description: "Your search about insurance",
+          alt: "about insurance",
+        },
+        {
+          image:
+            "https://images.livemint.com/img/2022/09/16/600x338/Electricity_price_hike_1663313286164_1663313286445_1663313286445.JPG",
+          description: "Your search about Electricity",
+          alt: "about electricity",
+        },
+      ];
+
+      for (let i = 0; i <= 5; i++) {
+        let div_content;
+        div_content = document.createElement("div");
+        div_content.setAttribute = ("class", "content");
+        console.log(div_content);
+
+        let div_subcontent;
+        div_subcontent = document.createElement("div");
+        div_subcontent.setAttribute = ("class", "subcontent");
+        div_content.append(div_subcontent);
+
+        let img_service;
+        img_service = document.createElement("img");
+        img_service.setAttribute("src", arrayoflist[i]["image"]);
+        img_service.setAttribute("alt", "image_placeholder");
+        img_service.setAttribute("class", "service");
+        div_subcontent.append(img_service);
+
+        let div_part;
+        div_part = document.createElement("div");
+        div_part.setAttribute = ("class", "part");
+        div_content.append(div_part);
+        let h3_text;
+        h3_text = document.createElement("h3");
+        h3_text.setAttribute = ("class", "text");
+        h3_text.innerText = ("Description", arrayoflist[i]["Description"]);
+        div_part.append(h3_text);
+
+        document.querySelector("div.whole").append(div_content);
+      }
+    </script>
   </body>
 </html>
