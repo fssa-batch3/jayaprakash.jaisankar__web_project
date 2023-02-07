@@ -104,7 +104,7 @@
     <div class="whole"></div>
 
     <script>
-      let arrayoflist = [
+      let product = [
         {
           image:
             "https://www.researchgate.net/publication/318653803/figure/tbl1/AS:631676480802855@1527614817503/District-wise-area-of-coconut-in-Tamil-Nadu-India.png",
@@ -155,7 +155,7 @@
 
         let img_service;
         img_service = document.createElement("img");
-        img_service.setAttribute("src", arrayoflist[i]["image"]);
+        img_service.setAttribute("src", product[i]["image"]);
         img_service.setAttribute("alt", "image_placeholder");
         img_service.setAttribute("class", "service");
         div_subcontent.append(img_service);
@@ -167,7 +167,7 @@
         let h3_text;
         h3_text = document.createElement("h3");
         h3_text.setAttribute = ("class", "text");
-        h3_text.innerText = ("Description", arrayoflist[i]["Description"]);
+        h3_text.innerText = ("Description", product[i]["Description"]);
         div_part.append(h3_text);
 
         document.querySelector("div.whole").append(div_content);

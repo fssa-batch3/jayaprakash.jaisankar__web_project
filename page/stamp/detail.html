@@ -205,7 +205,7 @@
 
       for (let i = 0; i <= 5; i++) {
         let div_card;
-        div_card = document.createElement("a");
+        div_card = document.createElement("div");
         div_card.setAttribute("class", "card");
         div_card.setAttribute(
           "href",
@@ -265,10 +265,10 @@
       // console.log(arrayOfList);
 
       // Array.find(  function(variableName){} )
-      const user = arrayOfList.find(function (Object) {
+      const user = arrayOfList.find(function (Obj) {
         //   userObj = {name : "Bala", "image": {}, "text": ""}
 
-        const name = Object[("name", "price", "description", "url")];
+        const name = Obj["Rs 10 stamp",];
 
         // username = "Bala"
         // name =     "Bala"
@@ -280,6 +280,7 @@
       });
 
       console.log(user);
+
       // console.log(user["name"]);
       // console.log(user["image"]);
       // console.log(user["description"]);
@@ -290,9 +291,9 @@
       // let url = window.location.search;
       // let img = window.location.search;
       // let urlParams = new URLSearchParams(img);
-      let stamp = document.createElement("img");
-      stamp.setAttribute("src", user["image"][url]);
-      document.querySelector(".whole").append(stamp);
+      // let stamp = document.createElement("img");
+      // stamp.setAttribute("src", user["image"][url]);
+      // document.querySelector(".whole").append(stamp);
     </script>
   </body>
 </html>

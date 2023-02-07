@@ -19,6 +19,7 @@
         >
         <a class="active" href="./page/contact/contact.html">contact us</a>
         <a class="active" href="./page/sign-up/sign-up.html">Sign-up</a>
+        <a class="active" href="./page/sign-up/login.html">Login</a>
         <a class="active"id="photo"  href="./page/profile.html"><p class="para">J</p></a>
         </a>
       </div>
@@ -151,6 +152,18 @@
         </ul>
         </div>
       </div>
+      <script>
+        localStorage.setItem("arrayOfList", JSON.stringify(arrayOfList))
+        localStorage.setItem("product", JSON.stringify(product))
+        localStorage.setItem("user_new", JSON.stringify(user_new))
+
+
+        JSON.parse( localStorage.setItem("arrayOfList") )
+        JSON.parse( localStorage.setItem("product") )
+        JSON.parse( localStorage.setItem("user_new") )
+
+
+      </script>
     </footer>
   </body>
 </html>
