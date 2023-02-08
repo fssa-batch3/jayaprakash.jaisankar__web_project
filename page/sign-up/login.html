@@ -13,7 +13,7 @@
         margin-top: 10%;
         margin-left: 30%;
         margin-right: 30%;
-        border: 2px solid black;
+        /* border: 2px solid black; */
       }
 
       #email {
@@ -67,23 +67,84 @@
       let logIn = document.getElementById("form");
       logIn.addEventListener("submit", (event) => {
         event.preventDefault();
+        let log = [];
         let defaultData = JSON.parse(localStorage.getItem("user"));
         console.log(defaultData);
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        console.log(email, password);
 
-        let Email = document.getElementById("email").value;
-        let PWD = document.getElementById("password").value;
-        const selectUser = defaultData.find(function (event) {
-          const email = event["email"];
-          const password = event["password"];
-          if (Email == email && PWD === password) {
-            return alert("Success");
-            window.location.href = "/index.html";
+        let isMatch = false;
+        for (let i = 0; i < defaultData.length; i++) {
+          if (
+            email === defaultData[i].email &&
+            password == defaultData[i].password
+          ) {
+            isMatch = true;
+            log.push(defaultData[i]);
+            window.localStorage.setItem("user_data", JSON.stringify(log));
+            break;
+          } else {
+            isMatch = false;
           }
+        }
 
-          // window.location.href = "\page\sign-up\sign-up.html";
-        });
-        return alert("failed");
+        if (isMatch === true) {
+          alert("success");
+
+          window.location.href = "/index.html";
+        } else {
+          alert("failed");
+          window.location.href = "\page\sign-up\sign-up.html";
+        }
       });
+
+      // i = i + defaultData.length;
+
+      // let logIn = document.getElementById("form");
+      // logIn.addEventListener("submit", (event) => {
+      //   event.preventDefault();
+      //   let Data = localStorage.getItem("user_info");
+      //   let defaultData = JSON.parse(Data);
+      //   let email = document.getElementById("email").value;
+      //   let Password = document.getElementById("password").value;
+      //   for (let i = 0; i < defaultData.length; i++) {
+      //     console.log(defaultData[i]);
+      //     isthis = false;
+      //     if (email === email && Password === password) {
+      //       isthis = true;
+      //       break;
+      //     } else {
+      //       isthis = false;
+      //     }
+      //   }
+      //   if ((isthis = true)) {
+      //     alert("Success");
+      //   } else {
+      //     alert("failed");
+      //   }
+      // });
+
+      // let logIn = document.getElementById("form");
+      // logIn.addEventListener("submit", (event) => {
+      //   event.preventDefault();
+      //   let Data = JSON.parse(localStorage.getItem("user"));
+      //   console.log(Data);
+
+      //   let Email = document.getElementById("email").value;
+      //   let PWD = document.getElementById("password").value;
+      //   // const selectUser = Data.find(function (event) {
+      //   //   const email = event["email"];
+      //   //   const password = event["password"];
+      //   if (Email == email && PWD === password) {
+      //     alert("Success");
+
+      //     window.location.href = "/index.html";
+      //   } else {
+      //     alert("failed");
+      //   }
+      //   // window.location.href = "\page\sign-up\sign-up.html";
+      // });
 
       // let log = document.getElementById("form");
       // log.addEventListener("submit", (event) => {

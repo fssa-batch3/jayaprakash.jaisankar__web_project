@@ -11,10 +11,10 @@
         background-color: rgb(241, 81, 183);
         width: 40px;
         height: 40px;
-        margin-left: 20%;
+        margin-left: 30%;
       }
       .para {
-        margin-left: 15px;
+        margin-left: 10px;
         padding-top: 13px;
       }
 
@@ -32,9 +32,9 @@
   </head>
   <body>
     <div class="sign-up">
-      <div id="photo"><p class="para">J</p></div>
+      <div id="photo"><p class="para">user</p></div>
 
-      <h1>Jayaprakash</h1>
+      <h1>User Details</h1>
 
       <form>
         <lable>First Name:</lable>
@@ -55,43 +55,54 @@
       </form>
     </div>
     <script>
+      let user_data = JSON.parse(window.localStorage.getItem("user_data"));
+      console.log(user_data);
+      document.getElementById("fname").value = user_data[0]["fname"];
+      document.getElementById("mname").value = user_data[0]["mname"];
+      document.getElementById("Lname").value = user_data[0]["Lname"];
+      document.getElementById("email").value = user_data[0]["email"];
+      document.getElementById("phnumber").value = user_data[0]["phnumber"];
+      document.getElementById("age").value = user_data[0]["age"];
+
+      document.getElementById("password").value = user_data[0]["password"];
+
       // const userJson = JSON.stringify("user_new");
       // localStorage.getItem("user", userJson);
 
-      localStorage.getItem("user_fname");
-      const fname = localStorage.getItem("user_fname");
-      console.log(fname);
+      // localStorage.getItem("user_fname");
+      // const fname = localStorage.getItem("user_fname");
+      // console.log(fname);
 
-      document.getElementById("fname").value = fname;
+      // document.getElementById("fname").value = fname;
 
-      const mname = localStorage.getItem("user_mname");
-      console.log(mname);
+      // const mname = localStorage.getItem("user_mname");
+      // console.log(mname);
 
-      document.getElementById("mname").value = mname;
+      // document.getElementById("mname").value = mname;
 
-      const Lname = localStorage.getItem("user_Lname");
-      console.log(Lname);
+      // const Lname = localStorage.getItem("user_Lname");
+      // console.log(Lname);
 
-      document.getElementById("Lname").value = Lname;
-      const email = localStorage.getItem("user_email");
-      console.log(email);
+      // document.getElementById("Lname").value = Lname;
+      // const email = localStorage.getItem("user_email");
+      // console.log(email);
 
-      document.getElementById("email").value = email;
+      // document.getElementById("email").value = email;
 
-      const phnumber = localStorage.getItem("user_phnumber");
-      console.log(phnumber);
+      // const phnumber = localStorage.getItem("user_phnumber");
+      // console.log(phnumber);
 
-      document.getElementById("phnumber").value = phnumber;
+      // document.getElementById("phnumber").value = phnumber;
 
-      const age = localStorage.getItem("user_age");
-      console.log(age);
+      // const age = localStorage.getItem("user_age");
+      // console.log(age);
 
-      document.getElementById("age").value = age;
+      // document.getElementById("age").value = age;
 
-      const password = localStorage.getItem("user_password");
-      console.log(password);
+      // const password = localStorage.getItem("user_password");
+      // console.log(password);
 
-      document.getElementById("password").value = password;
+      // document.getElementById("password").value = password;
     </script>
   </body>
 </html>

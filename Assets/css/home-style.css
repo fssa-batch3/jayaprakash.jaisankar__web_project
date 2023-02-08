@@ -333,7 +333,7 @@ p {
   color: #fff;
 }
 
-#photo {
+/* #photo {
   border-radius: 20px;
   background-color: rgb(241, 81, 183);
   width: 60px;
@@ -343,7 +343,19 @@ p {
 .para {
   margin-left: -10px;
   padding-top: 7px;
+} */
+#photo {
+  border-radius: 20px;
+  background-color: rgb(241, 81, 183);
+  width: 40px;
+  height: 40px;
+  margin-left: 30%;
 }
+.para {
+  margin-left: 10px;
+  padding-top: 13px;
+}
+
 @media only screen and (max-width: 700px) {
   .head {
     font-size: 24px;
