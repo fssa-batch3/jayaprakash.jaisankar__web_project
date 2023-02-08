@@ -259,19 +259,16 @@
         document.querySelector("div.whole").append(div_card);
       }
 
-      const url = window.location.search; // ?name=Arun
-      const urlParams = new URLSearchParams(url); // converting string into key value pair
-      const username = urlParams.get("name"); // return value of the "name" key
-      // console.log(arrayOfList);
+      const url = window.location.search;
+      const urlParams = new URLSearchParams(url);
+      const username = urlParams.get("name");
 
-      // Array.find(  function(variableName){} )
       const user = arrayOfList.find(function (Obj) {
-        //   userObj = {name : "Bala", "image": {}, "text": ""}
+
 
         const name = Obj["Rs 10 stamp",];
 
-        // username = "Bala"
-        // name =     "Bala"
+
         if (username === name) {
           return true;
         } else {

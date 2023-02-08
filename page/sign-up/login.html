@@ -68,28 +68,25 @@
       logIn.addEventListener("submit", (event) => {
         event.preventDefault();
         let log = [];
-        let defaultData = JSON.parse(localStorage.getItem("user"));
-        console.log(defaultData);
-        let email = document.getElementById("email").value;
+        let Data = JSON.parse(localStorage.getItem("user"));
+        console.log(Data);
+        let email = document.getElementById("email").value.toLowerCase();
         let password = document.getElementById("password").value;
         console.log(email, password);
 
-        let isMatch = false;
-        for (let i = 0; i < defaultData.length; i++) {
-          if (
-            email === defaultData[i].email &&
-            password == defaultData[i].password
-          ) {
-            isMatch = true;
-            log.push(defaultData[i]);
-            window.localStorage.setItem("user_data", JSON.stringify(log));
+        let isthis = false;
+        for (let i = 0; i < Data.length; i++) {
+          if (email === Data[i].email && password == Data[i].password) {
+            isthis = true;
+            log.push(Data[i]);
+            window.localStorage.setItem("userinfo", JSON.stringify(log));
             break;
           } else {
-            isMatch = false;
+            isthis = false;
           }
         }
 
-        if (isMatch === true) {
+        if (isthis === true) {
           alert("success");
 
           window.location.href = "/index.html";
