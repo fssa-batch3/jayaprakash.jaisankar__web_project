@@ -11,25 +11,84 @@
     <div class="sign-up">
       <h1>Sign-up</h1>
       <form id="form">
-        <lable>First Name:</lable>
-        <input class="input" id="fname" type="text" />
-        <lable> Middle Name:</lable>
-        <input class="input" id="mname" type="text" />
-        <lable>Last Name:</lable>
-        <input class="input" id="Lname" type="text" />
-        <lable>E-mail id:</lable>
-        <input class="input" id="email" type="email" />
-        <lable>Phone Number:</lable>
-        <input class="input" id="phnumber" type="number" />
-        <lable>Age:</lable>
-        <input class="input" id="age" type="number" />
+        <label>First Name:</label>
+        <input
+          class="input"
+          id="fname"
+          type="text"
+          title="Firstname required"
+          autocomplete="sdfsdf"
+          pattern="[A-Za-z]{1,32}"
+          required
+        />
 
-        <lable>Password:</lable>
+        <label> Middle Name:</label>
+        <input
+          class="input"
+          id="mname"
+          type="text"
+          title="middlename required"
+          pattern="[A-Za-z]{1,32}"
+          required
+        />
+
+        <label>Last Name:</label>
+        <input
+          class="input"
+          id="Lname"
+          type="text"
+          title="lastname required"
+          pattern="[A-Za-z]{1,32}"
+          required
+        />
+
+        <label>E-mail id:</label>
+        <input
+          class="input"
+          id="email"
+          required
+          type="email"
+          name="requiredemail"
+          required
+        />
+
+        <label>Phone Number:</label>
+        <input
+          class="input"
+          id="phnumber"
+          type="text"
+          title="phonenumber required"
+          pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+          required
+        />
+
+        <label>Age:</label>
+        <input
+          class="input"
+          id="age"
+          type="text"
+          title="age required"
+          pattern="[0-9]{2}"
+          required
+        />
+
+        <label>Password:</label>
         <input
           class="input"
           type="password"
           id="password"
-          minlength="8"
+          title="password required"
+          pattern="[a-z]{6,12}"
+          required
+        />
+
+        <label> conformpassword:</label>
+        <input
+          class="input"
+          type="password"
+          id="cpassword"
+          title="password required"
+          pattern="[a-z]{6,12}"
           required
         />
 
@@ -39,6 +98,19 @@
 
     <script>
       let arr = [];
+
+      // if (localStorage.getItem("userdata") != null) {
+      //   arr = JSON.parse(localStorage.getItem("userdata"));
+      // }
+      // if (window.localStorage.getItem("user") === null) {
+      //   window.localStorage.setItem("user", JSON.stringify(arr));
+      // } else {
+      //   let local = window.localStorage.getItem("user");
+      //   let json = JSON.parse(local);
+      //   json.push(userdata);
+      //   window.localStorage.setItem("user", JSON.stringify(json));
+      // }
+
       let form = document.getElementById("form");
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -49,23 +121,235 @@
         const email = document.getElementById("email").value;
         const phnumber = document.getElementById("phnumber").value;
         const password = document.getElementById("password").value;
+        const confirmpassword = document.getElementById("cpassword").value;
+
         userdata["fname"] = fname;
         userdata["mname"] = mname;
         userdata["Lname"] = Lname;
         userdata["phnumber"] = phnumber;
         userdata["email"] = email.toLowerCase();
         userdata["password"] = password;
+        userdata["password"] = confirmpassword;
         arr.push(userdata);
-        if (window.localStorage.getItem("user") === null) {
-          window.localStorage.setItem("user", JSON.stringify(arr));
-        } else {
-          let local = window.localStorage.getItem("user");
-          let json = JSON.parse(local);
-          json.push(userdata);
-          window.localStorage.setItem("user", JSON.stringify(json));
+
+        if (password != confirmpassword) {
+          alert("Password Doesn't Match");
         }
-        window.location.href = "/index.html";
+
+        let validation = JSON.parse(window.localStorage.getItem("user"));
+
+        let match = false;
+
+        for (let i = 0; i < validation.length; i++) {
+          if (email === validation[i].email) {
+            // alert("Email is already in use");
+            match = true;
+            break;
+          }
+        }
+        if (match === true) {
+          alert("Email is already in use");
+        } else {
+          if (window.localStorage.getItem("user") === null) {
+            window.localStorage.setItem("user", JSON.stringify(arr));
+            console.log(window.localStorage.getItem("user"));
+          } else {
+            let local = window.localStorage.getItem("user");
+            let json = JSON.parse(local);
+            json.push(userdata);
+            window.localStorage.setItem("user", JSON.stringify(json));
+          }
+          window.location.href = "/index.html";
+        }
       });
+
+      // let is = false;
+      //   let Data = JSON.parse(localStorage.getItem("user"));
+      //   for (i = 0; i < Data.length; i++) {
+      //     if (Data.value === email.value) {
+      //       is = true;
+      //     } else {
+      //       is = false;
+      //     }
+      //   }
+
+      //   if ((is = true)) {
+      //     alert("User Already Exists");
+      //   } else {
+      //     window.location.href = "/index.html";
+      //   }
+
+      //   let is = false;
+      //   let Data = JSON.parse(localStorage.getItem("user"));
+      //   for (i = 0; i < Data.length; i++) {
+      //     if (Data.value === email.value) {
+      //       is = true;
+      //     } else {
+      //       is = false;
+      //     }
+      //   }
+
+      //   if ((is = true)) {
+      //     alert("User Already Exists");
+      //   } else {
+      //     window.location.href = "/index.html";
+      //   }
+      // });
+
+      // window.location.href = "/index.html";
+
+      // function submit() {
+      //   if (fname == "" || email == null) {
+      //     setError(fname, "Firstname Cannot Be Blank");
+      //   } else {
+      //     setSuccess(fname);
+      //   }
+
+      //   if (mname === "") {
+      //     setError(mname, "Middlename Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(mname);
+      //   }
+      //   if (Lname === "") {
+      //     setError(Lname, "Lastname Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(Lname);
+      //   }
+      //   if (phnumber === "") {
+      //     setError(phnumber, "Phone Number Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(phnumber);
+      //   }
+      //   if (email === "") {
+      //     setError(email, "Email Cannot Be Blank");
+      //     return false;
+      //   } else if (!isEmail(email)) {
+      //     setError(email, "Not a valid Email");
+      //     return false;
+      //   } else {
+      //     setSuccess(email);
+      //     return false;
+      //   }
+      //   if (age === "") {
+      //     setError(age, "Age Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(age);
+      //     return false;
+      //   }
+      //   if (password === "") {
+      //     setError(password, "password Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(password);
+      //     return false;
+      //   }
+      //   function setError(input, message) {
+      //     const inputflex = input.parentElement;
+      //     const small = inputflex.querySelector("small");
+      //     inputflex.className = "inputflex error";
+      //     small.innerText = message;
+      //   }
+      //   function isEmail(Email) {
+      //     return /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/.test(
+      //       Email
+      //     );
+      //   }
+      // }
+
+      // function submit() {
+      //   const fname = fname.value.trim();
+      //   const mname = mname.value.trim();
+      //   const Lname = Lname.value.trim();
+      //   const phnumber = phnumber.value.trim();
+      //   const email = email.value.trim();
+      //   const age = age.value.trim();
+      //   const password = Password.value.trim();
+      //   if (fname == "" || email == null) {
+      //     setError(fname, "Firstname Cannot Be Blank");
+      //   } else {
+      //     setSuccess(fname);
+      //   }
+      //   if (mname === "") {
+      //     setError(mname, "Middlename Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(mname);
+      //   }
+      //   if (Lname === "") {
+      //     setError(Lname, "Lastname Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(Lname);
+      //   }
+      //   if (phnumber === "") {
+      //     setError(phnumber, "Phone Number Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(phnumber);
+      //   }
+      //   if (email === "") {
+      //     setError(email, "Email Cannot Be Blank");
+      //     return false;
+      //   } else if (!isEmail(email)) {
+      //     setError(email, "Not a valid Email");
+      //     return false;
+      //   } else {
+      //     setSuccess(email);
+      //     return false;
+      //   }
+      //   if (age === "") {
+      //     setError(age, "Age Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(age);
+      //     return false;
+      //   }
+      //   if (password === "") {
+      //     setError(password, "password Cannot Be Blank");
+      //     return false;
+      //   } else {
+      //     setSuccess(password);
+      //     return false;
+      //   }
+      // }
+      // // function setError(input, message) {
+      // //   const inputflex = input.parentElement;
+      // //   const small = inputflex.querySelector("small");
+      // //   inputflex.className = "inputflex error";
+      // //   small.innerText = message;
+      // // }
+      // function isEmail(Email) {
+      //   return /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/.test(
+      //     Email
+      //   );
+      // }
+
+      // function validateEmail(email) {
+      //   //Validates the email address
+      //   var emailRegex =
+      //     /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      //   return emailRegex.test(email);
+      // }
+
+      //         var value = $("#email").val();
+
+      //   var regex = new RegExp('^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|(^[0-9]{10})+$');
+
+      //   if(value){
+      //   		 if(!regex.test(value)){
+      //           $("#error").text("Please enter valid email address or phone number.")
+      //        }else{
+      //          $("#error").text('')
+      //        }
+      //   }else{
+      //    	$("#error").text('This field is required.')
+      //   }
+
+      // }
 
       // let user_new = [];
       // let user = new object();

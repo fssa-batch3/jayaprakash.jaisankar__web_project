@@ -34,7 +34,12 @@
         <input type="email" id="email" /><br />
 
         <label>Password</label>
-        <input type="password" id="password" minlength="8" /><br />
+        <input
+          type="password"
+          id="password"
+          pattern="[^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$
+        ]"
+        /><br />
         <button type="submit" class="btn">submit</button>
       </form>
     </div>
