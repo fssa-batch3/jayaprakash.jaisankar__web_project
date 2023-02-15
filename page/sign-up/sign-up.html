@@ -120,6 +120,7 @@
         const Lname = document.getElementById("Lname").value;
         const email = document.getElementById("email").value;
         const phnumber = document.getElementById("phnumber").value;
+        const age = document.getElementById("age").value;
         const password = document.getElementById("password").value;
         const confirmpassword = document.getElementById("cpassword").value;
 
@@ -127,6 +128,7 @@
         userdata["mname"] = mname;
         userdata["Lname"] = Lname;
         userdata["phnumber"] = phnumber;
+        userdata["age"] = age;
         userdata["email"] = email.toLowerCase();
         userdata["password"] = password;
         userdata["password"] = confirmpassword;
@@ -138,17 +140,17 @@
 
         let validation = JSON.parse(window.localStorage.getItem("user"));
 
-        let match = false;
+        let is = false;
 
         for (let i = 0; i < validation.length; i++) {
           if (email === validation[i].email) {
             // alert("Email is already in use");
-            match = true;
+            is = true;
             break;
           }
         }
-        if (match === true) {
-          alert("Email is already in use");
+        if (is === true) {
+          alert("already  email is exist");
         } else {
           if (window.localStorage.getItem("user") === null) {
             window.localStorage.setItem("user", JSON.stringify(arr));

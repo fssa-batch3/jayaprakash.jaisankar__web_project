@@ -7,6 +7,10 @@
 body {
   margin: 0px;
 }
+#google_translate_element {
+  margin-top: -150px;
+  margin-left: 10px;
+}
 .background {
   background-image: url(../image/background\ .jpg);
 }

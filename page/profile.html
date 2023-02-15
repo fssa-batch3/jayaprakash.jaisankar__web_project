@@ -36,7 +36,7 @@
 
       <h1>User Details</h1>
 
-      <form>
+      <form id="form">
         <label>First Name:</label>
         <input class="input" id="fname" type="text" />
         <label> Middle Name:</label>
@@ -47,62 +47,210 @@
         <input class="input" id="email" type="text" />
         <label>Phone Number:</label>
         <input class="input" id="phnumber" type="text" />
+        <label>Date of Birth</label>
+        <input class="input" id="date" type="text" />
+
         <label>Age</label>
         <input class="input" id="age" type="text" />
+        <label>Gender</label>
+        <input class="input" id="gender" type="text" />
+        <label>Address</label>
+        <input class="input" id="address" type="text" />
 
         <label>Password:</label>
         <input class="input" type="text" id="password" minlength="8" required />
+        <button type="submit" class="btn">submit</button>
+        <button type="submit" class="btn">Delete</button>
       </form>
     </div>
     <script>
-      let user_info = JSON.parse(window.localStorage.getItem("userinfo"));
-      console.log(user_info);
-      document.getElementById("fname").value = user_info[0]["fname"];
-      document.getElementById("mname").value = user_info[0]["mname"];
-      document.getElementById("Lname").value = user_info[0]["Lname"];
-      document.getElementById("email").value = user_info[0]["email"];
-      document.getElementById("phnumber").value = user_info[0]["phnumber"];
-      document.getElementById("age").value = user_info[0]["age"];
+      let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+      let data = JSON.parse(window.localStorage.getItem("user"));
+      console.log(data);
 
-      document.getElementById("password").value = user_info[0]["password"];
+      let get = data.find(function (obj) {
+        let checkmail = obj["email"];
+        if (mail === checkmail) {
+          return true;
+        }
+      });
+      console.log(get);
 
-      // const userJson = JSON.stringify("user_new");
-      // localStorage.getItem("user", userJson);
+      const fname = document.getElementById("fname");
+      const mname = document.getElementById("mname");
+      const Lname = document.getElementById("Lname");
+      const email = document.getElementById("email");
+      const phnumber = document.getElementById("phnumber");
+      //const age = document.getElementById("age");
+      // document.getElementById("password").value = data[0]["password"];
 
-      // localStorage.getItem("user_fname");
-      // const fname = localStorage.getItem("user_fname");
-      // console.log(fname);
+      fname.value = get["fname"];
+      mname.value = get["mname"];
+      Lname.value = get["Lname"];
+      email.value = get["email"];
+      phnumber.value = get["phnumber"];
+      age.value = get["age"];
 
-      // document.getElementById("fname").value = fname;
+      let form = document.getElementById("form");
 
-      // const mname = localStorage.getItem("user_mname");
-      // console.log(mname);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-      // document.getElementById("mname").value = mname;
+        let fname = document.getElementById("fname").value;
+        let mname = document.getElementById("mname").value;
+        let Lname = document.getElementById("Lname").value;
+        let email = document.getElementById("email").value;
+        let phnumber = document.getElementById("phnumber").value;
+        let date = document.getElementById("date").value;
+        let age = document.getElementById("age").value;
+        let address = document.getElementById("address").value;
 
-      // const Lname = localStorage.getItem("user_Lname");
-      // console.log(Lname);
+        let ject = {
+          fname,
+          mname,
+          Lname,
+          email,
+          phnumber,
+          date,
+          age,
+          address,
+        };
 
-      // document.getElementById("Lname").value = Lname;
-      // const email = localStorage.getItem("user_email");
-      // console.log(email);
+        let update = Object.assign(get, ject);
+        console.log(update);
+        let index = data.indexOf(get);
+        console.log(index);
+        data[index] = update;
+        localStorage.setItem("user", JSON.stringify(data));
+        alert("You have successfully updated your account details!");
+        // location.reload();
+      });
 
-      // document.getElementById("email").value = email;
+      //// const user_email = JSON.parse(window.localStorage.getItem("details"))
+      //// let check = true;
+      let check = true;
+      const present = JSON.parse(window.localStorage.getItem("user"));
+      let get_present = data.find(function (object) {
+        let check_email = object["email"];
+        if (mail === check_email) {
+          let fname = document.getElementById("fname");
+          let mname = document.getElementById("mname");
+          let Lname = document.getElementById("Lname");
+          let email = document.getElementById("email");
+          let phnumber = document.getElementById("phnumber");
+          let dob = document.getElementById("date");
+          let addres = document.getElementById("address");
+          let age = document.getElementById("age");
+          let gender = document.getElementById("gender");
+          fname.value = object["fname"];
+          mname.value = object["mname"];
+          Lname.value = object["Lname"];
+          email.value = object["email"];
+          phnumber.value = object["phnumber"];
+          dob.value = object["dob"];
 
-      // const phnumber = localStorage.getItem("user_phnumber");
-      // console.log(phnumber);
+          gender.value = object["gender"];
+        }
+      });
 
-      // document.getElementById("phnumber").value = phnumber;
+      // let formdelete = document.getElementById("form");
+      // formdelete.addEventListener("delete", function (event) {
+      //   event.preventDefault();
+      //   let index = mail.indexOf(get);
+      //   console.log(index);
+      //   presend_details.splice(data[index], 1);
+      //   confirm("delete this accuont");
+      // });
 
-      // const age = localStorage.getItem("user_age");
-      // console.log(age);
+      // const user_email = JSON.parse(window.localStorage.getItem("userinfo"));
+      // const user_details = JSON.parse(window.localStorage.getItem("user"));
+      // let get_obj = user_details.find(function (user_obj) {
+      //   let check_email = user_obj["email"];
+      //   if (user_email === check_email) {
+      //     return true;
+      //   }
+      // });
+      // console.log(get_obj);
+      // const fname = document.getElementById("fname");
+      // const mname = document.getElementById("mname");
+      // const Lname = document.getElementById("Lname");
+      // const age = document.getElementById("age");
+      // const email = document.getElementById("email");
+      // const phnumber = document.getElementById("phnumber");
+      // fname.value = get_obj["fname"];
+      // mname.value = get_obj["mname"];
+      // Lname.value = get_obj["lname"];
+      // email.value = user_email;
+      // age.value = age["age"];
+      // phnumber.value = get_obj["phnumber"];
 
-      // document.getElementById("age").value = age;
+      // let form = document.getElementById("form");
+      // form.addEventListener("submit", function (event) {
+      //   event.preventDefault();
+      //   let fname = document.getElementById("fname").value;
+      //   let mname = document.getElementById("mname").value;
 
-      // const password = localStorage.getItem("user_password");
-      // console.log(password);
+      //   let lname = document.getElementById("surname").value;
+      //   let mail = document.getElementById("emailid").value;
+      //   let phone = document.getElementById("mobilenumber").value;
+      //   let dob = document.getElementById("date").value;
+      //   let address = document.getElementById("address").value;
 
-      // document.getElementById("password").value = password;
+      //   let gender = document.getElementById("gender").value;
+      //   let new_data = {
+      //     fname,
+      //     mname,
+      //     lname,
+      //     email,
+      //     phnumber,
+      //     dob,
+
+      //     gender,
+      //   };
+      //   // if( mail.value != user_email ){
+      //   //   alert("You can't change the email-id")
+      //   //   return
+      //   // }
+      //   let updates = Object.assign(get_obj, new_data);
+      //   console.log(updates);
+      //   let index = user_details.indexOf(get_obj);
+      //   // console.log(index);
+      //   user_details[index] = updates;
+      //   localStorage.setItem("user", JSON.stringify(user_details));
+      //   alert("You have successfully updated your account details!");
+      // });
+      // // const user_email = JSON.parse(window.localStorage.getItem("details"))
+      // let check = true;
+      // const presend_details = JSON.parse(window.localStorage.getItem("user"));
+      // let get_presend = user_details.find(function (user_obj) {
+      //   let check_email = user_obj["email"];
+      //   if (user_email === check_email) {
+      //     let fname1 = document.getElementById("name");
+      //     let lname1 = document.getElementById("surname");
+      //     let mail1 = document.getElementById("emailid");
+      //     let phone1 = document.getElementById("mobilenumber");
+      //     let dob1 = document.getElementById("dob");
+      //     let state1 = document.getElementById("state");
+      //     let country1 = document.getElementById("country");
+      //     let gender1 = document.getElementById("gender");
+      //     fname1.value = user_obj["fname"];
+      //     lname1.value = user_obj["lname"];
+      //     mail1.value = user_obj["email"];
+      //     phone1.value = user_obj["phone"];
+      //     dob1.value = user_obj["dob"];
+      //     state1.value = user_obj["state"];
+      //     country1.value = user_obj["country"];
+      //     gender1.value = user_obj["gender"];
+      //   }
+      // });
+      // let form1 = document.getElementById("form");
+      // form1.addEventListener("delete", function (event) {
+      //   event.preventDefault();
+      //   let index = user_details.indexOf(get_obj);
+      //   console.log(index);
+      //   presend_details.splice(user_details[index], 1);
+      //   confirm("Are you sure you want to delete this accuont");
+      // });
     </script>
   </body>
 </html>

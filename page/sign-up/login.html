@@ -34,12 +34,7 @@
         <input type="email" id="email" /><br />
 
         <label>Password</label>
-        <input
-          type="password"
-          id="password"
-          pattern="[^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$
-        ]"
-        /><br />
+        <input type="password" id="password" /><br />
         <button type="submit" class="btn">submit</button>
       </form>
     </div>
@@ -72,7 +67,7 @@
       let logIn = document.getElementById("form");
       logIn.addEventListener("submit", (event) => {
         event.preventDefault();
-        let log = [];
+        // let log = [];
         let Data = JSON.parse(localStorage.getItem("user"));
         console.log(Data);
         let email = document.getElementById("email").value.toLowerCase();
@@ -83,8 +78,11 @@
         for (let i = 0; i < Data.length; i++) {
           if (email === Data[i].email && password == Data[i].password) {
             isthis = true;
-            log.push(Data[i]);
-            window.localStorage.setItem("userinfo", JSON.stringify(log));
+            // log.push(Data[i]);
+            window.localStorage.setItem(
+              "userinfo",
+              JSON.stringify(Data[i].email)
+            );
             break;
           } else {
             isthis = false;
