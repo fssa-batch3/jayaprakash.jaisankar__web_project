@@ -1,9 +1,22 @@
+body {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXpNLt2eFsHlOYUIfqBLx5Ie6LGnl2EcOjUKDbuIwEbGX__8R-kCjcauqsj4SiWg_-x1BffHrHTLU&usqp=CAU&ec=48600113);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 875px;
+}
 .sign-up {
-  background-color: white;
   padding: 100px;
-  margin-left: 30%;
-  margin-top: 2%;
   width: 200px;
+  background-color: rgb(6, 203, 243);
+  padding: 60px 120px 60px 120px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-top: 7rem;
+}
+.whole {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .input {
   margin-left: 105px;

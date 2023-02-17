@@ -1,0 +1,40 @@
+body {
+  padding: 0;
+  margin: 0px;
+  background-image: url("https://assets-news.housing.com/news/wp-content/uploads/2018/12/23065430/Stamp-duty-and-registration-laws-for-rentals-in-Maharashtra-FB-1200x725-compressed.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 779px;
+  width: 100%;
+}
+
+#photo {
+  border-radius: 20px;
+  background-color: rgb(241, 81, 183);
+  width: 40px;
+  height: 40px;
+  margin-left: 30%;
+}
+.para {
+  margin-left: 10px;
+  padding-top: 13px;
+}
+
+.sign-up {
+  background-color: white;
+  width: 200px;
+  background-color: azure;
+  padding: 60px 120px 60px 120px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7em;
+}
+
+.input {
+  margin-left: 105px;
+}

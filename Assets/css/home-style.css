@@ -6,13 +6,16 @@
 }
 body {
   margin: 0px;
+  padding: 0px;
 }
-#google_translate_element {
+/* #google_translate_element {
   margin-top: -150px;
   margin-left: 10px;
-}
+} */
 .background {
   background-image: url(../image/background\ .jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 .nav-bar {
   display: flex;

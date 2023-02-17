@@ -1,0 +1,31 @@
+body {
+  background-image: url("https://images.newindianexpress.com/uploads/user/imagelibrary/2018/8/15/w600X300/stamps04.jpg?w=400&dpr=2.6");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 875px;
+}
+.form {
+  margin: 40px;
+}
+.first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.whole {
+  background-color: white;
+  width: 200px;
+  background-color: azure;
+  border-radius: 10px;
+  padding: 60px 120px 60px 120px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 7rem;
+}
+
+#email {
+  margin: 10px;
+}
+
+#password {
+  margin: 10px;
+}
