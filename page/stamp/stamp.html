@@ -144,8 +144,13 @@
         </div>
       </div>
     </div> -->
+    <div>
     <div class="whole">
-
+  </div>
+  <div>
+    <a href="./create.html"><button>Add</button></a>
+    <a href="./edit.html"><button>Edit</button></a>
+  </div>
     </div>
     <footer>
       <div class="footer">
@@ -178,12 +183,12 @@
 
 
       
-      const arrayOfList = [
+      let arrayOfList = [
         {
-          "image": {
-            "url":"https://cdn.collectorbazar.com/products/a2zkollection-republic-india-10-rupees-used-stamp-paper-sp244sr-457147-1.jpg",
+         
+            "src":"https://cdn.collectorbazar.com/products/a2zkollection-republic-india-10-rupees-used-stamp-paper-sp244sr-457147-1.jpg",
             "alt":"RS 10 stamp",
-          },
+         
            "price":10,
            "name": "RS 10 stamp",
           "description":"Affidavit,Declarationand Undertaking",
@@ -198,20 +203,18 @@
 
         {
 
-          "image":{
-            "url":"https://legaldesk.com/wp-content/uploads/2016/09/Andhra-Pradesh.png",
+          "src":"https://legaldesk.com/wp-content/uploads/2016/09/Andhra-Pradesh.png",
             "alt":"RS 20 stamp",
-          },
+          
           "name": "RS 20 stamp",
           "price":20,
           "description":"special power of attorney",
         },
 
         {
-          "image":{
-            "url":"https://legaldesk.com/wp-content/uploads/2016/09/Telangana.png",
+          "src":"https://legaldesk.com/wp-content/uploads/2016/09/Telangana.png",
             "alt":"RS 50 stamp",
-          },
+        
           
           "price":50,
           "name": "RS 50 stamp",
@@ -222,11 +225,9 @@
 
 
         {
-          "image":{
-            
-            "url":"https://legaldesk.com/wp-content/uploads/2016/09/Telangana.png",
+          "src":"https://legaldesk.com/wp-content/uploads/2016/09/Telangana.png",
             "alt":"RS 50 stamp",
-          },
+          
           "price":100,
           "name": "RS 100 stamp",
           "description":"Indemnity Bond,Guarante and Bond",
@@ -236,11 +237,9 @@
 
         {
 
-          "image":{
-
-            "url":"https://m.media-amazon.com/images/I/31VahQWoL6L.jpg",
+          "src":"https://m.media-amazon.com/images/I/31VahQWoL6L.jpg",
             "alt":"RS 500 stamp",
-          },
+         
   
           "price":500,
           "name": "RS 500 stamp",
@@ -252,12 +251,10 @@
         {
 
           
-          "image":{
-
-                     "url":"https://content3.jdmagicbox.com/comp/kolkata/a3/033pxx33.xx33.190123153109.h3a3/catalogue/government-licensed-stamp-vendor-alipore-kolkata-legal-documents-nwrwdq5xlm.jpg?clr=3a3a2c",
+          "src":"https://content3.jdmagicbox.com/comp/kolkata/a3/033pxx33.xx33.190123153109.h3a3/catalogue/government-licensed-stamp-vendor-alipore-kolkata-legal-documents-nwrwdq5xlm.jpg?clr=3a3a2c",
 
                         "alt":"RS 1000 stamp",
-                },
+               
            "price":1000,
            "name": "RS 1000 stamp",
           "description": "Transactions with judiciary",
@@ -267,9 +264,26 @@
 
 
       ]
+
+      let div_card; 
+      let div_second;
+      let img_stamp;
+      let div_total;
+      let h1_head;
+      let p_text;
+     ;
+
+let create_card = JSON.parse(localStorage.getItem("new_card"));
+console.log(create_card);
+
+
+for (let i = 0; i <create_card.length; i++) {
+  arrayOfList.push(create_card[i]);
+  console.log(arrayOfList);
+}
       
 
-     for( let i = 0; i<=5; i++){
+     for( let i = 0; i<arrayOfList.length; i++){
         
 
 
@@ -290,7 +304,7 @@
         
         let img_stamp;
         img_stamp = document.createElement("img");
-        img_stamp.setAttribute("src", arrayOfList[i]["image"]["url"]);
+        img_stamp.setAttribute("src", arrayOfList[i]["src"]);
         img_stamp.setAttribute("alt", "image_placeholder");
         img_stamp.setAttribute("class", "stamp");
         div_second.append(img_stamp);
@@ -314,35 +328,49 @@
         let p_text;
         p_text = document.createElement("p");
         p_text.setAttribute("class", "text");
-        p_text.innerText = ("Description",arrayOfList[i]["description"])
+        p_text.innerText = (arrayOfList[i]["description"])
         div_total.append(p_text);
+
+      //   let a;
+      //   a = document.createElement("a");
+      //   a.setAttribute("class", "link");
+      //   a.setAttribute("href", "./create.html");
+      //   a.innerText = ("Add")
+      //  div_card.append(a);
+
+      //   let edit;
+      //   edit = document.creeditteElement("a");
+      //   edit.setAttribute("class", "link");
+      //   edit.setAttribute("href", "./edit.html");
+      //   edit.innerText = ("Add")
+      //  div_card.append(edit);
 
         document.querySelector("div.whole").append(div_card);
      }
 
-     const arrayOfList_length = arrayOfList.length;
+//      const arrayOfList_length = arrayOfList.length;
 
-for( let i = 0; i<arrayOfList_length; i++){
+// for( let i = 0; i<arrayOfList_length; i++){
    
 
 
- const user = arrayOfList[i]
+//  const user = arrayOfList[i]
 
-console.log(user["name"])
-console.log(user["description"])
-console.log(user["price"])
-console.log(user["image"])
+// console.log(user["name"])
+// console.log(user["description"])
+// console.log(user["price"])
+// console.log(user["image"])
 
-// <a href="./details.html"> </a>
-a = document.createElement("a");
-//  url.html?key=value&key=value
-a.setAttribute("href", "./details.html?name=" + user["name"]);
-a.innerText = user.name;
+// // <a href="./details.html"> </a>
+// a = document.createElement("a");
+// //  url.html?key=value&key=value
+// a.setAttribute("href", "./details.html?name=" + user["name"]);
+// a.innerText = user.name;
 
 
 
-document.querySelector("div.whole").append(div_card);
-}
+// document.querySelector("div.whole").append(div_card);
+// }
         
 
 

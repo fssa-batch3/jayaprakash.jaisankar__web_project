@@ -76,8 +76,8 @@
           />
           <button onclick="edit()" class="btn">Edit</button>
           <button type="submit" class="btn">submit</button>
-          <button onclick="Delete" id="delete" class="btn">Delete</button>
         </form>
+        <button onclick="Delete" id="delete" class="btn">Delete</button>
       </div>
     </div>
     <script>
@@ -140,6 +140,7 @@
         let age = document.getElementById("age").value;
         let gender = document.getElementById("gender").value;
         let address = document.getElementById("address").value;
+        let id = self.crypto.randomUUID();
 
         let ject = {
           fname,
@@ -151,6 +152,7 @@
           gender,
           age,
           address,
+          id,
         };
 
         console.log(ject);

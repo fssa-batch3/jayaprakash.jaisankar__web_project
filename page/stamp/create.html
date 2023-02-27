@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .whole {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .change {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="whole">
+      <form id="form">
+        <div class="change">
+          <label>image</label>&emsp;
+          <input id="image_url" type="url" />
+        </div>
+        <!-- <div class="change">
+          <label>name</label>&emsp;
+          <input id="name" type="text" />
+        </div> -->
+        <div class="change">
+          <label>price</label>&emsp;
+          <input id="price" type="number" />
+        </div>
+        <div class="change">
+          <label>name</label>&emsp;
+          <input id="name" type="text" />
+        </div>
+        <div class="change">
+          <label>description</label>&emsp;
+          <input id="description" type="text" />
+        </div>
+        <button onclick="submit" id="submit" class="btn">submit</button>
+      </form>
+    </div>
+    <script>
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let updates = {};
+
+        let img_stamp = document.getElementById("image_url").value;
+        updates["src"] = img_stamp;
+
+        let name = document.getElementById("name").value;
+        updates["name"] = name;
+
+        let price = document.getElementById("price").value;
+        // console.log(rediracting);
+        updates["price"] = price;
+
+        let description = document.getElementById("description").value;
+        updates["description"] = description;
+
+        // let rating = document.getElementById("rating").value;
+        // // console.log(rating);
+        // updates["rate"] = rating;
+
+        // let title = document.getElementById("title").value;
+        // // console.log(title);
+        // updates["title"] = title;
+
+        // let link = document.getElementById("link").value;
+        // // console.log(link);
+        // updates["link"] = link;
+
+        console.log(updates);
+
+        let whole = [];
+
+        if (localStorage.getItem("new_card") != null) {
+          whole = JSON.parse(localStorage.getItem("new_card"));
+          console.log(whole);
+        }
+
+        whole.push(updates);
+
+        localStorage.setItem("new_card", JSON.stringify(whole));
+        location.href = "./stamp.html";
+      });
+
+      // window.localStorage.setItem("update_detailes", JSON.stringify(updates));
+
+      // location.reload();
+
+      // if (window.localStorage.getItem("update_detailes") === null) {
+
+      // } else {
+      //   let local = window.localStorage.getItem("update_detailes");
+      //   let json = JSON.parse(local);
+      //   json.push(updates);
+      //   window.localStorage.setItem("update_detailes", JSON.stringify(json));
+      // }
+
+      // let card = [];
+
+      // let form = document.getElementById("form");
+
+      // form.addEventListener("submit", function (event) {
+      //   event.preventDefault();
+
+      //   let div_card;
+      //   div_card = document.createElement("a");
+      //   div_card.setAttribute("class", "card");
+      //   // div_card.setAttribute(
+      //   //   "href",
+      //   //   "/page/stamp/detail.html?name=" + arrayOfList[i]["name"]
+      //   // );
+
+      //   console.log(div_card);
+
+      //   let div_second;
+      //   div_second = document.createElement("div");
+      //   div_second.setAttribute("class", "second");
+      //   div_card.append(div_second);
+
+      //   let img_stamp;
+      //   img_stamp = document.createElement("img");
+      //   img_stamp.setAttribute("src", arrayOfList[i]["image"]["url"]);
+      //   img_stamp.setAttribute("alt", "image_placeholder");
+      //   img_stamp.setAttribute("class", "stamp");
+      //   div_second.append(img_stamp);
+
+      //   let div_total;
+      //   div_total = document.createElement("div");
+      //   div_total.setAttribute("class", "total");
+      //   div_second.append(div_total);
+
+      //   let h1_head;
+      //   h1_head = document.createElement("h1");
+      //   h1_head.setAttribute("class", "head");
+      //   h1_head.innerText = "Rs : " + arrayOfList[i]["price"];
+      //   div_total.append(h1_head);
+
+      //   let p_text;
+      //   p_text = document.createElement("p");
+      //   p_text.setAttribute("class", "text");
+      //   p_text.innerText = ("Description", arrayOfList[i]["description"]);
+      //   div_total.append(p_text);
+
+      //   // document.querySelector("").append(div_card);
+      // });
+    </script>
+  </body>
+</html>

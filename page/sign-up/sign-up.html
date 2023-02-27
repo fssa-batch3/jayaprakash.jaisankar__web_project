@@ -125,6 +125,7 @@
         const age = document.getElementById("age").value;
         const password = document.getElementById("password").value;
         const confirmpassword = document.getElementById("cpassword").value;
+        let id = self.crypto.randomUUID();
 
         userdata["fname"] = fname;
         userdata["mname"] = mname;
@@ -133,7 +134,8 @@
         userdata["age"] = age;
         userdata["email"] = email.toLowerCase();
         userdata["password"] = password;
-        userdata["password"] = confirmpassword;
+        userdata["cpassword"] = confirmpassword;
+        userdata.id = id;
         arr.push(userdata);
 
         if (password != confirmpassword) {

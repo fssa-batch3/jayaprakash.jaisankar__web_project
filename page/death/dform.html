@@ -52,9 +52,14 @@
             <label>Sex</label>
             <input id="gender" type="text" />
           </div>
+
           <div class="first">
             <label>place of birth</label>
             <input id="dob" type="date" />
+          </div>
+          <div class="first">
+            <label>place of birth</label>
+            <input id="dod" type="date" />
           </div>
           <div class="first">
             <label>signature of the request person </label>
@@ -64,13 +69,17 @@
             <label>Phnumber</label>
             <input id="number" type="number" />
           </div>
-          <button type="submit" onclick="submit" class="btn">submit</button>
+          <a>
+            <button type="submit" onclick="submit" class="btn">
+              payment
+            </button></a
+          >
         </form>
       </div>
     </div>
 
     <script>
-      let arr = [];
+      let array = [];
       let form = document.getElementById("form");
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -82,6 +91,7 @@
         let address = document.getElementById("address").value;
         let gender = document.getElementById("gender").value;
         let dob = document.getElementById("dob").value;
+        let dod = document.getElementById("dod").value;
         let sign = document.getElementById("sign").value;
         let number = document.getElementById("number").value;
         let birth = {
@@ -91,13 +101,14 @@
           address,
           gender,
           dob,
+          dod,
           number,
           sign,
         };
-        arr.push(birth);
+        array.push(birth);
 
-        window.localStorage.setItem("userdata", JSON.stringify(arr));
-        console.log(userdata);
+        window.localStorage.setItem("deadinfo", JSON.stringify(array));
+        //console.log(deadinfo);
       });
     </script>
   </body>
