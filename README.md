@@ -24,7 +24,7 @@ user flow:
          https://sonarcloud.io/project/overview?id=fssa-batch3_jayaprakash.jaisankar__web_project
          
          // My Progress Table
-  CRUD For User signning page
+  CRUD For User signing page
   => Create user account [completed]
   => Read User Data For Profile Page [completed]
   => Update user details For Edit Page [completed]
