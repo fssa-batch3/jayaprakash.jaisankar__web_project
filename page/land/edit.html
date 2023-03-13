@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .whole {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     .change {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 40px;
+     }
+ </style>
+ <body>
+   <div class="whole">
+   <form id="form">
+   <div class="change">
+     <label>Name</label>&emsp;
+     <input id="name" type="text" />
+   </div>
+
+   <div class="change">
+     <label>Servour.no</label>&emsp;
+     <input id="num" type="number" />
+   </div>
+
+   <div class="change">
+     <label>village</label>&emsp;
+     <input id="vname" type="text" />
+   </div>
+   <div class="change">
+     <label>village.no</label>&emsp;
+     <input id="vnum" type="number" />
+   </div>
+
+   <div class="change">
+     <label>taluk</label>&emsp;
+     <input id="tname" type="text" />
+   </div class="change">
+   <button onclick="submit" id="submit" class="btn">submit</button>
+   <button onclick="clear" id="delete" class="btn">Delete</button>
+      
+   </form>
+   </div>
+   <script>
+    let form_details = JSON.parse(localStorage.getItem("data"));
+    console.log(form_details);
+
+    let id = JSON.parse(localStorage.getItem("uuid"));
+    console.log(id);
+
+    let check = id.pop();
+    console.log(check);
+
+    let get = form_details.find(function (obj) {
+      let checkid = obj["uuid"];
+      if (check == checkid) {
+        return true;
+      }
+    });
+    console.log(get);
+
+    const name = document.getElementById("name");
+    const num = document.getElementById("num");
+    const vname = document.getElementById("vname");
+    const vnum = document.getElementById("vnum");
+    const tname = document.getElementById("tname");
+
+
+    name.value = get["name"];
+    num.value = get["num"];
+    vname.value = get["vname"];
+    vnum.value = get["vnum"];
+    tname.value=get["tname"]
+    console.log(get);
+
+    // edit profile start
+
+    const editpage = document.querySelectorAll(".input");
+    console.log(editpage);
+    function edit() {
+      for (i = 0; i < editpage.length; i++) {
+        editpage[i].removeAttribute("disabled");
+      }
+    }
+
+    let form = document.getElementById("form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let num = document.getElementById("num").value;
+      let vname = document.getElementById("vname").value;
+      let vnum = document.getElementById("vnum").value;
+      let tname = document.getElementById("tname").value;
+
+      let ject = {
+        name,
+        num,
+        vname,
+        vnum,
+        tname,
+      };
+
+      console.log(ject);
+
+      let update = Object.assign(get, ject);
+      console.log(update);
+      let index = form_details.indexOf(get);
+      console.log(index);
+
+      form_details[index] = update;
+      localStorage.setItem("data", JSON.stringify(form_details));
+      window.location.href = "./list.html";
+    });
+
+    let info = document.getElementById("delete");
+    info.addEventListener("click", function (event) {
+      event.preventDefault();
+      let indexof = form_details.indexOf(get);
+      let failed = confirm("Delete this");
+      if (failed !== true) {
+        return;
+      } else {
+        form_details.splice(indexof, 1);
+        localStorage.setItem("data", JSON.stringify(form_details));
+         window.location.href = "./list.html";
+      }
+    });
+  </script>
+</body>
+</html>

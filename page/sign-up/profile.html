@@ -7,30 +7,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="Assets/css/profile style.css" />
-    <!-- <style>
-      #photo {
-        border-radius: 20px;
-        background-color: rgb(241, 81, 183);
-        width: 40px;
-        height: 40px;
-        margin-left: 30%;
-      }
-      .para {
-        margin-left: 10px;
-        padding-top: 13px;
-      }
-
-      .sign-up {
-        background-color: white;
-        padding: 100px;
-        margin-left: 30%;
-        margin-top: 2%;
-        width: 200px;
-      }
-      .input {
-        margin-left: 105px;
-      }
-    </style> -->
+    
   </head>
   <body>
     <div class="card">
@@ -169,18 +146,9 @@
           // alert("You have successfully updated your account details!");
         }
 
-        // if (input != disabled) {
-        //   location.reload();
-        // }
+        
       });
 
-      // const page = document.querySelectorAll(".input");
-      // console.log(page);
-      // function Delete() {
-      //   for (i = 0; i < page.length; i++) {
-      //     page[i].removeAttribute("disabled");
-      //   }
-      // }
 
       let info = document.getElementById("delete");
       info.addEventListener("click", function (event) {
@@ -195,140 +163,6 @@
         }
       });
 
-      // let formdelete = document.getElementById("form");
-      // formdelete.addEventListener("Delete", function (event) {
-      //   event.preventDefault();
-      //   let index = data.indexOf(get);
-      //   console.log(index);
-      //   ject.splice(data[index], 1);
-      //   //confirm("Are you sure you want to delete this accuont");
-      // });
-
-      //// const user_email = JSON.parse(window.localStorage.getItem("details"))
-      //// let check = true;
-      // let check = true;
-      // const present = JSON.parse(window.localStorage.getItem("user"));
-      // let get_present = data.find(function (object) {
-      //   let check_email = object["email"];
-      //   if (mail === check_email) {
-      //     let fname = document.getElementById("fname");
-      //     let mname = document.getElementById("mname");
-      //     let Lname = document.getElementById("Lname");
-      //     let email = document.getElementById("email");
-      //     let phnumber = document.getElementById("phnumber");
-      //     let dob = document.getElementById("date");
-      //     let addres = document.getElementById("address");
-      //     let age = document.getElementById("age");
-      //     let gender = document.getElementById("gender");
-      //     fname.value = object["fname"];
-      //     mname.value = object["mname"];
-      //     Lname.value = object["Lname"];
-      //     email.value = object["email"];
-      //     phnumber.value = object["phnumber"];
-      //     dob.value = object["dob"];
-
-      //     gender.value = object["gender"];
-      //   }
-      // });
-
-      // let formdelete = document.getElementById("form");
-      // formdelete.addEventListener("delete", function (event) {
-      //   event.preventDefault();
-      //   let index = mail.indexOf(get);
-      //   console.log(index);
-      //   presend_details.splice(data[index], 1);
-      //   confirm("delete this accuont");
-      // });
-
-      // const user_email = JSON.parse(window.localStorage.getItem("userinfo"));
-      // const user_details = JSON.parse(window.localStorage.getItem("user"));
-      // let get_obj = user_details.find(function (user_obj) {
-      //   let check_email = user_obj["email"];
-      //   if (user_email === check_email) {
-      //     return true;
-      //   }
-      // });
-      // console.log(get_obj);
-      // const fname = document.getElementById("fname");
-      // const mname = document.getElementById("mname");
-      // const Lname = document.getElementById("Lname");
-      // const age = document.getElementById("age");
-      // const email = document.getElementById("email");
-      // const phnumber = document.getElementById("phnumber");
-      // fname.value = get_obj["fname"];
-      // mname.value = get_obj["mname"];
-      // Lname.value = get_obj["lname"];
-      // email.value = user_email;
-      // age.value = age["age"];
-      // phnumber.value = get_obj["phnumber"];
-
-      // let form = document.getElementById("form");
-      // form.addEventListener("submit", function (event) {
-      //   event.preventDefault();
-      //   let fname = document.getElementById("fname").value;
-      //   let mname = document.getElementById("mname").value;
-
-      //   let lname = document.getElementById("surname").value;
-      //   let mail = document.getElementById("emailid").value;
-      //   let phone = document.getElementById("mobilenumber").value;
-      //   let dob = document.getElementById("date").value;
-      //   let address = document.getElementById("address").value;
-
-      //   let gender = document.getElementById("gender").value;
-      //   let new_data = {
-      //     fname,
-      //     mname,
-      //     lname,
-      //     email,
-      //     phnumber,
-      //     dob,
-
-      //     gender,
-      //   };
-      //   // if( mail.value != user_email ){
-      //   //   alert("You can't change the email-id")
-      //   //   return
-      //   // }
-      //   let updates = Object.assign(get_obj, new_data);
-      //   console.log(updates);
-      //   let index = user_details.indexOf(get_obj);
-      //   // console.log(index);
-      //   user_details[index] = updates;
-      //   localStorage.setItem("user", JSON.stringify(user_details));
-      //   alert("You have successfully updated your account details!");
-      // });
-      // // const user_email = JSON.parse(window.localStorage.getItem("details"))
-      // let check = true;
-      // const presend_details = JSON.parse(window.localStorage.getItem("user"));
-      // let get_presend = user_details.find(function (user_obj) {
-      //   let check_email = user_obj["email"];
-      //   if (user_email === check_email) {
-      //     let fname1 = document.getElementById("name");
-      //     let lname1 = document.getElementById("surname");
-      //     let mail1 = document.getElementById("emailid");
-      //     let phone1 = document.getElementById("mobilenumber");
-      //     let dob1 = document.getElementById("dob");
-      //     let state1 = document.getElementById("state");
-      //     let country1 = document.getElementById("country");
-      //     let gender1 = document.getElementById("gender");
-      //     fname1.value = user_obj["fname"];
-      //     lname1.value = user_obj["lname"];
-      //     mail1.value = user_obj["email"];
-      //     phone1.value = user_obj["phone"];
-      //     dob1.value = user_obj["dob"];
-      //     state1.value = user_obj["state"];
-      //     country1.value = user_obj["country"];
-      //     gender1.value = user_obj["gender"];
-      //   }
-      // });
-      // let form1 = document.getElementById("form");
-      // form1.addEventListener("delete", function (event) {
-      //   event.preventDefault();
-      //   let index = user_details.indexOf(get_obj);
-      //   console.log(index);
-      //   presend_details.splice(user_details[index], 1);
-      //   confirm("Are you sure you want to delete this accuont");
-      // });
     </script>
   </body>
 </html>

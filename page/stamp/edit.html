@@ -24,61 +24,106 @@
       <form id="form">
         <div class="change">
           <label>image</label>&emsp;
-          <input id="image_url" type="url" />
+          <input class="inp ut" id="src" type="url" />
         </div>
-        <!-- <div class="change">
-          <label>name</label>&emsp;
-          <input id="name" type="text" />
-        </div> -->
+
         <div class="change">
           <label>price</label>&emsp;
-          <input id="price" type="number" />
+          <input class="input" id="price" type="number" />
         </div>
         <div class="change">
           <label>name</label>&emsp;
-          <input id="name" type="text" />
+          <input class="input" id="name" type="text" />
         </div>
         <div class="change">
           <label>description</label>&emsp;
-          <input id="description" type="text" />
+          <input class="input" id="description" type="text" />
         </div>
+        <button onclick="edit" id="submit" class="btn">edit</button>
         <button onclick="submit" id="submit" class="btn">submit</button>
+        <button onclick="clear" id="delete" class="btn">Delete</button>
       </form>
     </div>
     <script>
+      let card_details = JSON.parse(localStorage.getItem("jscard"));
+      console.log(card_details);
+
+      let id = JSON.parse(localStorage.getItem("uid"));
+      console.log(id);
+
+      let check = id.pop();
+      console.log(check);
+
+      let get = card_details.find(function (obj) {
+        let checkid = obj["uuid"];
+        if (check == checkid) {
+          return true;
+        }
+      });
+      console.log(get);
+
+      const src = document.getElementById("src");
+      const description = document.getElementById("description");
+      const price = document.getElementById("price");
+      const name = document.getElementById("name");
+
+      src.value = get["src"];
+      description.value = get["description"];
+      price.value = get["price"];
+      name.value = get["name"];
+      console.log(get);
+
+      // edit profile start
+
+      const editpage = document.querySelectorAll(".input");
+      console.log(editpage);
+      function edit() {
+        for (i = 0; i < editpage.length; i++) {
+          editpage[i].removeAttribute("disabled");
+        }
+      }
+
       let form = document.getElementById("form");
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        let updates = {};
-
-        let img_stamp = document.getElementById("image_url").value;
-        updates["src"] = img_stamp;
-
-        let name = document.getElementById("name").value;
-        updates["name"] = name;
-
-        let price = document.getElementById("price").value;
-        // console.log(rediracting);
-        updates["price"] = price;
-
+        let src = document.getElementById("src").value;
         let description = document.getElementById("description").value;
-        updates["description"] = description;
+        let price = document.getElementById("price").value;
+        let name = document.getElementById("name").value;
 
-        console.log(updates);
+        let ject = {
+          src,
+          description,
+          price,
+          name,
+        };
 
-        let whole = [];
+        console.log(ject);
 
-        // if (localStorage.getItem("new_card") != null) {
-        //   whole = JSON.parse(localStorage.getItem("new_card"));
-        //   console.log(whole);
-        // }
+        let update = Object.assign(get, ject);
+        console.log(update);
+        let index = card_details.indexOf(get);
+        console.log(index);
 
-        whole.push(updates);
+        card_details[index] = update;
+        localStorage.setItem("jscard", JSON.stringify(card_details));
+        window.location.href = "./stamp.html";
+      });
 
-        localStorage.setItem("new_card", JSON.stringify(whole));
-        location.href = "./stamp.html";
+      let info = document.getElementById("delete");
+      info.addEventListener("click", function (event) {
+        event.preventDefault();
+        let indexof = card_details.indexOf(get);
+        let failed = confirm("Delete this");
+        if (failed !== true) {
+          return;
+        } else {
+          card_details.splice(indexof, 1);
+          localStorage.setItem("jscard", JSON.stringify(card_details));
+          window.location.href = "./stamp.html";
+        }
       });
     </script>
   </body>

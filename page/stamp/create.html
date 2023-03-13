@@ -24,7 +24,7 @@
       <form id="form">
         <div class="change">
           <label>image</label>&emsp;
-          <input id="image_url" type="url" />
+          <input id="image" type="url" />
         </div>
         <!-- <div class="change">
           <label>name</label>&emsp;
@@ -42,6 +42,7 @@
           <label>description</label>&emsp;
           <input id="description" type="text" />
         </div>
+
         <button onclick="submit" id="submit" class="btn">submit</button>
       </form>
     </div>
@@ -53,8 +54,8 @@
 
         let updates = {};
 
-        let img_stamp = document.getElementById("image_url").value;
-        updates["src"] = img_stamp;
+        let image = document.getElementById("image").value;
+        updates["src"] = image;
 
         let name = document.getElementById("name").value;
         updates["name"] = name;
@@ -65,20 +66,34 @@
 
         let description = document.getElementById("description").value;
         updates["description"] = description;
-
+        let uuid = crypto.randomUUID();
+        updates["uuid"] = uuid;
+        console.log(uuid);
         console.log(updates);
+        // let whole = JSON.parse(localStorage.getItem("card"));
 
+        // if (localStorage.getItem("new_card") != null) {
+        //   whole = JSON.parse(localStorage.getItem("new_card"));
+        //   console.log(whole);
+        // }
         let whole = [];
-
-        if (localStorage.getItem("new_card") != null) {
-          whole = JSON.parse(localStorage.getItem("new_card"));
-          console.log(whole);
-        }
 
         whole.push(updates);
 
-        localStorage.setItem("new_card", JSON.stringify(whole));
-        location.href = "./stamp.html";
+        //let jscard = localStorage.setItem("jscard", JSON.stringify(whole));
+
+        if (window.localStorage.getItem("jscard") === null) {
+          window.localStorage.setItem("jscard", JSON.stringify(whole));
+          console.log(window.localStorage.getItem("jscard"));
+        } else {
+          let local = window.localStorage.getItem("jscard");
+          let json = JSON.parse(local);
+          json.push(updates);
+          window.localStorage.setItem("jscard", JSON.stringify(json));
+          window.location.href = "./stamp.html";
+        }
+        // console.log(card);
+        // location.href = "./stamp.html";
       });
 
       // window.localStorage.setItem("update_detailes", JSON.stringify(updates));
