@@ -34,3 +34,12 @@ user flow:
   => Read Product Data For card [completed]
   => Update user details For card [completed]
   => Deactivate Product details For Card [completed]
+  
+  
+  CRUD For User signing page => Create user account [completed] 
+  =>  stamp list Page [completed] 
+  =>  create stamp page [completed] 
+  =>  Read stamp page [completed] 
+  =>  update stamp page [completed] 
+  =>  Delete stamp page [completed] 
+  
