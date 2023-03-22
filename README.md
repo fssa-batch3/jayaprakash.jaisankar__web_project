@@ -30,7 +30,9 @@ user flow:
   => Update user details For Edit Page [completed]
   => Delete user details For deactivate [completed]
   CRUD For User Features page
-  => Create products card/list [completed]
-  => Read Product Data For card [completed]
-  => Update user details For card [completed]
-  => Deactivate Product details For Card [completed]
+  => Create stamplist [completed]
+  => Read stamp page  [completed]
+  => Update stamp page  [completed]
+  => Delete stamp page  [completed]
+
+
