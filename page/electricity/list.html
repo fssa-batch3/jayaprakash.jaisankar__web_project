@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="./Assets/css/home.css" />
     <style>
+      /* .form{
+
+        } */
+
       .whole {
         display: flex;
         flex-direction: row;
@@ -30,20 +36,105 @@
         align-items: center;
         padding: 10px;
       }
-      /* #card {
+      body {
+        background-color: rgb(156, 233, 249);
+      }
+      /* .whole {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 40px;
       } */
-
-      /* display: flex;
-        justify-content: center;
-        align-items: center; */
     </style>
   </head>
   <body>
-    <div class="tot">
-      <div class="whole"></div>
+    <div class="head">
+      <img
+        class="logo"
+        src="./Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png"
+        width="150px"
+        height="100px"
+      />
+      <!-- <p>
+        APPLICATION FOR TAMIL NADU GENERATION AND DISTRIBUTION CORPORATION
+        LIMITED
+      </p> -->
+
+      <div class="nav">
+        <div class="dropdown">
+          <span>Home</span>
+          <div class="dropdown-content">
+            <p>Home</p>
+            <p>About as</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>Apply</span>
+          <div class="dropdown-content">
+            <p>New</p>
+            <p>Remove</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>status</span>
+          <div class="dropdown-content">
+            <p>application</p>
+            <p>modify</p>
+            <p>delete</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>download</span>
+          <div class="dropdown-content">
+            <p>forms</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>feedback</span>
+        </div>
+
+        <div class="dropdown">
+          <span>dashboard</span>
+        </div>
+      </div>
+    </div>
+    <div class="whole"></div>
+
+    <div class="footer">
+      <div class="part">
+        <h1>useful links</h1>
+
+        <p>Electricity</p>
+        <p>Online payment</p>
+        <p>Complain</p>
+      </div>
+      <div class="part">
+        <h1>Privacy policy</h1>
+
+        <p>Website Policies</p>
+        <p>Cyber resilience</p>
+      </div>
+
+      <div class="part">
+        <h1>Contact as</h1>
+
+        <p>jp@gmail.com</p>
+        <p>Phone:+917094120148</p>
+      </div>
+      <div class="part">
+        <h1>Disclaimer</h1>
+        <p>
+          While care has been taken to ensure the accuracy of information,
+          TANGEDCO is not responsible for any damage or loss caused due to
+          action taken on the basis of this information. This website is best
+          viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+          resolution
+        </p>
+      </div>
     </div>
     <script>
       //   let div_card;
@@ -51,18 +142,14 @@
       //   div_card.setAttribute("id", "card");
       //   div_card.setAttribute("href", "detail.html?name=" + card[i]["name"]);
 
-      let work = JSON.parse(window.localStorage.getItem("data"));
+      let work = JSON.parse(window.localStorage.getItem("electricity"));
       console.log(work);
 
       for (let i = 0; i < work.length; i++) {
-        let two;
-        two = document.createElement("div");
-        two.setAttribute("class", "pla");
-
         let div_card;
         div_card = document.createElement("div");
         div_card.setAttribute("id", "card");
-        two.append(div_card);
+        console.log(div_card);
 
         let form;
         form = document.createElement("form");
@@ -77,7 +164,7 @@
         let label;
         label = document.createElement("label");
         label.setAttribute("id", "name");
-        label.innerText = "num";
+        label.innerText = "name";
         div1.append(label);
 
         let input;
@@ -95,11 +182,12 @@
         let label1;
         label1 = document.createElement("label");
         label1.setAttribute("id", "num");
-        label1.innerText = "serviour number";
+        label1.innerText = "file";
         div2.append(label1);
         let input1;
         input1 = document.createElement("input");
         input1.setAttribute("id", "Servour");
+        input1.setAttribute("type", "file");
         input1.setAttribute("value", work[i]["num"]);
         div2.append(input1);
         // console.log(input1);
@@ -118,7 +206,7 @@
         let input2;
         input2 = document.createElement("input");
         input2.setAttribute("id", "vnum");
-        input2.setAttribute("value", work[i]["tname"]);
+        input2.setAttribute("value", work[i]["vname"]);
         div3.append(input2);
 
         let div5;
@@ -130,13 +218,30 @@
         let label3;
         label3 = document.createElement("label");
         label3.setAttribute("id", "tname");
-        label3.innerText = "talukname";
+        label3.innerText = "village";
         div5.append(label3);
         let input3;
         input3 = document.createElement("input");
         input3.setAttribute("id", "tnum");
-        input3.setAttribute("value", work[i]["vname"]);
+        input3.setAttribute("value", work[i]["vnum"]);
         div5.append(input3);
+
+        let div6;
+        div6 = document.createElement("div");
+        div6.setAttribute("class", "place");
+
+        form.append(div6);
+
+        let label4;
+        label4 = document.createElement("label");
+        label4.setAttribute("id", "tname");
+        label4.innerText = "talukname";
+        div6.append(label4);
+        let input4;
+        input4 = document.createElement("input");
+        input4.setAttribute("id", "tnum");
+        input4.setAttribute("value", work[i]["tname"]);
+        div6.append(input4);
 
         let direct;
         direct = document.createElement("a");
@@ -164,35 +269,6 @@
 
         window.location.href = "./edit.html";
       }
-
-      //   let a;
-      //   a = document.createElement("a");
-      //   a.setAttribute("class", "link");
-      //   a.setAttribute("href", "./create.html");
-
-      //   div_card.append(a);
-      //   let submit;
-      //   submit = document.createElement("button");
-      //   submit.setAttribute("class", "link");
-      //   submit.setAttribute("href", "./create.html");
-      //   submit.innerText = "Add";
-      //   a.append(submit);
-
-      //   let direct;
-      //   direct = document.createElement("a");
-      //   direct.setAttribute("class", "link");
-      //   direct.setAttribute("href", "./edit.html");
-
-      //   div_card.append(direct);
-
-      //   let edit;
-      //   edit = document.createElement("button");
-      //   edit.setAttribute("class", "link");
-      //   edit.setAttribute("id", card[i]["uuid"]);
-      //   edit.setAttribute("onclick", "editPaper(this.id)");
-      //   edit.setAttribute("href", "./edit.html");
-      //   edit.innerText = "edit";
-      //   direct.append(edit);
     </script>
   </body>
 </html>

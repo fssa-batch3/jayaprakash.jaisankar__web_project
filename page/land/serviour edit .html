@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="whole">
+      <form id="form">
+        <div class="card">
+          <label> serviour_name</label>
+          <input id="name" />
+        </div>
+        <div class="card">
+          <label>taluk</label>
+          <input id="tname" />
+        </div>
+        <button onclick="submit" id="submit" class="btn">submit</button>
+        <button onclick="clear" id="delete" class="btn">Delete</button>
+      </form>
+    </div>
+    <script>
+      let form_details = JSON.parse(localStorage.getItem("list"));
+      console.log(form_details);
+
+      let id = JSON.parse(localStorage.getItem("ranid"));
+      console.log(id);
+
+      let check = id.pop();
+      console.log(check);
+
+      let get = form_details.find(function (obj) {
+        let checkid = obj["uuid"];
+        if (check == checkid) {
+          return true;
+        }
+      });
+      console.log(get);
+
+      const name = document.getElementById("name");
+      const tname = document.getElementById("tname");
+
+      name.value = get["name"];
+      tname.value = get["tname"];
+      console.log(get);
+
+      // edit profile start
+
+      //   const editpage = document.querySelectorAll(".input");
+      //   console.log(editpage);
+      //   function edit() {
+      //     for (i = 0; i < editpage.length; i++) {
+      //       editpage[i].removeAttribute("disabled");
+      //     }
+      //   }
+
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let tname = document.getElementById("tname").value;
+
+        let ject = {
+          name,
+          tname,
+        };
+
+        console.log(ject);
+
+        let update = Object.assign(get, ject);
+        console.log(update);
+        let index = form_details.indexOf(get);
+        console.log(index);
+
+        form_details[index] = update;
+        localStorage.setItem("list", JSON.stringify(form_details));
+        window.location.href = "./serviour list.html";
+      });
+
+      let info = document.getElementById("delete");
+      info.addEventListener("click", function (event) {
+        event.preventDefault();
+        let indexof = form_details.indexOf(get);
+        let failed = confirm("Delete this");
+        if (failed !== true) {
+          return;
+        } else {
+          form_details.splice(indexof, 1);
+          localStorage.setItem("list", JSON.stringify(form_details));
+          window.location.href = "./serviour list.html";
+        }
+      });
+    </script>
+  </body>
+</html>

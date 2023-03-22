@@ -28,7 +28,7 @@
    </div>
 
    <div class="change">
-     <label>Servour.no</label>&emsp;
+     <label>file</label>&emsp;
      <input id="num" type="number" />
    </div>
 
@@ -37,7 +37,7 @@
      <input id="vname" type="text" />
    </div>
    <div class="change">
-     <label>village.no</label>&emsp;
+     <label>village</label>&emsp;
      <input id="vnum" type="number" />
    </div>
 
@@ -45,13 +45,13 @@
      <label>taluk</label>&emsp;
      <input id="tname" type="text" />
    </div class="change">
-   <button onclick="submit" id="submit" class="btn">submit</button>
+   <button onclick="submit" id="submit" class="btn">Edit</button>
    <button onclick="clear" id="delete" class="btn">Delete</button>
-    <button></button>  
+  
    </form>
    </div>
    <script>
-    let form_details = JSON.parse(localStorage.getItem("data"));
+    let form_details = JSON.parse(localStorage.getItem("electricity"));
     console.log(form_details);
 
     let id = JSON.parse(localStorage.getItem("uuid"));
@@ -69,14 +69,14 @@
     console.log(get);
 
     const name = document.getElementById("name");
-    const num = document.getElementById("num");
+    const file = document.getElementById("num");
     const vname = document.getElementById("vname");
     const vnum = document.getElementById("vnum");
     const tname = document.getElementById("tname");
 
 
     name.value = get["name"];
-    num.value = get["num"];
+    file.value = get["num"];
     vname.value = get["vname"];
     vnum.value = get["vnum"];
     tname.value=get["tname"]
@@ -98,14 +98,14 @@
       event.preventDefault();
 
       let name = document.getElementById("name").value;
-      let num = document.getElementById("num").value;
+      let file = document.getElementById("num").value;
       let vname = document.getElementById("vname").value;
       let vnum = document.getElementById("vnum").value;
       let tname = document.getElementById("tname").value;
 
       let ject = {
         name,
-        num,
+       file,
         vname,
         vnum,
         tname,
@@ -119,7 +119,7 @@
       console.log(index);
 
       form_details[index] = update;
-      localStorage.setItem("data", JSON.stringify(form_details));
+      localStorage.setItem("electricity", JSON.stringify(form_details));
       window.location.href = "./list.html";
     });
 
@@ -132,7 +132,7 @@
         return;
       } else {
         form_details.splice(indexof, 1);
-        localStorage.setItem("data", JSON.stringify(form_details));
+        localStorage.setItem("electricity", JSON.stringify(form_details));
          window.location.href = "./list.html";
       }
     });

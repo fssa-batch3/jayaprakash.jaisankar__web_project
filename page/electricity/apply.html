@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <style>
-    .tot{
+    <style>
+          .tot{
       display: flex;
         justify-content: center;
         align-items: center;
@@ -42,6 +41,17 @@
         border-radius: 10px;
         background-color: rgb(48, 160, 240);
       }
+    /* .whole {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .change {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+      } */
   </style>
   <body>
     <div class="tot">
@@ -53,8 +63,8 @@
     </div>
 
     <div class="change">
-      <label>Servour.no</label>&emsp;
-      <input id="num" type="number" />
+      <label>file</label>&emsp;
+      <input id="num" type="file" />
     </div>
 
     <div class="change">
@@ -62,7 +72,7 @@
       <input id="vname" type="text" />
     </div>
     <div class="change">
-      <label>village.no</label>&emsp;
+      <label>village</label>&emsp;
       <input id="vnum" type="number" />
     </div>
 
@@ -70,9 +80,7 @@
       <label>taluk</label>&emsp;
       <input id="tname" type="text" />
     </div class="change">
-    <div class="sub">
     <button onclick="submit" id="submit" class="btn">submit</button>
-    </div>
    
     </form>
     </div>
@@ -85,18 +93,20 @@ let form = document.getElementById("form");
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         let name =document.getElementById("name").value;
-        let num =document.getElementById("num").value;
+        let file =document.getElementById("num").value;
         let vname =document.getElementById("vname").value;
         let vnum =document.getElementById("vnum").value;
         let tname =document.getElementById("tname").value;
 
         let obj ={
           name,
-          num,
+          file,
           vname,
           vnum,
           tname
          };
+
+         
          let uuid = crypto.randomUUID();
         obj["uuid"] = uuid;
         console.log(uuid);
@@ -108,16 +118,17 @@ let form = document.getElementById("form");
 
         //  localStorage.setItem("array",JSON.stringify(arr));
 
-        if (window.localStorage.getItem("data") === null) {
-            window.localStorage.setItem("data", JSON.stringify(arr));
-            console.log(window.localStorage.getItem("data"));
-            window.location.href = "./list.html"
+        if (window.localStorage.getItem("electricity") === null) {
+            window.localStorage.setItem("electricity", JSON.stringify(arr));
+            console.log(window.localStorage.getItem("electricity"));
+            // window.location.href = "./list.html"
           } else {
-            let local = window.localStorage.getItem("data");
+            let local = window.localStorage.getItem("electricity");
             let json = JSON.parse(local);
             json.push(obj);
-            window.localStorage.setItem("data", JSON.stringify(json));
+            window.localStorage.setItem("electricity", JSON.stringify(json));
           }
+
           window.location.href = "./list.html";
 
         });        
