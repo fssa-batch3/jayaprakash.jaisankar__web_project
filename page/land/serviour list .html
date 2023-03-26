@@ -6,16 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        margin-left: 80px;
+      }
       .whole {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 5px;
+        margin: 10px;
       }
       .change {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 40px;
+      }
+      .place {
+        padding: 10px;
+        margin: 10px;
+      }
+      #card {
+        padding: 40px;
+        margin: 20px;
+        background-color: rgba(95, 213, 234, 0.664);
+        border-radius: 10px;
+        box-shadow: 4px 6px 6px 4px rgb(60, 132, 233);
+      }
+      .button {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .link {
+        width: 70px;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(48, 133, 231);
+      }
+      .link:hover {
+        background-color: rgb(63, 104, 241);
       }
     </style>
   </head>
@@ -71,12 +101,16 @@
         input1.setAttribute("value", call[i]["tname"]);
         div2.append(input1);
 
+        let button = document.createElement("div");
+        button.setAttribute("class", "button");
+        div_card.append(button);
+
         let edit;
         edit = document.createElement("a");
-        edit.setAttribute("class", "link");
+
         edit.setAttribute("href", "./serviour edit .html");
 
-        div_card.append(edit);
+        button.append(edit);
 
         let editpage;
         editpage = document.createElement("button");
@@ -89,18 +123,30 @@
 
         let go;
         go = document.createElement("a");
-        go.setAttribute("class", "link");
+
         go.setAttribute("href", "./apply land.html");
 
-        div_card.append(go);
+        button.append(go);
 
         let apply;
         apply = document.createElement("button");
         apply.setAttribute("class", "link");
-
         apply.innerText = "apply";
         go.append(apply);
 
+        let vlink;
+        vlink = document.createElement("a");
+
+        vlink.setAttribute("href", "./list.html");
+
+        button.append(vlink);
+
+        let view;
+        view = document.createElement("button");
+        view.setAttribute("class", "link");
+
+        view.innerText = "view";
+        vlink.append(view);
         document.querySelector("div.whole").append(div_card);
       }
 

@@ -31,11 +31,23 @@
         const text = document.getElementById("text").value;
         const sent = document.getElementById("sent").value;
 
-        console.log(name);
-        console.log(email);
-        console.log(text);
-        console.log(sent);
+        let data = {
+          name,
+          email,
+          text,
+          sent,
+        };
 
+        let array = [];
+        if (localStorage.getItem("contact") === null) {
+          array.push(data);
+          localStorage.setItem("contact", JSON.stringify(array));
+        } else {
+          let dat = window.localStorage.getItem("contact");
+          let info = JSON.parse(dat);
+          info.push(data);
+          window.localStorage.setItem("contact", JSON.stringify(info));
+        }
         window.location.href = "/index.html";
       }
     </script>

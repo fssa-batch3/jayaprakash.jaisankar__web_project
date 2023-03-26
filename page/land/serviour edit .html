@@ -6,20 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .full {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #form {
+      padding: 40px;
+    }
+    .card {
+      padding: 10px;
+      margin: 10px;
+    }
+    .whole {
+      width: 400px;
+      height: 200px;
+      /* padding: 40px;
+      margin: 20px; */
+      background-color: rgba(95, 213, 234, 0.664);
+      border-radius: 10px;
+      box-shadow: 4px 6px 6px 4px rgb(60, 132, 233);
+    }
+    .button {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .link {
+      width: 70px;
+      height: 30px;
+      border-radius: 10px;
+      border: none;
+      background-color: rgb(48, 133, 231);
+    }
+    .link:hover {
+      background-color: rgb(63, 104, 241);
+    }
+  </style>
   <body>
-    <div class="whole">
-      <form id="form">
-        <div class="card">
-          <label> serviour_name</label>
-          <input id="name" />
-        </div>
-        <div class="card">
-          <label>taluk</label>
-          <input id="tname" />
-        </div>
-        <button onclick="submit" id="submit" class="btn">submit</button>
-        <button onclick="clear" id="delete" class="btn">Delete</button>
-      </form>
+    <div class="full">
+      <div class="whole">
+        <form id="form">
+          <div class="card">
+            <label> serviour_name</label>
+            <input id="name" />
+          </div>
+          <div class="card">
+            <label>taluk</label>
+            <input id="tname" />
+          </div>
+          <div class="button">
+            <button onclick="submit" class="link" id="submit" class="btn">
+              submit
+            </button>
+            <button onclick="clear" class="link" id="delete" class="btn">
+              Delete
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
     <script>
       let form_details = JSON.parse(localStorage.getItem("list"));
