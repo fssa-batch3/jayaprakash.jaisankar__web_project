@@ -24,15 +24,52 @@ user flow:
          https://sonarcloud.io/project/overview?id=fssa-batch3_jayaprakash.jaisankar__web_project
          
          // My Progress Table
-  CRUD For User signing page
+
+
+
+  CRUD For User signing page  (finished)
   => Create user account [completed]
   => Read User Data For Profile Page [completed]
   => Update user details For Edit Page [completed]
   => Delete user details For deactivate [completed]
-  CRUD For User Features page
+
+
+
+  CRUD For User Features page   (finished)
   => Create stamplist [completed]
   => Read stamp page  [completed]
   => Update stamp page  [completed]
   => Delete stamp page  [completed]
+
+
+  CRUD For apply for surviour Features page   (finished)
+  => Create surviourlist [completed]
+  => Read surviour page  [completed]
+  => Update surviour page  [completed]
+  => Delete surviour page  [completed]
+
+
+  CRUD For List of surviourFeatures page   (finished)
+  => Create surviourlist [completed]
+  => Read surviour page  [completed]
+  => Update surviour page  [completed]
+  => Delete surviour page  [completed]
+
+
+    CRUD For apply electricity Features page   (finished)
+  => Create apply electricitylist [completed]
+  => Read apply electricity page  [completed]
+  => Update apply electricity page  [completed]
+  => Delete apply electricity page  [completed]
+
+
+    CRUD For insurance apply Features page   ( yet to finish)
+  => Createinsurance apply list 
+  => Read insurance apply page  
+  => Update insurance apply page  
+  => Delete insurance apply page 
+
+
+
 
 
