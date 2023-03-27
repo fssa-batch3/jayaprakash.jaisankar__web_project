@@ -194,7 +194,7 @@ body {
 }
 .last {
   padding-bottom: 3%;
-  background-color: rgba(141, 205, 227, 0.959);
+  /* background-color: rgba(83, 153, 233, 0.959); */
 }
 .last-1 {
   display: flex;
