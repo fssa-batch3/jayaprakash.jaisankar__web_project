@@ -7,7 +7,6 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="Assets/css/profile style.css" />
-    
   </head>
   <body>
     <div class="card">
@@ -143,12 +142,10 @@
           console.log(index);
           data[index] = update;
           localStorage.setItem("user", JSON.stringify(data));
+
           // alert("You have successfully updated your account details!");
         }
-
-        
       });
-
 
       let info = document.getElementById("delete");
       info.addEventListener("click", function (event) {
@@ -162,7 +159,6 @@
           localStorage.setItem("user", JSON.stringify(data));
         }
       });
-
     </script>
   </body>
 </html>
