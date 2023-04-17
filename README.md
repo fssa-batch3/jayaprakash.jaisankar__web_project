@@ -64,10 +64,16 @@ user flow:
 
 
     CRUD For insurance apply Features page   ( yet to finish)
-  => Createinsurance apply list 
-  => Read insurance apply page  
-  => Update insurance apply page  
-  => Delete insurance apply page 
+  => Createinsurance apply list [Not completed]
+  => Read insurance apply page  [Not completed]
+  => Update insurance apply page  [Not completed]
+  => Delete insurance apply page [Not completed]
+
+    CRUD For education information Features page   ( yet to finish)
+  => Create education information [Not completed]
+  => Read education information [Not completed]
+  => Update education information [Not completed]
+  => Delete education information [Not completed]
   
   
   
