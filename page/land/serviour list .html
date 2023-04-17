@@ -148,7 +148,7 @@ body{
         <div class="dropdown">
           <span>status</span>
           <div class="dropdown-content">
-           <a href="./apply land.html"> <p>application</p></a>
+           <a href="./serviour apply  .html"> <p>application</p></a>
            <a href="./list.html"> <p>modify</p></a>
            <a href="./serviour list .html"> <p>visit</p></a>
           </div>
@@ -284,27 +284,32 @@ body{
         let go;
         go = document.createElement("a");
 
-        go.setAttribute("href", "./apply land.html");
+        go.setAttribute("href", "./serviour.html");
         button.append(go);
 
 
         let apply;
         apply = document.createElement("button");
         apply.setAttribute("class", "link");
-        apply.innerText = "apply";
+        // apply.setAttribute("id", call[i]["uuid"]);
+        // apply.setAttribute("onclick", "apply(this.id)");
+
+        apply.innerText = "view";
         go.append(apply);
 
-        let vlink;
-        vlink = document.createElement("a");
-        vlink.setAttribute("href", "./list.html");
-        button.append(vlink);
+        // let vlink;
+        // vlink = document.createElement("a");
+        // vlink.setAttribute("href", "./list.html");
+        // button.append(vlink);
 
-        let view;
-        view = document.createElement("button");
-        view.setAttribute("class", "link");
+        // let view;
+        // view = document.createElement("button");
+        // view.setAttribute("class", "link");
 
-        view.innerText = "view";
-        vlink.append(view);
+        // view.innerText = "view";
+        // // apply.setAttribute("id", call[i]["uuid"]);
+        // view.setAttribute("onclick", "view()");
+        // vlink.append(view);
         document.querySelector("div.whole").append(div_card);
       }
 
@@ -315,6 +320,20 @@ body{
         let ranid = localStorage.setItem("ranid", JSON.stringify(arr));
         // window.location.href = "./ serviour edit.html";
       }
+
+
+      // function view(e){
+        
+      // }
+
+      // let array = [];
+      // function apply(id) {
+      //   array.push(id);
+      //   console.log(id);
+      //   let rid = localStorage.setItem("rid", JSON.stringify(array));
+      //   // window.location.href = "./ serviour edit.html";
+      // }
+
 
       // let direct;
       // direct = document.createElement("a");

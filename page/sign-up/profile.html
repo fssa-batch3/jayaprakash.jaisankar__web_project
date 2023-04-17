@@ -69,6 +69,21 @@
       });
       console.log(get);
 
+      let file = document.getElementById("file");
+      let image;
+      file.addEventListener("change", function (e) {
+        let choosefile = this.files[0];
+        if (choosefile) {
+          let reader = new FileReader();
+          // console.log(reader.result);
+          reader.addEventListener("load", function () {
+            image = reader.result;
+            console.log(image);
+          });
+          reader.readAsDataURL(choosefile);
+        }
+      });
+
       const fname = document.getElementById("fname");
       const mname = document.getElementById("mname");
       const Lname = document.getElementById("Lname");

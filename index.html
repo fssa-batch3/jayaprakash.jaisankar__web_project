@@ -118,13 +118,13 @@
     <div class="last-1">
 
       <div>
-        <a href="./page/apply-info/apply-info.html">
+        <!-- <a href="./page/apply-info/apply-info.html"> -->
 
-          <button class="btn">
-            <a href="./page/land/list.html">
-              <span class="btn-text-one">Apply for surviour</span>
-              <span class="btn-text-two">Open!</span>
-            </a>
+          <button class="btn" onclick="Submit"  id="check" >Apply for surviour
+            <!-- <a href="./page/land/list.html"> -->
+              <!-- <span class="btn-text-one">Apply for surviour</span> -->
+              <!-- <span class="btn-text-two">Open!</span>
+            </a> -->
           </button>
       </div>
 
@@ -157,16 +157,21 @@
     <div class="last-1">
       <div>
         <a href="./page/land/serviour list .html">
-          <button class="btn">
-            <span class="btn-text-one">Land Measurement</span>
-            <span class="btn-text-two">Open!</span>
+          <button class="btn" onclick="clear"  id="delete"  >
+
+            Land Measurement
+            <!-- <span class="btn-text-one">Land Measurement</span>
+            <span class="btn-text-two">Open!</span> -->
           </button></a>
       </div>
       <div>
-        <a href="./page/stamp/stamp.html"> <button class="btn">
-            <span class="btn-text-one">Stamp Duty</span>
-            <span class="btn-text-two">Open!</span>
-          </button></a>
+       <!-- <a href="./page/stamp/stamp.html"> -->
+         <button class="btn" onclick="Submit"  id="create">
+          Stamp Duty
+            <!-- <span class="btn-text-one">Stamp Duty</span>
+            <span class="btn-text-two">Open!</span> -->
+          </button>
+        <!-- </a> -->
       </div>
 
       <div>
@@ -263,6 +268,7 @@
         </ul>
         </div>
       </div> -->
+    <a href="./page/land/servivor user list.html"
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
@@ -273,14 +279,85 @@
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
-    localStorage.setItem("arrayOfList", JSON.stringify(arrayOfList))
-    localStorage.setItem("product", JSON.stringify(product))
-    localStorage.setItem("user_new", JSON.stringify(user_new))
+
+let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+      let data = JSON.parse(window.localStorage.getItem("user"));
+      console.log(data);
+
+      let get = data.find(function (obj) {
+        let checkmail = obj["email"];
+        if (mail === checkmail) {
+          return true;
+        }
+      });
+      console.log(get);
+     let email = get["email"]
+     console.log(email)
+
+let info = document.getElementById("delete");
+      info.addEventListener("click", function (event) {
+        event.preventDefault();
+        // let indexof = form_details.indexOf(get);
+        let failed = confirm("you are survivor");
+        // let pass = confirm("you are not survivor");
+        if (failed == true) {
+          window.location.href = "./page/land/serviour list .html";
+        } else if (mail == email) {
+          // form_details.splice(indexof, 1);
+          // localStorage.setItem("list", JSON.stringify(form_details));
+          window.location.href = "./page/land/list.html";
+        }
+        else{
+          window.location.href = "./serviour list.html";
+        }
+      });
 
 
-    JSON.parse(localStorage.setItem("arrayOfList"))
-    JSON.parse(localStorage.setItem("product"))
-    JSON.parse(localStorage.setItem("user_new"))
+
+      
+let trans = document.getElementById("create");
+      trans.addEventListener("click", function (event) {
+        event.preventDefault();
+        // let indexof = form_details.indexOf(get);
+        let failed = confirm("you are admin");
+        // let pass = confirm("you are not survivor");
+        if (failed == true) {
+          window.location.href = "./page/stamp/stamp.html";
+        } else if (mail == email) {
+          // form_details.splice(indexof, 1);
+          // localStorage.setItem("list", JSON.stringify(form_details));
+          window.location.href = "/page/stamp/stampuser.html";
+        }
+        else{
+          window.location.href = "/page/stamp/stampuser.html";
+        }
+      });
+
+      let check = document.getElementById("check");
+      check.addEventListener("click", function (event) {
+        event.preventDefault();
+        // let indexof = form_details.indexOf(get);
+        let failed = confirm("you are user");
+        // let pass = confirm("you are not survivor");
+        if (failed == true) {
+          window.location.href = "./page/land/list.html";
+        } else if (mail == email) {
+          // form_details.splice(indexof, 1);
+          // localStorage.setItem("list", JSON.stringify(form_details));
+          window.location.href = "./page/land/servivor user list.html";
+        }
+        else{
+          window.location.href = "./page/land/list.html";
+        }
+      });
+    // localStorage.setItem("arrayOfList", JSON.stringify(arrayOfList))
+    // localStorage.setItem("product", JSON.stringify(product))
+    // localStorage.setItem("user_new", JSON.stringify(user_new))
+
+
+    // JSON.parse(localStorage.setItem("arrayOfList"))
+    // JSON.parse(localStorage.setItem("product"))
+    // JSON.parse(localStorage.setItem("user_new"))
 
 
   </script>

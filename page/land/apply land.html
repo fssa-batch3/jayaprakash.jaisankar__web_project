@@ -53,6 +53,12 @@
     </div>
 
     <div class="change">
+      <label>email</label>&emsp;
+      <input id="email" type="text" />
+    </div>
+
+
+    <div class="change">
       <label>Servour.no</label>&emsp;
       <input id="num" type="number" />
     </div>
@@ -78,20 +84,60 @@
     </div>
     </div>
     <script>
+// let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+//       let data = JSON.parse(window.localStorage.getItem("user"));
+//       console.log(data);
+
+//       let get = data.find(function (obj) {
+//         let checkmail = obj["email"];
+//         if (mail === checkmail) {
+//           return true;
+//         }
+//       });
+//       console.log(get);
+
+
+//       let index = data.indexOf(get);
+//         console.log(index);
+
+
 
      
 let form = document.getElementById("form");
 
+
+let form_details = JSON.parse(localStorage.getItem("list"))
+
+let dat= JSON.parse(localStorage.getItem("data"))
+let rid = JSON.parse(localStorage.getItem("rid"));
+
+
+let ject = form_details.find(function (obj) {
+        let checkid = obj["uuid"];
+        if (rid == checkid) {
+          return true;
+        }
+       
+      });
+console.log(ject)
+
+      // let tname = ject[""]
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         let name =document.getElementById("name").value;
+        let email =document.getElementById("email").value;
         let num =document.getElementById("num").value;
         let vname =document.getElementById("vname").value;
         let vnum =document.getElementById("vnum").value;
         let tname =document.getElementById("tname").value;
+    
 
+
+     
+      // console.log(get);
         let obj ={
           name,
+          email,
           num,
           vname,
           vnum,
@@ -101,26 +147,123 @@ let form = document.getElementById("form");
         obj["uuid"] = uuid;
         console.log(uuid);
         console.log(obj);
-       
-         let arr=[];
-         arr.push(obj);
 
 
-        //  localStorage.setItem("array",JSON.stringify(arr));
+        let arr = [ ];
+        arr.push(obj);
 
-        if (window.localStorage.getItem("data") === null) {
+      //   let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+      // let data = JSON.parse(window.localStorage.getItem("user"));
+      // console.log(data);
+
+
+      
+      // let checkmail = get["email"];
+      //   console.log(checkmail)
+
+      //   console.log(dat);
+      // let ject= dat.find(function (obj) {
+      //   let mail = obj["email"];
+      //   if (mail === checkmail) {
+      //     return true;
+      //   }
+      // });
+      // console.log(ject);
+
+
+      // let number = ject["num"];
+      //   console.log(number)
+
+
+
+        // let arr=[];
+        //      let check =[];    
+
+        //  for(let i=0;i<  form_details.length;i++){
+        //   for(let j=0;j<form_details[i].number.length;j++){
+        //     if(number ==   form_details[i].number[i])
+              
+        //   check.push(ject);
+        //   arr.push(check)
+
+        //   window.localStorage.setItem("data", JSON.stringify(arr));
+        //     console.log(window.localStorage.getItem("data"));
+        //   }
+         
+        //  }
+        // if(
+        //  form_details[0].number.find( (obj) => obj == number )){
+        //   let check =[];        
+        //   check.push(ject);
+        //   arr.push(check)
+
+          // window.localStorage.setItem("data", JSON.stringify(arr));
+          //   console.log(window.localStorage.getItem("data"));
+          if (window.localStorage.getItem("data") === null) {
             window.localStorage.setItem("data", JSON.stringify(arr));
             console.log(window.localStorage.getItem("data"));
-            window.location.href = "./list.html"
+            // window.location.href = "./list.html"
           } else {
             let local = window.localStorage.getItem("data");
             let json = JSON.parse(local);
             json.push(obj);
             window.localStorage.setItem("data", JSON.stringify(json));
           }
-          window.location.href = "./list.html";
+          // window.location.href = "./list.html";
 
-        });        
+        // }   
+        });
+        //  }
+        // let num = obj["num"];
+        // if (number === num) {
+        //   return true;
+        // }
+      
+      // console.log(arr);
+
+
+      // const length = form_details[0].number.length;
+      // console.log(length)
+
+
+      // for(let i=0;i<length;i++){
+      //   if(vnum !==form_details[0].number[i]){
+      //     alert("change")
+      //   }
+      //   else{
+        //   let arr=[];
+        //  arr.push(obj);
+      //   }
+      // }
+
+       
+        
+
+
+
+    //      let validation = JSON.parse(window.localStorage.getItem("data"));
+    //      const length = validation[0].number.length;
+    //   let is = false;
+    //  for (let i = 0; i <length; i++) {
+    //    if (email === validation[0].number[i]) {
+    //     alert("Email is already in use");
+    //      is = true;
+    //      break;
+    //    }
+    //  }
+    //   if (is === true) {
+    //     alert("already  email is exist");
+    //   }
+    //     // //localStorage.setItem("array",JSON.stringify(arr));
+    //     // let get = form_details.find(function (obj) {
+    //     // let checkid = obj["num"];
+    //     // if (num !== checkid) {
+    //     //   alert("notvalid");
+    //     // }
+        
+    //     else {
+          
+   
         
         
         

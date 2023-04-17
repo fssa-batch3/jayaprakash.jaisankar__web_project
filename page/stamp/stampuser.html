@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Assets\css\stamp.css" />
+  </head>
+  <body>
+    <!-- <div class="first">
+      <div class="nav-bar">
+        <a class="active" href="/index.html">Home</a>
+        <a class="active" href="../service/service.html">Service</a>
+        <a class="active" href="../help/help.html">Help</a>
+        <a class="active" href="../ask for/ask for.html">Ask for</a>
+        <a class="active" href="../contact/contact.html">contact us</a>
+        <a class="active" href="../sign-up/sign-up.html">Sign-up</a>
+      </div>
+    </div> -->
+
+    <div class="head">
+      <img
+        class="logo"
+        src="/page/electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png"
+        width="150px"
+        height="100px"
+      />
+      <div class="nav">
+        <div class="dropdown">
+          <span>Home</span>
+          <div class="dropdown-content">
+            <p>Home</p>
+            <a href="./about.html"> <p>About as</p></a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>Apply</span>
+          <div class="dropdown-content">
+            <a href="./create.html"> <p>New</p></a>
+            <a href="./edit.html"> <p>Remove</p></a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>status</span>
+          <div class="dropdown-content">
+            <p>application</p>
+            <p>modify</p>
+            <p>delete</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>download</span>
+          <div class="dropdown-content">
+            <p>forms</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>feedback</span>
+        </div>
+
+        <div class="dropdown">
+          <span>dashboard</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="whole"></div>
+
+    <div class="footer">
+      <div class="part">
+        <h1>useful links</h1>
+
+        <p>Electricity</p>
+        <p>Online payment</p>
+        <p>Complain</p>
+      </div>
+      <div class="part">
+        <h1>Privacy policy</h1>
+
+        <p>Website Policies</p>
+        <p>Cyber resilience</p>
+      </div>
+
+      <div class="part">
+        <h1>Contact as</h1>
+
+        <p>jp@gmail.com</p>
+        <p>Phone:+917094120148</p>
+      </div>
+      <div class="part">
+        <h1>Disclaimer</h1>
+        <p>
+          While care has been taken to ensure the accuracy of information,
+          TANGEDCO is not responsible for any damage or loss caused due to
+          action taken on the basis of this information. This website is best
+          viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+          resolution
+        </p>
+      </div>
+    </div>
+    <script>
+      let card = JSON.parse(localStorage.getItem("jscard"));
+
+      for (let i = 0; i < card.length; i++) {
+        let div_card;
+        div_card = document.createElement("a");
+        div_card.setAttribute("class", "card");
+        div_card.setAttribute("href", "detail.html?name=" + card[i]["name"]);
+
+        console.log(div_card);
+
+        let div_second;
+        div_second = document.createElement("div");
+        div_second.setAttribute("class", "second");
+        div_card.append(div_second);
+        // console.log(div_second);
+
+        let img_stamp;
+        img_stamp = document.createElement("img");
+        img_stamp.setAttribute("src", card[i]["src"]);
+        img_stamp.setAttribute("alt", "image_placeholder");
+        img_stamp.setAttribute("class", "stamp");
+        div_second.append(img_stamp);
+
+        let div_total;
+        div_total = document.createElement("div");
+        div_total.setAttribute("class", "total");
+        div_second.append(div_total);
+
+        let h1_head;
+        h1_head = document.createElement("h1");
+        h1_head.setAttribute("class", "head1");
+        h1_head.innerText = "Rs : " + card[i]["price"];
+        div_total.append(h1_head);
+
+        let p_text;
+        p_text = document.createElement("p");
+        p_text.setAttribute("class", "text");
+        p_text.innerText = card[i]["name"];
+        div_total.append(p_text);
+
+        let div_cc;
+        div_cc = document.createElement("div");
+        div_cc.setAttribute("class", "cc");
+        div_second.append(div_cc);
+
+        document.querySelector("div.whole").append(div_card);
+      }
+    </script>
+  </body>
+</html>

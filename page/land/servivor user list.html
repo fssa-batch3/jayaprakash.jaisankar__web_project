@@ -314,37 +314,21 @@ margin: 0px;
         input3.setAttribute("value", work[i]["tname"]);
         div5.append(input3);
 
-        let direct;
-        direct = document.createElement("a");
-        direct.setAttribute("class", "link");
-      //  direct.setAttribute("href", "./edit.html");
+   
+        let accept;
+        accept = document.createElement("a");
+        accept.setAttribute("class", "link");
+        accept.setAttribute("id", "delete");
+        // accept.setAttribute("href", "./edit.html");
+        form.append(accept);
 
-        form.append(direct);
-
-        let edit;
-        edit = document.createElement("button");
-        edit.setAttribute("class", "link");
-        edit.setAttribute("id", work[i]["uuid"]);
-        edit.setAttribute("onclick", "edit(this.id)");
-
-        edit.innerText = "edit";
-        direct.append(edit);
-
-        
-        // let accept;
-        // accept = document.createElement("a");
-        // accept.setAttribute("class", "link");
-        // accept.setAttribute("id", "delete");
-        // // accept.setAttribute("href", "./edit.html");
-        // form.append(accept);
-
-        // let acbt;
-        // acbt = document.createElement("button");
-        // acbt.setAttribute("class", "link");
-        // // acbt.setAttribute("id", work[i]["uuid"]);
-        // acbt.setAttribute("onclick", "clear");
-        // acbt.innerText = "accept";
-        // accept.append(acbt);
+        let acbt;
+        acbt = document.createElement("button");
+        acbt.setAttribute("class", "link");
+        // acbt.setAttribute("id", work[i]["uuid"]);
+        acbt.setAttribute("onclick", "clear");
+        acbt.innerText = "accept";
+        accept.append(acbt);
         
 
         document.querySelector("div.whole").append(div_card);
@@ -358,93 +342,7 @@ margin: 0px;
         // window.location.href = "./edit.html";
       }
 
-      let info = document.getElementById("delete");
-      info.addEventListener("click", function (event) {
-        event.preventDefault();
-
-// Include the Twilio client library
-const accountSid = 'YOUR_ACCOUNT_SID';
-const authToken = 'YOUR_AUTH_TOKEN';
-const client = require('twilio')(accountSid, authToken);
-
-// Specify the phone number and message
-const phoneNumber = '+917094120148';
-const message = 'Hello, this is a test message!';
-
-// Use the Twilio API to send the message
-client.messages.create({
-  body: message,
-  from: 'YOUR_TWILIO_NUMBER',
-  to: phoneNumber
-}).then(message => console.log(message.sid))
-.catch(error => console.log(error));
-
-      });
-//         let mail = JSON.parse(window.localStorage.getItem("userinfo"));
-//       let data = JSON.parse(window.localStorage.getItem("user"));
-//       console.log(data);
-
-//       let get = data.find(function (obj) {
-//         let checkmail = obj["email"];
-//         if ("jp@gmail.com"== checkmail) {
-//           return true;
-//         }
-//       });
-//       console.log(get);
-
-
-//       let index = data.indexOf(get);
-//         console.log(index);
-
-//         let form = document.getElementById("form");
-
-
-// let form_details = JSON.parse(localStorage.getItem("list"))
-
-// let dat= JSON.parse(localStorage.getItem("data"))
-// let rid = JSON.parse(localStorage.getItem("rid"));
-
-
-// let ject = form_details.find(function (obj) {
-//         let checkid = obj["email"];
-//         if (email == checkid) {
-//           return true;
-//         }
-       
-//       });
-// console.log(ject)
-
-//       // let email = ject["email"]
-
-//       }
-      //   let a;
-      //   a = document.createElement("a");
-      //   a.setAttribute("class", "link");
-      //   a.setAttribute("href", "./create.html");
-
-      //   div_card.append(a);
-      //   let submit;
-      //   submit = document.createElement("button");
-      //   submit.setAttribute("class", "link");
-      //   submit.setAttribute("href", "./create.html");
-      //   submit.innerText = "Add";
-      //   a.append(submit);
-
-      //   let direct;
-      //   direct = document.createElement("a");
-      //   direct.setAttribute("class", "link");
-      //   direct.setAttribute("href", "./edit.html");
-
-      //   div_card.append(direct);
-
-      //   let edit;
-      //   edit = document.createElement("button");
-      //   edit.setAttribute("class", "link");
-      //   edit.setAttribute("id", card[i]["uuid"]);
-      //   edit.setAttribute("onclick", "editPaper(this.id)");
-      //   edit.setAttribute("href", "./edit.html");
-      //   edit.innerText = "edit";
-      //   direct.append(edit);
+   
     </script>
   </body>
 </html>

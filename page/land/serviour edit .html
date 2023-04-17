@@ -55,6 +55,10 @@
             <label>taluk</label>
             <input id="tname" />
           </div>
+          <!-- <div class="card">
+            <label>number</label>
+            <input id="num" />
+          </div> -->
           <div class="button">
             <button onclick="submit" class="link" id="submit" class="btn">
               submit
@@ -86,9 +90,11 @@
 
       const name = document.getElementById("name");
       const tname = document.getElementById("tname");
+      // const num = document.getElementById("num");
 
       name.value = get["name"];
       tname.value = get["tname"];
+      // num.value = get["num"];
       console.log(get);
 
       // edit profile start
@@ -108,10 +114,12 @@
 
         let name = document.getElementById("name").value;
         let tname = document.getElementById("tname").value;
+        // let num = document.getElementById("num").value;
 
         let ject = {
           name,
           tname,
+          // num,
         };
 
         console.log(ject);

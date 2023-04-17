@@ -5,13 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./feedback.css" />
+    <style>
+      .whole {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 40px;
+      }
+      #card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 5px 2px 5px rgb(81, 134, 208);
+        background-color: rgb(89, 189, 232);
+        width: 150px;
+        height: 100px;
+      }
+      .place {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .head {
+ 
+
+ background-color: rgb(181, 222, 234);
+}
+.logo {
+display: flex;
+}
+
+.top2 {
+display: flex;
+}
+
+
+   
+.nav {
+
+margin-top: 40px;
+margin-left: 600px;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+margin-left: 20px;
+font-size: 18px;
+justify-content: space-between;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+padding: 8px 10px;
+z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.footer {
+padding: 100px;
+background-color: rgb(129, 209, 235);
+display: flex;
+column-gap: 150px;
+}
+
+body{
+margin: 0px;
+}
+    </style>
   </head>
   <body>
 
     <nav class="head">
 
-      <!-- <div class="part"> -->
+      <div class="part">
   
       <div class="top"> For any complaint - Call -7094120148 Tamilnadu , India</div>
   
@@ -19,7 +99,7 @@
       <div class="top2">
         <!-- Below code for logo placement  -->
         <div class="part1">
-          <img class="logo" src="../electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
+          <img class="logo" src="/page/electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
             height="100px" />
         </div>
         
@@ -29,16 +109,9 @@
             <span>Home</span>
             <div class="dropdown-content">
              <a href="./index.html"> <p>Home</p>
-  
+   <a href="./page/electricity/about.html">           <p>About as</p></a>
             </div>
           </div>
-  
-  
-              <div class="dropdown">
-                <a href="./page/electricity/about.html">     <span>About as</span></a>
-           
-          </div>
-  
   
           <div class="dropdown">
             <span>sign_in</span>
@@ -48,21 +121,21 @@
             </div>
           </div>
   
-          <!-- <div class="dropdown">
+          <div class="dropdown">
             <span>status</span>
             <div class="dropdown-content">
-              <p>application</p>
-              <p>modify</p>
-              <p>delete</p>
+             <a href="./apply land.html"> <p>application</p></a>
+             <a href="./list.html"> <p>modify</p></a>
+             <a href="./serviour list .html"> <p>visit</p></a>
             </div>
-          </div> -->
+          </div>
   
-          <!-- <div class="dropdown">
+          <div class="dropdown">
             <span>download</span>
             <div class="dropdown-content">
               <p>forms</p>
             </div>
-          </div> -->
+          </div>
           
           <div class="dropdown">
             <a href="./page/contact/contact.html"><span>Message</span></a>
@@ -72,14 +145,19 @@
             <span>feedback</span>
           </div>
   
-          <!-- <div class="dropdown">
+          <div class="dropdown">
             <span>dashboard</span>
-          </div> -->
+          </div>
         </div>
       </div>
     </nav>
-    <div class="full"></div>
-    <div><a href="./fedit.html"><button>Ask Question</button></a></div>
+
+
+    <div class="tot">
+      <div class="whole"></div>
+    </div>
+
+    
     <div class="footer">
       <div class="part">
         <h1>useful links</h1>
@@ -112,31 +190,7 @@
         </p>
       </div>
     </div>
-    
     <script>
-      let arr = JSON.parse(localStorage.getItem("fedit"));
-
-      for (let i = 0; i < arr.length; i++) {
-        let whole = document.createElement("div");
-        whole.setAttribute("class", "whole");
-
-        let fques = document.createElement("div");
-        fques.setAttribute("class", "fques");
-        whole.append(fques);
-
-        let head1 = document.createElement("h1");
-        head1.setAttribute("class", "head1");
-        head1.innerText = arr[i]["answer"];
-        ("what is the significance of the Registration-info website?");
-        fques.append(head1);
-
-        let head2 = document.createElement("h3");
-        head2.setAttribute("class", "head2");
-        head2.innerText = arr[i]["ans"];
-        fques.append(head2);
-
-        document.querySelector("div.full").append(whole);
-      }
     </script>
   </body>
 </html>

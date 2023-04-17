@@ -50,6 +50,11 @@
           <label>taluk</label> &emsp;&emsp;&emsp;&emsp;
           <input id="tname" />
         </div>
+
+        <div class="card">
+          <label>number</label> &emsp;&emsp;&emsp;&emsp;
+          <input id="num" />
+        </div>
         <div id="sub">
           <button onclick="submit" id="submit" class="btn">submit</button>
         </div>
@@ -62,10 +67,14 @@
 
         let name = document.getElementById("name").value;
         let tname = document.getElementById("tname").value;
+        let num = document.getElementById("num").value;
+
+        let arr = num.split(",");
 
         let data = {
           name,
           tname,
+          number: arr,
         };
         let card = [];
         card.push(data);
@@ -79,13 +88,13 @@
         if (window.localStorage.getItem("list") === null) {
           window.localStorage.setItem("list", JSON.stringify(card));
           console.log(window.localStorage.getItem("list"));
-          window.location.href = "./serviour list .html";
+          // window.location.href = "./serviour list .html";
         } else {
           let local = window.localStorage.getItem("list");
           let json = JSON.parse(local);
           json.push(data);
           window.localStorage.setItem("list", JSON.stringify(json));
-          window.location.href = "./serviour list.html";
+          // window.location.href = "./serviour list.html";
         }
       });
 

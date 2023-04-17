@@ -64,7 +64,7 @@
 
     <div class="change">
       <label>file</label>&emsp;
-      <input id="num" type="file" />
+      <input  type="file" id ="file"  />
     </div>
 
     <div class="change">
@@ -89,18 +89,34 @@
 
      
 let form = document.getElementById("form");
-
+ 
+let file = document.getElementById("file")
+let image ;
+file.addEventListener("change",function(e){
+  let choosefile = this.files[0];
+         if (choosefile) {
+    let reader = new FileReader();
+    // console.log(reader.result);
+    reader.addEventListener("load", function () {
+    image =reader.result;
+     console.log(image)
+      
+    });
+    reader.readAsDataURL(choosefile);
+  }
+});
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         let name =document.getElementById("name").value;
-        let file =document.getElementById("num").value;
+        // let num =document.getElementById("num").value;
         let vname =document.getElementById("vname").value;
         let vnum =document.getElementById("vnum").value;
         let tname =document.getElementById("tname").value;
 
+
         let obj ={
           name,
-          file,
+       file,
           vname,
           vnum,
           tname
@@ -114,6 +130,9 @@ let form = document.getElementById("form");
        
          let arr=[];
          arr.push(obj);
+     
+
+         
 
 
         //  localStorage.setItem("array",JSON.stringify(arr));
