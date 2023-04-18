@@ -31,6 +31,20 @@
         padding: 10px;
       }
 
+      .link {
+        margin-left: 100px;
+        margin-top: 40px;
+        width: 70px;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        
+        background-color: rgb(48, 133, 231);
+      }
+      .link:hover {
+        background-color: rgb(63, 104, 241);
+      }
+
       .head {
  
 
@@ -171,7 +185,7 @@ margin: 0px;
 
     <div class="tot">
       <div class="whole">
-        <input type="button" value="Send Email" onclick="sendEmail()">
+        <!-- <input type="button" value="Send Email" onclick="sendEmail()"> -->
       </div>
     </div>
 
@@ -314,12 +328,13 @@ margin: 0px;
 
       let acbt = document.createElement("button");
   acbt.setAttribute("class", "link");
-  acbt.setAttribute("type", "submit");
-  acbt.setAttribute("id", "submit");
+  acbt.setAttribute("type", "button");
+  acbt.setAttribute("id", "Send Email");
+  acbt.setAttribute("onclick", "sendEmail()");
   acbt.innerText = "Accept";
-  div_card.append(acbt);
+  form.append(acbt);
        
-        
+  // <input type="button" value="Send Email" onclick="sendEmail()">
 
         document.querySelector("div.whole").append(div_card);
       }
@@ -504,27 +519,37 @@ button.addEventListener("click", function(e) {
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script>
+
+
+let mail = JSON.parse(window.localStorage.getItem("userinfo"));
   function sendEmail() {
+
+
     Email.send({
-      SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4 ",
-      To: 'jayaprakashj2004930@gmail.com',
-      From: "jayaprakash.jaisankar@fssa.freshworks.com",
+  SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4 ",
+      // SecureToken: " e40f7e03-58d8-46ba-a840-6cc1c075b493",
+      Host: "smtp.elasticemail.com",
+        Username: "jayaprakash.jaisankar@fssa.freshworks.com",
+        Password: "7354083B73F02038F5B16EAF3DB2855682FD",
+      To: mail,
+      // To: "jayaprakashj2004930@gmail.com",
+      From:"jayaprakash.jaisankar@fssa.freshworks.com",
       Subject: "Test Email",
       Body: "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>",
       // Attachments: [{
       //   name : "smtp.png",
       //   path : "https://…/smtp.png"
       // }]
+     
       // Attachments: [{
       //   name : "smtp.png",
-      //   path : "http://127.0.0.1:5500/index.html.com/images/smtp.png"
+      //   path : "https://jayaprakash.jaisankar.com/images/smtp.png"
       // }]
 
-
-      Attachments: [{
-        name : "smtp.png",
-        path : "https://www.127.0.0.1:5500/index.html.com/images/smtp.png"
-      }]
+      // Attachments: [{
+      //   name : "smtp.png",
+      //   path : "https://deploy-preview-1--easy-registration.netlify.app/images/smtp.png"
+      // }]
 
     }).then(
       message => alert(message)
