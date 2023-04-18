@@ -59,29 +59,29 @@
     <form id="form">
     <div class="change">
       <label>Name</label>&emsp;
-      <input id="name" type="text" />
+      <input id="name" type="text" pattern="[A-Za-z]{6,12}" title="name is 6 to 12 letter" required/>
     </div>
 
     <div class="change">
       <label>file</label>&emsp;
-      <input  type="file" id ="file"  />
+      <input  type="file" id ="file" required />
     </div>
 
     <div class="change">
       <label>village</label>&emsp;
-      <input id="vname" type="text" />
+      <input id="vname" type="text" pattern="[A-Za-z]{6,12}" title="village_name is 6 to 12 letter"required/>
     </div>
     <div class="change">
       <label>village</label>&emsp;
-      <input id="vnum" type="number" />
+      <input id="vnum" type="number" pattern="[0-9]{1,32}" title="number is 1 to 32 number" required />
     </div>
 
     <div class="change">
       <label>taluk</label>&emsp;
-      <input id="tname" type="text" />
+      <input id="tname" type="text"  pattern="[A-Za-z]{6,12}" title="taluk_name is 6 to 12 letter" required />
     </div class="change">
     <button onclick="submit" id="submit" class="btn">submit</button>
-   
+    <button onclick="submit" id="download" class="btn">Download</button>
     </form>
     </div>
     </div>
@@ -132,7 +132,31 @@ file.addEventListener("change",function(e){
          arr.push(obj);
      
 
-         
+        //  const form = document.getElementById("myForm");
+      const submitButton = document.getElementById("download");
+
+      submitButton.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        const data = {};
+        for (const [key, value] of formData.entries()) {
+          data[key] = value;
+        }
+
+        const jsonString = JSON.stringify(data);
+        const blob = new Blob([jsonString], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "form-data.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
 
 
         //  localStorage.setItem("array",JSON.stringify(arr));

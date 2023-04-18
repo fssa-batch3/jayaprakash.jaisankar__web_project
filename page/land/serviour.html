@@ -170,7 +170,9 @@ margin: 0px;
 
 
     <div class="tot">
-      <div class="whole"></div>
+      <div class="whole">
+        <input type="button" value="Send Email" onclick="sendEmail()">
+      </div>
     </div>
 
     
@@ -498,6 +500,37 @@ button.addEventListener("click", function(e) {
     //   });
 
     </script>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+  function sendEmail() {
+    Email.send({
+      SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4 ",
+      To: 'jayaprakashj2004930@gmail.com',
+      From: "jayaprakash.jaisankar@fssa.freshworks.com",
+      Subject: "Test Email",
+      Body: "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>",
+      // Attachments: [{
+      //   name : "smtp.png",
+      //   path : "https://…/smtp.png"
+      // }]
+      // Attachments: [{
+      //   name : "smtp.png",
+      //   path : "http://127.0.0.1:5500/index.html.com/images/smtp.png"
+      // }]
+
+
+      Attachments: [{
+        name : "smtp.png",
+        path : "https://www.127.0.0.1:5500/index.html.com/images/smtp.png"
+      }]
+
+    }).then(
+      message => alert(message)
+    );
+  }
+</script>
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/twilio@3.60.0/dist/twilio.min.js"></script>
 <script>
