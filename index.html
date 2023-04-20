@@ -137,11 +137,13 @@
         <!-- </a> -->
       </div>
       <div>
-        <a href="./page/electricity/list.html">
-          <button class="btn">
-            <span class="btn-text-one">Electricity</span>
-            <span class="btn-text-two">Open!</span>
-          </button></a>
+        <!-- <a href="./page/electricity/list.html"> -->
+          <button class="btn" onclick="Submit" id ="change">
+            Electricity
+            <!-- <span class="btn-text-one">Electricity</span>
+            <span class="btn-text-two">Open!</span> -->
+          </button>
+        <!-- </a> -->
       </div>
 
       <div>
@@ -268,7 +270,7 @@
         </ul>
         </div>
       </div> -->
-    <a href="./page/land/servivor user list.html"
+    <!-- <a href="./page/land/servivor user list.html" -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
@@ -335,6 +337,24 @@ let trans = document.getElementById("create");
 
       let check = document.getElementById("check");
       check.addEventListener("click", function (event) {
+        event.preventDefault();
+        // let indexof = form_details.indexOf(get);
+        let failed = confirm("you are user");
+        // let pass = confirm("you are not survivor");
+        if (failed == true) {
+          window.location.href = "./page/land/list.html";
+        } else if (mail == email) {
+          // form_details.splice(indexof, 1);
+          // localStorage.setItem("list", JSON.stringify(form_details));
+          window.location.href = "./page/land/servivor user list.html";
+        }
+        else{
+          window.location.href = "./page/land/list.html";
+        }
+      });
+
+      let  app= document.getElementById("change");
+      app.addEventListener("click", function (event) {
         event.preventDefault();
         // let indexof = form_details.indexOf(get);
         let failed = confirm("you are user");

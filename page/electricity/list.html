@@ -179,18 +179,18 @@
         div2.setAttribute("class", "place");
         form.append(div2);
 
-        let label1;
-        label1 = document.createElement("label");
-        label1.setAttribute("id", "num");
-        label1.innerText = "file";
-        div2.append(label1);
-        let input1;
-        input1 = document.createElement("input");
-        input1.setAttribute("id", "Servour");
-        input1.setAttribute("type", "file");
-        input1.setAttribute("value", work[i]["num"]);
-        div2.append(input1);
-        // console.log(input1);
+        // let label1;
+        // label1 = document.createElement("label");
+        // label1.setAttribute("id", "num");
+        // label1.innerText = "file";
+        // div2.append(label1);
+        // let input1;
+        // input1 = document.createElement("input");
+        // input1.setAttribute("id", "Servour");
+        // input1.setAttribute("type", "file");
+        // input1.setAttribute("value", work[i]["image"]);
+        // div2.append(input1);
+        // // console.log(input1);
 
         let div4;
         div3 = document.createElement("div");
@@ -248,12 +248,13 @@
         direct.setAttribute("class", "link");
         direct.setAttribute("href", "./edit.html");
 
-        div6.append(direct);
+        div_card.append(direct);
 
         let edit;
         edit = document.createElement("button");
         edit.setAttribute("class", "link");
         edit.setAttribute("id", work[i]["uuid"]);
+
         edit.setAttribute("onclick", "edit(this.id)");
 
         edit.innerText = "edit";
@@ -262,6 +263,7 @@
         document.querySelector("div.whole").append(div_card);
       }
       let array = [];
+
       function edit(id) {
         array.push(id);
         console.log(array);

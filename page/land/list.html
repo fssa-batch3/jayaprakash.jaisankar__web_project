@@ -326,6 +326,7 @@ margin: 0px;
         edit.setAttribute("class", "link");
         edit.setAttribute("id", work[i]["uuid"]);
         edit.setAttribute("onclick", "edit(this.id)");
+        edit.setAttribute('disabled', '');
 
         edit.innerText = "edit";
         direct.append(edit);
@@ -358,28 +359,28 @@ margin: 0px;
         // window.location.href = "./edit.html";
       }
 
-      let info = document.getElementById("delete");
-      info.addEventListener("click", function (event) {
-        event.preventDefault();
+//       let info = document.getElementById("delete");
+//       info.addEventListener("click", function (event) {
+//         event.preventDefault();
 
-// Include the Twilio client library
-const accountSid = 'YOUR_ACCOUNT_SID';
-const authToken = 'YOUR_AUTH_TOKEN';
-const client = require('twilio')(accountSid, authToken);
+// // Include the Twilio client library
+// const accountSid = 'YOUR_ACCOUNT_SID';
+// const authToken = 'YOUR_AUTH_TOKEN';
+// const client = require('twilio')(accountSid, authToken);
 
-// Specify the phone number and message
-const phoneNumber = '+917094120148';
-const message = 'Hello, this is a test message!';
+// // Specify the phone number and message
+// const phoneNumber = '+917094120148';
+// const message = 'Hello, this is a test message!';
 
-// Use the Twilio API to send the message
-client.messages.create({
-  body: message,
-  from: 'YOUR_TWILIO_NUMBER',
-  to: phoneNumber
-}).then(message => console.log(message.sid))
-.catch(error => console.log(error));
+// // Use the Twilio API to send the message
+// client.messages.create({
+//   body: message,
+//   from: 'YOUR_TWILIO_NUMBER',
+//   to: phoneNumber
+// }).then(message => console.log(message.sid))
+// .catch(error => console.log(error));
 
-      });
+//       });
 //         let mail = JSON.parse(window.localStorage.getItem("userinfo"));
 //       let data = JSON.parse(window.localStorage.getItem("user"));
 //       console.log(data);

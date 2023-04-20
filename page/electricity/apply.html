@@ -65,6 +65,7 @@
     <div class="change">
       <label>file</label>&emsp;
       <input  type="file" id ="file" required />
+      <!-- <input  type="submit" value="upload file(s)" /> -->
     </div>
 
     <div class="change">
@@ -116,7 +117,7 @@ file.addEventListener("change",function(e){
 
         let obj ={
           name,
-       file,
+         image,
           vname,
           vnum,
           tname
@@ -133,30 +134,30 @@ file.addEventListener("change",function(e){
      
 
         //  const form = document.getElementById("myForm");
-      const submitButton = document.getElementById("download");
+      // const submitButton = document.getElementById("download");
 
-      submitButton.addEventListener("click", (event) => {
-        event.preventDefault();
+      // submitButton.addEventListener("click", (event) => {
+      //   event.preventDefault();
 
-        const formData = new FormData(form);
+      //   const formData = new FormData(form);
 
-        const data = {};
-        for (const [key, value] of formData.entries()) {
-          data[key] = value;
-        }
+      //   const data = {};
+      //   for (const [key, value] of formData.entries()) {
+      //     data[key] = value;
+      //   }
 
-        const jsonString = JSON.stringify(data);
-        const blob = new Blob([jsonString], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
+      //   const jsonString = JSON.stringify(data);
+      //   const blob = new Blob([jsonString], { type: "application/json" });
+      //   const url = URL.createObjectURL(blob);
 
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "form-data.json";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      });
+      //   const a = document.createElement("a");
+      //   a.href = url;
+      //   a.download = "form-data.json";
+      //   document.body.appendChild(a);
+      //   a.click();
+      //   document.body.removeChild(a);
+      //   URL.revokeObjectURL(url);
+      // });
 
 
         //  localStorage.setItem("array",JSON.stringify(arr));

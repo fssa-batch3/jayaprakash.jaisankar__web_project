@@ -15,7 +15,7 @@
 
         <!-- <h1>User Details</h1> -->
 
-        <form id="form">
+        <form id="form" action="/index.html">
           <label>First Name:</label>
           <input class="input" id="fname" type="text" disabled />
           <label> Middle Name:</label>
@@ -56,6 +56,7 @@
         <button onclick="Delete" id="delete" class="btn">Delete</button>
       </div>
     </div>
+    <a href="/index.html"></a>
     <script>
       let mail = JSON.parse(window.localStorage.getItem("userinfo"));
       let data = JSON.parse(window.localStorage.getItem("user"));
@@ -112,6 +113,7 @@
       const editpage = document.querySelectorAll(".input");
       console.log(editpage);
       function edit() {
+        event.preventDefault();
         for (i = 0; i < editpage.length; i++) {
           editpage[i].removeAttribute("disabled");
         }
@@ -150,6 +152,7 @@
 
         if (mail != email) {
           alert("You can't change the Email ID");
+          //    window.location.href = "/index.html";
         } else {
           let update = Object.assign(get, ject);
           console.log(update);
@@ -157,7 +160,8 @@
           console.log(index);
           data[index] = update;
           localStorage.setItem("user", JSON.stringify(data));
-
+          // location.reload();
+          window.location.href = "/index.html";
           // alert("You have successfully updated your account details!");
         }
       });
@@ -172,6 +176,7 @@
         } else {
           data.splice(indexof, 1);
           localStorage.setItem("user", JSON.stringify(data));
+          // window.location.href = "/index.html";
         }
       });
     </script>

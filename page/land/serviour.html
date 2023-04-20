@@ -317,15 +317,7 @@ margin: 0px;
 
       
 
-      //   let acbt;
-      //   acbt = document.createElement("button");
-      //   acbt.setAttribute("class", "link");
-      //   acbt.setAttribute("type", "button");
-      //   acbt.setAttribute("id", "delete");
-      //  acbt.setAttribute("onclick", "submit");
-      //   acbt.innerText = "accept";
-      // div_card.append(acbt);
-
+      
       let acbt = document.createElement("button");
   acbt.setAttribute("class", "link");
   acbt.setAttribute("type", "button");
@@ -334,185 +326,11 @@ margin: 0px;
   acbt.innerText = "Accept";
   form.append(acbt);
        
-  // <input type="button" value="Send Email" onclick="sendEmail()">
 
         document.querySelector("div.whole").append(div_card);
       }
    
-// const button = document.querySelector('.link');
-// // button.addEventListener('click', sendSMS);
-// // button.addEventListener("submit",function(e){
-// //   event.preventDefault()
-// function submit(){
 
-  const button = document.querySelector('.link');
-button.addEventListener("click", function(e) {
-  e.preventDefault();
-//   const nodemailer = require('nodemailer');
-
-// const transporter = nodemailer.createTransport({
-//   host: 'smtp.gmail.com',
-//   port: 465,
-//   secure: true,
-//   auth: {
-//     user: 'jayaprakashj2004930@gmail.com',
-//     pass: 'Sachin@31072005'
-//   }
-// });
-
-// const mailOptions = {
-//   from: 'jayaprakashj2004930@gmail.com',
-//   to: 'sachinvasanthapriyan@gmail.com',
-//   subject: 'Test email',
-//   text: 'This is a test email'
-// };
-
-// async function sendMail() {
-//   try {
-//     const response = await transporter.sendMail(mailOptions);
-//     console.log('Email sent: ' + response.response);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// sendMail();
-
-
-
-
-});
-// const accountSid = 'ACccb18c87e56589591c11f43aab859ca7';
-// const authToken = '170ee83cc8cfb6397a81a903ea5a98a5';
-
-// // const fromNumber = '+15076237931'; // Twilio phone number
-// // const toNumber = '+917094120148'; // recipient phone number
-
-// const fromNumber = '+14159690506'; // Your Twilio phone number
-// const toNumber = '+16505551234'; // Recipient phone numberc
-// const message = 'Hello from Twilio!';
-
-// fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`, {
-//   method: 'POST',
-//   headers: {
-//     'Authorization': 'Basic ' + btoa(`${accountSid}:${authToken}`),
-//     'Content-Type': 'application/x-www-form-urlencoded'
-//   },
-//   body: new URLSearchParams({
-//     From: fromNumber,
-//     To: toNumber,
-//     Body: message
-//   })
-// })
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-//   .catch(error => console.error(error));
-
-
-// const accountSid = 'ACccb18c87e56589591c11f43aab859ca7';
-// const authToken = '170ee83cc8cfb6397a81a903ea5a98a5';
-// const fromNumber = '+14159690506'; // Your Twilio phone number
-// const toNumber = '+16505551234'; // Recipient phone number
-// const message = 'Hello from Twilio!';
-
-// fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`, {
-//   method: 'POST',
-//   headers: {
-//     'Authorization': 'Basic ' + btoa(`${accountSid}:${authToken}`),
-//     'Content-Type': 'application/x-www-form-urlencoded'
-//   },
-//   body: new URLSearchParams({
-//     From: fromNumber,
-//     To: toNumber,
-//     Body: message
-//   })
-// })
-// .then(response => {
-//   if (response.ok) {
-//     console.log('Message sent successfully!');
-//     return response.json();
-//   } else {
-//     throw new Error('Failed to send message.');
-//   }
-// })
-// .then(data => console.log(data))
-// .catch(error => console.error(error));
-
-
-// const accountSid = 'ACccb18c87e56589591c11f43aab859ca7';
-// const authToken = '170ee83cc8cfb6397a81a903ea5a98a5';
-// const fromNumber = '+14159690506'; // Your Twilio phone number
-// const toNumber = '+16505551234'; // Recipient phone number
-// const message = 'Hello from Twilio!';
-
-// fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`, {
-//   method: 'POST',
-//   headers: {
-//     'Authorization': 'Basic ' + btoa(`${accountSid}:${authToken}`),
-//     'Content-Type': 'application/x-www-form-urlencoded'
-//   },
-//   body: new URLSearchParams({
-//     From: fromNumber,
-//     To: toNumber,
-//     Body: message
-//   })
-// })
-//   .then(response => {
-//     if (response.ok) {
-//       console.log('Message sent successfully!');
-//       return response.json();
-//     } else {
-//       throw new Error(`HTTP error ${response.status} (${response.statusText})`);
-//     }
-//   })
-//   .then(data => console.log(data))
-//   .catch(error => console.error(`Error sending message: ${error.message}`));
-
-
-
-
-
-
-
-// });
-
-
-  
-        // let accept;
-        // accept = document.createElement("a");
-        // accept.setAttribute("class", "link");
-        // accept.setAttribute("id", "delete");
-        // // accept.setAttribute("href", "./edit.html");
-        // form.append(accept);
-
-
-        
-    //   let info = document.getElementById("delete");
-    //   info.addEventListener("click", function (event) {
-    //     event.preventDefault();
-//         const accountSid = 'ACccb18c87e56589591c11f43aab859ca7';
-// const authToken = '170ee83cc8cfb6397a81a903ea5a98a5';
-// const client = require('twilio')(accountSid, authToken);
-
-// const sendSMS = () => {
-//   const message = 'Your message here hi';
-//   const receiver = '+917094120148'; // Indian phone number
-//   const sender = '+916374449159';
-  
-//   client.messages
-//     .create({
-//       body: message,
-//       from: sender,
-//       to: receiver
-//     })
-//     .then(message => console.log(`Message sent: ${message.sid}`))
-//     .catch(err => console.error(err));
-// }
-
-
-
-
-    //   });
 
     </script>
 
@@ -522,65 +340,27 @@ button.addEventListener("click", function(e) {
 
 
 let mail = JSON.parse(window.localStorage.getItem("userinfo"));
-  function sendEmail() {
 
-
+                                
+  function sendEmail(e) {
     Email.send({
-  SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4 ",
+      SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4 ",
       // SecureToken: " e40f7e03-58d8-46ba-a840-6cc1c075b493",
       Host: "smtp.elasticemail.com",
-        Username: "jayaprakash.jaisankar@fssa.freshworks.com",
-        Password: "7354083B73F02038F5B16EAF3DB2855682FD",
-      To: mail,
-      // To: "jayaprakashj2004930@gmail.com",
+      Username: "jayaprakash.jaisankar@fssa.freshworks.com",
+      Password: "7354083B73F02038F5B16EAF3DB2855682FD",
+      To: "www.freshbye@gmail.com", 
       From:"jayaprakash.jaisankar@fssa.freshworks.com",
       Subject: "Test Email",
       Body: "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>",
-      // Attachments: [{
-      //   name : "smtp.png",
-      //   path : "https://…/smtp.png"
-      // }]
-     
-      // Attachments: [{
-      //   name : "smtp.png",
-      //   path : "https://jayaprakash.jaisankar.com/images/smtp.png"
-      // }]
-
-      // Attachments: [{
-      //   name : "smtp.png",
-      //   path : "https://deploy-preview-1--easy-registration.netlify.app/images/smtp.png"
-      // }]
-
+   
     }).then(
       message => alert(message)
     );
   }
 </script>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/twilio@3.60.0/dist/twilio.min.js"></script>
-<script>
-  const accountSid = 'YOUR_ACCOUNT_SID';
-  const authToken = 'YOUR_AUTH_TOKEN';
-  const client = Twilio(accountSid, authToken);
 
-  const sendSMS = () => {
-    const message = 'Your message here';
-    const receiver = '+917094120148'; // Indian phone number
-    const sender = 'YOUR_TWILIO_PHONE_NUMBER';
-
-    client.messages
-      .create({
-        body: message,
-        from: sender,
-        to: receiver
-      })
-      .then(message => console.log(`Message sent: ${message.sid}`))
-      .catch(err => console.error(err));
-  }
-
-  const button = document.querySelector('acbt');
-  button.addEventListener('click', sendSMS);
-</script> -->
 
 
   </body>
