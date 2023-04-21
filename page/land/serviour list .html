@@ -210,10 +210,11 @@ body{
         </p>
       </div>
     </div>
-    
-    
+    <!-- <a href="/page/land/servivor user list.html" -->
+
     <script>
       let call = JSON.parse(window.localStorage.getItem("list"));
+      // let card = JSON.parse(window.localStorage.getItem("data"));
       for (let i = 0; i < call.length; i++) {
         // let redirect = document.createElement("a");
         // redirect.setAttribute("href",);
@@ -283,8 +284,8 @@ body{
 
         let go;
         go = document.createElement("a");
-
-        go.setAttribute("href", "./serviour.html");
+        // go.setAttribute("href", "./page/land/servivor user list.html?tname=" + call[i]["tname"]);        
+        go.setAttribute("href", "./servivoruserlist.html?tname=" + call[i]["tname"]);        
         button.append(go);
 
 

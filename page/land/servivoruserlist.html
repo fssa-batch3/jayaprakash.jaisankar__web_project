@@ -230,7 +230,17 @@ margin: 0px;
 //       });
 // console.log(ject)
 
-      for (let i = 0; i < work.length; i++) {
+
+      const url = window.location.search;
+      console.log(url);
+      const urlParams = new URLSearchParams(url);
+      console.log(urlParams);
+      const username = urlParams.get("tname");
+      console.log(username);
+      const page = work.filter((data) => data["tname"] === username);
+      console.log(page);
+
+      for (let i = 0; i < page.length; i++) {
         let two;
         two = document.createElement("div");
         two.setAttribute("class", "pla");
@@ -259,7 +269,7 @@ margin: 0px;
         let input;
         input = document.createElement("input");
         input.setAttribute("id", "lname");
-        input.setAttribute("value", work[i]["name"]);
+        input.setAttribute("value", page[i]["name"]);
         div1.append(input);
         // console.log(input);
 
@@ -276,7 +286,7 @@ margin: 0px;
         let input1;
         input1 = document.createElement("input");
         input1.setAttribute("id", "Servour");
-        input1.setAttribute("value", work[i]["num"]);
+        input1.setAttribute("value", page[i]["num"]);
         div2.append(input1);
         // console.log(input1);
 
@@ -294,7 +304,7 @@ margin: 0px;
         let input2;
         input2 = document.createElement("input");
         input2.setAttribute("id", "vnum");
-        input2.setAttribute("value", work[i]["vname"]);
+        input2.setAttribute("value", page[i]["vname"]);
         div3.append(input2);
 
         let div5;
@@ -311,7 +321,7 @@ margin: 0px;
         let input3;
         input3 = document.createElement("input");
         input3.setAttribute("id", "tnum");
-        input3.setAttribute("value", work[i]["tname"]);
+        input3.setAttribute("value", page[i]["tname"]);
         div5.append(input3);
 
    
@@ -322,13 +332,23 @@ margin: 0px;
         // accept.setAttribute("href", "./edit.html");
         form.append(accept);
 
-        let acbt;
-        acbt = document.createElement("button");
-        acbt.setAttribute("class", "link");
-        // acbt.setAttribute("id", work[i]["uuid"]);
-        acbt.setAttribute("onclick", "clear");
-        acbt.innerText = "accept";
-        accept.append(acbt);
+        // let acbt;
+        // acbt = document.createElement("button");
+        // acbt.setAttribute("class", "link");
+        // // acbt.setAttribute("id", work[i]["uuid"]);
+        // acbt.setAttribute("onclick", "clear");
+        // acbt.innerText = "accept";
+        // accept.append(acbt);
+
+            
+      let acbt = document.createElement("button");
+  acbt.setAttribute("class", "link");
+  acbt.setAttribute("type", "button");
+  acbt.setAttribute("id", "Send Email");
+  acbt.setAttribute("onclick", "sendEmail()");
+ // acbt.setAttribute("href","./servivoruserlist.html");
+  acbt.innerText = "Accept";
+  form.append(acbt);
         
 
         document.querySelector("div.whole").append(div_card);
@@ -344,5 +364,32 @@ margin: 0px;
 
    
     </script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+
+
+let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+
+                                
+  function sendEmail(e) {
+    Email.send({
+      SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4 ",
+      // SecureToken: " e40f7e03-58d8-46ba-a840-6cc1c075b493",
+      Host: "smtp.elasticemail.com",
+      Username: "jayaprakash.jaisankar@fssa.freshworks.com",
+      Password: "7354083B73F02038F5B16EAF3DB2855682FD",
+      To: "jayaprakashj2004930@gmail.com", 
+      From:"jayaprakash.jaisankar@fssa.freshworks.com",
+      Subject: "Test Email",
+      Body: "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>",
+   
+    }).then(
+      message => alert(message)
+    );
+  }
+</script>
+
   </body>
 </html>

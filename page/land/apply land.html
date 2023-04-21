@@ -46,7 +46,7 @@
   <body>
     <div class="tot">
     <div class="whole">
-    <form id="form">
+    <form id="form" action="./list.html">
     <div class="change">
       <label>Name</label>&emsp;
       <input id="name" type="text" />
@@ -78,7 +78,7 @@
     </div class="change">
     <div class="sub">
       <button onclick="edit" id="edit" class="btn">submit</button>
-    <button onclick="submit" id="submit" class="btn">submit</button>
+    <!-- <button onclick="submit" id="submit" class="btn">submit</button> -->
     </div>
    
     </form>
@@ -165,6 +165,7 @@ console.log(ject)
         console.log(obj);
 
 
+    
         let arr = [ ];
         arr.push(obj);
 
@@ -215,20 +216,36 @@ console.log(ject)
 
           // window.localStorage.setItem("data", JSON.stringify(arr));
           //   console.log(window.localStorage.getItem("data"));
+
+
+          let validation = JSON.parse(window.localStorage.getItem("data"));
+        let is = false;
+        for (let i = 0; i < validation.length; i++) {
+          if (num === validation[i].num) {
+            //alert("Email is already in use");
+            is = true;
+            break;
+          }
+        }
+        if (is === true) {
+          alert("already  email is exist");
+        } else {
+
           if (window.localStorage.getItem("data") === null) {
             window.localStorage.setItem("data", JSON.stringify(arr));
             console.log(window.localStorage.getItem("data"));
-            // window.location.href = "./list.html"
+             window.location.href = "./list.html"
           } else {
             let local = window.localStorage.getItem("data");
             let json = JSON.parse(local);
             json.push(obj);
             window.localStorage.setItem("data", JSON.stringify(json));
           }
-          // window.location.href = "./list.html";
+           window.location.href = "./list.html";
 
-        // }   
+         }   
         });
+      
         //  }
         // let num = obj["num"];
         // if (number === num) {
