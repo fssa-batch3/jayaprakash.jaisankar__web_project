@@ -195,7 +195,7 @@
         let validation = JSON.parse(window.localStorage.getItem("user"));
         let is = false;
         for (let i = 0; i < validation.length; i++) {
-          if (email === validation[i].email) {
+          if (email === validation[i]["email"]) {
             //alert("Email is already in use");
             is = true;
             break;
