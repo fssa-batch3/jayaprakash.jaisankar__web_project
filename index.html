@@ -287,15 +287,15 @@ let mail = JSON.parse(window.localStorage.getItem("userinfo"));
       let data = JSON.parse(window.localStorage.getItem("user"));
       console.log(data);
 
-      let get = data.find(function (obj) {
-        let checkmail = obj["email"];
-        if (mail === checkmail) {
-          return true;
-        }
-      });
-      console.log(get);
-     let email = get["email"]
-     console.log(email)
+    //   let get = data.find(function (obj) {
+    //     let checkmail = obj["email"];
+    //     if (mail === checkmail) {
+    //       return true;
+    //     }
+    //   });
+    //   console.log(get);
+    //  let email = get["email"]
+    //  console.log(email)
 
 let info = document.getElementById("delete");
       info.addEventListener("click", function (event) {
