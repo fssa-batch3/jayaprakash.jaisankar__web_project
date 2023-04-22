@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    button,
+    #otp-display {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+
+    #otp-display {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+  </style>
+  <body>
+    <button id="otp-button">Generate OTP</button>
+    <div id="otp-display"></div>
+    <script>
+      function generateOTP() {
+        let digits = "0123456789";
+        let OTP = "";
+        let n = 6;
+        for (let i = 0; i < n; i++) {
+          OTP += digits[Math.floor(Math.random() * 10)];
+        }
+        return OTP;
+      }
+
+      function generateAndDisplayOTP() {
+        const otpDisplay = document.getElementById("otp-display");
+        otpDisplay.textContent = "OTP of 6 digits: " + generateOTP();
+      }
+
+      const otpButton = document.getElementById("otp-button");
+      otpButton.addEventListener("click", generateAndDisplayOTP);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@twilio/sdk@3.0.0-beta27/dist/twilio.min.js"></script>
+    <script>
+      function generateAndDisplayOTP() {
+        const otpDisplay = document.getElementById("otp-display");
+        const otp = generateOTP();
+        otpDisplay.textContent = "OTP of 6 digits: " + otp;
+
+        const accountSid = "ACccb18c87e56589591c11f43aab859ca7";
+        const authToken = "170ee83cc8cfb6397a81a903ea5a98a5";
+
+        // const accountSid = "YOUR_ACCOUNT_SID";
+        // const authToken = "YOUR_AUTH_TOKEN";
+        const client = require("twilio")(accountSid, authToken);
+
+        const message = "Your OTP is " + otp;
+        const phoneNumber = +918122793940;
+
+        client.messages
+          .create({
+            body: message,
+            from: +917094120148,
+            to: phoneNumber,
+          })
+          .then((message) => console.log(message.sid))
+          .catch((error) => console.log(error));
+      }
+    </script>
+  </body>
+</html>

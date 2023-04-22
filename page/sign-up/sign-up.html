@@ -192,17 +192,33 @@
         if (password != confirmpassword) {
           alert("Password Doesn't Match");
         }
+
         let validation = JSON.parse(window.localStorage.getItem("user"));
-        let is = false;
-        for (let i = 0; i < validation.length; i++) {
-          if (email === validation[i]["email"]) {
-            //alert("Email is already in use");
-            is = true;
-            break;
+
+        if (validation !== null) {
+          let is = false;
+          for (let i = 0; i < validation.length; i++) {
+            if (email === validation[i]["email"]) {
+              //alert("Email is already in use");
+              is = true;
+              break;
+            }
           }
-        }
-        if (is === true) {
-          alert("already  email is exist");
+
+          if (is === true) {
+            alert("already  email is exist");
+          } else {
+            if (window.localStorage.getItem("user") === null) {
+              window.localStorage.setItem("user", JSON.stringify(arr));
+              console.log(window.localStorage.getItem("user"));
+            } else {
+              let local = window.localStorage.getItem("user");
+              let json = JSON.parse(local);
+              json.push(userdata);
+              window.localStorage.setItem("user", JSON.stringify(json));
+            }
+            window.location.href = "./login.html";
+          }
         } else {
           if (window.localStorage.getItem("user") === null) {
             window.localStorage.setItem("user", JSON.stringify(arr));
