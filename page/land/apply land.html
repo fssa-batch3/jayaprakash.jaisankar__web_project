@@ -108,6 +108,7 @@ let form = document.getElementById("form");
 
 
 let form_details = JSON.parse(localStorage.getItem("list"))
+console.log(form_details)
 
 // let dat= JSON.parse(localStorage.getItem("data"))
 // let rid = JSON.parse(localStorage.getItem("rid"));
@@ -218,20 +219,21 @@ let form_details = JSON.parse(localStorage.getItem("list"))
           //   console.log(window.localStorage.getItem("data"));
 
 
-          let validation = JSON.parse(window.localStorage.getItem("data"));
-          if(validation !== null){
-        let is = false;
-        for (let i = 0; i < validation.length; i++) {
-          if (num === validation[i]["num"]) {
-            //alert("Email is already in use");
-            is = true;
-            break;
-          }
-        }
-      }
-        if (is === true) {
-          alert("already  land number is exist");
-        } else {
+        //  let validation = JSON.parse(window.localStorage.getItem("data"));
+         
+       
+      //   for (let i = 0; i < form_details.length; i++) {
+      //     let is = false;
+      //     if (num === form_details[i]["num"]) {
+      //       //alert("Email is already in use");
+      //       is = true;
+      //       break;
+      //     }
+        
+      // }
+      //   if (is == true) {
+      //     alert("already  land number is exist");
+      //   } else {
 
           if (window.localStorage.getItem("data") === null) {
             window.localStorage.setItem("data", JSON.stringify(arr));
@@ -245,7 +247,7 @@ let form_details = JSON.parse(localStorage.getItem("list"))
           }
            window.location.href = "./list.html";
 
-         }   
+          
         });
       
         //  }

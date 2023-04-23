@@ -85,34 +85,34 @@
 
         card.push(data);
 
-        let validation = JSON.parse(window.localStorage.getItem("list"));
+        // let validation = JSON.parse(window.localStorage.getItem("list"));
 
-        if (validation !== null) {
-          let is = false;
-          for (let i = 0; i < validation.length; i++) {
-            if (tname === validation[i]["tname"]) {
-              //alert("Email is already in use");
-              is = true;
-              break;
-            }
-          }
-        }
+        // if (validation !== null) {
+        //   let is = false;
+        //   for (let i = 0; i < validation.length; i++) {
+        //     if (tname === validation[i]["tname"]) {
+        //       //alert("Email is already in use");
+        //       is = true;
+        //       break;
+        //     }
+        //   }
+        // }
 
-        if (is == true) {
-          alert("taluk name is in use");
+        // if (is == true) {
+        //   alert("taluk name is in use");
+        // } else {
+        if (window.localStorage.getItem("list") === null) {
+          window.localStorage.setItem("list", JSON.stringify(card));
+          console.log(window.localStorage.getItem("list"));
+          // window.location.href = "./serviour list .html";
         } else {
-          if (window.localStorage.getItem("list") === null) {
-            window.localStorage.setItem("list", JSON.stringify(card));
-            console.log(window.localStorage.getItem("list"));
-            // window.location.href = "./serviour list .html";
-          } else {
-            let local = window.localStorage.getItem("list");
-            let json = JSON.parse(local);
-            json.push(data);
-            window.localStorage.setItem("list", JSON.stringify(json));
-            // window.location.href = "./serviour list.html";
-          }
+          let local = window.localStorage.getItem("list");
+          let json = JSON.parse(local);
+          json.push(data);
+          window.localStorage.setItem("list", JSON.stringify(json));
+          // window.location.href = "./serviour list.html";
         }
+        // }
       });
 
       // let list = localStorage.setItem("list", JSON.stringify(card));
