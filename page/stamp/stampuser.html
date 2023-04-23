@@ -149,6 +149,21 @@
         div_cc.setAttribute("class", "cc");
         div_second.append(div_cc);
 
+        let direct;
+        direct = document.createElement("a");
+        direct.setAttribute("class", "link");
+        direct.setAttribute("href", "./edit.html");
+
+        div_cc.append(direct);
+
+        let Buy;
+        Buy = document.createElement("button");
+        Buy.setAttribute("class", "link");
+
+        //   Buy.setAttribute("href", "./Buy.html");
+        Buy.innerText = "Buy";
+        direct.append(Buy);
+
         document.querySelector("div.whole").append(div_card);
       }
     </script>

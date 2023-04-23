@@ -109,18 +109,18 @@ let form = document.getElementById("form");
 
 let form_details = JSON.parse(localStorage.getItem("list"))
 
-let dat= JSON.parse(localStorage.getItem("data"))
-let rid = JSON.parse(localStorage.getItem("rid"));
+// let dat= JSON.parse(localStorage.getItem("data"))
+// let rid = JSON.parse(localStorage.getItem("rid"));
 
 
-let ject = form_details.find(function (obj) {
-        let checkid = obj["uuid"];
-        if (rid == checkid) {
-          return true;
-        }
+// let ject = form_details.find(function (obj) {
+//         let checkid = obj["uuid"];
+//         if (rid == checkid) {
+//           return true;
+//         }
        
-      });
-console.log(ject)
+//       });
+// console.log(ject)
 
 // let index =form_details.indexOf(ject)
 
@@ -219,6 +219,7 @@ console.log(ject)
 
 
           let validation = JSON.parse(window.localStorage.getItem("data"));
+          if(validation !== null){
         let is = false;
         for (let i = 0; i < validation.length; i++) {
           if (num === validation[i].num) {
@@ -227,8 +228,9 @@ console.log(ject)
             break;
           }
         }
+      }
         if (is === true) {
-          alert("already  email is exist");
+          alert("already  land number is exist");
         } else {
 
           if (window.localStorage.getItem("data") === null) {
