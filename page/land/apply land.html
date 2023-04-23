@@ -222,7 +222,7 @@ let form_details = JSON.parse(localStorage.getItem("list"))
           if(validation !== null){
         let is = false;
         for (let i = 0; i < validation.length; i++) {
-          if (num === validation[i].num) {
+          if (num === validation[i]["num"]) {
             //alert("Email is already in use");
             is = true;
             break;
