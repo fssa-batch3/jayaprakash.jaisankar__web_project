@@ -31,20 +31,6 @@
         padding: 10px;
       }
 
-      .link {
-        margin-left: 100px;
-        margin-top: 40px;
-        width: 70px;
-        height: 30px;
-        border-radius: 10px;
-        border: none;
-        
-        background-color: rgb(48, 133, 231);
-      }
-      .link:hover {
-        background-color: rgb(63, 104, 241);
-      }
-
       .head {
  
 
@@ -184,9 +170,7 @@ margin: 0px;
 
 
     <div class="tot">
-      <div class="whole">
-        <!-- <input type="button" value="Send Email" onclick="sendEmail()"> -->
-      </div>
+      <div class="whole"></div>
     </div>
 
     
@@ -223,12 +207,28 @@ margin: 0px;
       </div>
     </div>
     <script>
-      
+      //   let div_card;
+      //   div_card = document.createElement("a");
+      //   div_card.setAttribute("id", "card");
+      //   div_card.setAttribute("href", "detail.html?name=" + card[i]["name"]);
+
       let work = JSON.parse(window.localStorage.getItem("data"));
       console.log(work);
 
 
+//       let form_details = JSON.parse(localStorage.getItem("list"))
 
+// let dat= JSON.parse(localStorage.getItem("data"))
+// let rid = JSON.parse(localStorage.getItem("uuid"));
+
+//       let ject = form_details.find(function (obj) {
+//         let checkid = obj["uuid"];
+//         if (rid == checkid) {
+//           return true;
+//         }
+       
+//       });
+// console.log(ject)
 
       for (let i = 0; i < work.length; i++) {
         let two;
@@ -243,7 +243,6 @@ margin: 0px;
         let form;
         form = document.createElement("form");
         form.setAttribute("class", "form");
-        form.setAttribute("action", "");
         div_card.append(form);
 
         let div1;
@@ -315,73 +314,45 @@ margin: 0px;
         input3.setAttribute("value", work[i]["tname"]);
         div5.append(input3);
 
+    //     let direct;
+    //     direct = document.createElement("a");
+    //     direct.setAttribute("class", "link");
+    //    direct.setAttribute("href", "./edit.html");
 
-      
+    //     div_card.append(direct);
 
-      
-      let acbt = document.createElement("button");
-  acbt.setAttribute("class", "link");
-  acbt.setAttribute("type", "button");
-  acbt.setAttribute("id", "Send Email");
-  acbt.setAttribute("onclick", "sendEmail()");
- // acbt.setAttribute("href","./servivoruserlist.html");
-  acbt.innerText = "Accept";
-  form.append(acbt);
-       
+    //     let edit;
+    //     edit = document.createElement("button");
+    //     edit.setAttribute("class", "link");
+    //     edit.setAttribute("id", work[i]["uuid"]);
+    //     edit.setAttribute("onclick", "edit(this.id)");
+    //     // edit.setAttribute('disabled', '');
+
+    //     edit.innerText = "edit";
+    //     direct.append(edit);
+
+        
+        // let accept;
+        // accept = document.createElement("a");
+        // accept.setAttribute("class", "link");
+        // accept.setAttribute("id", "delete");
+        // // accept.setAttribute("href", "./edit.html");
+        // form.append(accept);
+
+        // let acbt;
+        // acbt = document.createElement("button");
+        // acbt.setAttribute("class", "link");
+        // // acbt.setAttribute("id", work[i]["uuid"]);
+        // acbt.setAttribute("onclick", "clear");
+        // acbt.innerText = "accept";
+        // accept.append(acbt);
+        
 
         document.querySelector("div.whole").append(div_card);
       }
-   
+      
 
 
     </script>
-
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-<script>
-
-
-let mail = JSON.parse(window.localStorage.getItem("userinfo"));
-console.log(mail)
-                                
-  function sendEmail(e) {
-    Email.send({
-      SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4 ",
-      // SecureToken: " e40f7e03-58d8-46ba-a840-6cc1c075b493",
-      Host: "smtp.elasticemail.com",
-      Username: "jayaprakash.jaisankar@fssa.freshworks.com",
-      Password: "7354083B73F02038F5B16EAF3DB2855682FD",
-      To: mail, 
-      From:"jayaprakash.jaisankar@fssa.freshworks.com",
-      Subject: "Test Email",
-      Body: "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>",
-   
-    }).then(
-      message => alert(message)
-      
-    );
-    
-  }
-
-//   /* SmtpJS.com - v3.0.0 */
-// var Email = { send: function (a)
-//  { return new Promise(function (n, e) 
-//  { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; 
-//  var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t,
-//   function (e) { n(e) }) }) }, 
-//   ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e);
-//    a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"),
-//     a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) },
-//      ajax: function (e, n) { var t = Email.createCORSRequest("GET", e);
-//       t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, 
-//       createCORSRequest: function (e, n) { var t = new XMLHttpRequest;
-//        return "withCredentials" in t ?
-//         t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? 
-//          (t = new XDomainRequest).open(e, n) : t = null, t } };
-</script>
-
-
-
-
   </body>
 </html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+            display: block;
+        justify-content: center;
+        text-align: center;
+      }
+      .head {
+        margin: auto;
+        /* padding-top: 10px; */
+
+        background-color: rgb(181, 222, 234);
+      }
+      .logo {
+        display: flex;
+        /* margin-top: -100px; */
+        /* margin-left: 100px;
+    margin-bottom: 30px; */
+      }
+
+      .top2 {
+        display: flex;
+      }
+
+      .part1 {
+        padding-left: 100px;
+      }
+
+      .nav {
+        margin-top: 40px;
+        margin-left: 600px;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 18px;
+        justify-content: space-between;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 8px 10px;
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      #btn {
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(51, 159, 227);
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  margin-left: 400px;
+  margin-bottom: 20px;
+}
+#btn:hover {
+  background-color: rgb(0, 118, 191);
+}
+
+      .footer {
+        /* margin-top: 500px; */
+        padding: 100px;
+        background-color: rgb(129, 209, 235);
+        display: flex;
+        column-gap: 150px;
+      }
+      .tot {
+        margin: 20px 200px 20px 200px;
+      } /* @media print {
+        margin: 0px;
+        padding: 0px;
+      }
+      .top {
+   
+
+        .no-print {
+          display: none;
+        }
+    } */
+
+      @media print {
+        .head,
+        .footer {
+          display: none;
+        }
+        #btn{
+          display: none;
+        }
+        .tot {
+          font-size: 12pt;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="head">
+
+        <!-- <div class="part"> -->
+    
+        <div class="top"> For any complaint - Call -7094120148 Tamilnadu , India</div>
+    
+    
+        <div class="top2">
+          <!-- Below code for logo placement  -->
+          <div class="part1">
+            <img class="logo" src="../electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
+              height="100px" />
+          </div>
+          
+          <div class="nav">
+    
+            <div class="dropdown">
+              <span>Home</span>
+              <div class="dropdown-content">
+               <a href="./index.html"> <p>Home</p>
+    
+              </div>
+            </div>
+    
+    
+                <div class="dropdown">
+                  <a href="./page/electricity/about.html">     <span>About us</span></a>
+             
+            </div>
+    
+    
+            <div class="dropdown">
+              <span>sign_in</span>
+              <div class="dropdown-content">
+              <a href="./page/sign-up/sign-up.html"> <p>new_user</p></a>
+               <a href="./page/sign-up/profile.html"> <p>Remove</p></a>
+              </div>
+            </div>
+    
+            <!-- <div class="dropdown">
+              <span>status</span>
+              <div class="dropdown-content">
+                <p>application</p>
+                <p>modify</p>
+                <p>delete</p>
+              </div>
+            </div> -->
+    
+            <!-- <div class="dropdown">
+              <span>download</span>
+              <div class="dropdown-content">
+                <p>forms</p>
+              </div>
+            </div> -->
+            
+            <div class="dropdown">
+              <a href="./page/contact/contact.html"><span>Message</span></a>
+            </div>
+    
+            <div class="dropdown">
+              <span>feedback</span>
+            </div>
+    
+            <div class="dropdown">
+              <span id="logout">logout</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="tot">
+      <h1>Farmers Welfare Schemes</h1>
+      <h3>
+        Government of India is according high priority for welfare of the
+        farmers and is implementing several farmers’ welfare schemes to
+        revitalize agriculture sector and to improve their economic conditions.
+        The Government has rolled out a number of new initiatives like Soil
+        Health Card Scheme, Neem Coated Urea, Paramparagat Krishi Vikas Yojana
+        (PKVY), Pradhan Mantri Krishi Sinchayee Yojana (PMKSY), National
+        Agriculture Market (e-NAM), Pradhan Mantri Fasal Bima Yojana (PMFBY) and
+        Interest Subvention Scheme. These schemes are for the benefit of all
+        farmers. The details of the schemes are as below:
+      </h3>
+
+      <h2>(i) Soil Health Card Scheme:</h2>
+
+      <p>
+        Launched in 2015, the scheme has been introduced to assist State
+        Governments to issue Soil Health Cards to all farmers in the country.
+        The Soil Health Cards provide information to farmers on nutrient status
+        of their soil alongwith recommendation on appropriate dosage of
+        nutrients to be applied for improving soil health and its fertility.
+      </p>
+
+      <p>
+        As on 11.7.2017, against target of 253 lakh soil samples, all 253 lakh
+        soil samples have been collected and 245 lakh (97%) samples have been
+        tested. Against target of 12 crore Soil Health Cards, so far 9 crore
+        (76%) cards have been distributed to farmers.
+      </p>
+
+      <h2>(ii) Neem Coated Urea (NCU):</h2>
+
+      <p>
+        Scheme being promoted to regulate use of urea, enhance availability of
+        nitrogen to the crop and reduce cost of fertilizer application. NCU
+        slows down the release of fertilizer and makes it available to the crop
+        in an effective manner. The entire quantity of domestically manufactured
+        and imported urea is now neem coated. The reports from field are
+        positive. The expected saving is 10% of urea consumption, thereby
+        resulting in reduced cost of cultivation and improved soil health
+        management.
+      </p>
+
+      <h2>(iii) Paramparagat Krishi Vikas Yojana (PKVY):</h2>
+
+      <p>
+        Paramparagat Krishi Vikas Yojana (PKVY) is being implemented with a view
+        to promote organic farming in the country. This will improve soil health
+        and organic matter content and increase net income of the farmer so as
+        to realise premium prices. Under this scheme, an area of 5 lakh acre is
+        targeted to be covered though 10,000 clusters of 50 acre each, from the
+        year 2015-16 to 2017-18.
+      </p>
+      <p></p>
+
+      <p>
+        So far 7208 clusters have been formed and remaining clusters would be
+        formed during 2017-18.
+      </p>
+
+      <h2>(iv) Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) :</h2>
+
+      <p>
+        Launched on 1st July, 2015 with the motto of ‘Har Khet Ko Paani’, the
+        Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) is being implemented to
+        expand cultivated area with assured irrigation, reduce wastage of water
+        and improve water use efficiency. PMKSY not only focuses on creating
+        sources for assured irrigation, but also creating protective irrigation
+        by harnessing rain water at micro level through ‘Jal Sanchay’ and ‘Jal
+        Sinchan’. Micro irrigation is also incentivized through subsidy to
+        ensure ‘Per drop-More crop’. The target under micro-irrigation for the
+        year 2016-17 was 8 lakh ha. against which 8.39 lakh ha have been
+        covered.
+      </p>
+
+      <h2>(v) National Agriculture Market (e-NAM):</h2>
+
+      <p>
+        The National Agriculture Market scheme (e-NAM) envisages initiation of
+        e-marketing platform at national level and to support creation of
+        infrastructure to enable e-marketing in 585 regulated markets across the
+        country by March 2018. This innovative market process is revolutionizing
+        agri markets by ensuring better price discovery, bringing in
+        transparency and competition to enable farmers to get improved
+        remuneration for their produce moving towards ‘One Nation One Market’. A
+        target of integrating 400 markets to e-NAM had been set for March, 2017
+        against which 455 markets in 13 States have been on boarded as on
+        30.6.2017. As on 2.7.2017, 47.95 lakh farmers and 91,500 traders have
+        registered on e-NAM portal.
+      </p>
+
+      <h2>
+        (vi) Pradhan Mantri Fasal Bima Yojana (PMFBY)/ Restructured Weather
+        Based Crop Insurance Scheme (RWBCIS):
+      </h2>
+
+      <p>
+        Pradhan Mantri Fasal Bima Yojana (PMFBY) & Restructured Weather Based
+        Crop Insurance Scheme (RWBCIS) were launched from Kharif 2016 to provide
+        comprehensive crop insurance coverage from pre-sowing to post harvest
+        losses against non-preventable natural risks. These schemes are only
+        risk mitigation tools available to farmers at extremely low premium
+        rates payable by farmers at 2% for Kharif crops, 1.5% for Rabi Crop and
+        5% for annual commercial/horticultural crops. The balance of actuarial
+        premium is shared by the Central and State Governments on 50 : 50 basis.
+        The schemes are voluntary for States and available in areas and crops
+        that are notified by the State Governments. Further, the schemes are
+        compulsory for loanee farmers and voluntary for non-loanee farmers.
+      </p>
+
+      <p>
+        During Kharif 2016 season, a total of 23 States implemented both PMFBY
+        (21) and RWBCS (12) and during Rabi 2016-17, 24 States and 3 Union
+        Territories implemented PMFBY (25) and RWBCIS (9). Overall coverage of
+        both the schemes is 401.52 lakh farmers and 385 lakh ha. area insured
+        for a sum of Rs. 133106 crore in Kharif 2016 and 172.67 lakh farmers and
+        195 lakh ha. area insured for a sum of Rs. 71696 crore during Rabi
+        2016-17 season.
+      </p>
+
+      <h2>(vii) Interest Subvention Scheme (ISS):</h2>
+
+      <p>
+        The Government provides interest subvention of 3% on short-term crop
+        loans up to Rs.3.00 lakh. Presently, loan is available to farmers at an
+        interest rate of 7% per annum, which gets reduced to 4% on prompt
+        repayment. Further, under Interest Subvention Scheme 2016-17, in order
+        to provide relief to the farmers on occurrence of natural calamities,
+        the interest subvention of 2% shall continue to be available to banks
+        for the first year on the restructured amount. In order to discourage
+        distress sale by farmers and to encourage them to store their produce in
+        warehouses against negotiable warehouse receipts, the benefit of
+        interest subvention will be available to small and marginal farmers
+        having Kisan Credit Card for a further period of upto six months post
+        harvest on the same rate as available to crop loan.
+      </p>
+
+      <p>
+        Agriculture is a State subject and the State Governments are primarily
+        responsible for the growth and development of agriculture sector in
+        their respective States. The Government supplements the efforts of
+        States through appropriate policy measures and budgetary support.
+        Presently the approach of the Government of India has shifted from
+        production centric to income centric platform in the agriculture sector
+        and the above schemes are being implemented for making farming viable.
+      </p>
+
+      <p>
+        This information was given by the Minister of State for Agriculture &
+        Farmers Welfare, Shri Parshottam Rupala, in reply to a question in Lok
+        Sabha today.
+      </p>
+
+      <button type="submit" onclick="printPage()" id="btn">Download</button>
+      <!-- <a href="/page/insurance/add.html"> <button type="submit" >Add</button></a> -->
+    </div>
+
+    <div class="footer">
+      <div class="part">
+        <h1>useful links</h1>
+
+        <p>Electricity</p>
+        <p>Online payment</p>
+        <p>Complain</p>
+      </div>
+      <div class="part">
+        <h1>Privacy policy</h1>
+
+        <p>Website Policies</p>
+        <p>Cyber resilience</p>
+      </div>
+
+      <div class="part">
+        <h1>Contact as</h1>
+
+        <p>jp@gmail.com</p>
+        <p>Phone:+917094120148</p>
+      </div>
+      <div class="part">
+        <h1>Disclaimer</h1>
+        <p>
+          While care has been taken to ensure the accuracy of information,
+          TANGEDCO is not responsible for any damage or loss caused due to
+          action taken on the basis of this information. This website is best
+          viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+          resolution
+        </p>
+      </div>
+    </div>
+    <script>
+      function printPage() {
+        window.print();
+      }
+
+      //   // Wait for the document to finish loading
+      //   window.onload = function () {
+      //     // Get the header and footer elements
+      //     var header = document.getElementById("header");
+      //     var footer = document.getElementById("footer");
+
+      //     // Apply the CSS rule to hide the header and footer on print view
+      //     var style = document.createElement("style");
+      //     style.innerHTML =
+      //       "@media print { #header, #footer { display: none !important; } }";
+      //     document.head.appendChild(style);
+      //   };
+    </script>
+  </body>
+</html>

@@ -78,33 +78,52 @@
               pattern="[0-9]{2}"
               required
             />
-          </div>
+            <!-- <div class="change">
+              <label>User or Admin</label>
+              <input
+                class="input"
+                id="user"
+                type="text"
+                title="User or Admin required"
+                pattern="[A-Za-z]{1,32}"
+                required
+              />
+          </div> -->
           <div class="change">
             <label>Password:</label>
             <input
               class="input"
               type="password"
               id="password"
-              title="password required"
-              pattern="[a-z]{6,12}"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"         
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               required
             />
           </div>
           <div class="change">
-            <label> conformpassword:</label>
+            <label> confirmpassword:</label>
             <input
               class="input"
               type="password"
               id="cpassword"
-              title="password required"
-              pattern="[a-z]{6,12}"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"         
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               required
             />
+          </div>
+<div class="change">
+          <label for="role">Role:</label>
+          <select id="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
           </div>
           <button type="submit" class="btn">submit</button>
         </form>
       </div>
     </div>
+    <script src="node_modules/bcrypt/dist/bcrypt.min.js"></script>
+
     <script>
       // sql
       // let arr = [];
@@ -176,14 +195,17 @@
         const email = document.getElementById("email").value;
         const phnumber = document.getElementById("phnumber").value;
         const age = document.getElementById("age").value;
+        const role = document.getElementById("role").value;
         const password = document.getElementById("password").value;
         const confirmpassword = document.getElementById("cpassword").value;
         let id = self.crypto.randomUUID();
+
         userdata["fname"] = fname;
         userdata["mname"] = mname;
         userdata["Lname"] = Lname;
         userdata["phnumber"] = phnumber;
         userdata["age"] = age;
+        userdata["role"] = role;
         userdata["email"] = email.toLowerCase();
         userdata["password"] = password;
         userdata["cpassword"] = confirmpassword;
@@ -192,6 +214,21 @@
         if (password != confirmpassword) {
           alert("Password Doesn't Match");
         }
+
+        //         const plainTextPassword = 'myPassword123';
+        // const hashedPassword = '...'; // Retrieve the hashed password from your storage (e.g., database)
+
+        // bcrypt.compare(plainTextPassword, hashedPassword, function(err, result) {
+        //   if (err) {
+        //     console.error(err);
+        //   } else {
+        //     if (result) {
+        //       console.log('Passwords match!');
+        //     } else {
+        //       console.log('Passwords do not match!');
+        //     }
+        //   }
+        // });
 
         let validation = JSON.parse(window.localStorage.getItem("user"));
 
@@ -204,7 +241,7 @@
               break;
             }
           }
-
+                         
           if (is === true) {
             alert("already  email is exist");
           } else {
@@ -217,7 +254,13 @@
               json.push(userdata);
               window.localStorage.setItem("user", JSON.stringify(json));
             }
+
+            if("admin" === role){
+              window.location.href = "./loginadmin.html";
+            }
+            else{
             window.location.href = "./login.html";
+            }
           }
         } else {
           if (window.localStorage.getItem("user") === null) {
@@ -259,3 +302,244 @@
     </script>
   </body>
 </html>
+
+<!-- 
+
+<script src="node_modules/bcrypt/dist/bcrypt.min.js"></script>
+
+<script>
+  // sql
+  // let arr = [];
+  // let form = document.getElementById("form");
+  // form.addEventListener("submit", function (event) {
+  //   event.preventDefault();
+  //   let userdata = {};
+  //   const fname = document.getElementById("fname").value;
+  //   const mname = document.getElementById("mname").value;
+  //   const Lname = document.getElementById("Lname").value;
+  //   const email = document.getElementById("email").value;
+  //   const phnumber = document.getElementById("phnumber").value;
+  //   const age = document.getElementById("age").value;
+  //   const password = document.getElementById("password").value;
+  //   const confirmpassword = document.getElementById("cpassword").value;
+  //   let id = self.crypto.randomUUID();
+
+  //   if (password != confirmpassword) {
+  //     alert("Password Doesn't Match");
+  //     return;
+  //   }
+  //   baseURL = "http://localhost:3000";
+  //   fetch(baseURL + "/signup", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       fname,
+  //       mname,
+  //       Lname,
+  //       email,
+  //       phnumber,
+  //       age,
+  //       password,
+  //       confirmpassword,
+  //       id,
+  //     }),
+  //   })
+  //     .then((response) => {
+  //       console.log(response);
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       window.location.href = "./login.html";
+  //     })
+  //     .catch((error) => {
+  //       console.error(
+  //         "There was a problem with the fetch operation:",
+  //         error
+  //       );
+  //     });
+  // });
+
+  //sql
+
+  // let arr = [];
+  // let form = document.getElementById("form");
+  // form.addEventListener("submit", function (event) {
+  //   event.preventDefault();
+  //   let userdata = {};
+  //   const fname = document.getElementById("fname").value;
+  //   const mname = document.getElementById("mname").value;
+  //   const Lname = document.getElementById("Lname").value;
+  //   const email = document.getElementById("email").value;
+  //   const phnumber = document.getElementById("phnumber").value;
+  //   const age = document.getElementById("age").value;
+  //   const role = document.getElementById("role").value;
+  //   const password = document.getElementById("password").value;
+  //   const confirmpassword = document.getElementById("cpassword").value;
+  //   let id = self.crypto.randomUUID();
+
+  //   userdata["fname"] = fname;
+  //   userdata["mname"] = mname;
+  //   userdata["Lname"] = Lname;
+  //   userdata["phnumber"] = phnumber;
+  //   userdata["age"] = age;
+  //   userdata["role"] = role;
+  //   userdata["email"] = email.toLowerCase();
+  //   userdata["password"] = password;
+  //   userdata["cpassword"] = confirmpassword;
+  //   userdata.id = id;
+  //   arr.push(userdata);
+  //   if (password != confirmpassword) {
+  //     alert("Password Doesn't Match");
+  //   }
+
+  let arr = [];
+let form = document.getElementById("form");
+form.addEventListener("submit", function (event) {
+event.preventDefault();
+let userdata = {};
+const fname = document.getElementById("fname").value;
+const mname = document.getElementById("mname").value;
+const Lname = document.getElementById("Lname").value;
+const email = document.getElementById("email").value;
+const phnumber = document.getElementById("phnumber").value;
+const age = document.getElementById("age").value;
+const role = document.getElementById("role").value;
+const password = document.getElementById("password").value;
+const confirmpassword = document.getElementById("cpassword").value;
+let uuid = self.crypto.randomUUID();
+
+userdata["fname"] = fname;
+userdata["mname"] = mname;
+userdata["Lname"] = Lname;
+userdata["phnumber"] = phnumber;
+userdata["age"] = age;
+userdata["role"] = role;
+userdata["email"] = email.toLowerCase();
+userdata.uuid = uuid;
+arr.push(userdata);
+
+if (password != confirmpassword) {
+alert("Password Doesn't Match");
+return;
+}
+
+// Generate a salt for bcrypt
+bcrypt.genSalt(10, function (err, salt) {
+if (err) {
+  console.error('Error generating salt:', err);
+  return;
+}
+
+// Hash the password using the generated salt
+bcrypt.hash(password, salt, function (err, hash) {
+  if (err) {
+    console.error('Error hashing password:', err);
+    return;
+  }
+
+  userdata["password"] = hash; // Store the hashed password in the userdata object
+
+  // Rest of your code...
+
+//       let validation = JSON.parse(window.localStorage.getItem("user"));
+
+//       // ...
+//     });
+//   });
+// });
+
+// Rest of your code...
+
+
+    //         const plainTextPassword = 'myPassword123';
+    // const hashedPassword = '...'; // Retrieve the hashed password from your storage (e.g., database)
+
+    // bcrypt.compare(plainTextPassword, hashedPassword, function(err, result) {
+    //   if (err) {
+    //     console.error(err);
+    //   } else {
+    //     if (result) {
+    //       console.log('Passwords match!');
+    //     } else {
+    //       console.log('Passwords do not match!');
+    //     }
+    //   }
+    // });
+
+    let validation = JSON.parse(window.localStorage.getItem("user"));
+
+    if (validation !== null) {
+      let is = false;
+      for (let i = 0; i < validation.length; i++) {
+        if (email === validation[i]["email"]) {
+          //alert("Email is already in use");
+          is = true;
+          break;
+        }
+      }
+                     
+      if (is === true) {
+        alert("already  email is exist");
+      } else {
+        if (window.localStorage.getItem("user") === null) {
+          window.localStorage.setItem("user", JSON.stringify(arr));
+          console.log(window.localStorage.getItem("user"));
+        } else {
+          let local = window.localStorage.getItem("user");
+          let json = JSON.parse(local);
+          json.push(userdata);
+          window.localStorage.setItem("user", JSON.stringify(json));
+        }
+
+        if("admin" === role){
+          window.location.href = "./loginadmin.html";
+        }
+        else{
+        window.location.href = "./login.html";
+        }
+      }
+    } else {
+      if (window.localStorage.getItem("user") === null) {
+        window.localStorage.setItem("user", JSON.stringify(arr));
+        console.log(window.localStorage.getItem("user"));
+      } else {
+        let local = window.localStorage.getItem("user");
+        let json = JSON.parse(local);
+        json.push(userdata);
+        window.localStorage.setItem("user", JSON.stringify(json));
+      }
+      window.location.href = "./login.html";
+    }
+  });
+})
+})
+  // let validation = JSON.parse(window.localStorage.getItem("user"));
+  // let is = false;
+  // // for (let i = 0; i < validation.length; i++) {
+  // //   if (email === validation[i].email) {
+  // //     // alert("Email is already in use");
+  // //     is = true;
+  // //     break;
+  // //   }
+  // // }
+  // if (is === true) {
+  //   alert("already  email is exist");
+  // } else {
+  //   if (window.localStorage.getItem("user") === null) {
+  //     window.localStorage.setItem("user", JSON.stringify(arr));
+  //     console.log(window.localStorage.getItem("user"));
+  //   } else {
+  //     let local = window.localStorage.getItem("user");
+  //     let json = JSON.parse(local);
+  //     json.push(userdata);
+  //     window.localStorage.setItem("user", JSON.stringify(json));
+  //   }
+  //   window.location.href = "./login.html";
+  // }
+</script> -->

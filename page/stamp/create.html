@@ -72,6 +72,10 @@
           <input id="price" type="number" />
         </div>
         <div class="change">
+          <label>Stock</label>&emsp;
+          <input id="stock" type="number" />
+        </div>
+        <div class="change">
           <label>name</label>&emsp;
           <input id="name" type="text" />
         </div>
@@ -99,8 +103,10 @@
         updates["name"] = name;
 
         let price = document.getElementById("price").value;
-        // console.log(rediracting);
         updates["price"] = price;
+
+        let stock = document.getElementById("stock").value;
+        updates["stock"] = stock;
 
         let description = document.getElementById("description").value;
         updates["description"] = description;

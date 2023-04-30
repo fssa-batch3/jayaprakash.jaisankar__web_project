@@ -125,6 +125,14 @@ body {
   justify-content: center; */
 }
 
+.details {
+  margin-left: -200px;
+
+  padding: 30px;
+  width: 100px;
+  height: 25px;
+}
+
 /* @keyframes squeeze3124 {
   0% {
     -webkit-transform: scale3d(1, 1, 1);

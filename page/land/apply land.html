@@ -49,32 +49,34 @@
     <form id="form" action="./list.html">
     <div class="change">
       <label>Name</label>&emsp;
-      <input id="name" type="text" />
+      <input id="name" type="text" pattern="[A-Za-z]{1,32}" required/>
     </div>
 
     <div class="change">
       <label>email</label>&emsp;
-      <input id="email" type="text" />
+      <input id="email" type="email" />
     </div>
 
 
     <div class="change">
       <label>Servour.no</label>&emsp;
-      <input id="num" type="number" />
+      <input id="num" type="number"    pattern="[0-9]{4}"
+      required />
     </div>
 
     <div class="change">
       <label>village</label>&emsp;
-      <input id="vname" type="text" />
+      <input id="vname" type="text" pattern="[A-Za-z]{1,32}" required />
     </div>
     <div class="change">
       <label>village.no</label>&emsp;
-      <input id="vnum" type="number" />
+      <input id="vnum" type="number" pattern="[0-9]{4}"
+      required/>
     </div>
 
     <div class="change">
       <label>taluk</label>&emsp;
-      <input id="tname" type="text" />
+      <input id="tname" type="text" pattern="[A-Za-z]{1,32}" required />
     </div class="change">
     <div class="sub">
       <button onclick="edit" id="edit" class="btn">submit</button>
@@ -109,6 +111,8 @@ let form = document.getElementById("form");
 
 let form_details = JSON.parse(localStorage.getItem("list"))
 console.log(form_details)
+let mail = JSON.parse(localStorage.getItem("userinfo"))
+console.log(mail)
 
 // let dat= JSON.parse(localStorage.getItem("data"))
 // let rid = JSON.parse(localStorage.getItem("rid"));
@@ -142,7 +146,7 @@ console.log(form_details)
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         let name =document.getElementById("name").value;
-        let email =document.getElementById("email").value;
+       // let email =document.getElementById("email").value;
         let num =document.getElementById("num").value;
         let vname =document.getElementById("vname").value;
         let vnum =document.getElementById("vnum").value;
@@ -154,11 +158,12 @@ console.log(form_details)
       // console.log(get);
         let obj ={
           name,
-          email,
+          mail,
           num,
           vname,
           vnum,
-          tname
+          tname,
+          mail
          };
          let uuid = crypto.randomUUID();
         obj["uuid"] = uuid;
@@ -250,58 +255,6 @@ console.log(form_details)
           
         });
       
-        //  }
-        // let num = obj["num"];
-        // if (number === num) {
-        //   return true;
-        // }
-      
-      // console.log(arr);
-
-
-      // const length = form_details[0].number.length;
-      // console.log(length)
-
-
-      // for(let i=0;i<length;i++){
-      //   if(vnum !==form_details[0].number[i]){
-      //     alert("change")
-      //   }
-      //   else{
-        //   let arr=[];
-        //  arr.push(obj);
-      //   }
-      // }
-
-       
-        
-
-
-
-    //      let validation = JSON.parse(window.localStorage.getItem("data"));
-    //      const length = validation[0].number.length;
-    //   let is = false;
-    //  for (let i = 0; i <length; i++) {
-    //    if (email === validation[0].number[i]) {
-    //     alert("Email is already in use");
-    //      is = true;
-    //      break;
-    //    }
-    //  }
-    //   if (is === true) {
-    //     alert("already  email is exist");
-    //   }
-    //     // //localStorage.setItem("array",JSON.stringify(arr));
-    //     // let get = form_details.find(function (obj) {
-    //     // let checkid = obj["num"];
-    //     // if (num !== checkid) {
-    //     //   alert("notvalid");
-    //     // }
-        
-    //     else {
-          
-   
-        
         
         
     </script>

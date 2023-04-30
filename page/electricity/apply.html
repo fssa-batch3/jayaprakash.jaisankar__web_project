@@ -90,10 +90,11 @@
 
      
 let form = document.getElementById("form");
- 
+let mail = JSON.parse(window.localStorage.getItem("userinfo"));
 let file = document.getElementById("file")
 let image ;
 file.addEventListener("change",function(e){
+  e.preventDefault()
   let choosefile = this.files[0];
          if (choosefile) {
     let reader = new FileReader();
@@ -120,7 +121,8 @@ file.addEventListener("change",function(e){
          image,
           vname,
           vnum,
-          tname
+          tname,
+          mail
          };
 
          

@@ -7,21 +7,39 @@
     <title>Document</title>
     <style>
       .whole {
-        display: grid;
+        display: block;
         grid-template-columns: repeat(3, 1fr);
       }
       .stamp {
         width: 400px;
         height: 500px;
       }
+      .start {
+        display: flex;
+      }
+      .first {
+        /* padding-right: 200px;
+        padding-top: 10px; */
+        padding: 100px;
+        width: 400px;
+        height: 200px;
+        margin-left: 200px;
+        margin-top: 200px;
+        background-color: rgba(134, 106, 106, 0.227);
+      }
+
+      #txt {
+        padding: 100px;
+        width: 200px;
+        height: 50px;
+      }
     </style>
   </head>
   <body>
-    <div class="whole"></div>
-
+    <div class="start">
+      <div class="whole"></div>
+    
     <script>
-     
-
       let create_card = JSON.parse(localStorage.getItem("jscard"));
       console.log(create_card);
 
@@ -35,12 +53,13 @@
       const user = create_card.find((data) => data["name"] === username);
       console.log(user);
 
-    
+      let div = document.createElement("div");
+      div.setAttribute("class", "start");
 
       let div_second;
       div_second = document.createElement("div");
       div_second.setAttribute("class", "second");
-      // div_card.append(div_second);
+      div.append(div_second);
 
       let img_stamp;
       img_stamp = document.createElement("img");
@@ -66,10 +85,19 @@
       p_text.innerText = ("Description", user["description"]);
       div_total.append(p_text);
 
-      document.querySelector("div.whole").append(div_second);
-      // }
+      // let div_first = document.createElement("div");
+      // div_first.setAttribute("class", "first");
+      // div.append(div_first);
 
-     
+      // let form = document.createElement("form");
+      // form.setAttribute("class", "fm");
+      // div_first.append(form);
+
+      // let input = document.createElement("input");
+      // input.setAttribute("class", "txt");
+
+      document.querySelector("div.whole").append(div);
+      // }
     </script>
   </body>
 </html>

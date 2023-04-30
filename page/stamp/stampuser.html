@@ -105,7 +105,7 @@
     </div>
     <script>
       let card = JSON.parse(localStorage.getItem("jscard"));
-
+      //   let number =card[]
       for (let i = 0; i < card.length; i++) {
         let div_card;
         div_card = document.createElement("a");
@@ -153,7 +153,6 @@
         direct = document.createElement("a");
         direct.setAttribute("class", "link");
         direct.setAttribute("href", "./payment.html");
-
         div_cc.append(direct);
 
         let Buy;
