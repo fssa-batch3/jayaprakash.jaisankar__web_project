@@ -49,53 +49,22 @@
           <div class="dropdown-content">
           <a href="./page/sign-up/sign-up.html"> <p>new_user</p></a>
           <a href="./page/sign-up/login.html"> <p>old_user</p></a>
-           <a href="./page/sign-up/profile.html"> <p>Remove</p></a>
+       <p id="logout">Remove</p>
           </div>
         </div>
 
-        <!-- <div class="dropdown">
-          <span>status</span>
-          <div class="dropdown-content">
-            <p>application</p>
-            <p>modify</p>
-            <p>delete</p>
-          </div>
-        </div> -->
-
-        <!-- <div class="dropdown">
-          <span>download</span>
-          <div class="dropdown-content">
-            <p>forms</p>
-          </div>
-        </div> -->
-        
+      
         <div class="dropdown">
           <a href="./page/contact/contact.html"><span>Message</span></a>
         </div>
 
-        <!-- <div class="dropdown">
-          <span>feedback</span>
-        </div> -->
 
-        <div class="dropdown"  id="logout">logout </div>
+        <!-- <div class="dropdown"  >logout </div> -->
       </div>
     </div>
   </nav>
   <div class="background">
-    <!-- <header class="head">Registration-info.com</header> -->
-
-    <!-- <div class="nav-bar">
-        <a class="active" href="./page/sign-up/sign-up.html">Home</a>
-        <a class="active" href="./page/service/service.html">Service</a>
-        <a class="active" href="./page/help/help.html">Help</a>
-        <a class="active" href="./page/ask for/ask for.html">Ask for</a
-        >
-        <a class="active" href="./page/contact/contact.html">contact us</a>
-        <a class="active" href="./page/sign-up/sign-up.html">Sign-up</a>
-        <a class="active" href="./page/sign-up/login.html">Login</a>
-        <a class="active"id="phot"  href="./page/profile.html"><p class="para">user</p></a>
-        </a>
-      </div>  -->
+   
 
     <div id="google_translate_element"></div>
 
@@ -124,9 +93,6 @@
         <a href="./page/land/listadmin.html">
 
           <button class="btn" onclick="click"  id="check" >Apply for surviour
-            <!-- <a href="./page/land/list.html"> -->
-              <!-- <span class="btn-text-one">Apply for surviour</span> -->
-              <!-- <span class="btn-text-two">Open!</span> -->
         
           </button>
         </a>
@@ -144,8 +110,7 @@
       <a href="./page/electricity/servicelist.html">
           <button class="btn" onclick="click" id ="change">
             Electricity
-            <!-- <span class="btn-text-one">Electricity</span>
-            <span class="btn-text-two">Open!</span> -->
+           
           </button>
         </a>
 
@@ -167,8 +132,7 @@
           <button class="btn" onclick="click"  id="delete">
 
             Land Measurement
-            <!-- <span class="btn-text-one">Land Measurement</span>
-            <span class="btn-text-two">Open!</span> -->
+
           </button>
         </a>
       </div>
@@ -176,8 +140,7 @@
        <a href="./page/stamp/stamp.html">
          <button class="btn" onclick="click"  id="create">
           Stamp Duty
-            <!-- <span class="btn-text-one">Stamp Duty</span>
-            <span class="btn-text-two">Open!</span> -->
+            
           </button>
         </a>
       </div>
@@ -200,14 +163,7 @@
     </div>
   </div>
 
-  <!-- <div class="footer">
-  <div></div>
 
-
-
-
-
-</div> -->
 
 <div class="footer">
   <div class="part">
@@ -228,8 +184,7 @@
     <h1>Contact as</h1>
 
     <span id = "email">jayaprakash.jaisankar@fssa.freshworks.com</span>
-    <p><!-- HTML code -->
-<!-- HTML code -->
+    <p>
 <a href="tel:+917094120148">Call us at +91 70941 20148</a>
 
     </p>
@@ -247,40 +202,7 @@
 </div>
 
 </footer>
-  <!-- <footer>
-      <div class="footer">
-        <div>
-          <p>© Developed by JP</p>
-        </div>
-
-
-        <div class="footer-1"><span>Last Updated:December 15,2022 </span></div>
-
-        <div class="footer-2">
-          <ul class="wrapper">
-            <li class="icon facebook">
-                <span class="tooltip">Facebook</span>
-                <span><i class="fab fa-facebook-f"></i></span>
-            </li>
-            <li class="icon twitter">
-                <span class="tooltip">Twitter</span>
-                <span><i class="fab fa-twitter"></i></span>
-            </li>
-            
-            <li class="icon instagram">
-                <span class="tooltip">Instagram</span>
-                <span><i class="fab fa-instagram"></i></span>
-            </li>
-
-            <li class="icon youtube">
-              <span class="tooltip">Youtube</span>
-              <span><i class="fab fa-Youtube"></i></span>
-          </li>
-
-        </ul>
-        </div>
-      </div> -->
-    <!-- <a href="./page/land/servivor user list.html" -->
+  
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
@@ -319,14 +241,85 @@ let mail = JSON.parse(window.localStorage.getItem("userinfo"));
 let to = document.getElementById("email");
       to.addEventListener("click", function (event) {
         let emailAddress = 'jayaprakash.jaisankar@fssa.freshworks.com';
-let subjectLine = 'Email subject';
-let emailBody = 'Email body text';
+let subjectLine = 'subject';
+let emailBody = 'body ';
 let mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subjectLine) + '&body=' + encodeURIComponent(emailBody);
 window.location.href = mailtoLink;
       })
  
 
        
+
+
+
+  </script>
+
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+
+window.onload = function() {
+  loadYouTubeAPI();
+};
+
+function initYouTubeAPI() {
+  gapi.client.init({
+    apiKey: 'AIzaSyD2LBkm6fwZyiyAAEardpEVrfi0nk6nndM'
+  }).then(function() {
+    // API ready
+    document.getElementById('summaryButton').disabled = false;
+  }).catch(function(error) {
+    // Error loading the API
+    console.log('Error: ' + error);
+  });
+}
+
+// Load the YouTube Data API
+function loadYouTubeAPI() {
+  gapi.load('client', initYouTubeAPI);
+}
+
+// Initialize the YouTube Data API client
+function initYouTubeAPI() {
+  gapi.client.init({
+    apiKey: 'AIzaSyD2LBkm6fwZyiyAAEardpEVrfi0nk6nndM'
+  }).then(function() {
+    // API ready
+    document.getElementById("summaryButton").disabled = false;
+  }, function(error) {
+    // Error loading the API
+    console.log('Error: ' + error);
+  });
+}
+
+
+// Generate video summary
+function generateSummary() {
+  let videoId = 'WeGHhQPSfcE'; // Extract the video ID from the src URL
+
+  // Make an API request to retrieve video details
+  gapi.client.request({
+    path: 'youtube/v3/videos',
+    part: 'snippet',
+    id: videoId
+  }).then(function(response) {
+    let videoDetails = response.result.items[0].snippet;
+    let summary = videoDetails.description; // Use the video description as the summary
+    // Display the summary in the summaryContainer div
+    let summaryContainer = document.getElementById('summaryContainer');
+    summaryContainer.innerText = summary;
+  }).catch(function(error) {
+    console.log('Error:', error);
+    // Handle the error    
+    let errorMessage = 'An error occurred while fetching video details.';
+    // Display the error message in the summaryContainer div
+    let summaryContainer = document.getElementById('summaryContainer');
+    summaryContainer.innerText = errorMessage;
+  });
+}
+// Button click event handler
+document.getElementById('summaryButton').addEventListener('click', generateSummary);
+
+
 
 // let info = document.getElementById("delete");
 //       info.addEventListener("click", function (event) {
@@ -428,75 +421,12 @@ window.location.href = mailtoLink;
     // JSON.parse(localStorage.setItem("user_new"))
 
 
-  </script>
-
-<script src="https://apis.google.com/js/api.js"></script>
-<script>
-
-window.onload = function() {
-  loadYouTubeAPI();
-};
-
-function initYouTubeAPI() {
-  gapi.client.init({
-    apiKey: 'AIzaSyD2LBkm6fwZyiyAAEardpEVrfi0nk6nndM'
-  }).then(function() {
-    // API ready
-    document.getElementById('summaryButton').disabled = false;
-  }).catch(function(error) {
-    // Error loading the API
-    console.log('Error: ' + error);
-  });
-}
-
-// Load the YouTube Data API
-function loadYouTubeAPI() {
-  gapi.load('client', initYouTubeAPI);
-}
-
-// Initialize the YouTube Data API client
-function initYouTubeAPI() {
-  gapi.client.init({
-    apiKey: 'AIzaSyD2LBkm6fwZyiyAAEardpEVrfi0nk6nndM'
-  }).then(function() {
-    // API ready
-    document.getElementById("summaryButton").disabled = false;
-  }, function(error) {
-    // Error loading the API
-    console.log('Error: ' + error);
-  });
-}
-
-
-// Generate video summary
-function generateSummary() {
-  let videoId = 'WeGHhQPSfcE'; // Extract the video ID from the src URL
-
-  // Make an API request to retrieve video details
-  gapi.client.request({
-    path: 'youtube/v3/videos',
-    part: 'snippet',
-    id: videoId
-  }).then(function(response) {
-    let videoDetails = response.result.items[0].snippet;
-    let summary = videoDetails.description; // Use the video description as the summary
-    // Display the summary in the summaryContainer div
-    let summaryContainer = document.getElementById('summaryContainer');
-    summaryContainer.innerText = summary;
-  }).catch(function(error) {
-    console.log('Error:', error);
-    // Handle the error    
-    let errorMessage = 'An error occurred while fetching video details.';
-    // Display the error message in the summaryContainer div
-    let summaryContainer = document.getElementById('summaryContainer');
-    summaryContainer.innerText = errorMessage;
-  });
-}
-// Button click event handler
-document.getElementById('summaryButton').addEventListener('click', generateSummary);
+    
 </script>
 
  
 </body>
 
 </html>
+
+
