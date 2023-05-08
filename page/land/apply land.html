@@ -111,40 +111,13 @@ let form = document.getElementById("form");
 
 let form_details = JSON.parse(localStorage.getItem("list"))
 console.log(form_details)
-let mail = JSON.parse(localStorage.getItem("userinfo"))
+
 console.log(mail)
 
-// let dat= JSON.parse(localStorage.getItem("data"))
-// let rid = JSON.parse(localStorage.getItem("rid"));
 
-
-// let ject = form_details.find(function (obj) {
-//         let checkid = obj["uuid"];
-//         if (rid == checkid) {
-//           return true;
-//         }
-       
-//       });
-// console.log(ject)
-
-// let index =form_details.indexOf(ject)
-
-
-// function edit(){
-//   form_details[index].removeAttribute("disabled")
-// }
-// const editpage = document.querySelectorAll(".input");
-//       console.log(editpage);
-//       function edit() {
-//         for (i = 0; i < editpage.length; i++) {
-//           editpage[i].removeAttribute("disabled");
-//         }
-//       }
-
-
-      // let tname = ject[""]
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+        let mail = JSON.parse(localStorage.getItem("userinfo"))
         let name =document.getElementById("name").value;
        // let email =document.getElementById("email").value;
         let num =document.getElementById("num").value;
