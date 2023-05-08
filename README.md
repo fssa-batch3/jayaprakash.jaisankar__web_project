@@ -112,7 +112,7 @@ user flow:
         - The user can view the list of available survivor.
         
   ### apply of survivor
-  - Scenario 2: Successfully apply available for survivor 
+  - Scenario 3: Successfully apply available for survivor 
     - Steps:
         1. Navigate to the apply available for survivor page.
         2. Apply available for survivor page.
@@ -120,7 +120,7 @@ user flow:
         - The user can apply for available survivor.
         
      ###  apply electricity
-  - Scenario 2: Successfully  apply electricity
+  - Scenario 4: Successfully  apply electricity
     - Steps:
         1. Navigate to the  apply electricity page.
         2.  Apply for new connection electricity.
