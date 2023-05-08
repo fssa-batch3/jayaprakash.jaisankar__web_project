@@ -111,13 +111,13 @@ let form = document.getElementById("form");
 
 let form_details = JSON.parse(localStorage.getItem("list"))
 console.log(form_details)
+let mail = JSON.parse(localStorage.getItem("userinfo"))
 
-console.log(mail)
 
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
-        let mail = JSON.parse(localStorage.getItem("userinfo"))
+    
         let name =document.getElementById("name").value;
        // let email =document.getElementById("email").value;
         let num =document.getElementById("num").value;
@@ -136,7 +136,7 @@ console.log(mail)
           vname,
           vnum,
           tname,
-          mail
+        
          };
          let uuid = crypto.randomUUID();
         obj["uuid"] = uuid;
