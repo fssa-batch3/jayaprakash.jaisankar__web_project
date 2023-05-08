@@ -24,7 +24,7 @@
       <!-- Below code for logo placement  -->
       <div class="part1">
         <img class="logo" src="./page/electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
-          height="100px" />
+          height="100px" alt="logo image " />
       </div>
       
       <div class="nav">
@@ -53,49 +53,18 @@
           </div>
         </div>
 
-        <!-- <div class="dropdown">
-          <span>status</span>
-          <div class="dropdown-content">
-            <p>application</p>
-            <p>modify</p>
-            <p>delete</p>
-          </div>
-        </div> -->
-
-        <!-- <div class="dropdown">
-          <span>download</span>
-          <div class="dropdown-content">
-            <p>forms</p>
-          </div>
-        </div> -->
-        
+      
         <div class="dropdown">
           <a href="./page/contact/contact.html"><span>Message</span></a>
         </div>
 
-        <!-- <div class="dropdown">
-          <span>feedback</span>
-        </div> -->
-
+       
         <div class="dropdown"  id="logout">logout </div>
       </div>
     </div>
   </nav>
   <div class="background">
-    <!-- <header class="head">Registration-info.com</header> -->
-
-    <!-- <div class="nav-bar">
-        <a class="active" href="./page/sign-up/sign-up.html">Home</a>
-        <a class="active" href="./page/service/service.html">Service</a>
-        <a class="active" href="./page/help/help.html">Help</a>
-        <a class="active" href="./page/ask for/ask for.html">Ask for</a
-        >
-        <a class="active" href="./page/contact/contact.html">contact us</a>
-        <a class="active" href="./page/sign-up/sign-up.html">Sign-up</a>
-        <a class="active" href="./page/sign-up/login.html">Login</a>
-        <a class="active"id="phot"  href="./page/profile.html"><p class="para">user</p></a>
-        </a>
-      </div>  -->
+   
 
     <div id="google_translate_element"></div>
 
@@ -120,10 +89,7 @@
         <a href="./page/land/apply land.html">
 
           <button class="btn" onclick="click"  id="check" >Apply for surviour
-            <!-- <a href="./page/land/list.html"> -->
-              <!-- <span class="btn-text-one">Apply for surviour</span> -->
-              <!-- <span class="btn-text-two">Open!</span>-->
-       
+           
           </button>     </a> 
       </div>
 
@@ -139,8 +105,7 @@
       <a href="./page/electricity/list.html">
           <button class="btn" onclick="click" id ="change">
             Electricity
-            <!-- <span class="btn-text-one">Electricity</span>
-            <span class="btn-text-two">Open!</span> -->
+          
           </button>
         </a>
       </div>
@@ -157,21 +122,19 @@
 
     <div class="last-1">
       <div>
-        <a href="./page/land/serviour list .html">
+        <!-- <a href="./page/land/serviour list .html"> -->
           <button class="btn" onclick="click"  id="delete">
 
             Land Measurement
-            <!-- <span class="btn-text-one">Land Measurement</span>
-            <span class="btn-text-two">Open!</span> -->
+     
           </button>
-        </a>
+        <!-- </a> -->
       </div>
       <div>
        <a href="./page/stamp/stampuser.html">
          <button class="btn" onclick="click"  id="create">
           Stamp Duty
-            <!-- <span class="btn-text-one">Stamp Duty</span>
-            <span class="btn-text-two">Open!</span> -->
+           
           </button>
         </a>
       </div>
@@ -193,15 +156,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="footer">
-  <div></div>
-
-
-
-
-
-</div> -->
 
 <div class="footer">
   <div class="part">
@@ -293,78 +247,23 @@ window.location.href = mailtoLink;
       })
  
 
-// let info = document.getElementById("delete");
-//       info.addEventListener("click", function (event) {
-//         event.preventDefault();
-//         // let indexof = form_details.indexOf(get);
-//         let failed = confirm("you are survivor");
-//         // let pass = confirm("you are not survivor");
-//         if (failed == true) {
-//           window.location.href = "./page/land/serviour list .html";
-//         } 
-//         // else if (mail == email) {
-//         //   // form_details.splice(indexof, 1);
-//         //   // localStorage.setItem("list", JSON.stringify(form_details));
-//         //   window.location.href = "./page/land/list.html";
-//         // }
-//         else{
-//          window.location.href = "./serviour list.html";
-//         }
-//       });
-
-
-
-      
-// let trans = document.getElementById("create");
-//       trans.addEventListener("click", function (event) {
-//         event.preventDefault();
-//         // let indexof = form_details.indexOf(get);
-//         let failed = confirm("you are admin");
-//         // let pass = confirm("you are not survivor");
-//         if (failed == true) {
-//           window.location.href = "./page/stamp/stamp.html";
-//         } 
-        
-       
-//         else{
-//        window.location.href = "/page/stamp/stampuser.html";
-//         }
-//       });
-
-    //   let check = document.getElementById("check");
-    //   check.addEventListener("click", function (event) {
-    //     event.preventDefault();
-    //     // let indexof = form_details.indexOf(get);
-    //     let failed = confirm("you are user");
-    //     // let pass = confirm("you are not survivor");
-    //     if (failed == true) {
-    //      window.location.href = "./page/land/apply land.html";
-    //     } 
-        
-       
-    //     else{
-    //     window.location.href = "./page/land/list.html";
-    //     }
-    //   });
-
-    //   let  app= document.getElementById("change");
-    //   app.addEventListener("click", function (event) {
-    //     event.preventDefault();
-    //     // let indexof = form_details.indexOf(get);
-    //     let failed = confirm("you are user");
-    //     // let pass = confirm("you are not survivor");
-    //     if (failed == true) {
-    //       window.location.href = "./page/electricity/list.html";
-    //     } 
+let info = document.getElementById("delete");
+      info.addEventListener("click", function (event) {
+        event.preventDefault();
+   
+        let failed = confirm("you are survivor");
      
+        if (failed == true) {
+          window.location.href = "./page/land/serviour list .html";
+        } 
+  
+        else{
+         window.location.href = "./serviour list.html";
+        }
+      });
 
-    //     else{
-    //       window.location.href = "./page/electricity/list.html";
-    //     }
-    //   });
 
 
-      
    
 
 

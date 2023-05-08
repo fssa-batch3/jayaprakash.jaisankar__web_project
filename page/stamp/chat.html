@@ -6,15 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-           /* .first {
         
-        padding: 100px;
-        width: 400px;
-        height: 200px;
-        margin-left: 200px;
-        margin-top: 200px;
-        background-color: rgba(134, 106, 106, 0.227);
-      } */
       .first{
         display: block;
         align-items: center;
@@ -65,13 +57,6 @@
           };
           let comment = [];
           comment.push(obj);
-        //   let loca = JSON.Prase(localStorage.getItem("comment"));
-        //   let is = false
-        //   for(i=0;i<loca.length;i++){
-        //   if(txt == loca[i]["txt"]){
-        //    is = true
-        //   }
-        // }
   
           if (window.localStorage.getItem("comment") === null) {
             window.localStorage.setItem("comment", JSON.stringify(comment));
@@ -82,9 +67,7 @@
             json.push(obj);
             window.localStorage.setItem("comment", JSON.stringify(json));
           }
-        //  localStorage.setItem("comment", JSON.stringify(comment));
-       
-
+      
 
     location.reload()
 
@@ -112,12 +95,6 @@ for(i=0;i<cm.length;i++)
       input.value = cm[i]["txt"] ;                     ;
       form.append(input)
 
-      // let direct;
-      //   direct = document.createElement("a");
-      //   direct.setAttribute("class", "link");
-      //   direct.setAttribute("href", "./edit.html");
-
-      //   div_cc.append(direct);
 
 
 

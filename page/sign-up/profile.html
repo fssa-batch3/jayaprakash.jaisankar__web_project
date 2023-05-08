@@ -57,8 +57,7 @@
         <button onclick="Delete" id="delete" class="btn">Delete</button>
       </div>
     </div>
-    <!-- <a href="/index.html"></a> -->
-    <script>
+   <script>
       let mail = JSON.parse(window.localStorage.getItem("userinfo"));
       let data = JSON.parse(window.localStorage.getItem("user"));
       console.log(data);
@@ -126,12 +125,7 @@
 
         const date = document.getElementById("date").value;
 
-        // // Get the current date
-        // const currentDate = new Date().toISOString().split("T")[0];
-        // console.log(currentDate);
-        // // Set the min and max attributes of the date input to the current date
-        // date.setAttribute("min", "1900-01-01");
-        // date.setAttribute("max", currentDate);
+        
 
         let ject = {
           fname,
@@ -139,7 +133,7 @@
           Lname,
           email,
           phnumber,
-          date, // Use the value of the date input
+          date,
           gender,
           age,
           address,
@@ -178,136 +172,6 @@
         }
       });
     </script>
-    <!-- <script>
-      let mail = JSON.parse(window.localStorage.getItem("userinfo"));
-      let data = JSON.parse(window.localStorage.getItem("user"));
-      console.log(data);
-
-      let get = data.find(function (obj) {
-        let checkmail = obj["email"];
-        if (mail === checkmail) {
-          return true;
-        }
-      });
-      console.log(get);
-
-      let file = document.getElementById("file");
-      let image;
-      // file.addEventListener("change", function (e) {
-      //   let choosefile = this.files[0];
-      //   if (choosefile) {
-      //     let reader = new FileReader();
-      //     // console.log(reader.result);
-      //     reader.addEventListener("load", function () {
-      //       image = reader.result;
-      //       console.log(image);
-      //     });
-      //     reader.readAsDataURL(choosefile);
-      //   }
-      // });
-
-      const fname = document.getElementById("fname");
-      const mname = document.getElementById("mname");
-      const Lname = document.getElementById("Lname");
-      const email = document.getElementById("email");
-      const phnumber = document.getElementById("phnumber");
-      const age = document.getElementById("age");
-      const gender = document.getElementById("gender");
-      const address = document.getElementById("address");
-      const date = document.getElementById("date");
-
-      const password = document.getElementById("password");
-
-      fname.value = get["fname"];
-      mname.value = get["mname"];
-      Lname.value = get["Lname"];
-      email.value = get["email"];
-      phnumber.value = get["phnumber"];
-      age.value = get["age"];
-      date.value = get["date"];
-      address.value = get["address"];
-      gender.value = get["gender"];
-      password.value = get["password"];
-
-      // edit profile start
-
-      const editpage = document.querySelectorAll(".input");
-      console.log(editpage);
-      function edit() {
-        event.preventDefault();
-        for (i = 0; i < editpage.length; i++) {
-          editpage[i].removeAttribute("disabled");
-        }
-      }
-
-      let form = document.getElementById("form");
-
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        let fname = document.getElementById("fname").value;
-        let mname = document.getElementById("mname").value;
-        let Lname = document.getElementById("Lname").value;
-        let email = document.getElementById("email").value;
-        let phnumber = document.getElementById("phnumber").value;
-        // let date = document.getElementById("date").value;
-        let age = document.getElementById("age").value;
-        let gender = document.getElementById("gender").value;
-        let address = document.getElementById("address").value;
-        let id = self.crypto.randomUUID();
-
-        const date = document.getElementById("date");
-
-        // Get the current date
-        const currentDate = new Date().toISOString().split("T")[0];
-        console.log(currentDate);
-        // Set the max attribute of the date input to the current date
-        date.setAttribute("max", currentDate);
-
-        let ject = {
-          fname,
-          mname,
-          Lname,
-          email,
-          phnumber,
-          date,
-          gender,
-          age,
-          address,
-          id,
-        };
-
-        console.log(ject);
-
-        if (mail != email) {
-          alert("You can't change the Email ID");
-          //    window.location.href = "/index.html";
-        } else {
-          let update = Object.assign(get, ject);
-          console.log(update);
-          let index = data.indexOf(get);
-          console.log(index);
-          data[index] = update;
-          localStorage.setItem("user", JSON.stringify(data));
-          // location.reload();
-          //   window.location.href = "/index.html";
-          // alert("You have successfully updated your account details!");
-        }
-      });
-
-      let info = document.getElementById("delete");
-      info.addEventListener("click", function (event) {
-        event.preventDefault();
-        let indexof = data.indexOf(get);
-        let failed = confirm("Delete this");
-        if (failed !== true) {
-          return;
-        } else {
-          data.splice(indexof, 1);
-          localStorage.setItem("user", JSON.stringify(data));
-          window.location.href = "/index.html";
-        }
-      });
-    </script> -->
+  
   </body>
 </html>
