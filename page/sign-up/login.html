@@ -24,41 +24,6 @@
       </div>
     </div>
 
-    <script>
-      let logIn = document.getElementById("form");
-      logIn.addEventListener("submit", (event) => {
-        event.preventDefault();
-        // let log = [];
-        let Data = JSON.parse(localStorage.getItem("user"));
-        console.log(Data);
-        let email = document.getElementById("email").value.toLowerCase();
-        let password = document.getElementById("password").value;
-        console.log(email, password);
-
-        let isthis = false;
-        for (let i = 0; i < Data.length; i++) {
-          if (email === Data[i].email && password == Data[i].password) {
-            isthis = true;
-            // log.push(Data[i]);
-            window.localStorage.setItem(
-              "userinfo",
-              JSON.stringify(Data[i].email)
-            );
-            break;
-          } else {
-            isthis = false;
-          }
-        }
-
-        if (isthis === true) {
-          alert("success");
-
-          window.location.href = "/indexuser.html";
-        } else {
-          alert("failed");
-          window.location.href = "./sign-up.html";
-        }
-      });
-    </script>
+    <script src="/page/sign-up/loginuser.js"></script>
   </body>
 </html>

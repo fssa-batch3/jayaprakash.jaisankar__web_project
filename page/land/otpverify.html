@@ -14,7 +14,6 @@
       <button type="button" onclick="sendEmail()">Send OTP</button>
 
       <br /><br />
-
       <label for="verify">Enter OTP:</label>
       <input type="text" id="verify" required /><br /><br />
 
@@ -71,7 +70,7 @@
 
         if (password[0] == otp) {
           alert("Success! OTP verified.");
-          window.location = "/index.html";
+          window.location = "/page/sign-up/profile.html";
         } else {
           alert("Invalid OTP. Please try again.");
         }

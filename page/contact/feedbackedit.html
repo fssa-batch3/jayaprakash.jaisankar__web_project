@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="question">
+      <form id="form">
+        <div class="inner">
+          <label>Question</label>
+          <input id="answer" />
+        </div>
+
+        <div class="inner">
+          <label>Answer</label>
+          <input id="ans" />
+        </div>
+
+        <button type="submit" id="submit" class="btn">submit</button>
+      </form>
+    </div>
+
+    <script>
+      let form = document.getElementById("form");
+
+      let form_details = JSON.parse(localStorage.getItem("fedit"));
+      console.log(form_details);
+
+      let id = JSON.parse(localStorage.getItem("edit"));
+      console.log(id);
+
+      let check = id.pop();
+      console.log(check);
+
+      let get = form_details.find(function (obj) {
+        let checkid = obj["uuid"];
+        if (check == checkid) {
+          return true;
+        }
+      });
+      console.log(get);
+
+      let answer = document.getElementById("answer");
+      let ans = document.getElementById("ans");
+      answer.value = get["answer"];
+      ans.value = get["ans"];
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let answer = document.getElementById("answer").value;
+        let ans = document.getElementById("ans").value;
+
+        let ject = {
+          answer,
+          ans,
+        };
+
+        let update = Object.assign(get, ject);
+        console.log(update);
+        let index = form_details.indexOf(get);
+        console.log(index);
+
+        form_details[index] = update;
+        localStorage.setItem("fedit", JSON.stringify(form_details));
+        //window.location.href = "./list.html";
+      });
+    </script>
+  </body>
+</html>

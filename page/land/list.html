@@ -92,15 +92,13 @@ justify-content: center; */
 body{
 margin: 0px;
 }
-      /* #card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      } */
+.place{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-      /* display: flex;
-        justify-content: center;
-        align-items: center; */
+}
+     
     </style>
   </head>
   <body>
@@ -207,29 +205,12 @@ margin: 0px;
       </div>
     </div>
     <script>
-      //   let div_card;
-      //   div_card = document.createElement("a");
-      //   div_card.setAttribute("id", "card");
-      //   div_card.setAttribute("href", "detail.html?name=" + card[i]["name"]);
 
       let work = JSON.parse(window.localStorage.getItem("data"));
       console.log(work);
       let email = JSON.parse(localStorage.getItem("userinfo"))
 console.log(email)
 
-//       let form_details = JSON.parse(localStorage.getItem("list"))
-
-// let dat= JSON.parse(localStorage.getItem("data"))
-// let rid = JSON.parse(localStorage.getItem("uuid"));
-
-//       let ject = form_details.find(function (obj) {
-//         let checkid = obj["uuid"];
-//         if (rid == checkid) {
-//           return true;
-//         }
-       
-//       });
-// console.log(ject)
 
       for (let i = 0; i < work.length; i++) {
         let two;
@@ -254,13 +235,13 @@ console.log(email)
         let label;
         label = document.createElement("label");
         label.setAttribute("id", "name");
-        label.innerText = "num";
+        label.innerText = "Name:";
         div1.append(label);
 
         let input;
-        input = document.createElement("input");
+        input = document.createElement("p");
         input.setAttribute("id", "lname");
-        input.setAttribute("value", work[i]["name"]);
+        input.innerText = work[i]["name"];
         div1.append(input);
         // console.log(input);
 
@@ -272,12 +253,12 @@ console.log(email)
         let label1;
         label1 = document.createElement("label");
         label1.setAttribute("id", "num");
-        label1.innerText = "serviour number";
+        label1.innerText = "serviour number:";
         div2.append(label1);
         let input1;
-        input1 = document.createElement("input");
+        input1 = document.createElement("p");
         input1.setAttribute("id", "Servour");
-        input1.setAttribute("value", work[i]["num"]);
+        input1.innerText =  work[i]["num"];
         div2.append(input1);
         // console.log(input1);
 
@@ -289,13 +270,13 @@ console.log(email)
         let label2;
         label2 = document.createElement("label");
         label2.setAttribute("id", "vname");
-        label2.innerText = "village_name";
+        label2.innerText = "village_name:";
         div3.append(label2);
 
         let input2;
-        input2 = document.createElement("input");
+        input2 = document.createElement("p");
         input2.setAttribute("id", "vnum");
-        input2.setAttribute("value", work[i]["vname"]);
+        input2.innerText =  work[i]["vname"];
         div3.append(input2);
 
         let div5;
@@ -307,12 +288,12 @@ console.log(email)
         let label3;
         label3 = document.createElement("label");
         label3.setAttribute("id", "tname");
-        label3.innerText = "talukname";
+        label3.innerText = "talukname:";
         div5.append(label3);
         let input3;
-        input3 = document.createElement("input");
+        input3 = document.createElement("p");
         input3.setAttribute("id", "tnum");
-        input3.setAttribute("value", work[i]["tname"]);
+        input3.innerText =  work[i]["tname"];
         div5.append(input3);
      
 if(email == work[i]["mail"] ){
@@ -335,20 +316,6 @@ if(email == work[i]["mail"] ){
 
         }
         
-        // let accept;
-        // accept = document.createElement("a");
-        // accept.setAttribute("class", "link");
-        // accept.setAttribute("id", "delete");
-        // // accept.setAttribute("href", "./edit.html");
-        // form.append(accept);
-
-        // let acbt;
-        // acbt = document.createElement("button");
-        // acbt.setAttribute("class", "link");
-        // // acbt.setAttribute("id", work[i]["uuid"]);
-        // acbt.setAttribute("onclick", "clear");
-        // acbt.innerText = "accept";
-        // accept.append(acbt);
         
 
         document.querySelector("div.whole").append(div_card);
@@ -362,93 +329,6 @@ if(email == work[i]["mail"] ){
         // window.location.href = "./edit.html";
       }
 
-//       let info = document.getElementById("delete");
-//       info.addEventListener("click", function (event) {
-//         event.preventDefault();
-
-// // Include the Twilio client library
-// const accountSid = 'YOUR_ACCOUNT_SID';
-// const authToken = 'YOUR_AUTH_TOKEN';
-// const client = require('twilio')(accountSid, authToken);
-
-// // Specify the phone number and message
-// const phoneNumber = '+917094120148';
-// const message = 'Hello, this is a test message!';
-
-// // Use the Twilio API to send the message
-// client.messages.create({
-//   body: message,
-//   from: 'YOUR_TWILIO_NUMBER',
-//   to: phoneNumber
-// }).then(message => console.log(message.sid))
-// .catch(error => console.log(error));
-
-//       });
-//         let mail = JSON.parse(window.localStorage.getItem("userinfo"));
-//       let data = JSON.parse(window.localStorage.getItem("user"));
-//       console.log(data);
-
-//       let get = data.find(function (obj) {
-//         let checkmail = obj["email"];
-//         if ("jp@gmail.com"== checkmail) {
-//           return true;
-//         }
-//       });
-//       console.log(get);
-
-
-//       let index = data.indexOf(get);
-//         console.log(index);
-
-//         let form = document.getElementById("form");
-
-
-// let form_details = JSON.parse(localStorage.getItem("list"))
-
-// let dat= JSON.parse(localStorage.getItem("data"))
-// let rid = JSON.parse(localStorage.getItem("rid"));
-
-
-// let ject = form_details.find(function (obj) {
-//         let checkid = obj["email"];
-//         if (email == checkid) {
-//           return true;
-//         }
-       
-//       });
-// console.log(ject)
-
-//       // let email = ject["email"]
-
-//       }
-      //   let a;
-      //   a = document.createElement("a");
-      //   a.setAttribute("class", "link");
-      //   a.setAttribute("href", "./create.html");
-
-      //   div_card.append(a);
-      //   let submit;
-      //   submit = document.createElement("button");
-      //   submit.setAttribute("class", "link");
-      //   submit.setAttribute("href", "./create.html");
-      //   submit.innerText = "Add";
-      //   a.append(submit);
-
-      //   let direct;
-      //   direct = document.createElement("a");
-      //   direct.setAttribute("class", "link");
-      //   direct.setAttribute("href", "./edit.html");
-
-      //   div_card.append(direct);
-
-      //   let edit;
-      //   edit = document.createElement("button");
-      //   edit.setAttribute("class", "link");
-      //   edit.setAttribute("id", card[i]["uuid"]);
-      //   edit.setAttribute("onclick", "editPaper(this.id)");
-      //   edit.setAttribute("href", "./edit.html");
-      //   edit.innerText = "edit";
-      //   direct.append(edit);
     </script>
   </body>
 </html>

@@ -163,9 +163,9 @@
     </div>
   </nav>
 
-  <input type="text" id="search-input" placeholder="Search...">
-  <ul id="list">
-    <li>
+  <input type="text" id="searchInput" placeholder="Search...">
+  <ul class="details" id="list">
+    <!-- <li>
       <h2>Engineering</h2>
       <p>The systems engineering theory believes that the system engineers use their technical knowledge of the whole system to guide the system development . For complex engine design, it is impossible for one person to know all the related areas.</p>
     </li>
@@ -186,27 +186,14 @@
       <p>Four major concepts are frequently interrelated and fundamental to nursing theory: person, environment, health, and nursing. These four are collectively referred to as metaparadigm for nursing. Person, Nursing, Environment, and Health – the four main concepts that make up the nursing metaparadigm.</p>
       
     </li>
-    <li>
-      <h2></h2>
-      <p></p>
-    </li>
-    <li>
-      <h2></h2>
-      <p></p>
-    </li>
-    <li>
-      <h2></h2>
-      <p></p>
-    </li>
-    <li>
-      <h2></h2>
-      <p></p>
-    </li>
+    -->
   </ul>
   
-  <div id="details"></div>
+  <!-- <div id="details"></div> -->
 
-  
+
+<ul id="results"></ul>
+
 
 <div class="footer">
   <div class="part">
@@ -240,41 +227,63 @@
     </p>
   </div>
 </div>
+
 <script>
-  const searchInput = document.getElementById('search-input');
-const list = document.getElementById('list');
-const details = document.getElementById('details');
+  let info = JSON.parse(localStorage.getItem("addli"));
+  for (let i = 0; i < info.length; i++) {
+      let div = document.createElement("div");
 
-// Attach a click event listener to the list element
-list.addEventListener('click', (event) => {
-  // Check if the clicked element is an item
-  if (event.target.nodeName === 'H2') {
-    // Display the details of the item
-    const description = event.target.nextElemntSibling.innerHTML;
-    details.innerHTML = `<h2>${event.target.innerHTML}</h2><p>${description}</p>`;
+      let crud = document.createElement("li");
+      div.append(crud);
+
+      let head = document.createElement("h2");
+      head.innerText = info[i]["head"];
+      div.append(head);
+
+      let para = document.createElement("p");
+      para.innerText = info[i]["para"];
+      div.append(para);
+
+      document.querySelector("ul.details").append(div);
   }
-});
+</script>
+<script>
+let data = JSON.parse(localStorage.getItem("addli"));
 
-// Attach a keyup event listener to the search input element
-searchInput.addEventListener('keyup', () => {
-  const filter = searchInput.value.toLowerCase();
-  const items = list.getElementsByTagName('li');
+function filterData(searchTerm) {
+  const term = searchTerm.toLowerCase();
 
-  // Loop through all the items and hide those that do not match the search filter
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i];
-    const title = item.getElementsByTagName('h2')[0].innerHTML.toLowerCase();
-    if (title.indexOf(filter) > -1) {
-      item.style.display = '';
-    } else {
-      item.style.display = 'none';
-    }
-  }
-});
+  const filteredData = data.filter(item => {
+    const itemName = item.name.toLowerCase();
+    return itemName.includes(term);
+  });
 
+  return filteredData;
+}
+
+
+function renderResults(results) {
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = '';
+
+  results.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item.name;
+    resultsContainer.appendChild(li);
+  });
+}
+
+
+function handleSearchInputChange(event) {
+  const searchTerm = event.target.value;
+  const filteredResults = filterData(searchTerm);
+  renderResults(filteredResults);
+}
+
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', handleSearchInputChange);
 
 </script>
-
 
 </body>
 </html>

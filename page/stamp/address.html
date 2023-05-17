@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+      }
+
+      label {
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0069d9;
+      }
+      .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <form id="form">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          pattern="[A-Za-z]{1,300}"
+          title="Name must be between 1 to 300 letters"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="address">Address:</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          pattern="[A-Za-z]{1,300}"
+          placeholder="4/267,melakkadu,karuppampulam"
+          required
+        />
+
+        <label for="city">Taluk:</label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          pattern="[A-Za-z]{1,32}"
+          title="City must be between 1 to 32 letters"
+          placeholder="Enter your Taluk"
+          required
+        />
+
+        <label for="state">District:</label>
+        <input
+          type="text"
+          id="state"
+          name="state"
+          pattern="[A-Za-z]{1,32}"
+          title="State must be between 1 to 32 letters"
+          placeholder="Enter your District"
+          required
+        />
+
+        <label for="zip">Pin Code:</label>
+        <input
+          type="text"
+          id="zip"
+          name="zip"
+          pattern="[0-9]{6}"
+          title="Pin code must be 6 digits"
+          placeholder="Enter your pin code"
+          maxlength="6"
+          required
+        />
+
+        <button type="submit">Continue</button>
+      </form>
+    </div>
+    <script>
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let arr = [];
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        let city = document.getElementById("city").value;
+        let state = document.getElementById("state").value;
+        let zip = document.getElementById("zip").value;
+        let obj = {
+          name,
+          address,
+          city,
+          state,
+          zip,
+        };
+        arr.push(obj);
+
+        if (window.localStorage.getItem("address") === null) {
+          window.localStorage.setItem("address", JSON.stringify(arr));
+          console.log(window.localStorage.getItem("address"));
+          window.location.href = "./payment.html";
+        } else {
+          let local = window.localStorage.getItem("address");
+          let json = JSON.parse(local);
+          json.push(obj);
+          window.localStorage.setItem("address", JSON.stringify(json));
+          window.location.href = "./payment.html";
+        }
+      });
+    </script>
+  </body>
+</html>

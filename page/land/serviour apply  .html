@@ -51,6 +51,11 @@
           <input id="tname" />
         </div>
 
+        <div class="card">
+          <label>email</label> &emsp;&emsp;&emsp;&emsp;
+          <input id="mail" />
+        </div>
+
         <!-- <div class="card">
           <label>number</label> &emsp;&emsp;&emsp;&emsp;
           <input id="num" />
@@ -62,12 +67,13 @@
     </div>
     <script>
       let form = document.getElementById("form");
-      let mail = JSON.parse(localStorage.getItem("userinfo"));
+      //let mail = JSON.parse(localStorage.getItem("userinfo"));
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         let name = document.getElementById("name").value;
         let tname = document.getElementById("tname").value;
+     let mail = document.getElementById("mail").value;
         //   let num = document.getElementById("num").value;
 
         //  let arr = num.split(",");

@@ -60,17 +60,17 @@
 
     <div class="change">
       <label>Servour.no</label>&emsp;
-      <input id="num" type="number"    pattern="[0-9]{4}"
+      <input id="num" type="number" maxlength="4"   pattern="[0-9]{4}"
       required />
     </div>
 
     <div class="change">
       <label>village</label>&emsp;
-      <input id="vname" type="text" pattern="[A-Za-z]{1,32}" required />
+      <input id="vname" type="text"  pattern="[A-Za-z]{1,32}" required />
     </div>
     <div class="change">
       <label>village.no</label>&emsp;
-      <input id="vnum" type="number" pattern="[0-9]{4}"
+      <input id="vnum" type="number"  maxlength="4" pattern="[1-9]{4}"
       required/>
     </div>
 
@@ -216,14 +216,14 @@ let mail = JSON.parse(localStorage.getItem("userinfo"))
           if (window.localStorage.getItem("data") === null) {
             window.localStorage.setItem("data", JSON.stringify(arr));
             console.log(window.localStorage.getItem("data"));
-             window.location.href = "./list.html"
+             window.location.href = "./listuser.html"
           } else {
             let local = window.localStorage.getItem("data");
             let json = JSON.parse(local);
             json.push(obj);
             window.localStorage.setItem("data", JSON.stringify(json));
           }
-           window.location.href = "./list.html";
+           window.location.href = "./listuser.html";
 
           
         });

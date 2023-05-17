@@ -13,7 +13,9 @@
   position: relative;
   display: inline-block;
 }
-
+a {
+  text-decoration: none;
+}
 .dropdown-content {
   display: none;
   position: absolute;

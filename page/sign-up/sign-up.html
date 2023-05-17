@@ -32,7 +32,7 @@
               type="text"
               title="middlename required"
               pattern="[A-Za-z]{1,32}"
-              required
+              
             />
           </div>
           <div class="change">
@@ -43,7 +43,7 @@
               type="text"
               title="lastname required"
               pattern="[A-Za-z]{1,32}"
-              required
+      
             />
           </div>
           <div class="change">
@@ -64,7 +64,8 @@
               id="phnumber"
               type="text"
               title="phonenumber required"
-              pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+              pattern="[6-9]{1}[0-9]{9}"
+              maxlength="10"
               required
             />
           </div>
@@ -76,6 +77,7 @@
               type="text"
               title="age required"
               pattern="[0-9]{2}"
+              maxlength="2"
               required
             />
 
@@ -106,107 +108,112 @@
           <select id="role">
             <option value="user">User</option>
             <option value="admin">Admin</option>
+            
+            surveyor
           </select>
           </div>
           <button type="submit" class="btn">submit</button>
         </form>
 
 
-        <button id = "google" >continue with google</button>
+        <!-- <button id = "google" >continue with google</button> -->
       </div>
     </div>
    
 
     
     <script>
-      
-      let arr = [];
-      let form = document.getElementById("form");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let userdata = {};
-        const fname = document.getElementById("fname").value;
-        const mname = document.getElementById("mname").value;
-        const Lname = document.getElementById("Lname").value;
-        const email = document.getElementById("email").value;
-        const phnumber = document.getElementById("phnumber").value;
-        const age = document.getElementById("age").value;
-        const role = document.getElementById("role").value;
-        const password = document.getElementById("password").value;
-        const confirmpassword = document.getElementById("cpassword").value;
-        let id = self.crypto.randomUUID();
 
+let form = document.getElementById("form");
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const fname = document.getElementById("fname").value;
+  const mname = document.getElementById("mname").value;
+  const Lname = document.getElementById("Lname").value;
+  const email = document.getElementById("email").value;
+  const phnumber = document.getElementById("phnumber").value;
+  const age = document.getElementById("age").value;
+  const role = document.getElementById("role").value;
+  const password = document.getElementById("password").value;
+  const confirmpassword = document.getElementById("cpassword").value;
+  let id = self.crypto.randomUUID();
 
+  let userdata = {
+    fname,
+    mname,
+    Lname,
+    phnumber,
+    age,
+    role,
+    email: email.toLowerCase(),
+    password,
+    cpassword: confirmpassword,
+    id,
+  };
 
+  // let info = JSON.parse(localStorage.getItem("list"));
+  // let isSurveyor = false;
 
+  // for (let i = 0; i < info.length; i++) {
+  //   if (email === info[i].mail) {
+  //     isSurveyor = true;
+  //     break;
+  //   }
+  // }
 
+  // if (isSurveyor === false) {
+  //   alert("You are not a surveyor");
+  //   return;
+  // }
 
-        userdata["fname"] = fname;
-        userdata["mname"] = mname;
-        userdata["Lname"] = Lname;
-        userdata["phnumber"] = phnumber;
-        userdata["age"] = age;
-        userdata["role"] = role;
-        userdata["email"] = email.toLowerCase();
-        userdata["password"] = password;
-        userdata["cpassword"] = confirmpassword;
-        userdata.id = id;
-        arr.push(userdata);
-        if (password != confirmpassword) {
-          alert("Password Doesn't Match");
-        }
+  if (password !== confirmpassword) {
+    alert("Password doesn't match");
+    return;
+  }
 
-    
+  // let validation = JSON.parse(localStorage.getItem("user"));
+  // let isEmailExist = false;
 
-        let validation = JSON.parse(window.localStorage.getItem("user"));
+  // if (validation !== null) {
+  //   for (let i = 0; i < validation.length; i++) {
+  //     if (email === validation[i].email) {
+  //       isEmailExist = true;
+  //       break;
+  //     }
+  //   }
+  // }
 
-        if (validation !== null) {
-          let is = false;
-          for (let i = 0; i < validation.length; i++) {
-            if (email === validation[i]["email"]) {
-              //alert("Email is already in use");
-              is = true;
-              break;
-            }
-          }
+  // if (isEmailExist) {
+  //   alert("Email already exists");
+  //   return;
+  // }
 
-          
-                         
-          if (is === true) {
-            alert("already  email is exist");
-          } else {
-            if (window.localStorage.getItem("user") === null) {
-              window.localStorage.setItem("user", JSON.stringify(arr));
-              console.log(window.localStorage.getItem("user"));
-            } else {
-              let local = window.localStorage.getItem("user");
-              let json = JSON.parse(local);
-              json.push(userdata);
-              window.localStorage.setItem("user", JSON.stringify(json));
-            }
+  // if (role === "surveyor") {
+  //   saveUser(userdata);
+  //   window.location.href = "./loginsurveyor.html";
+  // } 
+   if (role === "admin") {
+    if (email === "jayaprakash.jaisankar@fssa.freshworks.com") {
+      saveUser(userdata);
+      window.location.href = "./loginadmin.html";
+    } else {
+      alert("You are not an admin");
+    }
+  } else {
+    saveUser(userdata);
+    window.location.href = "./login.html";
+  }
+});
 
-            if("admin" === role){
-              window.location.href = "./loginadmin.html";
-            }
-            else{
-            window.location.href = "./login.html";
-            }
-          }
-        } else {
-          if (window.localStorage.getItem("user") === null) {
-            window.localStorage.setItem("user", JSON.stringify(arr));
-            console.log(window.localStorage.getItem("user"));
-          } else {
-            let local = window.localStorage.getItem("user");
-            let json = JSON.parse(local);
-            json.push(userdata);
-            window.localStorage.setItem("user", JSON.stringify(json));
-          }
-          window.location.href = "./login.html";
-        }
-      });
+function saveUser(userdata) {
+  let userList = JSON.parse(localStorage.getItem("user")) || [];
+  userList.push(userdata);
+  localStorage.setItem("user", JSON.stringify(userList));
+}
+
 
     </script>
+    
   
   </body>
 </html>

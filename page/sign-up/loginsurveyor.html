@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./Assets/css/login.css" />
+  </head>
+  <body>
+    <div class="first">
+      <div class="whole">
+        <form id="form">
+          <h1>Login</h1>
+
+          <label>E-mail</label>
+          <input type="email" id="email" /><br />
+          <button type="button" onclick="sendEmail()">Send OTP</button><br />
+          <label for="verify">Enter OTP:</label>
+          <input type="text" id="verify" required /><br /><br />
+
+          <button type="button" id="btn">Verify OTP</button>
+          <!-- <label>Password</label>
+          <input type="password" id="password" /><br /> -->
+          <button type="submit" class="btn">submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      let pass = [];
+
+      function sendEmail() {
+        const otp = generateOTP();
+        let mail = document.getElementById("email").value;
+        console.log(mail);
+
+        Email.send({
+          SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4",
+          Host: "smtp.elasticemail.com",
+          Username: "jayaprakash.jaisankar@fssa.freshworks.com",
+          Password: "7354083B73F02038F5B16EAF3DB2855682FD",
+          To: mail,
+          From: "jayaprakash.jaisankar@fssa.freshworks.com",
+          Subject: "Test Email",
+          Body: "OTP of 6 digits: " + otp,
+        })
+          .then((message) => {
+            alert("OTP sent to the user_email");
+
+            pass.push(otp);
+            console.log(pass);
+            localStorage.setItem("pass", JSON.stringify(pass));
+            console.log("OTP: " + otp + " sent to: " + mail);
+          })
+          .catch((error) => {
+            console.log("Error sending email:", error);
+            alert("Error sending OTP. Please try again later.");
+          });
+      }
+
+      function generateOTP() {
+        let digits = "0123456789";
+        let OTP = "";
+        let n = 6;
+        for (let i = 0; i < n; i++) {
+          OTP += digits[Math.floor(Math.random() * 10)];
+        }
+        return OTP;
+      }
+      let sen = document.getElementById("btn");
+      sen.addEventListener("click", function (e) {
+        e.preventDefault();
+        let password = JSON.parse(localStorage.getItem("pass"));
+        let otp = document.getElementById("verify").value;
+        console.log(otp);
+
+        if (password[0] == otp) {
+          alert("Success! OTP verified.");
+          // window.location = "/page/sign-up/profile.html";
+        } else {
+          alert("Invalid OTP. Please try again.");
+        }
+      });
+    </script>
+    <script>
+      // let logIn = document.getElementById("form");
+      // logIn.addEventListener("submit", (event) => {
+      //   event.preventDefault();
+      //   let Data = JSON.parse(localStorage.getItem("list"));
+      //   console.log(Data);
+      //   let email = document.getElementById("email").value.toLowerCase();
+
+      //   console.log(email);
+
+      //   let isthis = false;
+      //   for (let i = 0; i < Data.length; i++) {
+      //     if (email === Data[i]["email"]) {
+      //       isthis = true;
+
+      //       window.localStorage.setItem(
+      //         "userinfo",
+      //         JSON.stringify(Data[i].email)
+      //       );
+      //       break;
+      //     } else {
+      //       isthis = false;
+      //     }
+      //   }
+
+      //   if (isthis === true) {
+      //     alert("success");
+      //     window.localStorage.setItem("userinfo", JSON.stringify(email));
+      //     window.location.href = "/indexs.html";
+      //   } else {
+      //     alert("failed");
+      //     window.location.href = "./sign-up.html";
+      //   }
+      // });
+
+      let logIn = document.getElementById("form");
+      logIn.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let Data = JSON.parse(localStorage.getItem("list"));
+        console.log(Data);
+        let email = document.getElementById("email").value.toLowerCase();
+        //let password = document.getElementById("password").value;
+        console.log(email);
+
+        let isthis = false;
+        for (let i = 0; i < Data.length; i++) {
+          if (email == Data[i].mail) {
+            isthis = true;
+            // log.push(Data[i]);
+            window.localStorage.setItem(
+              "userinfo",
+              JSON.stringify(Data[i].mail)
+            );
+            break;
+          } else {
+            isthis = false;
+          }
+        }
+
+        if (isthis === true) {
+          alert("success");
+          // if (localStorage.getItem("userinfo") !== null) {
+          //   let clear = document.getElementsById("remnove");
+          //   clear.style.display = "none";
+          // }
+          //window.location.href = "/indexs.html";
+        } else {
+          alert("failed");
+          //window.location.href = "./sign-up.html";
+        }
+      });
+    </script>
+  </body>
+</html>

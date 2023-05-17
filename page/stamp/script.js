@@ -1,10 +1,29 @@
 // Form validation
-const form = document.querySelector("form");
-const cardName = document.getElementById("cardname");
-const cardNumber = document.getElementById("cardnumber");
-const expMonth = document.getElementById("expmonth");
-const expYear = document.getElementById("expyear");
-const cvv = document.getElementById("cvv");
+let pre = JSON.parse(localStorage.getItem("jscard"));
+
+let id = JSON.parse(localStorage.getItem("priceid"));
+console.log(id);
+
+let check = id.pop();
+console.log(check);
+
+let get = pre.find(function (obj) {
+  let checkid = obj["uuid"];
+  if (check == checkid) {
+    return true;
+  }
+});
+console.log(get);
+
+let form = document.querySelector("form");
+let cardName = document.getElementById("cardname");
+let cardNumber = document.getElementById("cardnumber");
+let expMonth = document.getElementById("expmonth");
+let expYear = document.getElementById("expyear");
+let cvv = document.getElementById("cvv");
+let price = document.getElementById("price");
+
+price.value = get["price"];
 
 form.addEventListener("submit", function (event) {
   if (!validateCardName()) {
@@ -67,3 +86,8 @@ function validateCVV() {
   }
   return true;
 }
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  window.location.href = "./declarationbill.html";
+});

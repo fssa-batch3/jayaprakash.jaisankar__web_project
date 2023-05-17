@@ -32,9 +32,9 @@
       }
       .place {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        padding: 10px;
+        /* padding: 10px; */
       }
       body {
         background-color: rgb(156, 233, 249);
@@ -160,13 +160,13 @@
         let label;
         label = document.createElement("label");
         label.setAttribute("id", "name");
-        label.innerText = "name";
+        label.innerText = "name:";
         div1.append(label);
 
         let input;
-        input = document.createElement("input");
+        input = document.createElement("p");
         input.setAttribute("id", "lname");
-        input.setAttribute("value", work[i]["name"]);
+        input.innerText = work[i]["name"];
         div1.append(input);
         // console.log(input);
 
@@ -183,13 +183,13 @@
         let label2;
         label2 = document.createElement("label");
         label2.setAttribute("id", "vname");
-        label2.innerText = "village_name";
+        label2.innerText = "village_name:";
         div3.append(label2);
 
         let input2;
-        input2 = document.createElement("input");
+        input2 = document.createElement("p");
         input2.setAttribute("id", "vnum");
-        input2.setAttribute("value", work[i]["vname"]);
+        input2.innerText = work[i]["vname"];
         div3.append(input2);
 
         let div5;
@@ -201,12 +201,12 @@
         let label3;
         label3 = document.createElement("label");
         label3.setAttribute("id", "tname");
-        label3.innerText = "village";
+        label3.innerText = "village:";
         div5.append(label3);
         let input3;
-        input3 = document.createElement("input");
+        input3 = document.createElement("p");
         input3.setAttribute("id", "tnum");
-        input3.setAttribute("value", work[i]["vnum"]);
+        input3.innerText = work[i]["vnum"];
         div5.append(input3);
 
         let div6;
@@ -217,13 +217,13 @@
         let label4;
         label4 = document.createElement("label");
         label4.setAttribute("id", "tname");
-        label4.innerText = "talukname";
+        label4.innerText = "talukname:";
         div6.append(label4);
 
         let input4;
-        input4 = document.createElement("input");
+        input4 = document.createElement("p");
         input4.setAttribute("id", "tnum");
-        input4.setAttribute("value", work[i]["tname"]);
+        input4.innerText = work[i]["tname"];
         div6.append(input4);
 
         // let direct;

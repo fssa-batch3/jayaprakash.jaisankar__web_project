@@ -59,11 +59,11 @@
     </div>
     <script>
       let mail = JSON.parse(window.localStorage.getItem("userinfo"));
-      let data = JSON.parse(window.localStorage.getItem("user"));
+      let data = JSON.parse(window.localStorage.getItem("list"));
       console.log(data);
 
       let get = data.find(function (obj) {
-        let checkmail = obj["email"];
+        let checkmail = obj["mail"];
         if (mail === checkmail) {
           return true;
         }
@@ -85,12 +85,12 @@
 
       const password = document.getElementById("password");
 
-      fname.value = get["fname"];
-      mname.value = get["mname"];
-      Lname.value = get["Lname"];
-      email.value = get["email"];
-      phnumber.value = get["phnumber"];
-      age.value = get["age"];
+      fname.value = get["name"];
+      //   mname.value = get["mname"];
+      //   Lname.value = get["Lname"];
+      email.value = get["mail"];
+      //   phnumber.value = get["phnumber"];
+      //   age.value = get["age"];
       // date.value = get["date"];
       //  address.value = get["address"];
       // gender.value = get["gender"];
@@ -151,7 +151,7 @@
           data[index] = update;
           localStorage.setItem("user", JSON.stringify(data));
           // location.reload();
-          window.location.href = "/index.html";
+          window.location.href = "/indexs.html";
           // alert("You have successfully updated your account details!");
         }
       });
@@ -166,7 +166,7 @@
         } else {
           data.splice(indexof, 1);
           localStorage.setItem("user", JSON.stringify(data));
-          window.location.href = "/index.html";
+          window.location.href = "/indexhome.html";
         }
       });
     </script>

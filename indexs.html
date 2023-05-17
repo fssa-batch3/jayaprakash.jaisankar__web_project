@@ -24,7 +24,7 @@
       <!-- Below code for logo placement  -->
       <div class="part1">
         <img class="logo" src="./page/electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
-          height="100px" alt="logo image " />
+          height="100px" alt="logo image"/>
       </div>
       
       <div class="nav">
@@ -32,7 +32,7 @@
         <div class="dropdown">
           <span>Home</span>
           <div class="dropdown-content">
-           <a href="./indexhome.html"> <p>Home</p>
+           <a href="./index.html"> <p>Home</p>
 
           </div>
         </div>
@@ -45,18 +45,22 @@
 
 
         <div class="dropdown">
-          <span  id="logout">sign_out</span>
-       
-        
+          <span id = "logout">signout</span>
+          
         </div>
-
+        <div class="dropdown">
+          <a href="/page/sign-up/sprofile.html"><span  >profile</span></a>
+          <div class="dropdown-content">
+        
+          </div>
+        </div>
       
         <div class="dropdown">
-          <a href="/page/contact/fedit.html"><span>Any queries</span></a>
+          <a href="./page/contact/contact.html"><span>Message</span></a>
         </div>
 
-<!--        
-        <div class="dropdown"  id="logout">logout </div> -->
+
+        <!-- <div class="dropdown"  >logout </div> -->
       </div>
     </div>
   </nav>
@@ -76,6 +80,10 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
+      <!-- <button class="details" id="summaryButton">Generate Summary</button>
+      <div id="summaryContainer"></div> -->
+
+
     </div>
   </div>
 
@@ -83,74 +91,30 @@
     <div class="last-1">
 
       <div>
-        <a href="./page/land/apply land.html">
+        <a href="./page/land/listadmin.html">
 
           <button class="btn" onclick="click"  id="check" >Apply for surviour
-           
-          </button>     </a> 
-      </div>
-
-      <div>
-        <a href="./page/insurance/welfare.html">
-          <button class="btn">
-            Welfare scheme
-                   </button>
-        </a>
-      </div>
-      <div>
-      <a href="/page/electricity/applylist.html">
-          <button class="btn" onclick="click" id ="change">
-            Electricity
-          
+        
           </button>
         </a>
       </div>
 
-      <div>
-        <a href="./page/education/education.html"> 
-          <button class="btn">
-            <span class="btn-text-one">Education</span>
-            <span class="btn-text-two">Open!</span>
-          </button>
-        </a>
-      </div>
-    </div>
+
+  
+
 
     <div class="last-1">
       <div>
-        <a href="/page/land/calculation.html">
+        <a href="./page/land/serviour list .html">
           <button class="btn" onclick="click"  id="delete">
 
             Land Measurement
-     
+
           </button>
         </a>
       </div>
-      <div>
-       <a href="./page/stamp/stampuser.html">
-         <button class="btn" onclick="click"  id="create">
-          Stamp Duty
-           
-          </button>
-        </a>
-      </div>
+  
 
-
-      <div>
-        <a href="/page/contact/feedback.html">
-          <button class="btn" onclick="click"  id="create">
-          Result
-            
-           </button>
-         </a>
-       </div>
-      <div>
-        <a href="./page/help/help.html">
-          <button class="btn">
-            <span class="btn-text-one">Help</span>
-            <span class="btn-text-two">Open!</span>
-          </button></a>
-      </div>
 
       <div class="pdf">
         <a href="Assets\image\PM-09-2015-00512017.pdf">
@@ -161,6 +125,8 @@
       </div>
     </div>
   </div>
+
+
 
 <div class="footer">
   <div class="part">
@@ -181,8 +147,7 @@
     <h1>Contact as</h1>
 
     <span id = "email">jayaprakash.jaisankar@fssa.freshworks.com</span>
-    <p><!-- HTML code -->
-<!-- HTML code -->
+    <p>
 <a href="tel:+917094120148">Call us at +91 70941 20148</a>
 
     </p>
@@ -198,19 +163,18 @@
     </p>
   </div>
 </div>
-</footer>
 
- 
+</footer>
+  
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
     }
   </script>
-  <script type="text/javascript"
-  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  
 
-  <script src="/page/sign-up/loginuser.js"></script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <script>
 
     // JavaScript code
@@ -227,57 +191,106 @@ if (phoneNumberLink) {
 
 
 let mail = JSON.parse(window.localStorage.getItem("userinfo"));
-
-
       let data = JSON.parse(window.localStorage.getItem("user"));
       console.log(data);
-
    let log = document.getElementById("logout");
-
       log.addEventListener("click", function (event) {
-        event.preventDefault();
-    if(window.localStorage.getItem("userinfo") !== null)  {
-   confirm("Are you want to logout")
+        event.preventDefault();    
       let rem =   localStorage.removeItem("userinfo");
-    
-      }
       })
-  
+     
 
       
 let to = document.getElementById("email");
       to.addEventListener("click", function (event) {
         let emailAddress = 'jayaprakash.jaisankar@fssa.freshworks.com';
-let subjectLine = 'Email subject';
-let emailBody = 'Email body text';
+let subjectLine = 'subject';
+let emailBody = 'body ';
 let mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subjectLine) + '&body=' + encodeURIComponent(emailBody);
 window.location.href = mailtoLink;
-
       })
  
 
-// let info = document.getElementById("delete");
-//       info.addEventListener("click", function (event) {
-//         event.preventDefault();
-   
-//         let failed = confirm("you are survivor");
-     
-//         if (failed == true) {
-//           window.location.href = "./page/land/serviour list .html";
-//         } 
-  
-//         else{
-//          window.location.href ="./page/land/serviour list .html";
-//         }
-//       });
+       
 
-
-
-   
 
 
   </script>
-  
+
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+
+window.onload = function() {
+  loadYouTubeAPI();
+};
+
+function initYouTubeAPI() {
+  gapi.client.init({
+    apiKey: 'AIzaSyD2LBkm6fwZyiyAAEardpEVrfi0nk6nndM'
+  }).then(function() {
+    // API ready
+    document.getElementById('summaryButton').disabled = false;
+  }).catch(function(error) {
+    // Error loading the API
+    console.log('Error: ' + error);
+  });
+}
+
+// Load the YouTube Data API
+function loadYouTubeAPI() {
+  gapi.load('client', initYouTubeAPI);
+}
+
+// Initialize the YouTube Data API client
+function initYouTubeAPI() {
+  gapi.client.init({
+    apiKey: 'AIzaSyD2LBkm6fwZyiyAAEardpEVrfi0nk6nndM'
+  }).then(function() {
+    // API ready
+    document.getElementById("summaryButton").disabled = false;
+  }, function(error) {
+    // Error loading the API
+    console.log('Error: ' + error);
+  });
+}
+
+
+// Generate video summary
+function generateSummary() {
+  let videoId = 'WeGHhQPSfcE'; // Extract the video ID from the src URL
+
+  // Make an API request to retrieve video details
+  gapi.client.request({
+    path: 'youtube/v3/videos',
+    part: 'snippet',
+    id: videoId
+  }).then(function(response) {
+    let videoDetails = response.result.items[0].snippet;
+    let summary = videoDetails.description; // Use the video description as the summary
+    // Display the summary in the summaryContainer div
+    let summaryContainer = document.getElementById('summaryContainer');
+    summaryContainer.innerText = summary;
+  }).catch(function(error) {
+    console.log('Error:', error);
+    // Handle the error    
+    let errorMessage = 'An error occurred while fetching video details.';
+    // Display the error message in the summaryContainer div
+    let summaryContainer = document.getElementById('summaryContainer');
+    summaryContainer.innerText = errorMessage;
+  });
+}
+// Button click event handler
+document.getElementById('summaryButton').addEventListener('click', generateSummary);
+
+
+
+
+    
+</script>
+
+ 
 </body>
 
 </html>
+
+

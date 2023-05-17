@@ -5,13 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
-    <link rel="stylesheet" href="./Assets/css/home.css" />
     <style>
-      /* .form{
-
-        } */
-
       .whole {
         display: flex;
         flex-direction: row;
@@ -36,91 +30,148 @@
         align-items: center;
         padding: 10px;
       }
-      body {
-        background-color: rgb(156, 233, 249);
-      }
-     .place{
-      display: flex;
-      justify-content:space-between ;
-     }
+
+      .head {
+ 
+
+ background-color: rgb(181, 222, 234);
+}
+.logo {
+display: flex;
+/* margin-top: -100px; */
+/* margin-left: 100px;
+margin-bottom: 30px; */
+}
+
+.top2 {
+display: flex;
+}
+
+
+   
+.nav {
+
+margin-top: 40px;
+margin-left: 600px;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+margin-left: 20px;
+font-size: 18px;
+justify-content: space-between;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+padding: 8px 10px;
+z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.footer {
+/* margin-top: 500px; */
+padding: 100px;
+background-color: rgb(129, 209, 235);
+display: flex;
+column-gap: 150px;
+/*   
+text-align: center;
+justify-content: center; */
+}
+
+body{
+margin: 0px;
+}
+.place{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+     
     </style>
   </head>
   <body>
-    <div class="head">
-      <img
-        class="logo"
-        src="./Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png"
-        width="150px"
-        height="100px"
-        alt="logo"
-      />
-      <!-- <p>
-        APPLICATION FOR TAMIL NADU GENERATION AND DISTRIBUTION CORPORATION
-        LIMITED
-      </p> -->
 
-      <div class="nav">
-        <div class="dropdown">
-      
-          <span>Home</span>
-          <div class="dropdown-content">
-            <a href="/indexuser.html">  <p>Home</p></a>
-           <a href="/page/electricity/about.html"><p>About as</p>
+    <nav class="head">
+
+      <div class="part">
+  
+      <div class="top"> For any complaint - Call -7094120148 Tamilnadu , India</div>
+  
+  
+      <div class="top2">
+        <!-- Below code for logo placement  -->
+        <div class="part1">
+          <img class="logo" src="/page/electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
+            height="100px" alt="logo" />
+        </div>
+        
+        <div class="nav">
+  
+          <div class="dropdown">
+            <span>Home</span>
+            <div class="dropdown-content">
+             <a href="/indexhome.html"> <p>Home</p>
+   <a href="./page/electricity/about.html">           <p>About as</p></a>
+            </div>
+          </div>
+  
+       
+          <div class="dropdown">
+            <span>Apply</span>
+            <div class="dropdown-content">
+             <a href="./apply land.html"> <p>application</p></a>
+           
+            </div>
+          </div>
+  
+         
+          
+          <div class="dropdown">
+            <a href="./page/contact/contact.html"><span>Message</span></a>
+          </div>
+  
+        
           </div>
         </div>
-
-        <div class="dropdown">
-          <span>Apply</span>
-          <div class="dropdown-content">
-            <a href="./apply.html"><p>New</p></a>
-            <a href="./edit.html"> <p>Remove</p></a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <span>status</span>
-          <div class="dropdown-content">
-         <a href="./apply.html">   <p>application</p></a>
-            
-          </div>
-        </div>
-
-        <!-- <div class="dropdown">
-          <span>download</span>
-          <div class="dropdown-content">
-            <p>forms</p>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <span>feedback</span>
-        </div>
-
-        <div class="dropdown">
-          <span>dashboard</span>
-        </div> -->
       </div>
-    </div>
-    <div class="whole"></div>
+    </nav>
 
+
+    <div class="tot">
+      <div class="whole"></div>
+    </div>
+
+    
     <div class="footer">
       <div class="part">
         <h1>useful links</h1>
-
+    
         <p>Electricity</p>
         <p>Online payment</p>
         <p>Complain</p>
       </div>
       <div class="part">
         <h1>Privacy policy</h1>
-
+    
         <p>Website Policies</p>
         <p>Cyber resilience</p>
       </div>
-
+    
       <div class="part">
         <h1>Contact as</h1>
-
+    
         <p>jp@gmail.com</p>
         <p>Phone:+917094120148</p>
       </div>
@@ -136,16 +187,33 @@
       </div>
     </div>
     <script>
- 
-let email = JSON.parse(localStorage.getItem("userinfo"));                        
-      let work = JSON.parse(window.localStorage.getItem("electricity"));
-      console.log(work);
+      
 
-      for (let i = 0; i < work.length; i++) {
+      let get = JSON.parse(window.localStorage.getItem("data"));
+      console.log(get);
+      let email = JSON.parse(localStorage.getItem("userinfo"))
+console.log(email)
+
+
+
+
+let work = get.find(function (obj) {
+      let check = obj["mail"];
+      if (email == check) {
+        return true;
+      }
+    });
+    console.log(work);
+
+    
+        let two;
+        two = document.createElement("div");
+        two.setAttribute("class", "pla");
+
         let div_card;
         div_card = document.createElement("div");
         div_card.setAttribute("id", "card");
-        console.log(div_card);
+        two.append(div_card);
 
         let form;
         form = document.createElement("form");
@@ -160,13 +228,13 @@ let email = JSON.parse(localStorage.getItem("userinfo"));
         let label;
         label = document.createElement("label");
         label.setAttribute("id", "name");
-        label.innerText = "name";
+        label.innerText = "Name:";
         div1.append(label);
 
         let input;
         input = document.createElement("p");
         input.setAttribute("id", "lname");
-        input.innerText =  work[i]["name"];
+        input.innerText = work["name"];
         div1.append(input);
         // console.log(input);
 
@@ -175,7 +243,17 @@ let email = JSON.parse(localStorage.getItem("userinfo"));
         div2.setAttribute("class", "place");
         form.append(div2);
 
-
+        let label1;
+        label1 = document.createElement("label");
+        label1.setAttribute("id", "num");
+        label1.innerText = "serviour number:";
+        div2.append(label1);
+        let input1;
+        input1 = document.createElement("p");
+        input1.setAttribute("id", "Servour");
+        input1.innerText =  work["num"];
+        div2.append(input1);
+        // console.log(input1);
 
         let div4;
         div3 = document.createElement("div");
@@ -185,13 +263,13 @@ let email = JSON.parse(localStorage.getItem("userinfo"));
         let label2;
         label2 = document.createElement("label");
         label2.setAttribute("id", "vname");
-        label2.innerText = "village_name";
+        label2.innerText = "village_name:";
         div3.append(label2);
 
         let input2;
         input2 = document.createElement("p");
         input2.setAttribute("id", "vnum");
-        input2.innerText =  work[i]["vname"];
+        input2.innerText =  work["vname"];
         div3.append(input2);
 
         let div5;
@@ -203,60 +281,48 @@ let email = JSON.parse(localStorage.getItem("userinfo"));
         let label3;
         label3 = document.createElement("label");
         label3.setAttribute("id", "tname");
-        label3.innerText = "village";
+        label3.innerText = "talukname:";
         div5.append(label3);
         let input3;
         input3 = document.createElement("p");
         input3.setAttribute("id", "tnum");
-        input3.innerText =  work[i]["vnum"];
+        input3.innerText =  work["tname"];
         div5.append(input3);
-
-        let div6;
-        div6 = document.createElement("div");
-        div6.setAttribute("class", "place");
-
-        form.append(div6);
-
-        let label4;
-        label4 = document.createElement("label");
-        label4.setAttribute("id", "tname");
-        label4.innerText = "talukname";
-        div6.append(label4);
-        let input4;
-        input4 = document.createElement("p");
-        input4.setAttribute("id", "tnum");
-        input4.innerText =  work[i]["tname"];
-        div6.append(input4);
+     
 
         let direct;
         direct = document.createElement("a");
         direct.setAttribute("class", "link");
-        direct.setAttribute("href", "./edit.html");
+       direct.setAttribute("href", "./edit.html");
 
         div_card.append(direct);
 
-        
-  
         let edit;
         edit = document.createElement("button");
         edit.setAttribute("class", "link");
-        edit.setAttribute("id", work[i]["uuid"]);
-
+        edit.setAttribute("id", work ["uuid"]);
         edit.setAttribute("onclick", "edit(this.id)");
+        // edit.setAttribute('disabled', '');
 
         edit.innerText = "edit";
         direct.append(edit);
-}
+
+        
+        
+      
+        
+
         document.querySelector("div.whole").append(div_card);
       
-      let array = [];
+    //   let array = [];
+    //   function edit(id) {
+    //     array.push(id);
+    //     console.log(array);
+    //     let uuid = localStorage.setItem("uuid", JSON.stringify(array));
 
-      function edit(id) {
-        array.push(id);
-        console.log(array);
-        let uuid = localStorage.setItem("uuid", JSON.stringify(array));
-        window.location.href = "./edit.html";
-      }
+     
+    //   }
+
     </script>
   </body>
 </html>

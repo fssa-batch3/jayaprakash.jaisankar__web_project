@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <div class="divide">
+        <label>Heading</label>
+        <input id="head" type="text" required />
+      </div>
+      <div class="divide">
+        <label>Description</label>
+        <input id="para" type="text" required />
+      </div>
+      <button id="btn" type="submit">ADD</button>
+    </form>
+
+    <script>
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let head = document.getElementById("head").value;
+        console.log(head);
+        let para = document.getElementById("para").value;
+
+        let obj = {
+          head,
+          para,
+        };
+        let arr = [];
+        arr.push(obj);
+
+        if (window.localStorage.getItem("addli") === null) {
+          window.localStorage.setItem("addli", JSON.stringify(arr));
+          console.log(window.localStorage.getItem("addli"));
+          //window.location.href = "./list.html";
+        } else {
+          let local = window.localStorage.getItem("addli");
+          let json = JSON.parse(local);
+          json.push(obj);
+          window.localStorage.setItem("addli", JSON.stringify(json));
+        }
+      });
+    </script>
+  </body>
+</html>
