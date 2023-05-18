@@ -79,21 +79,21 @@
       const email = document.getElementById("email");
       const phnumber = document.getElementById("phnumber");
       const age = document.getElementById("age");
-      //  const gender = document.getElementById("gender");
-      //const address = document.getElementById("address");
-      // const date = document.getElementById("date");
+      const gender = document.getElementById("gender");
+      const address = document.getElementById("address");
+      const date = document.getElementById("date");
 
       const password = document.getElementById("password");
 
       fname.value = get["name"];
-      //   mname.value = get["mname"];
-      //   Lname.value = get["Lname"];
+      mname.value = get["mname"];
+      Lname.value = get["Lname"];
       email.value = get["mail"];
-      //   phnumber.value = get["phnumber"];
-      //   age.value = get["age"];
-      // date.value = get["date"];
-      //  address.value = get["address"];
-      // gender.value = get["gender"];
+      phnumber.value = get["phnumber"];
+      age.value = get["age"];
+      date.value = get["date"];
+      address.value = get["address"];
+      gender.value = get["gender"];
       password.value = get["password"];
 
       // Edit profile start
@@ -149,8 +149,8 @@
           let index = data.indexOf(get);
           console.log(index);
           data[index] = update;
-          localStorage.setItem("user", JSON.stringify(data));
-          // location.reload();
+          localStorage.setItem("list", JSON.stringify(data));
+          //location.reload();
           window.location.href = "/indexs.html";
           // alert("You have successfully updated your account details!");
         }
@@ -165,7 +165,7 @@
           return;
         } else {
           data.splice(indexof, 1);
-          localStorage.setItem("user", JSON.stringify(data));
+          localStorage.setItem("list", JSON.stringify(data));
           window.location.href = "/indexhome.html";
         }
       });

@@ -137,9 +137,35 @@
         fques.append(head2);
 
       
+       
+      let direct;
+        direct = document.createElement("a");
+        direct.setAttribute("class", "link");
+        direct.setAttribute("href", "./feedbackedit.html");
+
+        whole.append(direct);
+
+        
+  
+        let edit;
+        edit = document.createElement("button");
+        edit.setAttribute("class", "link");
+        edit.setAttribute("id", arr[i]["uuid"]);
+
+        edit.setAttribute("onclick", "edit(this.id)");
+
+        edit.innerText = "edit";
+        direct.append(edit);
         document.querySelector("div.full").append(whole);
       }
-  
+      let array = [];
+
+      function edit(id) {
+        array.push(id);
+        console.log(array);
+        let uuid = localStorage.setItem("edit", JSON.stringify(array));
+        window.location.href = "./feedbackedit.html";
+      }
 
    
     </script>

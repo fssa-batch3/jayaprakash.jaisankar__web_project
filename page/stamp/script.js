@@ -23,8 +23,8 @@ let expYear = document.getElementById("expyear");
 let cvv = document.getElementById("cvv");
 let price = document.getElementById("price");
 
-price.value = get["price"];
-
+price.value = get["price"] + "200";
+console.log(price.value);
 form.addEventListener("submit", function (event) {
   if (!validateCardName()) {
     event.preventDefault();
