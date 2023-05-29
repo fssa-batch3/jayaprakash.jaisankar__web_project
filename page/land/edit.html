@@ -127,7 +127,7 @@
 
       form_details[index] = update;
       localStorage.setItem("data", JSON.stringify(form_details));
-      window.location.href = "./list.html";
+      window.location.href = "./listuser.html";
     });
 
     let info = document.getElementById("delete");
@@ -140,7 +140,7 @@
       } else {
         form_details.splice(indexof, 1);
         localStorage.setItem("data", JSON.stringify(form_details));
-         window.location.href = "./list.html";
+         window.location.href = "./listuser.html";
       }
     });
   </script>

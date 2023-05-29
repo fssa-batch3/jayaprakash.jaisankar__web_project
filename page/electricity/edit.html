@@ -51,22 +51,27 @@
    </form>
    </div>
    <script>
-    let form_details = JSON.parse(localStorage.getItem("electricity"));
-    console.log(form_details);
+let form_details = JSON.parse(localStorage.getItem("electricity"));
+console.log(form_details);
 
-    let id = JSON.parse(localStorage.getItem("uuid"));
-    console.log(id);
+let id = JSON.parse(localStorage.getItem("uuid"));
+console.log(id);
 
-    let check = id.pop();
-    console.log(check);
+let check = id.pop();
+console.log(check);
 
-    let get = form_details.find(function (obj) {
-      let checkid = obj["uuid"];
-      if (check == checkid) {
-        return true;
-      }
-    });
-    console.log(get);
+let get = form_details.find(function(obj) {
+  let checkid = obj["uuid"];
+  console.log("Check:", check, "Check ID:", checkid);
+  if (check == checkid) {
+    return true;
+  }
+  return false;
+});
+
+console.log("Result:", get);
+
+
 
     const name = document.getElementById("name");
  //  const email = document.getElementById("num");
@@ -120,7 +125,7 @@
 
       form_details[index] = update;
       localStorage.setItem("electricity", JSON.stringify(form_details));
-      window.location.href = "./list.html";
+      window.location.href = "./applylist.html";
     });
 
     let info = document.getElementById("delete");
@@ -133,7 +138,7 @@
       } else {
         form_details.splice(indexof, 1);
         localStorage.setItem("electricity", JSON.stringify(form_details));
-         window.location.href = "./list.html";
+         window.location.href = "./applylist.html";
       }
     });
   </script>

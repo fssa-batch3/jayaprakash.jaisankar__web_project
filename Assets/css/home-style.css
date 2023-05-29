@@ -57,9 +57,10 @@ body {
   outline: none;
 }
 .background {
-  background-image: url(../image/background\ .jpg);
-  background-size: 100% 100%;
+  background-image: url(/gettyimages-170883817-612x612.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .footer {
@@ -102,7 +103,7 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 20px;
-  border: 10px solid rgb(93, 212, 212);
+  border: 10px solid rgba(185, 132, 132, 0.89);
 
   padding: 10px;
   margin-bottom: 50px;

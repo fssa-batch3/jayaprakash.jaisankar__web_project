@@ -136,138 +136,112 @@
       </div>
     </div>
     <script>
- 
-let email = JSON.parse(localStorage.getItem("userinfo"));                        
-      let get = JSON.parse(window.localStorage.getItem("electricity"));
+      let email = JSON.parse(localStorage.getItem("userinfo"));
+      let get = JSON.parse(localStorage.getItem("electricity"));
       console.log(get);
-
-
-
+    
       let work = get.find(function (obj) {
-      let check = obj["mail"];
-      if (email == check) {
-        return true;
-      }
-    });
-    console.log(get);
-
-
-    //   for (let i = 0; i < work.length; i++) {
-        let div_card;
-        div_card = document.createElement("div");
+        let check = obj["mail"];
+        if (email === check) {
+          return true;
+        }
+      });
+      console.log(work);
+    
+      if (work) {
+        let div_card = document.createElement("div");
         div_card.setAttribute("id", "card");
         console.log(div_card);
-
-        let form;
-        form = document.createElement("form");
+    
+        let form = document.createElement("form");
         form.setAttribute("class", "form");
         div_card.append(form);
-
-        let div1;
-        div1 = document.createElement("div");
+    
+        let div1 = document.createElement("div");
         div1.setAttribute("class", "place");
         form.append(div1);
-
-        let label;
-        label = document.createElement("label");
-        label.setAttribute("id", "name");
-        label.innerText = "name";
-        div1.append(label);
-
-        let input;
-        input = document.createElement("p");
-        input.setAttribute("id", "lname");
-        input.innerText =  work["name"];
-        div1.append(input);
-        // console.log(input);
-
-        let div2;
-        div2 = document.createElement("div");
+    
+        let label1 = document.createElement("label");
+        label1.setAttribute("id", "name");
+        label1.innerText = "Name";
+        div1.append(label1);
+    
+        let input1 = document.createElement("p");
+        input1.setAttribute("id", "lname");
+        input1.innerText = work["name"];
+        div1.append(input1);
+    
+        let div2 = document.createElement("div");
         div2.setAttribute("class", "place");
         form.append(div2);
-
-
-
-        let div4;
-        div3 = document.createElement("div");
+    
+        let div3 = document.createElement("div");
         div3.setAttribute("class", "place");
         form.append(div3);
-
-        let label2;
-        label2 = document.createElement("label");
+    
+        let label2 = document.createElement("label");
         label2.setAttribute("id", "vname");
-        label2.innerText = "village_name";
+        label2.innerText = "Village Name";
         div3.append(label2);
-
-        let input2;
-        input2 = document.createElement("p");
+    
+        let input2 = document.createElement("p");
         input2.setAttribute("id", "vnum");
-        input2.innerText =  work["vname"];
+        input2.innerText = work["vname"];
         div3.append(input2);
-
-        let div5;
-        div5 = document.createElement("div");
-        div5.setAttribute("class", "place");
-
-        form.append(div5);
-
-        let label3;
-        label3 = document.createElement("label");
+    
+        let div4 = document.createElement("div");
+        div4.setAttribute("class", "place");
+        form.append(div4);
+    
+        let label3 = document.createElement("label");
         label3.setAttribute("id", "tname");
-        label3.innerText = "village";
-        div5.append(label3);
-        let input3;
-        input3 = document.createElement("p");
+        label3.innerText = "Village";
+        div4.append(label3);
+    
+        let input3 = document.createElement("p");
         input3.setAttribute("id", "tnum");
-        input3.innerText =  work["vnum"];
-        div5.append(input3);
-
-        let div6;
-        div6 = document.createElement("div");
-        div6.setAttribute("class", "place");
-
-        form.append(div6);
-
-        let label4;
-        label4 = document.createElement("label");
-        label4.setAttribute("id", "tname");
-        label4.innerText = "talukname";
-        div6.append(label4);
-        let input4;
-        input4 = document.createElement("p");
-        input4.setAttribute("id", "tnum");
-        input4.innerText =  work["tname"];
-        div6.append(input4);
-
-        let direct;
-        direct = document.createElement("a");
-        direct.setAttribute("class", "link");
-        direct.setAttribute("href", "./edit.html");
-
-        div_card.append(direct);
-
-        
-  
-        let edit;
-        edit = document.createElement("button");
-        edit.setAttribute("class", "link");
-        edit.setAttribute("id", work["uuid"]);
-
-        edit.setAttribute("onclick", "edit(this.id)");
-
-        edit.innerText = "edit";
-        direct.append(edit);
-
+        input3.innerText = work["vnum"];
+        div4.append(input3);
+    
+        let div5 = document.createElement("div");
+        div5.setAttribute("class", "place");
+        form.append(div5);
+    
+        let label4 = document.createElement("label");
+        label4.setAttribute("id", "talukname");
+        label4.innerText = "Taluk Name";
+        div5.append(label4);
+    
+        let input4 = document.createElement("p");
+        input4.setAttribute("id", "taluknum");
+        input4.innerText = work["tname"];
+        div5.append(input4);
+    
+        let editLink = document.createElement("a");
+        editLink.setAttribute("class", "link");
+       // editLink.setAttribute("href", "./edit.html");
+        div_card.append(editLink);
+    
+        let editButton = document.createElement("button");
+        editButton.setAttribute("class", "link");
+        editButton.setAttribute("id", work["uuid"]);
+        editButton.setAttribute("onclick", "edit(this.id)");
+        editButton.innerText = "Edit";
+        editLink.append(editButton);
+    
         document.querySelector("div.whole").append(div_card);
-      
-    //   let array = [];
-
-    //   function edit(id) {
-    //     array.push(id);
-    //     console.log(array);
-    //     let uuid = localStorage.setItem("uuid", JSON.stringify(array));
-    //     window.location.href = "./edit.html";
-    //   }
+      } else {
+        console.log("No matching work found.");
+      }
+    
+      function edit(id) {
+        let array = [];
+        array.push(id);
+        console.log(array);
+        localStorage.setItem("uuid", JSON.stringify(array));
+        window.location.href = "./edit.html";
+      }
     </script>
+    
   </body>
 </html>

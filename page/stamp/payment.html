@@ -5,62 +5,59 @@
     <link rel="stylesheet" type="text/css" href="./Assets/css/syle.css" />
   </head>
   <body>
-    <h1>Payment Page</h1>
-    <form>
-      <label for="cardname">Name on Card:</label>
-      <input
-        type="text"
-        id="cardname"
-        name="cardname"
-        pattern="[A-Za-z]{1,32}"
-        required
-      /><br /><br />
-      <label for="cardnumber">Card Number:</label>
-      <input
-        type="text"
-        id="cardnumber"
-        name="cardnumber"
-        pattern="^\d{16}$"
-        maxlength="16"
-        required
-      /><br /><br />
-      <label for="expmonth">Expiration Month:</label>
-      <input
-        type="text"
-        id="expmonth"
-        name="expmonth"
-        maxlength="2"
-        pattern="^(0[1-9]|1[0-2])$"
-        required
-      /><br /><br />
-      <label for="expyear">Expiration Year:</label>
-      <input
-        type="text"
-        id="expyear"
-        name="expyear"
-        maxlength="4"
-        pattern="^20[2-9][0-9]|2[1-9][0-9]{2}$"
-        required
-      /><br /><br />
-      <label for="cvv">CVV:</label>
-      <input
-        type="text"
-        id="cvv"
-        name="cvv"
-        pattern="[1-9]{1}[0-9]{2}"
-        maxlength="3"
-        required
-      /><br /><br />
-      <label for="price">Price:</label>
-      <input
-        type="text"
-        id="price"
-        pattern="^\d+(\.\d{1,2})?$"
-        name="price"
-        disabled
-      /><br /><br />
-      <input type="submit" value="Submit Payment" />
-    </form>
+    <div>
+      <h1>Payment Page</h1>
+      <form>
+        <label for="cardname">Name on Card:</label>
+        <input
+          type="text"
+          id="cardname"
+          name="cardname"
+          pattern="[A-Za-z]{1,32}"
+          value="Yazhan"
+          required
+        /><br /><br />
+        <label for="cardnumber">Card Number:</label>
+        <input
+          type="password"
+          id="cardnumber"
+          name="cardnumber"
+          pattern="^\d{16}$"
+          maxlength="16"
+          value="9876543210123456"
+          required
+        /><br /><br />
+        <label for="expmonth">Expiration Month:</label>
+        <select id="expirationMonth"></select>
+
+        <br /><br />
+        <label for="expyear">Expiration Year:</label>
+
+        <select id="expirationYear"></select>
+
+        <br /><br />
+        <label for="cvv">CVV:</label>
+        <input
+          type="password"
+          id="cvv"
+          name="cvv"
+          pattern="[1-9]{1}[0-9]{2}"
+          value="678"
+          maxlength="3"
+          required
+        /><br /><br />
+        <label for="price">Price:</label>
+        <input
+          type="text"
+          id="price"
+          pattern="^\d+(\.\d{1,2})?$"
+          name="price"
+          disabled
+        /><br /><br />
+        <input type="submit" value="Submit Payment" />
+      </form>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

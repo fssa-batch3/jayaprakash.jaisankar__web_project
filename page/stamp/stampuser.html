@@ -131,6 +131,7 @@
 
         let img_stamp;
         img_stamp = document.createElement("img");
+        img_stamp.setAttribute("id", "image");
         img_stamp.setAttribute("src", card[i]["src"]);
         img_stamp.setAttribute("alt", "image_placeholder");
         img_stamp.setAttribute("class", "stamp");
@@ -176,6 +177,7 @@
 
         document.querySelector("div.whole").append(div_card);
       }
+
       let arr = [];
       function editPaper(id) {
         arr.push(id);
@@ -185,6 +187,18 @@
         console.log(uid);
         window.location.href = "./address.html";
       }
+    </script>
+    <script>
+      let dragstart = document.getElementById("image");
+      dragstart.addEventListener("copy", (event) => {
+        event.preventDefault();
+        alert("Copying of the image is not allowed.");
+      });
+
+      dragstart.addEventListener("paste", (event) => {
+        event.preventDefault();
+        alert("Pasting of the image is not allowed.");
+      });
     </script>
   </body>
 </html>

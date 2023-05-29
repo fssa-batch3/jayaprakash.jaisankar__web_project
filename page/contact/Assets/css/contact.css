@@ -31,6 +31,12 @@ body {
 .btn:hover {
   opacity: 0.7;
 }
+.alig {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 @media only screen and (max-width: 700px) {
   .contact {
     width: 400px;

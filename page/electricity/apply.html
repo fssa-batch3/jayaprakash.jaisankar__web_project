@@ -23,9 +23,14 @@
       }
       .change {
         display: flex;
-        justify-content: center;
+        justify-content:center;
         align-items: center;
         padding: 40px;
+      }
+      .align{
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
       }
       
       #sub{
@@ -35,6 +40,13 @@
       }
 
       #submit{
+        width: 100px;
+        height: 30px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(48, 160, 240);
+      }
+      #download{
         width: 100px;
         height: 30px;
         border: none;
@@ -59,7 +71,7 @@
     <form id="form" >
     <div class="change">
       <label>Name</label>&emsp;
-      <input id="name" type="text" pattern="[A-Za-z]{6,12}" title="name is 6 to 12 letter" required/>
+      <input id="name" type="text" value="yazhanj" pattern="[A-Za-z]{6,12}" title="name is 6 to 12 letter" required/>
     </div>
 
     <div class="change">
@@ -70,19 +82,21 @@
 
     <div class="change">
       <label>village</label>&emsp;
-      <input id="vname" type="text" pattern="[A-Za-z]{6,12}" title="village_name is 6 to 12 letter"required/>
+      <input id="vname" value="karurk" type="text" pattern="[A-Za-z]{6,12}" title="village_name is 6 to 12 letter"required/>
     </div>
     <div class="change">
       <label>village.no</label>&emsp;
-      <input id="vnum" type="number" maxlength="4" pattern="[0-9]{1,32}" title="number is 1 to 32 number" required />
+      <input id="vnum" value = "50" type="number" maxlength="4" pattern="[0-9]{1,32}" title="number is 1 to 32 number" required />
     </div>
 
     <div class="change">
       <label>taluk</label>&emsp;
-      <input id="tname" type="text"  pattern="[A-Za-z]{6,12}" title="taluk_name is 6 to 12 letter" required />
-    </div class="change">
+      <input id="tname" value = "vedaranyam"type="text"  pattern="[A-Za-z]{6,12}" title="taluk_name is 6 to 12 letter" required />
+    </div >
+    <div class="align">
     <button onclick="submit" id="submit" class="btn">submit</button>
     <button onclick="submit" id="download" class="btn">Download</button>
+  </div>
     </form>
     </div>
     </div>
@@ -175,7 +189,7 @@ file.addEventListener("change",function(e){
             window.localStorage.setItem("electricity", JSON.stringify(json));
           }
 
-          window.location.href = "./list.html";
+          window.location.href = "./applylist.html";
 
         });        
         

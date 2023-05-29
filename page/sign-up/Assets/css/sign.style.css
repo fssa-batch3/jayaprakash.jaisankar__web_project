@@ -5,7 +5,6 @@ body {
   height: 875px;
 }
 .sign-up {
-  padding: 100px;
   width: 200px;
   background-color: rgb(6, 203, 243);
   padding: 60px 120px 60px 120px;
@@ -13,13 +12,7 @@ body {
   border-radius: 10px;
   margin-top: 7rem;
 }
-/* .change {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: auto;
-  margin: auto;
-} */
+
 .whole {
   display: flex;
   align-items: center;
@@ -31,12 +24,6 @@ body {
   border: none;
   outline: none;
 }
-/* input:valid {
-  border: 2px solid green;
-}
-input:invalid {
-  border: 2px solid rgb(206, 50, 19);
-} */
 
 .btn {
   background: green;

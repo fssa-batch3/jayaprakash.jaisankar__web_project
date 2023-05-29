@@ -23,7 +23,7 @@ let expYear = document.getElementById("expyear");
 let cvv = document.getElementById("cvv");
 let price = document.getElementById("price");
 
-price.value = get["price"] + "200";
+price.value = parseInt(get["price"]) + 100;
 console.log(price.value);
 form.addEventListener("submit", function (event) {
   if (!validateCardName()) {
@@ -91,3 +91,38 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
   window.location.href = "./declarationbill.html";
 });
+
+// Get references to the select elements
+let monthSelect = document.getElementById("expirationMonth");
+let yearSelect = document.getElementById("expirationYear");
+
+// Populate the month dropdown
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+for (let i = 1; i <= 12; i++) {
+  let option = document.createElement("option");
+  option.text = months[i - 1];
+  option.value = i;
+  monthSelect.add(option);
+}
+
+// Populate the year dropdown with the current year and the next 10 years
+let currentYear = new Date().getFullYear();
+for (let i = 0; i < 21; i++) {
+  let option = document.createElement("option");
+  option.text = currentYear + i;
+  option.value = currentYear + i;
+  yearSelect.add(option);
+}

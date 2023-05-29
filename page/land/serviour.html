@@ -26,14 +26,14 @@
       }
       .place {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         padding: 10px;
       }
 
       .link {
-        margin-left: 100px;
-        margin-top: 40px;
+        margin-left: 60px;
+        margin-top: -30px;
         width: 70px;
         height: 30px;
         border-radius: 10px;
@@ -254,15 +254,15 @@ margin: 0px;
         let label;
         label = document.createElement("label");
         label.setAttribute("id", "name");
-        label.innerText = "num";
+        label.innerText = "Name:";
         div1.append(label);
 
         let input;
-        input = document.createElement("input");
+        input = document.createElement("p");
         input.setAttribute("id", "lname");
-        input.setAttribute("value", work[i]["name"]);
+        input.innerText = work[i]["name"];
         div1.append(input);
-        // console.log(input);
+    
 
         let div2;
         div2 = document.createElement("div");
@@ -272,14 +272,14 @@ margin: 0px;
         let label1;
         label1 = document.createElement("label");
         label1.setAttribute("id", "num");
-        label1.innerText = "serviour number";
+        label1.innerText = "surveyor no:";
         div2.append(label1);
         let input1;
-        input1 = document.createElement("input");
+        input1 = document.createElement("p");
         input1.setAttribute("id", "Servour");
-        input1.setAttribute("value", work[i]["num"]);
+        input1.innerText = work[i]["num"];
         div2.append(input1);
-        // console.log(input1);
+       
 
         let div4;
         div3 = document.createElement("div");
@@ -289,30 +289,29 @@ margin: 0px;
         let label2;
         label2 = document.createElement("label");
         label2.setAttribute("id", "vname");
-        label2.innerText = "village_name";
+        label2.innerText = "village:";
         div3.append(label2);
 
         let input2;
-        input2 = document.createElement("input");
+        input2 = document.createElement("p");
         input2.setAttribute("id", "vnum");
-        input2.setAttribute("value", work[i]["vname"]);
+        input2.innerText = work[i]["vname"];
         div3.append(input2);
 
         let div5;
         div5 = document.createElement("div");
         div5.setAttribute("class", "place");
-
         form.append(div5);
 
         let label3;
         label3 = document.createElement("label");
         label3.setAttribute("id", "tname");
-        label3.innerText = "talukname";
+        label3.innerText = "taluk:";
         div5.append(label3);
         let input3;
-        input3 = document.createElement("input");
+        input3 = document.createElement("p");
         input3.setAttribute("id", "tnum");
-        input3.setAttribute("value", work[i]["tname"]);
+        input3.innerText= work[i]["tname"];
         div5.append(input3);
 
 
@@ -362,6 +361,7 @@ console.log(mail)
     );
     
   }
+  
 
 //   /* SmtpJS.com - v3.0.0 */
 // var Email = { send: function (a)

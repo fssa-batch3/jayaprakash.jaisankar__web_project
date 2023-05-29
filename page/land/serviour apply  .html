@@ -44,16 +44,16 @@
       <form id="form">
         <div class="card">
           <label>serviour_name:</label>
-          <input id="name" />
+          <input value="Yazhan" id="name" />
         </div>
         <div class="card">
           <label>taluk</label> &emsp;&emsp;&emsp;&emsp;
-          <input id="tname" />
+          <input value="vedai" id="tname" />
         </div>
 
         <div class="card">
           <label>email</label> &emsp;&emsp;&emsp;&emsp;
-          <input id="mail" />
+          <input value="jyazhan@gmail.com" id="mail" />
         </div>
 
         <!-- <div class="card">
@@ -73,7 +73,7 @@
 
         let name = document.getElementById("name").value;
         let tname = document.getElementById("tname").value;
-     let mail = document.getElementById("mail").value;
+        let mail = document.getElementById("mail").value;
         //   let num = document.getElementById("num").value;
 
         //  let arr = num.split(",");
@@ -113,13 +113,13 @@
         if (window.localStorage.getItem("list") === null) {
           window.localStorage.setItem("list", JSON.stringify(card));
           console.log(window.localStorage.getItem("list"));
-          window.location.href = "/page/land/serviour list .html";
+          window.location.href = "/page/land/surveyoradmin.html";
         } else {
           let local = window.localStorage.getItem("list");
           let json = JSON.parse(local);
           json.push(data);
           window.localStorage.setItem("list", JSON.stringify(json));
-          window.location.href = "/page/land/serviour list .html";
+          window.location.href = "/page/land/surveyoradmin.html";
         }
         // }
       });

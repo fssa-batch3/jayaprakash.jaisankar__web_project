@@ -26,7 +26,7 @@
       }
       .place {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         padding: 10px;
       }
@@ -92,6 +92,18 @@ justify-content: center; */
 body{
 margin: 0px;
 }
+
+.link {
+        width: 70px;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(48, 133, 231);
+      }
+      .link:hover {
+        background-color: rgb(63, 104, 241);
+      }
+
       /* #card {
         display: flex;
         justify-content: center;
@@ -129,13 +141,13 @@ margin: 0px;
             </div>
           </div>
   
-          <div class="dropdown">
+          <!-- <div class="dropdown">
             <span>sign_in</span>
             <div class="dropdown-content">
             <a href="./page/sign-up/sign-up.html"> <p>new_user</p></a>
              <a href="./page/sign-up/profile.html"> <p>Remove</p></a>
             </div>
-          </div>
+          </div> -->
   
           <div class="dropdown">
             <span>status</span>
@@ -146,24 +158,24 @@ margin: 0px;
             </div>
           </div>
   
-          <div class="dropdown">
+          <!-- <div class="dropdown">
             <span>download</span>
             <div class="dropdown-content">
               <p>forms</p>
             </div>
-          </div>
+          </div> -->
           
           <div class="dropdown">
             <a href="./page/contact/contact.html"><span>Message</span></a>
           </div>
   
-          <div class="dropdown">
+          <!-- <div class="dropdown">
             <span>feedback</span>
           </div>
   
           <div class="dropdown">
             <span>dashboard</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>
@@ -263,13 +275,13 @@ margin: 0px;
         let label;
         label = document.createElement("label");
         label.setAttribute("id", "name");
-        label.innerText = "num";
+        label.innerText = "Name:";
         div1.append(label);
 
         let input;
-        input = document.createElement("input");
+        input = document.createElement("p");
         input.setAttribute("id", "lname");
-        input.setAttribute("value", page[i]["name"]);
+        input.innerText = page[i]["name"];
         div1.append(input);
         // console.log(input);
 
@@ -281,12 +293,12 @@ margin: 0px;
         let label1;
         label1 = document.createElement("label");
         label1.setAttribute("id", "num");
-        label1.innerText = "serviour number";
+        label1.innerText = "Surveyor no:";
         div2.append(label1);
         let input1;
-        input1 = document.createElement("input");
+        input1 = document.createElement("p");
         input1.setAttribute("id", "Servour");
-        input1.setAttribute("value", page[i]["num"]);
+        input1.innerText =  page[i]["num"];
         div2.append(input1);
         // console.log(input1);
 
@@ -298,13 +310,13 @@ margin: 0px;
         let label2;
         label2 = document.createElement("label");
         label2.setAttribute("id", "vname");
-        label2.innerText = "village_name";
+        label2.innerText = "Village:";
         div3.append(label2);
 
         let input2;
-        input2 = document.createElement("input");
+        input2 = document.createElement("p");
         input2.setAttribute("id", "vnum");
-        input2.setAttribute("value", page[i]["vname"]);
+        input2.innerText =  page[i]["vname"];
         div3.append(input2);
 
         let div5;
@@ -316,12 +328,12 @@ margin: 0px;
         let label3;
         label3 = document.createElement("label");
         label3.setAttribute("id", "tname");
-        label3.innerText = "talukname";
+        label3.innerText = "Taluk:";
         div5.append(label3);
         let input3;
-        input3 = document.createElement("input");
+        input3 = document.createElement("p");
         input3.setAttribute("id", "tnum");
-        input3.setAttribute("value", page[i]["tname"]);
+        input3.innerText =  page[i]["tname"];
         div5.append(input3);
 
    
