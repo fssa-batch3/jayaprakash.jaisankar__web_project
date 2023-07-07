@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="question">
+      <form id="form">
+        <div class="inner">
+          <label>Question</label>
+          <input id="answer" />
+        </div>
+        <!-- 
+        <div class="inner">
+          <label>Answer</label>
+          <input id="ans" />
+        </div> -->
+        <button type="submit" id="submit" class="btn">submit</button>
+      </form>
+    </div>
+
+    <script>
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let answer = document.getElementById("answer").value;
+        //let ans = document.getElementById("ans").value;
+        let uuid = crypto.randomUUID();
+        let obj = {};
+        obj["answer"] = answer;
+        //obj["ans"] = ans;
+        obj["uuid"] = uuid;
+        console.log(uuid);
+        console.log(obj);
+        let array = [];
+        array.push(obj);
+        console.log(array);
+        // localStorage.setItem("array", JSON.stringify(array));
+        if (window.localStorage.getItem("fedit") === null) {
+          window.localStorage.setItem("fedit", JSON.stringify(array));
+          console.log(window.localStorage.getItem("fedit"));
+          // window.location.href = "./list.html"
+        } else {
+          let local = window.localStorage.getItem("fedit");
+          let json = JSON.parse(local);
+          json.push(obj);
+          window.localStorage.setItem("fedit", JSON.stringify(json));
+        }
+        window.location.href = "./feedback.html";
+      });
+    </script>
+  </body>
+</html>

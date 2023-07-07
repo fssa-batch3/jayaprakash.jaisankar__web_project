@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./feedback.css" />
+  </head>
+  <body>
+
+    <nav class="head">
+
+      <!-- <div class="part"> -->
+  
+      <div class="top"> For any complaint - Call -7094120148 Tamilnadu , India</div>
+  
+  
+      <div class="top2">
+        <!-- Below code for logo placement  -->
+        <div class="part1">
+          <img class="logo" src="../electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
+            height="100px" alt="logo"/>
+        </div>
+        
+        <div class="nav">
+  
+          <div class="dropdown">
+            <span>Home</span>
+            <div class="dropdown-content">
+             <a href="./index.html"> <p>Home</p>
+  
+            </div>
+          </div>
+  
+  
+              <div class="dropdown">
+                <a href="./page/electricity/about.html">     <span>About as</span></a>
+           
+          </div>
+  
+  
+          <div class="dropdown">
+            <span>sign_in</span>
+            <div class="dropdown-content">
+            <a href="./page/sign-up/sign-up.html"> <p>new_user</p></a>
+             <a href="./page/sign-up/profile.html"> <p>Remove</p></a>
+            </div>
+          </div>
+  
+          <!-- <div class="dropdown">
+            <span>status</span>
+            <div class="dropdown-content">
+              <p>application</p>
+              <p>modify</p>
+              <p>delete</p>
+            </div>
+          </div> -->
+  
+          <!-- <div class="dropdown">
+            <span>download</span>
+            <div class="dropdown-content">
+              <p>forms</p>
+            </div>
+          </div> -->
+          
+          <div class="dropdown">
+            <a href="./page/contact/contact.html"><span>Message</span></a>
+          </div>
+  
+          <div class="dropdown">
+            <span>feedback</span>
+          </div>
+  
+          <!-- <div class="dropdown">
+            <span>dashboard</span>
+          </div> -->
+        </div>
+      </div>
+    </nav>
+    <div class="full"></div>
+    <div><a href="./fedit.html"><button>Ask Question</button></a></div>
+    <div class="footer">
+      <div class="part">
+        <h1>useful links</h1>
+    
+        <p>Electricity</p>
+        <p>Online payment</p>
+        <p>Complain</p>
+      </div>
+      <div class="part">
+        <h1>Privacy policy</h1>
+    
+        <p>Website Policies</p>
+        <p>Cyber resilience</p>
+      </div>
+    
+      <div class="part">
+        <h1>Contact as</h1>
+    
+        <p>jp@gmail.com</p>
+        <p>Phone:+917094120148</p>
+      </div>
+      <div class="part">
+        <h1>Disclaimer</h1>
+        <p>
+          While care has been taken to ensure the accuracy of information,
+          TANGEDCO is not responsible for any damage or loss caused due to
+          action taken on the basis of this information. This website is best
+          viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+          resolution
+        </p>
+      </div>
+    </div>
+    
+    <script>
+      let arr = JSON.parse(localStorage.getItem("fedit"));
+
+      for (let i = 0; i < arr.length; i++) {
+        let whole = document.createElement("div");
+        whole.setAttribute("class", "whole");
+
+        let fques = document.createElement("div");
+        fques.setAttribute("class", "fques");
+        whole.append(fques);
+
+        let head1 = document.createElement("h1");
+        head1.setAttribute("class", "head1");
+        head1.innerText = arr[i]["answer"];
+       
+        fques.append(head1);
+
+        let head2 = document.createElement("h3");
+        head2.setAttribute("class", "head2");
+        head2.innerText = arr[i]["ans"];
+        fques.append(head2);
+
+        document.querySelector("div.full").append(whole);
+      }
+    </script>
+  </body>
+</html>

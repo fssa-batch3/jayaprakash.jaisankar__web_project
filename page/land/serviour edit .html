@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .full {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #form {
+      padding: 40px;
+    }
+    .card {
+      padding: 10px;
+      margin: 10px;
+    }
+    .whole {
+      width: 400px;
+      height: 200px;
+      /* padding: 40px;
+      margin: 20px; */
+      background-color: rgba(95, 213, 234, 0.664);
+      border-radius: 10px;
+      box-shadow: 4px 6px 6px 4px rgb(60, 132, 233);
+    }
+    .button {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .link {
+      width: 70px;
+      height: 30px;
+      border-radius: 10px;
+      border: none;
+      background-color: rgb(48, 133, 231);
+    }
+    .link:hover {
+      background-color: rgb(63, 104, 241);
+    }
+  </style>
+  <body>
+    <div class="full">
+      <div class="whole">
+        <form id="form" action="./serviour list.html">
+          <div class="card">
+            <label> serviour_name</label>
+            <input id="name" />
+          </div>
+          <div class="card">
+            <label>taluk</label>
+            <input id="tname" />
+          </div>
+          <!-- <div class="card">
+            <label>number</label>
+            <input id="num" />
+          </div> -->
+          <div class="button">
+            <button onclick="submit" class="link" id="submit" class="btn">
+              submit
+            </button>
+            <button onclick="clear" class="link" id="delete" class="btn">
+              Delete
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      let form_details = JSON.parse(localStorage.getItem("list"));
+      console.log(form_details);
+
+      let id = JSON.parse(localStorage.getItem("ranid"));
+      console.log(id);
+
+      let check = id.pop();
+      console.log(check);
+
+      let get = form_details.find(function (obj) {
+        let checkid = obj["uuid"];
+        if (check == checkid) {
+          return true;
+        }
+      });
+      console.log(get);
+
+      const name = document.getElementById("name");
+      const tname = document.getElementById("tname");
+      // const num = document.getElementById("num");
+
+      name.value = get["name"];
+      tname.value = get["tname"];
+      // num.value = get["num"];
+      console.log(get);
+
+      // edit profile start
+
+      //   const editpage = document.querySelectorAll(".input");
+      //   console.log(editpage);
+      //   function edit() {
+      //     for (i = 0; i < editpage.length; i++) {
+      //       editpage[i].removeAttribute("disabled");
+      //     }
+      //   }
+
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let tname = document.getElementById("tname").value;
+        // let num = document.getElementById("num").value;
+
+        let ject = {
+          name,
+          tname,
+          // num,
+        };
+
+        console.log(ject);
+
+        let update = Object.assign(get, ject);
+        console.log(update);
+        let index = form_details.indexOf(get);
+        console.log(index);
+
+        form_details[index] = update;
+        localStorage.setItem("list", JSON.stringify(form_details));
+        window.location.href = "./surveyoradmin.html";
+      });
+
+      let info = document.getElementById("delete");
+      info.addEventListener("click", function (event) {
+        event.preventDefault();
+        let indexof = form_details.indexOf(get);
+        let failed = confirm("Delete this");
+        if (failed !== true) {
+          return;
+        } else {
+          form_details.splice(indexof, 1);
+          localStorage.setItem("list", JSON.stringify(form_details));
+          window.location.href = "./surveyoradmin.html";
+        }
+      });
+    </script>
+  </body>
+</html>

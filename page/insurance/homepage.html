@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      .top {
+        display: block;
+        justify-content: center;
+        text-align: center;
+      }
+      .head {
+        margin: auto;
+        /* padding-top: 10px; */
+
+        background-color: rgb(181, 222, 234);
+      }
+      .logo {
+        display: flex;
+        /* margin-top: -100px; */
+        /* margin-left: 100px;
+  margin-bottom: 30px; */
+      }
+
+      .top2 {
+        display: flex;
+      }
+
+      .part1 {
+        padding-left: 100px;
+      }
+
+      .nav {
+        margin-top: 40px;
+        margin-left: 600px;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 18px;
+        justify-content: space-between;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 8px 10px;
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .footer {
+        /* margin-top: 500px; */
+        padding: 100px;
+        background-color: rgb(129, 209, 235);
+        display: flex;
+        column-gap: 150px;
+      }
+
+      @media print {
+        /* styles for printed page go here */
+        body {
+          font-size: 12pt;
+        }
+        .no-print {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <img
+        class="logo"
+        src="./Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png"
+        width="150px"
+        height="100px"
+        alt="logo"
+      />
+
+      <!-- <p>
+          APPLICATION FOR TAMIL NADU GENERATION AND DISTRIBUTION CORPORATION
+          LIMITED
+        </p> -->
+
+      <div class="nav">
+        <div class="dropdown">
+          <span>Home</span>
+          <div class="dropdown-content">
+            <p>Home</p>
+            <p>About as</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>Apply</span>
+          <div class="dropdown-content">
+            <a href="./apply.html"><p>New</p></a>
+            <a href="./edit.html"> <p>Remove</p></a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>status</span>
+          <div class="dropdown-content">
+            <p>application</p>
+            <p>modify</p>
+            <p>delete</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>download</span>
+          <div class="dropdown-content">
+            <p>forms</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>feedback</span>
+        </div>
+
+        <div class="dropdown">
+          <span>dashboard</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" onclick="printPage() ">print</button>
+    <div class="footer">
+      <div class="part">
+        <h1>useful links</h1>
+
+        <p>Electricity</p>
+        <p>Online payment</p>
+        <p>Complain</p>
+      </div>
+      <div class="part">
+        <h1>Privacy policy</h1>
+
+        <p>Website Policies</p>
+        <p>Cyber resilience</p>
+      </div>
+
+      <div class="part">
+        <h1>Contact as</h1>
+
+        <p>jp@gmail.com</p>
+        <p>Phone:+917094120148</p>
+      </div>
+      <div class="part">
+        <h1>Disclaimer</h1>
+        <p>
+          While care has been taken to ensure the accuracy of information,
+          TANGEDCO is not responsible for any damage or loss caused due to
+          action taken on the basis of this information. This website is best
+          viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+          resolution
+        </p>
+      </div>
+    </div>
+
+    <!-- <script>
+      function printPage() {
+        window.print();
+      }
+    </script> -->
+  </body>
+</html>

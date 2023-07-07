@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./Assets/css/home.css" />
+    <style>
+      /* .form{
+
+        } */
+
+      .whole {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 40px;
+      }
+      #card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 5px 2px 5px rgb(81, 134, 208);
+        background-color: rgb(89, 189, 232);
+        width: 150px;
+        height: 100px;
+      }
+      .place {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+      body {
+        background-color: rgb(156, 233, 249);
+      }
+     .place{
+      display: flex;
+      justify-content:space-between ;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <img
+        class="logo"
+        src="./Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png"
+        width="150px"
+        height="100px"
+        alt="logo"
+      />
+      <!-- <p>
+        APPLICATION FOR TAMIL NADU GENERATION AND DISTRIBUTION CORPORATION
+        LIMITED
+      </p> -->
+
+      <div class="nav">
+        <div class="dropdown">
+      
+          <span>Home</span>
+          <div class="dropdown-content">
+            <a href="/indexuser.html">  <p>Home</p></a>
+           <a href="/page/electricity/about.html"><p>About as</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>Apply</span>
+          <div class="dropdown-content">
+            <a href="./apply.html"><p>New</p></a>
+            <a href="./edit.html"> <p>Remove</p></a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>status</span>
+          <div class="dropdown-content">
+         <a href="./apply.html">   <p>application</p></a>
+            
+          </div>
+        </div>
+
+        <!-- <div class="dropdown">
+          <span>download</span>
+          <div class="dropdown-content">
+            <p>forms</p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span>feedback</span>
+        </div>
+
+        <div class="dropdown">
+          <span>dashboard</span>
+        </div> -->
+      </div>
+    </div>
+    <div class="whole"></div>
+
+    <div class="footer">
+      <div class="part">
+        <h1>useful links</h1>
+
+        <p>Electricity</p>
+        <p>Online payment</p>
+        <p>Complain</p>
+      </div>
+      <div class="part">
+        <h1>Privacy policy</h1>
+
+        <p>Website Policies</p>
+        <p>Cyber resilience</p>
+      </div>
+
+      <div class="part">
+        <h1>Contact as</h1>
+
+        <p>jp@gmail.com</p>
+        <p>Phone:+917094120148</p>
+      </div>
+      <div class="part">
+        <h1>Disclaimer</h1>
+        <p>
+          While care has been taken to ensure the accuracy of information,
+          TANGEDCO is not responsible for any damage or loss caused due to
+          action taken on the basis of this information. This website is best
+          viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+          resolution
+        </p>
+      </div>
+    </div>
+    <script>
+      let email = JSON.parse(localStorage.getItem("userinfo"));
+      let get = JSON.parse(localStorage.getItem("electricity"));
+      console.log(get);
+    
+      let work = get.find(function (obj) {
+        let check = obj["mail"];
+        if (email === check) {
+          return true;
+        }
+      });
+      console.log(work);
+    
+      if (work) {
+        let div_card = document.createElement("div");
+        div_card.setAttribute("id", "card");
+        console.log(div_card);
+    
+        let form = document.createElement("form");
+        form.setAttribute("class", "form");
+        div_card.append(form);
+    
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "place");
+        form.append(div1);
+    
+        let label1 = document.createElement("label");
+        label1.setAttribute("id", "name");
+        label1.innerText = "Name";
+        div1.append(label1);
+    
+        let input1 = document.createElement("p");
+        input1.setAttribute("id", "lname");
+        input1.innerText = work["name"];
+        div1.append(input1);
+    
+        let div2 = document.createElement("div");
+        div2.setAttribute("class", "place");
+        form.append(div2);
+    
+        let div3 = document.createElement("div");
+        div3.setAttribute("class", "place");
+        form.append(div3);
+    
+        let label2 = document.createElement("label");
+        label2.setAttribute("id", "vname");
+        label2.innerText = "Village Name";
+        div3.append(label2);
+    
+        let input2 = document.createElement("p");
+        input2.setAttribute("id", "vnum");
+        input2.innerText = work["vname"];
+        div3.append(input2);
+    
+        let div4 = document.createElement("div");
+        div4.setAttribute("class", "place");
+        form.append(div4);
+    
+        let label3 = document.createElement("label");
+        label3.setAttribute("id", "tname");
+        label3.innerText = "Village";
+        div4.append(label3);
+    
+        let input3 = document.createElement("p");
+        input3.setAttribute("id", "tnum");
+        input3.innerText = work["vnum"];
+        div4.append(input3);
+    
+        let div5 = document.createElement("div");
+        div5.setAttribute("class", "place");
+        form.append(div5);
+    
+        let label4 = document.createElement("label");
+        label4.setAttribute("id", "talukname");
+        label4.innerText = "Taluk Name";
+        div5.append(label4);
+    
+        let input4 = document.createElement("p");
+        input4.setAttribute("id", "taluknum");
+        input4.innerText = work["tname"];
+        div5.append(input4);
+    
+        let editLink = document.createElement("a");
+        editLink.setAttribute("class", "link");
+       // editLink.setAttribute("href", "./edit.html");
+        div_card.append(editLink);
+    
+        let editButton = document.createElement("button");
+        editButton.setAttribute("class", "link");
+        editButton.setAttribute("id", work["uuid"]);
+        editButton.setAttribute("onclick", "edit(this.id)");
+        editButton.innerText = "Edit";
+        editLink.append(editButton);
+    
+        document.querySelector("div.whole").append(div_card);
+      } else {
+        console.log("No matching work found.");
+      }
+    
+      function edit(id) {
+        let array = [];
+        array.push(id);
+        console.log(array);
+        localStorage.setItem("uuid", JSON.stringify(array));
+        window.location.href = "./edit.html";
+      }
+    </script>
+    
+  </body>
+</html>

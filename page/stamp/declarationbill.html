@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bill Receipt</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      #receipt {
+        width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+
+      #receipt h1 {
+        font-size: 24px;
+        margin: 0;
+        text-align: center;
+      }
+
+      #receipt p {
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+      #receipt .info {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+      }
+
+      #receipt .info p {
+        margin-bottom: 0;
+      }
+      .btn {
+        margin-left: 48%;
+        margin-top: 10px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+  </head>
+  <body>
+    <div id="receipt"></div>
+
+    <button class="btn" id="downloadButton">Download</button>
+
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let receipt = document.getElementById("receipt");
+
+        let Data = JSON.parse(localStorage.getItem("address"));
+        let card = JSON.parse(localStorage.getItem("jscard"));
+        let priceid = JSON.parse(localStorage.getItem("priceid"));
+        let addressData = Data.pop();
+
+        let selectedCard = card.find(function (card) {
+          return card.uuid === priceid[priceid.length - 1];
+        });
+
+        let today = new Date();
+        let deliveryDate = new Date(today);
+        deliveryDate.setDate(today.getDate() + 15);
+
+        let d = String(today.getDate()).padStart(2, "0");
+        let m = String(today.getMonth() + 1).padStart(2, "0");
+        let yy = today.getFullYear();
+        let Today = `${d}/${m}/${yy}`;
+
+        let dd = String(deliveryDate.getDate()).padStart(2, "0");
+        let mm = String(deliveryDate.getMonth() + 1).padStart(2, "0");
+        let yyyy = deliveryDate.getFullYear();
+        let formattedDeliveryDate = `${dd}/${mm}/${yyyy}`;
+
+        let html = `
+    <h1>Bill Receipt</h1>
+    <p><strong>Name:</strong> ${addressData.name}</p>
+    <p><strong>Address:</strong> ${addressData.address}, ${addressData.city}, ${addressData.state}, ${addressData.zip}</p>
+    <p><strong>Item Name:</strong> ${selectedCard.name}</p>
+   
+    <p><strong>Order Date:</strong> ${Today}</p>
+    <p><strong>Delivery Date:</strong> ${formattedDeliveryDate}</p>
+    <p><strong>Price:</strong> ${selectedCard.price}</p>
+    <div class="info">
+      <p>Thank you for your purchase!</p>
+    </div> 
+    `;
+        receipt.innerHTML = html;
+        function downloadReceipt() {
+          let receiptContent = receipt.innerHTML;
+          let blob = new Blob([receiptContent], { type: "text/html" });
+          let link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = "bill_receipt.html";
+          link.target = "_blank";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+        let downloadButton = document.getElementById("downloadButton");
+        downloadButton.addEventListener("click", downloadReceipt);
+      });
+    </script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let receipt = document.getElementById("receipt");
+
+        let Data = JSON.parse(localStorage.getItem("address"));
+        let card = JSON.parse(localStorage.getItem("jscard"));
+        let priceid = JSON.parse(localStorage.getItem("priceid"));
+        let addressData = Data.pop();
+
+        let selectedCard = card.find(function (card) {
+          return card.uuid === priceid[priceid.length - 1];
+        });
+
+        let today = new Date();
+        let deliveryDate = new Date(today);
+        deliveryDate.setDate(today.getDate() + 15);
+
+        let d = String(today.getDate()).padStart(2, "0");
+        let m = String(today.getMonth() + 1).padStart(2, "0");
+        let yy = today.getFullYear();
+        let Today = `${d}/${m}/${yy}`;
+
+        let dd = String(deliveryDate.getDate()).padStart(2, "0");
+        let mm = String(deliveryDate.getMonth() + 1).padStart(2, "0");
+        let yyyy = deliveryDate.getFullYear();
+        let formattedDeliveryDate = `${dd}/${mm}/${yyyy}`;
+
+        // Set the totalPrice variable to add 100
+        let totalPrice = 100 + parseInt(selectedCard.price);
+        console.log(totalPrice);
+        let html = `
+    <h1>Bill Receipt</h1>
+    <p><strong>Name:</strong> ${addressData.name}</p>
+    <p><strong>Address:</strong> ${addressData.address}, ${addressData.city}, ${
+          addressData.state
+        }, ${addressData.zip}</p>
+    <p><strong>Item Name:</strong> ${selectedCard.name}</p>
+    
+    <p><strong>Order Date:</strong> ${Today}</p>
+    <p><strong>Delivery Date:</strong> ${formattedDeliveryDate}</p>
+    <p><strong>Price:</strong> ${selectedCard.price}</p>
+    <p><strong>Delivery Charge:</strong> ${100}</p>
+    <p><strong>Total Price:</strong> ${totalPrice}</p> <!-- Added line -->
+    <div class="info">
+      <p>Thank you for your purchase!</p>
+    </div> 
+    `;
+        receipt.innerHTML = html;
+        function downloadReceipt() {
+          let receiptContent = receipt.innerHTML;
+          let blob = new Blob([receiptContent], { type: "text/html" });
+          let link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = "bill";
+          link.target = "_blank";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+        let downloadButton = document.getElementById("downloadButton");
+        downloadButton.addEventListener("click", downloadReceipt);
+      });
+    </script>
+  </body>
+</html>

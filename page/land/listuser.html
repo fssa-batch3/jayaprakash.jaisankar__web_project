@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .whole {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 40px;
+      }
+      #card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 5px 2px 5px rgb(81, 134, 208);
+        background-color: rgb(89, 189, 232);
+        width: 150px;
+        height: 100px;
+      }
+      .place {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .head {
+ 
+
+ background-color: rgb(181, 222, 234);
+}
+.logo {
+display: flex;
+/* margin-top: -100px; */
+/* margin-left: 100px;
+margin-bottom: 30px; */
+}
+
+.top2 {
+display: flex;
+}
+
+
+   
+.nav {
+
+margin-top: 40px;
+margin-left: 600px;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+margin-left: 20px;
+font-size: 18px;
+justify-content: space-between;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+padding: 8px 10px;
+z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.footer {
+/* margin-top: 500px; */
+padding: 100px;
+background-color: rgb(129, 209, 235);
+display: flex;
+column-gap: 150px;
+/*   
+text-align: center;
+justify-content: center; */
+}
+
+body{
+margin: 0px;
+}
+.place{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+     
+    </style>
+  </head>
+  <body>
+
+    <nav class="head">
+
+      <div class="part">
+  
+      <div class="top"> For any complaint - Call -7094120148 Tamilnadu , India</div>
+  
+  
+      <div class="top2">
+        <!-- Below code for logo placement  -->
+        <div class="part1">
+          <img class="logo" src="/page/electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
+            height="100px" alt="logo" />
+        </div>
+        
+        <div class="nav">
+  
+          <div class="dropdown">
+            <span>Home</span>
+            <div class="dropdown-content">
+             <a href="/indexhome.html"> <p>Home</p>
+   <a href="./page/electricity/about.html">           <p>About as</p></a>
+            </div>
+          </div>
+  
+       
+          <div class="dropdown">
+            <span>Apply</span>
+            <div class="dropdown-content">
+             <a href="./apply land.html"> <p>application</p></a>
+           
+            </div>
+          </div>
+  
+         
+          
+          <div class="dropdown">
+            <a href="./page/contact/contact.html"><span>Message</span></a>
+          </div>
+  
+        
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="tot">
+      <div class="whole"></div>
+    </div>
+
+    
+    <div class="footer">
+      <div class="part">
+        <h1>useful links</h1>
+    
+        <p>Electricity</p>
+        <p>Online payment</p>
+        <p>Complain</p>
+      </div>
+      <div class="part">
+        <h1>Privacy policy</h1>
+    
+        <p>Website Policies</p>
+        <p>Cyber resilience</p>
+      </div>
+    
+      <div class="part">
+        <h1>Contact as</h1>
+    
+        <p>jp@gmail.com</p>
+        <p>Phone:+917094120148</p>
+      </div>
+      <div class="part">
+        <h1>Disclaimer</h1>
+        <p>
+          While care has been taken to ensure the accuracy of information,
+          TANGEDCO is not responsible for any damage or loss caused due to
+          action taken on the basis of this information. This website is best
+          viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+          resolution
+        </p>
+      </div>
+    </div>
+    <script>
+      let email = JSON.parse(localStorage.getItem("userinfo"));
+      let get = JSON.parse(localStorage.getItem("data"));
+      console.log(get);
+    
+      let work = get.find(function (obj) {
+        let check = obj["mail"];
+        if (email === check) {
+          return true;
+        }
+      });
+      console.log(work);
+    
+      if (work) {
+        let two = document.createElement("div");
+        two.setAttribute("class", "pla");
+    
+        let divCard = document.createElement("div");
+        divCard.setAttribute("id", "card");
+        two.appendChild(divCard);
+    
+        let form = document.createElement("form");
+        form.setAttribute("class", "form");
+        divCard.appendChild(form);
+    
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "place");
+        form.appendChild(div1);
+    
+        let nameLabel = document.createElement("label");
+        nameLabel.setAttribute("id", "name");
+        nameLabel.innerText = "Name:";
+        div1.appendChild(nameLabel);
+    
+        let input1 = document.createElement("p");
+        input1.setAttribute("id", "lname");
+        input1.innerText = work["name"];
+        div1.appendChild(input1);
+    
+        let div2 = document.createElement("div");
+        div2.setAttribute("class", "place");
+        form.appendChild(div2);
+    
+        let label1 = document.createElement("label");
+        label1.setAttribute("id", "num");
+        label1.innerText = "surveyor number:";
+        div2.appendChild(label1);
+    
+        let input2 = document.createElement("p");
+        input2.setAttribute("id", "Servour");
+        input2.innerText = work["num"];
+        div2.appendChild(input2);
+    
+        let div3 = document.createElement("div");
+        div3.setAttribute("class", "place");
+        form.appendChild(div3);
+    
+        let label2 = document.createElement("label");
+        label2.setAttribute("id", "vname");
+        label2.innerText = "village name:";
+        div3.appendChild(label2);
+    
+        let input3 = document.createElement("p");
+        input3.setAttribute("id", "vnum");
+        input3.innerText = work["vname"];
+        div3.appendChild(input3);
+    
+        let div4 = document.createElement("div");
+        div4.setAttribute("class", "place");
+        form.appendChild(div4);
+    
+        let label3 = document.createElement("label");
+        label3.setAttribute("id", "tname");
+        label3.innerText = "taluk name:";
+        div4.appendChild(label3);
+    
+        let input4 = document.createElement("p");
+        input4.setAttribute("id", "tnum");
+        input4.innerText = work["tname"];
+        div4.appendChild(input4);
+    
+        let direct = document.createElement("a");
+        direct.setAttribute("class", "link");
+        direct.setAttribute("href", "./edit.html");
+        divCard.appendChild(direct);
+    
+        let edit = document.createElement("button");
+        edit.setAttribute("class", "link");
+        edit.setAttribute("id", work["uuid"]);
+        edit.setAttribute("onclick", "edit(this.id)");
+        edit.innerText = "edit";
+        direct.appendChild(edit);
+    
+        document.querySelector("div.whole").appendChild(divCard);
+      } else {
+        console.log("No matching work found.");
+      }
+    
+      function edit(id) {
+        let array = [];
+        array.push(id);
+        console.log(array);
+        localStorage.setItem("uuid", JSON.stringify(array));
+      }
+    </script>
+    
+    
+  </body>
+</html>

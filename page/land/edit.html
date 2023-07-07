@@ -47,7 +47,7 @@
    </div class="change">
    <button onclick="submit" id="submit" class="btn">submit</button>
    <button onclick="clear" id="delete" class="btn">Delete</button>
-      
+
    </form>
    </div>
    <script>
@@ -67,6 +67,13 @@
       }
     });
     console.log(get);
+
+//     let index =form_details.indexOf(ject)
+//   console.log(index)
+
+// function edit(){
+//   form_details[index].removeAttribute("disabled")
+// }
 
     const name = document.getElementById("name");
     const num = document.getElementById("num");
@@ -102,7 +109,7 @@
       let vname = document.getElementById("vname").value;
       let vnum = document.getElementById("vnum").value;
       let tname = document.getElementById("tname").value;
-
+      
       let ject = {
         name,
         num,
@@ -120,7 +127,7 @@
 
       form_details[index] = update;
       localStorage.setItem("data", JSON.stringify(form_details));
-      window.location.href = "./list.html";
+      window.location.href = "./listuser.html";
     });
 
     let info = document.getElementById("delete");
@@ -133,7 +140,7 @@
       } else {
         form_details.splice(indexof, 1);
         localStorage.setItem("data", JSON.stringify(form_details));
-         window.location.href = "./list.html";
+         window.location.href = "./listuser.html";
       }
     });
   </script>

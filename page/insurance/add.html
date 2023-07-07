@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" id="title" />
+      <input type="text" id="comment" />
+      <button type="submit">submit</button>
+    </form>
+    <script>
+      let form = document.getElementById("form");
+      form.addEventListener("submit", function (event) {
+        let title = document.getElementById("title").value;
+        let comment = document.getElementById("comment").value;
+        let uuid = crypto.randomUUID();
+        let obj = {
+          title,
+          comment,
+          uuid,
+        };
+        let arr = [];
+        arr.push(obj);
+
+        let store = JSON.parse(localStorage.getItem("add"));
+        if (store !== null) {
+          let add = JSON.parse(localStorage.getItem("add"));
+          add.push(obj);
+
+          localStorage.setItem("add", JSON.stringify(add));
+        } else {
+          arr.push(obj);
+          localStorage.setItem("add", JSON.stringify(arr));
+        }
+      });
+    </script>
+  </body>
+</html>

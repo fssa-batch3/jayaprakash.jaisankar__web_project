@@ -11,11 +11,47 @@
         justify-content: center;
         align-items: center;
       }
+      body {
+        background-color: rgb(217, 238, 251);
+      }
       .change {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 40px;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+      }
+      #form {
+        background-color: rgb(73, 179, 245);
+        padding-top: 20px;
+        border-radius: 10px;
+        box-shadow: 6px 10px 6px rgb(80, 188, 255);
+        height: fit-content;
+        margin: 10px;
+      }
+      .bt {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 18px;
+      }
+      .btn {
+        width: 150px;
+        height: 35px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        /* margin: 0px 0px 0px 60px; */
+        background-color: rgb(51, 159, 227);
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .btn:hover {
+        background-color: rgb(0, 118, 191);
       }
     </style>
   </head>
@@ -39,9 +75,11 @@
           <label>description</label>&emsp;
           <input class="input" id="description" type="text" />
         </div>
-        <button onclick="edit" id="submit" class="btn">edit</button>
-        <button onclick="submit" id="submit" class="btn">submit</button>
-        <button onclick="clear" id="delete" class="btn">Delete</button>
+        <div class="bt">
+          <!-- <button onclick="edit" id="submit" class="btn">edit</button> -->
+          <button onclick="submit" id="submit" class="b tn">submit</button>
+          <button onclick="clear" id="delete" class="btn">Delete</button>
+        </div>
       </form>
     </div>
     <script>

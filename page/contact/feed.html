@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chat</title>
+    <style>
+      .chat-container {
+        width: 400px;
+        margin: 0 auto;
+      }
+
+      .chat-messages {
+        height: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        overflow-y: scroll;
+      }
+
+      .chat-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .chat-input input {
+        flex: 1;
+        padding: 5px;
+      }
+
+      .chat-input button {
+        margin-left: 10px;
+        padding: 5px 10px;
+      }
+
+      .message {
+        margin-bottom: 10px;
+        background-color: #f2f2f2;
+        padding: 8px;
+        border-radius: 5px;
+      }
+
+      .message.sender {
+        background-color: #dcf8c6;
+      }
+
+      .message .timestamp {
+        font-size: 0.8em;
+        color: #888;
+        margin-left: 5px;
+      }
+
+      .message .edit-btn,
+      .message .delete-btn {
+        cursor: pointer;
+        color: blue;
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-messages" id="chatMessages">
+        <!-- Chat messages will be dynamically added here -->
+      </div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Type your message..."
+        />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script>
+      // Load chat messages from local storage on page load
+      window.addEventListener("load", function () {
+        let storedMessages = JSON.parse(localStorage.getItem("chatMessages"));
+
+        if (storedMessages) {
+          let chatMessages = document.getElementById("chatMessages");
+          chatMessages.innerHTML = storedMessages;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      });
+
+      function getFormattedDate(date) {
+        let currentDate = new Date();
+        if (date.toDateString() === currentDate.toDateString()) {
+          return "Today";
+        } else if (
+          date.toDateString() ===
+          new Date(currentDate - 86400000).toDateString()
+        ) {
+          return "Yesterday";
+        } else {
+          return date.toLocaleDateString();
+        }
+      }
+
+      function getCurrentTime() {
+        let currentDateTime = new Date();
+        let hours = currentDateTime.getHours();
+        let minutes = currentDateTime.getMinutes();
+
+        if (minutes < 0) {
+          minutes = "0" + minutes;
+        }
+
+        return hours + ":" + minutes;
+      }
+
+      function sendMessage() {
+        let messageInput = document.getElementById("messageInput");
+        let message = messageInput.value.trim();
+
+        if (message !== "") {
+          let chatMessages = document.getElementById("chatMessages");
+          let timestamp = new Date();
+          let formattedDate = getFormattedDate(timestamp);
+          let dateText =
+            formattedDate === "Today" || formattedDate === "Yesterday"
+              ? formattedDate
+              : formattedDate + " " + getCurrentTime();
+          let email = JSON.parse(localStorage.getItem("userinfo"));
+          let chatMessage = document.createElement("div");
+          chatMessage.className = "message";
+          chatMessage.innerHTML =
+            '<span class="message-content">' +
+            message +
+            "</span>" +
+            '<span class="timestamp">' +
+            dateText +
+            "</span>" +
+            "</span>" +
+            '<span class="edit-btn" onclick="editMessage(this)">Edit</span>' +
+            '<span class="delete-btn" onclick="deleteMessage(this)">Delete</span>';
+          chatMessages.appendChild(chatMessage);
+
+          // Save chat messages to local storage
+          localStorage.setItem(
+            "chatMessages",
+            JSON.stringify(chatMessages.innerHTML)
+          );
+
+          messageInput.value = "";
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      }
+
+      function editMessage(editButton) {
+        let messageElement =
+          editButton.parentNode.querySelector(".message-content");
+        let editedMessage = prompt(
+          "Edit your message:",
+          messageElement.textContent
+        );
+
+        if (editedMessage !== null) {
+          messageElement.textContent = editedMessage;
+
+          let chatMessages = document.getElementById("chatMessages");
+          localStorage.setItem(
+            "chatMessages",
+            JSON.stringify(chatMessages.innerHTML)
+          );
+        }
+      }
+
+      function deleteMessage(deleteButton) {
+        let messageContainer = deleteButton.parentNode;
+        let chatMessages = document.getElementById("chatMessages");
+        let currentUserMessage = messageContainer
+          .querySelector(".message-content")
+          .textContent.trim();
+
+        if (confirm("Are you sure you want to delete this message?")) {
+          // Check if the message is sent by the current user
+          if (
+            currentUserMessage ===
+            deleteButton.parentNode
+              .querySelector(".message-content")
+              .textContent.trim()
+          ) {
+            chatMessages.removeChild(messageContainer);
+            localStorage.setItem(
+              "chatMessages",
+              JSON.stringify(chatMessages.innerHTML)
+            );
+          } else {
+            alert("You can only delete your own messages.");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -11,11 +11,48 @@
         justify-content: center;
         align-items: center;
       }
+      body {
+        background-color: rgb(217, 238, 251);
+      }
       .change {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 40px;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+      }
+      #form {
+        background-color: rgb(73, 179, 245);
+        padding-top: 20px;
+
+        border-radius: 10px;
+        box-shadow: 6px 10px 6px rgb(80, 188, 255);
+        height: fit-content;
+        margin: 10px;
+      }
+      .bt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+      }
+      .btn {
+        width: 150px;
+        height: 35px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        /* margin: 0px 0px 0px 60px; */
+        background-color: rgb(51, 159, 227);
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .btn:hover {
+        background-color: rgb(0, 118, 191);
       }
     </style>
   </head>
@@ -24,26 +61,28 @@
       <form id="form">
         <div class="change">
           <label>image</label>&emsp;
-          <input id="image" type="url" />
+          <input id="image" type="url" required />
         </div>
-        <!-- <div class="change">
-          <label>name</label>&emsp;
-          <input id="name" type="text" />
-        </div> -->
+
         <div class="change">
           <label>price</label>&emsp;
-          <input id="price" type="number" />
+          <input id="price" type="number" required />
+        </div>
+        <div class="change">
+          <label>Stock</label>&emsp;
+          <input id="stock" type="number" required />
         </div>
         <div class="change">
           <label>name</label>&emsp;
-          <input id="name" type="text" />
+          <input id="name" type="text" required />
         </div>
         <div class="change">
           <label>description</label>&emsp;
-          <input id="description" type="text" />
+          <input id="description" type="text" required />
         </div>
-
-        <button onclick="submit" id="submit" class="btn">submit</button>
+        <div class="bt">
+          <button onclick="submit" id="submit" class="btn">submit</button>
+        </div>
       </form>
     </div>
     <script>
@@ -61,8 +100,10 @@
         updates["name"] = name;
 
         let price = document.getElementById("price").value;
-        // console.log(rediracting);
         updates["price"] = price;
+
+        let stock = document.getElementById("stock").value;
+        updates["stock"] = stock;
 
         let description = document.getElementById("description").value;
         updates["description"] = description;
@@ -70,17 +111,10 @@
         updates["uuid"] = uuid;
         console.log(uuid);
         console.log(updates);
-        // let whole = JSON.parse(localStorage.getItem("card"));
 
-        // if (localStorage.getItem("new_card") != null) {
-        //   whole = JSON.parse(localStorage.getItem("new_card"));
-        //   console.log(whole);
-        // }
         let whole = [];
 
         whole.push(updates);
-
-        //let jscard = localStorage.setItem("jscard", JSON.stringify(whole));
 
         if (window.localStorage.getItem("jscard") === null) {
           window.localStorage.setItem("jscard", JSON.stringify(whole));
@@ -92,71 +126,7 @@
           window.localStorage.setItem("jscard", JSON.stringify(json));
           window.location.href = "./stamp.html";
         }
-        // console.log(card);
-        // location.href = "./stamp.html";
       });
-
-      // window.localStorage.setItem("update_detailes", JSON.stringify(updates));
-
-      // location.reload();
-
-      // if (window.localStorage.getItem("update_detailes") === null) {
-
-      // } else {
-      //   let local = window.localStorage.getItem("update_detailes");
-      //   let json = JSON.parse(local);
-      //   json.push(updates);
-      //   window.localStorage.setItem("update_detailes", JSON.stringify(json));
-      // }
-
-      // let card = [];
-
-      // let form = document.getElementById("form");
-
-      // form.addEventListener("submit", function (event) {
-      //   event.preventDefault();
-
-      //   let div_card;
-      //   div_card = document.createElement("a");
-      //   div_card.setAttribute("class", "card");
-      //   // div_card.setAttribute(
-      //   //   "href",
-      //   //   "/page/stamp/detail.html?name=" + arrayOfList[i]["name"]
-      //   // );
-
-      //   console.log(div_card);
-
-      //   let div_second;
-      //   div_second = document.createElement("div");
-      //   div_second.setAttribute("class", "second");
-      //   div_card.append(div_second);
-
-      //   let img_stamp;
-      //   img_stamp = document.createElement("img");
-      //   img_stamp.setAttribute("src", arrayOfList[i]["image"]["url"]);
-      //   img_stamp.setAttribute("alt", "image_placeholder");
-      //   img_stamp.setAttribute("class", "stamp");
-      //   div_second.append(img_stamp);
-
-      //   let div_total;
-      //   div_total = document.createElement("div");
-      //   div_total.setAttribute("class", "total");
-      //   div_second.append(div_total);
-
-      //   let h1_head;
-      //   h1_head = document.createElement("h1");
-      //   h1_head.setAttribute("class", "head");
-      //   h1_head.innerText = "Rs : " + arrayOfList[i]["price"];
-      //   div_total.append(h1_head);
-
-      //   let p_text;
-      //   p_text = document.createElement("p");
-      //   p_text.setAttribute("class", "text");
-      //   p_text.innerText = ("Description", arrayOfList[i]["description"]);
-      //   div_total.append(p_text);
-
-      //   // document.querySelector("").append(div_card);
-      // });
     </script>
   </body>
 </html>

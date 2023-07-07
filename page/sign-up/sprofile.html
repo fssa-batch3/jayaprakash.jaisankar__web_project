@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Assets/css/profile style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="sign-up">
+        <div id="photo"><p class="para">user</p></div>
+
+        <!-- <h1>User Details</h1> -->
+
+        <form id="form" action="/index.html">
+          <label>First Name:</label>
+          <input class="input" id="fname" type="text" disabled />
+          <label> Middle Name:</label>
+          <input class="input" id="mname" type="text" disabled />
+          <label>Last Name:</label>
+          <input class="input" id="Lname" type="text" disabled />
+          <label>E-mail id</label>
+          <input class="input" id="email" type="text" disabled />
+          <label>Phone Number:</label>
+          <input class="input" id="phnumber" type="text" disabled />
+          <label>Date of Birth</label>
+          <input
+            class="input"
+            id="date"
+            type="date"
+            min="1900-01-01"
+            max="2020-01-01"
+            disabled
+          />
+
+          <label>Age</label>
+          <input class="input" id="age" type="text" disabled />
+          <label>Gender</label>
+          <input class="input" id="gender" type="text" disabled />
+          <label>Address</label>
+          <input class="input" id="address" type="text" disabled />
+
+          <label>Password:</label>
+          <input
+            class="input"
+            type="password"
+            id="password"
+            minlength="8"
+            disabled
+          />
+          <button onclick="edit()" class="btn">Edit</button>
+          <button type="submit" class="btn">submit</button>
+        </form>
+        <button onclick="Delete" id="delete" class="btn">Delete</button>
+      </div>
+    </div>
+    <script>
+      let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+      let data = JSON.parse(window.localStorage.getItem("list"));
+      console.log(data);
+
+      let get = data.find(function (obj) {
+        let checkmail = obj["mail"];
+        if (mail === checkmail) {
+          return true;
+        }
+      });
+      console.log(get);
+
+      let file = document.getElementById("file");
+      let image;
+
+      const fname = document.getElementById("fname");
+      const mname = document.getElementById("mname");
+      const Lname = document.getElementById("Lname");
+      const email = document.getElementById("email");
+      const phnumber = document.getElementById("phnumber");
+      const age = document.getElementById("age");
+      const gender = document.getElementById("gender");
+      const address = document.getElementById("address");
+      const date = document.getElementById("date");
+
+      const password = document.getElementById("password");
+
+      fname.value = get["name"];
+      mname.value = get["mname"];
+      Lname.value = get["Lname"];
+      email.value = get["mail"];
+      phnumber.value = get["phnumber"];
+      age.value = get["age"];
+      date.value = get["date"];
+      address.value = get["address"];
+      gender.value = get["gender"];
+      password.value = get["password"];
+
+      // Edit profile start
+
+      const editpage = document.querySelectorAll(".input");
+      console.log(editpage);
+
+      function edit() {
+        event.preventDefault();
+        for (let i = 0; i < editpage.length; i++) {
+          editpage[i].removeAttribute("disabled");
+        }
+      }
+
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let fname = document.getElementById("fname").value;
+        let mname = document.getElementById("mname").value;
+        let Lname = document.getElementById("Lname").value;
+        let email = document.getElementById("email").value;
+        let phnumber = document.getElementById("phnumber").value;
+        let age = document.getElementById("age").value;
+        let gender = document.getElementById("gender").value;
+        let address = document.getElementById("address").value;
+        let id = self.crypto.randomUUID();
+
+        const date = document.getElementById("date").value;
+
+        let ject = {
+          fname,
+          mname,
+          Lname,
+          email,
+          phnumber,
+          date,
+          gender,
+          age,
+          address,
+          id,
+        };
+
+        console.log(ject);
+
+        if (mail != email) {
+          alert("You can't change the Email ID");
+          // window.location.href = "/index.html";
+        } else {
+          let update = Object.assign(get, ject);
+          console.log(update);
+          let index = data.indexOf(get);
+          console.log(index);
+          data[index] = update;
+          localStorage.setItem("list", JSON.stringify(data));
+          //location.reload();
+          window.location.href = "/indexs.html";
+          // alert("You have successfully updated your account details!");
+        }
+      });
+
+      let info = document.getElementById("delete");
+      info.addEventListener("click", function (event) {
+        event.preventDefault();
+        let indexof = data.indexOf(get);
+        let failed = confirm("Delete this");
+        if (failed !== true) {
+          return;
+        } else {
+          data.splice(indexof, 1);
+          localStorage.setItem("list", JSON.stringify(data));
+          window.location.href = "/indexhome.html";
+        }
+      });
+    </script>
+  </body>
+</html>

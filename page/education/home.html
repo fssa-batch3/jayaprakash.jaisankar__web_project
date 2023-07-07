@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body {
+            display: block;
+        justify-content: center;
+        text-align: center;
+      } */
+      body{
+        margin: 0px;
+      }
+      .head {
+        margin: auto;
+        /* padding-top: 10px; */
+
+        background-color: rgb(181, 222, 234);
+      }
+      .logo {
+        display: flex;
+        /* margin-top: -100px; */
+        /* margin-left: 100px;
+    margin-bottom: 30px; */
+      }
+
+      .top2 {
+        display: flex;
+      }
+
+      .part1 {
+        padding-left: 100px;
+      }
+
+      .nav {
+        margin-top: 40px;
+        margin-left: 600px;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 18px;
+        justify-content: space-between;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 8px 10px;
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      #btn {
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(51, 159, 227);
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  margin-left: 400px;
+  margin-bottom: 20px;
+}
+#btn:hover {
+  background-color: rgb(0, 118, 191);
+}
+
+      .footer {
+        /* margin-top: 500px; */
+        padding: 100px;
+        background-color: rgb(129, 209, 235);
+        display: flex;
+        column-gap: 150px;
+      }
+      .tot {
+        margin: 20px 200px 20px 200px;
+      }
+    </style>
+</head>
+<body>
+    
+  <nav class="head">
+
+    <!-- <div class="part"> -->
+
+    <div class="top"> For any complaint - Call -7094120148 Tamilnadu , India</div>
+
+
+    <div class="top2">
+      <!-- Below code for logo placement  -->
+      <div class="part1">
+        <img class="logo" src="/page/electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
+          height="100px"  alt="logo"/>
+      </div>
+      
+      <div class="nav">
+
+        <div class="dropdown">
+          <span>Home</span>
+          <div class="dropdown-content">
+           <a href="/index.html"> <p>Home</p>
+
+          </div>
+        </div>
+
+
+            <div class="dropdown">
+              <a href="/page/electricity/about.html">     <span>About as</span></a>
+         
+        </div>
+
+
+        <div class="dropdown">
+          <span>sign_in</span>
+          <div class="dropdown-content">
+          <a href="/page/sign-up/sign-up.html"> <p>new_user</p></a>
+           <a href="/page/sign-up/profile.html"> <p>Remove</p></a>
+          </div>
+        </div>
+
+        <!-- <div class="dropdown">
+          <span>status</span>
+          <div class="dropdown-content">
+            <p>application</p>
+            <p>modify</p>
+            <p>delete</p>
+          </div>
+        </div> -->
+
+        <!-- <div class="dropdown">
+          <span>download</span>
+          <div class="dropdown-content">
+            <p>forms</p>
+          </div>
+        </div> -->
+        
+        <div class="dropdown">
+          <a href="/page/contact/contact.html"><span>Message</span></a>
+        </div>
+
+        <div class="dropdown">
+          <span>feedback</span>
+        </div>
+
+        <!-- <div class="dropdown">
+          <span>dashboard</span>
+        </div> -->
+      </div>
+    </div>
+  </nav>
+
+  <input type="text" id="searchInput" placeholder="Search...">
+  <ul class="details" id="list">
+    <!-- <li>
+      <h2>Engineering</h2>
+      <p>The systems engineering theory believes that the system engineers use their technical knowledge of the whole system to guide the system development . For complex engine design, it is impossible for one person to know all the related areas.</p>
+    </li>
+    <li>
+      <h2>Doctor</h2>
+      <p>Doctors are considered the most important and responsible people in society. They are the ones who support when someone is struggling with their health. Doctors are the ones to have a profound knowledge of all kinds of diseases, their symptoms, and their treatments.</p>
+    </li>
+    <li>
+      <h2>Teacher</h2>
+      <p>The theory of teaching is prescriptive in nature, thereby expressing rules that prescribe a particular course of action. So, it gives rules concerning the most effective ways for helping students to gain knowledge and acquire skills.</p>
+    </li>
+    <li>
+      <h2>Postmater</h2>
+      <p>The Postmaster is a story of a city-bred young man forced to live in a remote village. Necessity drove him to spend his evenings in the company of a simple orphan girl Ratan. CONTENT: The Postmaster short story is about an unnamed postmaster who was transfered to a remote post office in a small rural Indian village.</p>
+    </li>
+    <li>
+      <h2>Nurse</h2>
+      <p>Four major concepts are frequently interrelated and fundamental to nursing theory: person, environment, health, and nursing. These four are collectively referred to as metaparadigm for nursing. Person, Nursing, Environment, and Health – the four main concepts that make up the nursing metaparadigm.</p>
+      
+    </li>
+    -->
+  </ul>
+  
+  <!-- <div id="details"></div> -->
+
+
+<ul id="results"></ul>
+
+
+<div class="footer">
+  <div class="part">
+    <h1>useful links</h1>
+
+    <p>Electricity</p>
+    <p>Online payment</p>
+    <p>Complain</p>
+  </div>
+  <div class="part">
+    <h1>Privacy policy</h1>
+
+    <p>Website Policies</p>
+    <p>Cyber resilience</p>
+  </div>
+
+  <div class="part">
+    <h1>Contact as</h1>
+
+    <p>jp@gmail.com</p>
+    <p>Phone:+917094120148</p>
+  </div>
+  <div class="part">
+    <h1>Disclaimer</h1>
+    <p>
+      While care has been taken to ensure the accuracy of information,
+      TANGEDCO is not responsible for any damage or loss caused due to
+      action taken on the basis of this information. This website is best
+      viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+      resolution
+    </p>
+  </div>
+</div>
+
+<script>
+  let info = JSON.parse(localStorage.getItem("addli"));
+  for (let i = 0; i < info.length; i++) {
+      let div = document.createElement("div");
+
+      let crud = document.createElement("li");
+      div.append(crud);
+
+      let head = document.createElement("h2");
+      head.innerText = info[i]["head"];
+      div.append(head);
+
+      let para = document.createElement("p");
+      para.innerText = info[i]["para"];
+      div.append(para);
+
+      document.querySelector("ul.details").append(div);
+  }
+</script>
+<script>
+let data = JSON.parse(localStorage.getItem("addli"));
+
+function filterData(searchTerm) {
+  const term = searchTerm.toLowerCase();
+
+  const filteredData = data.filter(item => {
+    const itemName = item.name.toLowerCase();
+    return itemName.includes(term);
+  });
+
+  return filteredData;
+}
+
+
+function renderResults(results) {
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = '';
+
+  results.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item.name;
+    resultsContainer.appendChild(li);
+  });
+}
+
+
+function handleSearchInputChange(event) {
+  const searchTerm = event.target.value;
+  const filteredResults = filterData(searchTerm);
+  renderResults(filteredResults);
+}
+
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', handleSearchInputChange);
+
+</script>
+
+</body>
+</html>

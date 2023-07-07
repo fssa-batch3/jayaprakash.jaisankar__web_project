@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./Assets/css/login.css" />
+  </head>
+  <body>
+    <div class="first">
+      <div class="whole">
+        <form id="form">
+          <h1>Login</h1>
+
+          <label>E-mail</label>
+          <input type="email" id="email" /><br />
+
+          <label>Password</label>
+          <input
+            type="password"
+            value="jayaprakash.jaisankar@fssa.freshworks.com"
+            id="password"
+          /><br />
+          <button type="submit" value="As123456" class="btn">submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let logIn = document.getElementById("form");
+      logIn.addEventListener("submit", (event) => {
+        event.preventDefault();
+        // let log = [];
+        let Data = JSON.parse(localStorage.getItem("user"));
+        console.log(Data);
+        let email = document.getElementById("email").value.toLowerCase();
+        let password = document.getElementById("password").value;
+        console.log(email, password);
+
+        let isthis = false;
+        for (let i = 0; i < Data.length; i++) {
+          if (email === Data[i].email && password == Data[i].password) {
+            isthis = true;
+            // log.push(Data[i]);
+            window.localStorage.setItem(
+              "userinfo",
+              JSON.stringify(Data[i].email)
+            );
+            break;
+          } else {
+            isthis = false;
+          }
+        }
+
+        if (isthis === true) {
+          alert("success");
+
+          window.location.href = "/indexadmin.html";
+        } else {
+          alert("failed");
+          window.location.href = "./sign-up.html";
+        }
+      });
+    </script>
+  </body>
+</html>

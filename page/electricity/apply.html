@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+          .tot{
+      display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+     .whole {
+     
+        /* padding: 100px; */
+       width: 200px;
+        background-color: rgb(6, 203, 243);
+        padding: 60px 120px 60px 120px;
+       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+         border-radius: 10px;
+      }
+      .change {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        padding: 40px;
+      }
+      .align{
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+      }
+      
+      #sub{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #submit{
+        width: 100px;
+        height: 30px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(48, 160, 240);
+      }
+      #download{
+        width: 100px;
+        height: 30px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(48, 160, 240);
+      }
+    /* .whole {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .change {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+      } */
+  </style>
+  <body>
+    <div class="tot">
+    <div class="whole">
+    <form id="form" >
+    <div class="change">
+      <label>Name</label>&emsp;
+      <input id="name" type="text" value="yazhanj" pattern="[A-Za-z]{6,12}" title="name is 6 to 12 letter" required/>
+    </div>
+
+    <div class="change">
+      <label>file</label>&emsp;
+      <input  type="file" id ="file" required />
+      <!-- <input  type="submit" value="upload file(s)" /> -->
+    </div>
+
+    <div class="change">
+      <label>village</label>&emsp;
+      <input id="vname" value="karurk" type="text" pattern="[A-Za-z]{6,12}" title="village_name is 6 to 12 letter"required/>
+    </div>
+    <div class="change">
+      <label>village.no</label>&emsp;
+      <input id="vnum" value = "50" type="number" maxlength="4" pattern="[0-9]{1,32}" title="number is 1 to 32 number" required />
+    </div>
+
+    <div class="change">
+      <label>taluk</label>&emsp;
+      <input id="tname" value = "vedaranyam"type="text"  pattern="[A-Za-z]{6,12}" title="taluk_name is 6 to 12 letter" required />
+    </div >
+    <div class="align">
+    <button onclick="submit" id="submit" class="btn">submit</button>
+    <button onclick="submit" id="download" class="btn">Download</button>
+  </div>
+    </form>
+    </div>
+    </div>
+    <script>
+
+     
+let form = document.getElementById("form");
+let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+let file = document.getElementById("file")
+let image ;
+file.addEventListener("change",function(e){
+  e.preventDefault()
+  let choosefile = this.files[0];
+         if (choosefile) {
+    let reader = new FileReader();
+    // console.log(reader.result);
+    reader.addEventListener("load", function () {
+    image =reader.result;
+     console.log(image)
+      
+    });
+    reader.readAsDataURL(choosefile);
+  }
+});
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let name =document.getElementById("name").value;
+        // let num =document.getElementById("num").value;
+        let vname =document.getElementById("vname").value;
+        let vnum =document.getElementById("vnum").value;
+        let tname =document.getElementById("tname").value;
+
+
+        let obj ={
+          name,
+         image,
+          vname,
+          vnum,
+          tname,
+          mail
+         };
+
+         
+         let uuid = crypto.randomUUID();
+        obj["uuid"] = uuid;
+        console.log(uuid);
+        console.log(obj);
+       
+         let arr=[];
+         arr.push(obj);
+     
+
+        //  const form = document.getElementById("myForm");
+      // const submitButton = document.getElementById("download");
+
+      // submitButton.addEventListener("click", (event) => {
+      //   event.preventDefault();
+
+      //   const formData = new FormData(form);
+
+      //   const data = {};
+      //   for (const [key, value] of formData.entries()) {
+      //     data[key] = value;
+      //   }
+
+      //   const jsonString = JSON.stringify(data);
+      //   const blob = new Blob([jsonString], { type: "application/json" });
+      //   const url = URL.createObjectURL(blob);
+
+      //   const a = document.createElement("a");
+      //   a.href = url;
+      //   a.download = "form-data.json";
+      //   document.body.appendChild(a);
+      //   a.click();
+      //   document.body.removeChild(a);
+      //   URL.revokeObjectURL(url);
+      // });
+
+
+        //  localStorage.setItem("array",JSON.stringify(arr));
+
+        if (window.localStorage.getItem("electricity") === null) {
+            window.localStorage.setItem("electricity", JSON.stringify(arr));
+            console.log(window.localStorage.getItem("electricity"));
+            // window.location.href = "./list.html"
+          } else {
+            let local = window.localStorage.getItem("electricity");
+            let json = JSON.parse(local);
+            json.push(obj);
+            window.localStorage.setItem("electricity", JSON.stringify(json));
+          }
+
+          window.location.href = "./applylist.html";
+
+        });        
+        
+        
+        
+    </script>
+  </body>
+</html>

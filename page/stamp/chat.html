@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+      .first{
+        display: block;
+        align-items: center;
+        text-align: center;
+      }
+      .text{
+        border: none;
+        padding: 40px;
+        width: 400px;
+        display: block;
+      }
+
+      #txt {
+        padding: 100px;
+        width: 200px;
+        height: 50px;
+      }
+      #btn{
+        margin-top: 20px;
+      }
+      .fst{
+        display: block;
+      }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <form id="form">
+          <input id="txt" />
+          <button id="btn" type="submit">Submit</button>
+        </form>
+      </div>
+    
+    </div>
+<div class="tot"></div>
+    <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    
+      <script>
+        let form = document.getElementById("form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault()
+          let txt = document.getElementById("txt").value + moment().format('MMMM Do YYYY, h:mm:ss a');
+          let uuid = crypto.randomUUID();
+     
+          let obj = {
+            txt,
+            uuid,
+          };
+          let comment = [];
+          comment.push(obj);
+  
+          if (window.localStorage.getItem("comment") === null) {
+            window.localStorage.setItem("comment", JSON.stringify(comment));
+            console.log(window.localStorage.getItem("comment"));
+          } else {
+            let local = window.localStorage.getItem("comment");
+            let json = JSON.parse(local);
+            json.push(obj);
+            window.localStorage.setItem("comment", JSON.stringify(json));
+          }
+      
+
+    location.reload()
+
+});
+
+      </script>
+
+      <script>
+
+let cm =JSON.parse(localStorage.getItem("comment"));
+        console.log(cm)
+for(i=0;i<cm.length;i++)
+{
+          let div_f = document.createElement("div");
+      div_f.setAttribute("class", "fst");
+   
+
+      let fom = document.createElement("form");
+      form.setAttribute("class", "fm");
+      div_f.append(form);
+
+      let input = document.createElement("input");
+      input.setAttribute("class", "text");
+      input.setAttribute("id", "tt");
+      input.value = cm[i]["txt"] ;                     ;
+      form.append(input)
+
+
+
+
+      document.querySelector("div.tot").append(div_f)
+  
+}
+
+
+
+
+
+
+
+      </script>
+
+</body>
+</html>

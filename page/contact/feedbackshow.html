@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./feedback.css" />
+  </head>
+  <body>
+
+    <nav class="head">
+
+      <!-- <div class="part"> -->
+  
+      <div class="top"> For any complaint - Call -7094120148 Tamilnadu , India</div>
+  
+  
+      <div class="top2">
+        <!-- Below code for logo placement  -->
+        <div class="part1">
+          <img class="logo" src="../electricity/Green_Vintage_Badge_Farm_Logo__1_-removebg-preview.png" width="150px"
+            height="100px" alt="logo"/>
+        </div>
+        
+        <div class="nav">
+  
+          <div class="dropdown">
+            <span>Home</span>
+            <div class="dropdown-content">
+             <a href="./index.html"> <p>Home</p>
+  
+            </div>
+          </div>
+  
+  
+              <div class="dropdown">
+                <a href="./page/electricity/about.html">     <span>About as</span></a>
+           
+          </div>
+  
+  
+          <div class="dropdown">
+            <span>sign_in</span>
+            <div class="dropdown-content">
+            <a href="./page/sign-up/sign-up.html"> <p>new_user</p></a>
+             <a href="./page/sign-up/profile.html"> <p>Remove</p></a>
+            </div>
+          </div>
+  
+          <!-- <div class="dropdown">
+            <span>status</span>
+            <div class="dropdown-content">
+              <p>application</p>
+              <p>modify</p>
+              <p>delete</p>
+            </div>
+          </div> -->
+  
+          <!-- <div class="dropdown">
+            <span>download</span>
+            <div class="dropdown-content">
+              <p>forms</p>
+            </div>
+          </div> -->
+          
+          <div class="dropdown">
+            <a href="./page/contact/contact.html"><span>Message</span></a>
+          </div>
+  
+          <div class="dropdown">
+            <span>feedback</span>
+          </div>
+  
+          <!-- <div class="dropdown">
+            <span>dashboard</span>
+          </div> -->
+        </div>
+      </div>
+    </nav>
+    <div class="full"></div>
+    <!-- <div><a href="./fedit.html"><button>Ask Question</button></a></div> -->
+    <div class="footer">
+      <div class="part">
+        <h1>useful links</h1>
+    
+        <p>Electricity</p>
+        <p>Online payment</p>
+        <p>Complain</p>
+      </div>
+      <div class="part">
+        <h1>Privacy policy</h1>
+    
+        <p>Website Policies</p>
+        <p>Cyber resilience</p>
+      </div>
+    
+      <div class="part">
+        <h1>Contact as</h1>
+    
+        <p>jp@gmail.com</p>
+        <p>Phone:+917094120148</p>
+      </div>
+      <div class="part">
+        <h1>Disclaimer</h1>
+        <p>
+          While care has been taken to ensure the accuracy of information,
+          TANGEDCO is not responsible for any damage or loss caused due to
+          action taken on the basis of this information. This website is best
+          viewed in IE 8+, Firefox 3+ and Google chrome 3+ @ 1024 x 768
+          resolution
+        </p>
+      </div>
+    </div>
+    
+    <script>
+      let arr = JSON.parse(localStorage.getItem("fedit"));
+
+      for (let i = 0; i < arr.length; i++) {
+        let whole = document.createElement("div");
+        whole.setAttribute("class", "whole");
+
+        let fques = document.createElement("div");
+        fques.setAttribute("class", "fques");
+        whole.append(fques);
+
+        let head1 = document.createElement("h1");
+        head1.setAttribute("class", "head1");
+        head1.innerText = arr[i]["answer"];
+       
+        fques.append(head1);
+
+        let head2 = document.createElement("h3");
+        head2.setAttribute("class", "head2");
+        head2.innerText = arr[i]["ans"];
+        fques.append(head2);
+
+      
+       
+      let direct;
+        direct = document.createElement("a");
+        direct.setAttribute("class", "link");
+        direct.setAttribute("href", "./feedbackedit.html");
+
+        whole.append(direct);
+
+        
+  
+        let edit;
+        edit = document.createElement("button");
+        edit.setAttribute("class", "link");
+        edit.setAttribute("id", arr[i]["uuid"]);
+
+        edit.setAttribute("onclick", "edit(this.id)");
+
+        edit.innerText = "edit";
+        direct.append(edit);
+        document.querySelector("div.full").append(whole);
+      }
+      let array = [];
+
+      function edit(id) {
+        array.push(id);
+        console.log(array);
+        let uuid = localStorage.setItem("edit", JSON.stringify(array));
+        window.location.href = "./feedbackedit.html";
+      }
+
+   
+    </script>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let fedit = JSON.parse(localStorage.getItem("contact"));
+
+      for (let i = 0; i < fedit.length; i++) {
+        let div = document.createElement("div");
+        div.setAttribute("class", "show");
+
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "inside");
+        div.append(div1);
+
+        let label = document.createElement("label");
+        label.setAttribute("class", "label1");
+        div1.append(label);
+
+        let input = document.createElement("p");
+        input.setAttribute("class", "input");
+        div1.append(input);
+
+        let div2 = document.createElement("div");
+        div2.setAttribute("class", "inside");
+        div.append(div2);
+
+        let label1 = document.createElement("label");
+        label1.setAttribute("class", "label");
+        div2.append(label1);
+
+        let input1 = document.createElement("p");
+        input1.setAttribute("class", "input");
+        div2.append(input1);
+
+        letdiv3 = document.createElement("div");
+        div3.setAttribute("class", "inside");
+        div.append(div2);
+
+        let label2 = document.createElement("label");
+        label2.setAttribute("class", "label2");
+        div3.append(label2);
+
+        let input2 = document.createElement("p");
+        input2.setAttribute("class", "input");
+        div3.append(input2);
+        document.querySelector("body").append(div);
+      }
+    </script>
+  </body>
+</html> -->

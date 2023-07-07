@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="date" id="birthdate" />
+    <button onclick="submitBirthdate()">Submit</button>
+
+    <script>
+      function submitBirthdate() {
+        let birthdateInput = document.getElementById("birthdate");
+        let birthdate = birthdateInput.value;
+
+        // Do something with the birthdate (e.g., submit it to a server)
+      }
+
+      // Set the maximum value of the birthdate input to the current date
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, "0");
+      let mm = String(today.getMonth() + 1).padStart(2, "0"); // January is 0!
+      let yyyy = today.getFullYear();
+      let maxDate = yyyy + "-" + mm + "-" + dd;
+
+      //document.getElementById("birthdate").setAttribute("max", maxDate);
+    </script>
+  </body>
+</html>

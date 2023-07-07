@@ -7,10 +7,20 @@
     <title>Document</title>
   </head>
   <style>
-     .whole {
-        display: flex;
+    .tot{
+      display: flex;
         justify-content: center;
         align-items: center;
+
+    }
+     .whole {
+     
+        /* padding: 100px; */
+       width: 200px;
+        background-color: rgb(6, 203, 243);
+        padding: 60px 120px 60px 120px;
+       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+         border-radius: 10px;
       }
       .change {
         display: flex;
@@ -18,81 +28,206 @@
         align-items: center;
         padding: 40px;
       }
+      
+      #sub{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #submit{
+        width: 100px;
+        height: 30px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(48, 160, 240);
+      }
   </style>
   <body>
+    <div class="tot">
     <div class="whole">
-    <form id="form">
+    <form id="form" action="./list.html">
     <div class="change">
       <label>Name</label>&emsp;
-      <input id="name" type="text" />
+      <input id="name" type="text" value="Yazhan" pattern="[A-Za-z]{1,32}" required/>
     </div>
 
     <div class="change">
-      <label>Servour.no</label>&emsp;
-      <input id="num" type="number" />
+      <label>email</label>&emsp;
+      <input id="email" value="yazhan@gmail.com" type="email" />
+    </div>
+
+
+    <div class="change">
+      <label>Surveyor.no</label>&emsp;
+      <input id="num" type="text" value="50" maxlength="4"   
+      required />
     </div>
 
     <div class="change">
       <label>village</label>&emsp;
-      <input id="vname" type="text" />
+      <input id="vname" type="text" value="karur" pattern="[A-Za-z]{1,32}" required />
     </div>
     <div class="change">
       <label>village.no</label>&emsp;
-      <input id="vnum" type="number" />
+      <input id="vnum" type="text" value="52" maxlength="4" 
+      required/>
     </div>
 
     <div class="change">
       <label>taluk</label>&emsp;
-      <input id="tname" type="text" />
+      <input id="tname" type="text" value="vedai" pattern="[A-Za-z]{1,32}" required />
     </div class="change">
-    <button onclick="submit" id="submit" class="btn">submit</button>
-       
+    <div class="sub">
+      <button onclick="edit" id="edit" class="btn">submit</button>
+    <!-- <button onclick="submit" id="submit" class="btn">submit</button> -->
+    </div>
+   
     </form>
     </div>
+    </div>
     <script>
+// let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+//       let data = JSON.parse(window.localStorage.getItem("user"));
+//       console.log(data);
+
+//       let get = data.find(function (obj) {
+//         let checkmail = obj["email"];
+//         if (mail === checkmail) {
+//           return true;
+//         }
+//       });
+//       console.log(get);
+
+
+//       let index = data.indexOf(get);
+//         console.log(index);
+
+
 
      
 let form = document.getElementById("form");
 
+
+let form_details = JSON.parse(localStorage.getItem("list"))
+console.log(form_details)
+let mail = JSON.parse(localStorage.getItem("userinfo"))
+
+
+
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+    
         let name =document.getElementById("name").value;
+       // let email =document.getElementById("email").value;
         let num =document.getElementById("num").value;
         let vname =document.getElementById("vname").value;
         let vnum =document.getElementById("vnum").value;
         let tname =document.getElementById("tname").value;
+    
 
+
+     
+      // console.log(get);
         let obj ={
           name,
+          mail,
           num,
           vname,
           vnum,
-          tname
+          tname,
+        
          };
          let uuid = crypto.randomUUID();
         obj["uuid"] = uuid;
         console.log(uuid);
         console.log(obj);
+
+
+    
+        let arr = [ ];
+        arr.push(obj);
+
+      //   let mail = JSON.parse(window.localStorage.getItem("userinfo"));
+      // let data = JSON.parse(window.localStorage.getItem("user"));
+      // console.log(data);
+
+
+      
+      // let checkmail = get["email"];
+      //   console.log(checkmail)
+
+      //   console.log(dat);
+      // let ject= dat.find(function (obj) {
+      //   let mail = obj["email"];
+      //   if (mail === checkmail) {
+      //     return true;
+      //   }
+      // });
+      // console.log(ject);
+
+
+      // let number = ject["num"];
+      //   console.log(number)
+
+
+
+        // let arr=[];
+        //      let check =[];    
+
+        //  for(let i=0;i<  form_details.length;i++){
+        //   for(let j=0;j<form_details[i].number.length;j++){
+        //     if(number ==   form_details[i].number[i])
+              
+        //   check.push(ject);
+        //   arr.push(check)
+
+        //   window.localStorage.setItem("data", JSON.stringify(arr));
+        //     console.log(window.localStorage.getItem("data"));
+        //   }
+         
+        //  }
+        // if(
+        //  form_details[0].number.find( (obj) => obj == number )){
+        //   let check =[];        
+        //   check.push(ject);
+        //   arr.push(check)
+
+          // window.localStorage.setItem("data", JSON.stringify(arr));
+          //   console.log(window.localStorage.getItem("data"));
+
+
+        //  let validation = JSON.parse(window.localStorage.getItem("data"));
+         
        
-         let arr=[];
-         arr.push(obj);
+      //   for (let i = 0; i < form_details.length; i++) {
+      //     let is = false;
+      //     if (num === form_details[i]["num"]) {
+      //       //alert("Email is already in use");
+      //       is = true;
+      //       break;
+      //     }
+        
+      // }
+      //   if (is == true) {
+      //     alert("already  land number is exist");
+      //   } else {
 
-
-        //  localStorage.setItem("array",JSON.stringify(arr));
-
-        if (window.localStorage.getItem("data") === null) {
+          if (window.localStorage.getItem("data") === null) {
             window.localStorage.setItem("data", JSON.stringify(arr));
             console.log(window.localStorage.getItem("data"));
-            window.location.href = "./list.html"
+             window.location.href = "./listuser.html"
           } else {
             let local = window.localStorage.getItem("data");
             let json = JSON.parse(local);
             json.push(obj);
             window.localStorage.setItem("data", JSON.stringify(json));
           }
-          window.location.href = "./list.html";
+           window.location.href = "./listuser.html";
 
-        });        
+          
+        });
+      
         
         
     </script>

@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+          <!-- <label>Name</label><br />
+      <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,33 +12,66 @@
     <div class="contact">
       <div class="contact-1">
         <h1>Contact Us Form</h1>
-        <label>Name*</label><br />
-        <input type="text" id="name" /><br />
-        <label>E-mail*</label><br />
-        <input type="text" id="email" /><br />
-        <label>Subject*</label><br />
-        <input type="text" id="text" /><br />
-        <label>Message*</label><br />
-        <input type="text" id="sent" />
-        <br />
-        <button type="button" class="btn" onclick="submit()">submit</button>
+        <form id="form">
+    <input type="text" id="name" pattern="[A-Za-z]" /><br /> -->
+          <div class="alig">
+            <label>E-mail*</label><br />
+            <input type="email" value ="yazhanj@gmail.com" id="email" required /><br />
+          </div>
+          <div class="alig">
+            <label>Subject</label><br />
+            <input
+              type="text"
+              id="text"
+              value="Issue"
+              pattern="[A-Za-z]{1,32}"
+              required
+            /><br />
+          </div>
+          <div class="alig">
+            <label>Message</label><br />
+            <textarea
+              type="text"
+              id="sent"
+              value = "Hi.333333333333333333333333amidoit"
+              pattern="[a-zA-Z\d\s',. #/-]*"
+              required
+            ></textarea>
+            <br />
+          </div>
+          <button type="submit" class="btn">submit</button>
+        </form>
       </div>
     </div>
 
     <script>
-      function submit() {
-        const name = document.getElementById("name").value;
+      let form = document.getElementById("form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        //const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const text = document.getElementById("text").value;
         const sent = document.getElementById("sent").value;
 
-        console.log(name);
-        console.log(email);
-        console.log(text);
-        console.log(sent);
+        let data = {
+          name,
+          email,
+          text,
+          sent,
+        };
 
-        window.location.href = "/index.html";
-      }
+        let array = [];
+        if (localStorage.getItem("contact") === null) {
+          array.push(data);
+          localStorage.setItem("contact", JSON.stringify(array));
+        } else {
+          let dat = window.localStorage.getItem("contact");
+          let info = JSON.parse(dat);
+          info.push(data);
+          window.localStorage.setItem("contact", JSON.stringify(info));
+        }
+        window.location.href = "/indexhome.html";
+      });
     </script>
   </body>
 </html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .whole {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     .change {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 40px;
+     }
+ </style>
+ <body>
+   <div class="whole">
+   <form id="form">
+   <div class="change">
+     <label>Name</label>&emsp;
+     <input id="name" type="text" pattern="[A-Za-z]{6,12}" title= "name is 6 to 12" required/>
+   </div>
+
+   <!-- <div class="change">
+     <label>email</label>&emsp;
+     <input id="num" type="email" title="example@gmail.com" required />
+   </div> -->
+
+   <div class="change">
+     <label>village</label>&emsp;
+     <input id="vname" type="text" pattern="[A-Za-z]{6,12}" title= "village_name is 6 to 12" required/>
+   </div>
+   <div class="change">
+     <label>village</label>&emsp;
+     <input id="vnum" type="number" pattern="[0-9]{1,32}" title= "villagenumber is 1 to 32" required />
+   </div>
+
+   <div class="change">
+     <label>taluk</label>&emsp;
+     <input id="tname" type="text" pattern="[A-Za-z]{6,12}" title= "taluk_name is 6 to 12" required />
+   </div class="change">
+   <button onclick="submit" id="submit" class="btn">Edit</button>
+   <button onclick="clear" id="delete" class="btn">Delete</button>
+  
+   </form>
+   </div>
+   <script>
+let form_details = JSON.parse(localStorage.getItem("electricity"));
+console.log(form_details);
+
+let id = JSON.parse(localStorage.getItem("uuid"));
+console.log(id);
+
+let check = id.pop();
+console.log(check);
+
+let get = form_details.find(function(obj) {
+  let checkid = obj["uuid"];
+  console.log("Check:", check, "Check ID:", checkid);
+  if (check == checkid) {
+    return true;
+  }
+  return false;
+});
+
+console.log("Result:", get);
+
+
+
+    const name = document.getElementById("name");
+ //  const email = document.getElementById("num");
+    const vname = document.getElementById("vname");
+    const vnum = document.getElementById("vnum");
+    const tname = document.getElementById("tname");
+
+
+    name.value = get["name"];
+  //  email.value = get["num"];
+    vname.value = get["vname"];
+    vnum.value = get["vnum"];
+    tname.value=get["tname"]
+    console.log(get);
+
+    // edit profile start
+
+    const editpage = document.querySelectorAll(".input");
+    console.log(editpage);
+    function edit() {
+      for (i = 0; i < editpage.length; i++) {
+        editpage[i].removeAttribute("disabled");
+      }
+    }
+
+    let form = document.getElementById("form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value;
+     // let file = document.getElementById("num").value;
+      let vname = document.getElementById("vname").value;
+      let vnum = document.getElementById("vnum").value;
+      let tname = document.getElementById("tname").value;
+
+      let ject = {
+        name,
+      // file,
+        vname,
+        vnum,
+        tname,
+      };
+
+      console.log(ject);
+
+      let update = Object.assign(get, ject);
+      console.log(update);
+      let index = form_details.indexOf(get);
+      console.log(index);
+
+      form_details[index] = update;
+      localStorage.setItem("electricity", JSON.stringify(form_details));
+      window.location.href = "./applylist.html";
+    });
+
+    let info = document.getElementById("delete");
+    info.addEventListener("click", function (event) {
+      event.preventDefault();
+      let indexof = form_details.indexOf(get);
+      let failed = confirm("Delete this");
+      if (failed !== true) {
+        return;
+      } else {
+        form_details.splice(indexof, 1);
+        localStorage.setItem("electricity", JSON.stringify(form_details));
+         window.location.href = "./applylist.html";
+      }
+    });
+  </script>
+</body>
+</html>

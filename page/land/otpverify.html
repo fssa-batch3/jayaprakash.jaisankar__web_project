@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required /><br /><br />
+
+      <button type="button" onclick="sendEmail()">Send OTP</button>
+
+      <br /><br />
+      <label for="verify">Enter OTP:</label>
+      <input type="text" id="verify" required /><br /><br />
+
+      <button type="button" id="btn">Verify OTP</button>
+    </form>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      let pass = [];
+
+      function sendEmail() {
+        const otp = generateOTP();
+        let mail = document.getElementById("email").value;
+        console.log(mail);
+
+        Email.send({
+          SecureToken: "7279fc32-fa76-40d1-b975-6908e7da02f4",
+          Host: "smtp.elasticemail.com",
+          Username: "jayaprakash.jaisankar@fssa.freshworks.com",
+          Password: "7354083B73F02038F5B16EAF3DB2855682FD",
+          To: mail,
+          From: "jayaprakash.jaisankar@fssa.freshworks.com",
+          Subject: "Test Email",
+          Body: "OTP of 6 digits: " + otp,
+        })
+          .then((message) => {
+            alert("OTP sent to the user_email");
+
+            pass.push(otp);
+            console.log(pass);
+            localStorage.setItem("pass", JSON.stringify(pass));
+            console.log("OTP: " + otp + " sent to: " + mail);
+          })
+          .catch((error) => {
+            console.log("Error sending email:", error);
+            alert("Error sending OTP. Please try again later.");
+          });
+      }
+
+      function generateOTP() {
+        let digits = "0123456789";
+        let OTP = "";
+        let n = 6;
+        for (let i = 0; i < n; i++) {
+          OTP += digits[Math.floor(Math.random() * 10)];
+        }
+        return OTP;
+      }
+      let sen = document.getElementById("btn");
+      sen.addEventListener("click", function (e) {
+        e.preventDefault();
+        let password = JSON.parse(localStorage.getItem("pass"));
+        let otp = document.getElementById("verify").value;
+        console.log(otp);
+
+        if (password[0] == otp) {
+          alert("Success! OTP verified.");
+          window.location = "/page/sign-up/profile.html";
+        } else {
+          alert("Invalid OTP. Please try again.");
+        }
+      });
+    </script>
+  </body>
+</html>
